@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% block title %}{{ title }} | Cactus{% endblock title %}
+{% block content %}
+
+<section id="wrapper" class="group">
+	<header id="header">
+		<a id="title" href="/">Blog</a>
+	</header>
+
+	<article class="post">
+		<header>
+			<h1>{{ title }}</h1>
+			<h2 class="headline">{{ headline }} </h2>
+		</header>
+		<section id="post-body">
+			{% block body %}
+				This is where the post contents is.
+			{% endblock body %}
+		</section>
+		
+		<footer id="post-meta" class="clearfix">
+			<div><span>Posted on </span> {{ date|date:"M j" }}</div>
+			<div><span>Written by</span> {{ author }}</div>
+
+			<section id="sharing">
+				<a class="twitter" href="https://twitter.com/share"><span class="icon-twitter-circled"></span></a>
+
+				<a class="facebook" href="#" 
+				  onclick="
+				    window.open(
+				      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href), 
+				      'facebook-share-dialog', 
+				      'width=626,height=436'); 
+				    return false;"><span class="icon-facebook-circled"></span> 
+				</a>
+
+			</section> 
+		</footer> 
+	</article>
+
+	<footer>
+	<nav id="post-nav">
+		<span class="prev">
+			{% if prevPost %}
+				<a href='/{{ prevPost.path }}'>
+					<span class="arrow">&larr;</span> {{ prevPost.title }}
+				</a>
+			{% endif %}
+		</span>
+		
+
+		<span class="next">
+			{% if nextPost %}
+				<a href='/{{ nextPost.path }}'>
+					{{ nextPost.title }} <span class="arrow">&rarr;</span>
+				</a>
+			{% endif %}
+		</span>
+	</nav>
+	</footer>
+</section> 
+
+{% endblock content %}
