@@ -6,16 +6,23 @@
 {% block content %}
 
 <section id="wrapper">
-    <h1>Create your first web app</h1>
+    <h1>Create your first web app #1</h1>
 
     <ul id="post-list">
         {% for post in posts %}
             <li> 
-                <a href='/{{ post.path }}'><aside class="dates">{{ post.date|date:"M j" }}</aside></a>
-                <a href='/{{ post.path }}'>{{ post.title }} <h2>{{ post.headline }}</h2></a>
+                <a href='/{{ post.path }}'>
+                    <aside class="dates">{{ post.date|date:"M j" }}</aside>
+                </a>
+                <a href='/{{ post.path }}'>
+                    {{ post.title }}
+                    <h2>{{ post.headline }}</h2>
+                </a>
             </li>
         {% endfor %}
     </ul>
 </section>
+
+{% include 'includes/newsletter.html' %}
 
 {% endblock content %}
