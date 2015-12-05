@@ -15,11 +15,11 @@
 <body>
     <nav>
         <ul>
-            <li><a href="archive.html">Articles</a></li>
-            <li><a href="faq.html">FAQ</a></li>
-            <li><a href="/">Hello Web App</a></li>
-            <li><a href="workshops.html">Workshops</a></li>
-            <li><a href="order.html">Order</a></li>
+            <li><a href="{% url '/archive.html' %}">Articles</a></li>
+            <li><a href="{% url '/faq.html' %}">FAQ</a></li>
+            <li><a href="{% url '/index.html' %}">Hello Web App</a></li>
+            <li><a href="{% url '/workshops.html' %}">Workshops</a></li>
+            <li><a href="{% url '/order.html' %}">Order</a></li>
         </ul>
     </nav>
 
@@ -28,8 +28,8 @@
 
     <nav>
         <ul>
-            <li><a href="about.html">About</a></li>
-            <li><a href="donate.html">Donate</a></li>
+            <li><a href="{% url '/about.html' %}">About</a></li>
+            <li><a href="{% url '/donate.html' %}">Donate</a></li>
         </ul>
     </nav>
 
