@@ -8,36 +8,49 @@
     <link rel="shortcut icon" href="{% static '/images/favicon.ico' %}">
     <link rel="stylesheet" href="{% static '/scss/style.scss.css' %}">
 
+    <link href='https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700,700italic|Rock+Salt' rel='stylesheet' type='text/css'>
+
     {% block header %}
     <title>{% block title %}Hello Web App{% endblock %}</title>
     {% endblock header %}
 </head>
+
+{% block bodyclass %}
 <body>
-    <nav>
-        <ul>
-            <li><a href="{% url '/archive.html' %}">Articles</a></li>
+{% endblock bodyclass %}
+    <nav class="container" id="main-nav">
+        <ul class="list-inline">
+            <li><a href="{% url '/about.html' %}">About</a></li>
+            <li><a href="{% url '/press.html' %}">Press</a></li>
             <li><a href="{% url '/faq.html' %}">FAQ</a></li>
-            <li><a href="{% url '/index.html' %}">Hello Web App</a></li>
+            <li id="home-link"><a href="{% url '/index.html' %}">Hello Web App</a></li>
+            <li><a href="{% url '/archive.html' %}">Blog</a></li>
             <li><a href="{% url '/workshops.html' %}">Workshops</a></li>
-            <li><a href="{% url '/order.html' %}">Order</a></li>
+            <li><a href="{% url '/order.html' %}">Buy</a></li>
         </ul>
     </nav>
 
     {% block content %}
     {% endblock content %}
 
-    <nav>
-        <ul>
-            <li><a href="{% url '/about.html' %}">About</a></li>
+    <nav class="container text-center">
+        <ul class="list-inline">
             <li><a href="{% url '/donate.html' %}">Donate</a></li>
         </ul>
     </nav>
 
-    <p>&copy; Copyright 2015, Tracy Osborn</p>
+    <div class="container text-center">
+        <ul class="list-inline">
+            <li><a href="//twitter.com/hellowebapp">Twitter</a></li>
+            <li><a href="//github.com/hellowebapp">GitHub</a></li>
+            <li><a href="mailto:tracy@hellowebapp.com">Email</a></li>
+        </ul>
+        <p>Hello Web App by Tracy Osborn, &copy; 2015</p>
+    </div>
 
     {% block scripts %}
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-        <script src="{% static '/js/main.js' %}"></script>
-    {% endblock scripts%}
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="{% static '/js/main.js' %}"></script>
+    {% endblock scripts %}
 </body>
 </html>

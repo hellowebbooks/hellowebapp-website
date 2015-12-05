@@ -2,11 +2,78 @@
 
 {% block title %}Create your first web app with {{ block.super }}{% endblock %}
 
+{% block bodyclass %}
+<body id="home">
+{% endblock %}
 
 {% block content %}
+<div class="jumbotron">
+    <div class="container text-center">
+        <h1>Create your first web app</h1>
+        <h2>Design and build your own custom web app using Python and Django. <br/>
+            Tailored for non-programmers, written by a designer.</h2>
 
-<section id="wrapper">
-    <h1>Create your first web app #1</h1>
+        <a href="" class="btn btn-secondary">Free Sample</a>
+        <a href="{% url '/order.html' %}" class="btn btn-primary">Order</a>
+    </div>
+</div>
+
+<div class="container">
+    <div class="text-center">
+        <h3>Have you ever wanted to develop your own web product?</h3>
+        <p>Not just a basic HTML &amp; CSS website design, but rather a complete functional web app with users.</p>
+
+        <p><strong>Your side project. Your lifestyle business. Your future startup.</strong></p>
+
+        <p>Hello Web App teaches the basics of web app programming using Python and Django. In less than 150 pages, you'll learn how to choose a project, set up a database, create your templates, and launch your app.</p>
+
+        <p><a href="" class="btn btn-secondary">Get a free sample</a></p>
+    </div>
+
+    <hr/>
+
+    <div class="row">
+        <div class="col-sm-6">
+            <h4>Hello Web App</h4>
+            <h5>Learn how to build your first Django web app.</h5>
+            <p>Want to build your first web app? Hello Web App walks you through ideation to deployment of a super simple, easy web app. The project is easily customizable so you can create a web app that is unique to you.</p>
+        </div>
+        <div class="col-sm-6">
+            <h4>Hello Web App: Intermediate Concepts</h4>
+            <h5>Continue building and growing your web app.</h5>
+            <p>Learn how to add more advanced features to your app, such as customer payments, an API, user-uploaded images, multiple models, proper database design, and more. The perfect book for any beginner looking for the next step.</p>
+        </div>
+    </div>
+
+    <p><a href="" class="btn btn-primary">Buy the books</a></p>
+
+    <hr/>
+
+    <blockquote>
+        <p>This is a fantastic guide for anyone who is not a developer and has an idea that they wish they could build. The format - “collection of things” - is incredibly flexible and gives you a fast and easy way to start “sketching” out your application without getting overwhelmed by a lot of technology.</p>
+        <footer>Olya S.</footer>
+    </blockquote>
+
+    <blockquote>
+        <p>After reading and working through this book, I had a functioning prototype of a fairly complex app within 3 weeks. It really does help in a concrete, practical way. And I love its optimism—the idea that you don’t have to spend years becoming a seasoned programmer to build an interactive web app that’s decent.</p>
+        <footer>Blake W.</footer>
+    </blockquote>
+
+    <blockquote>
+        <p>This is a fantastic introduction to the Django framework if you’re getting into it for the first time. It delicately balances introductory content and intermediary content in a way that doesn’t make you feel like you’re being talked down to or that the pacing is too slow.</p>
+        <footer>Julian S.</footer>
+    </blockquote>
+
+    <hr />
+
+    <h3>About the Author</h3>
+    <p>Hi, I'm Tracy Osborn — designer, developer, and entreprenerd.</p>
+    <p>I taught myself how to code five years ago. As a visually oriented learner with no real previous experience with programming, I had a lot of problems with pre-existing tutorials and resources. Hello Web App is what I wish I had when I was learning — to the point, simple, down-to-earth introduction to building a web app.</p>
+    <p><a href="//twitter.com/limedaring">Feel free to chat with me on Twitter (@limedaring) any time.</a></p>
+
+    <hr />
+
+    <a href="{% url '/order.html' %}" class="btn btn-primary">Order Hello Web App today</a>
 
     <ul id="post-list">
         {% for post in posts %}
@@ -21,7 +88,7 @@
             </li>
         {% endfor %}
     </ul>
-</section>
+</div>
 
 {% include 'includes/newsletter.html' %}
 
