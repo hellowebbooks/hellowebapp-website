@@ -1,25 +1,79 @@
-// Variable overrides
-$font-family-sans-serif:     "PT Sans", Helvetica, Arial, sans-serif !default;
-$link-color:                 #8a9a0f;
+// bootstrap variable overrides
+$font-family-sans-serif:     "Lato", Helvetica, Arial, sans-serif !default;
+$headings-font-weight:       300 !default;
 $font-size-base:             1.25rem !default;
+$btn-border-radius:          0;
+$border-radius:              0 !default;
+$brand-primary:              #8a9a0f !default;
+$btn-secondary-color:        #fff;
+$btn-secondary-border:       #fff !default;
+$btn-font-weight:            300 !default;
+$btn-padding-x:              1.2rem;
+$btn-padding-y:              1rem;
 
+// bootstrap
 @import "bootstrap";
 
-
-body {
-    background-color: #fff;
+// new styles
+body { 
+    background-color: #fff; 
+    font-weight: 300; 
 }
 
-h1 {
-    font-family: "Rock Salt", Georgia, cursive;
+h1 { 
+    font-family: "Lato", Georgia, cursive; 
+    font-weight: 100;
 }
 
-#main-nav {
+.btn {
     text-transform: uppercase;
     font-size: 1rem;
     letter-spacing: 0.1em;
-    a { color: $gray-dark }
-    #home-link {
-        font-weight: bold;
+    font-size: 1rem;
+    padding: .7rem 1.3rem;
+}
+
+.btn-secondary-outline:hover { background-color: transparent !important; }
+
+#main-nav {
+    margin-bottom: -20px;
+    background-color: #fff;
+    font-weight: 400;
+    a { color: $gray-dark; }
+    a:hover { text-decoration: none; }
+    li {
+        margin-top: 13px;
+        text-transform: uppercase;
+        font-size: 0.85rem;
+        letter-spacing: 0.1em;
+        padding: 0 1.5em 0 0;
     }
+    #home-link {
+        background-color: #fff;
+        padding: 15px 30px 20px 30px;
+        img {
+            max-width: 100%;
+        }
+    }
+    #right-nav {
+        padding: 0 0 0 1.5em;
+    }
+}
+
+.jumbotron { 
+    margin-left: 40px;
+    margin-right: 40px;
+    border-radius: 0;
+    h1 {
+        color: #fff; 
+        font-size: 5rem;
+    }
+}
+
+// homepage
+#home .jumbotron {
+    background: url(../images/heros/home-dark.jpg) top center no-repeat;
+    background-size: 100% auto;
+    height: 650px;
+    color: #fff;
 }

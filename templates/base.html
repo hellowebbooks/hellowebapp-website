@@ -8,7 +8,7 @@
     <link rel="shortcut icon" href="{% static '/images/favicon.ico' %}">
     <link rel="stylesheet" href="{% static '/scss/style.scss.css' %}">
 
-    <link href='https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700,700italic|Rock+Salt' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Lato:100,300,300italic,400,700,700italic|Rock+Salt' rel='stylesheet' type='text/css'>
 
     {% block header %}
     <title>{% block title %}Hello Web App{% endblock %}</title>
@@ -19,15 +19,22 @@
 <body>
 {% endblock bodyclass %}
     <nav class="container" id="main-nav">
-        <ul class="list-inline">
-            <li><a href="{% url '/about.html' %}">About</a></li>
-            <li><a href="{% url '/press.html' %}">Press</a></li>
-            <li><a href="{% url '/faq.html' %}">FAQ</a></li>
-            <li id="home-link"><a href="{% url '/index.html' %}">Hello Web App</a></li>
-            <li><a href="{% url '/archive.html' %}">Blog</a></li>
-            <li><a href="{% url '/workshops.html' %}">Workshops</a></li>
-            <li><a href="{% url '/order.html' %}">Buy</a></li>
-        </ul>
+        <div class="row">
+            <ul class="list-inline col-sm-4">
+                <!--<li><a href="{% url '/about.html' %}">About</a></li>-->
+                <li><a href="{% url '/start.html' %}">Start Here</a></li>
+                <li><a href="{% url '/faq.html' %}">FAQ</a></li>
+                <li><a href="{% url '/archive.html' %}">Blog</a></li>
+            </ul>
+            <a id="home-link" class="col-sm-4" href="{% url '/index.html' %}">
+                <img src="{% static 'images/hellowebapp.svg' %}" alt=""/>
+            </a>
+            <ul id="right-nav" class="list-inline col-sm-4" style="text-align: right">
+                <li><a href="{% url '/workshops.html' %}">Workshops</a></li>
+                <li><a href="{% url '/press.html' %}">Press</a></li>
+                <li><a href="{% url '/order.html' %}">Buy</a></li>
+            </ul>
+        </div>
     </nav>
 
     {% block content %}
