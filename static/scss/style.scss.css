@@ -4451,9 +4451,14 @@ body {
   background-color: #fff;
   font-weight: 300; }
 
-h1 {
-  font-family: "Lato", Georgia, cursive;
+h1, h3 {
+  font-family: "Mrs Onion", Georgia, cursive;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
   font-weight: 100; }
+
+h3 {
+  font-size: 1.3rem; }
 
 .btn {
   text-transform: uppercase;
@@ -4493,11 +4498,20 @@ h1 {
   border-radius: 0; }
   .jumbotron h1 {
     color: #fff;
-    font-size: 5rem; }
+    font-size: 5rem;
+    font-weight: 700; }
+  .jumbotron h2 {
+    font-weight: 300;
+    font-size: 1.6rem;
+    line-height: 1.6;
+    margin-bottom: 1em; }
 
 #home .jumbotron {
-  background: url(../images/heros/home-dark.jpg) top center no-repeat;
+  background: url(../images/heros/home-yellow-grad.jpg) center center no-repeat;
   background-size: 100% auto;
-  height: 650px;
+  height: 33em;
+  padding-top: 8em;
   color: #fff; }
+  #home .jumbotron h1 {
+    margin-bottom: 0.2em; }
 

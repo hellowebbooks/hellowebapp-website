@@ -20,10 +20,15 @@ body {
     font-weight: 300; 
 }
 
-h1 { 
-    font-family: "Lato", Georgia, cursive; 
+h1, h3 { 
+    font-family: "Mrs Onion", Georgia, cursive; 
+    //text-transform: uppercase;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
     font-weight: 100;
 }
+
+h3 { font-size: 1.3rem; }
 
 .btn {
     text-transform: uppercase;
@@ -67,13 +72,24 @@ h1 {
     h1 {
         color: #fff; 
         font-size: 5rem;
+        font-weight: 700;
+    }
+    h2 {
+        font-weight: 300;
+        font-size: 1.6rem;
+        line-height: 1.6;
+        margin-bottom: 1em;
     }
 }
 
 // homepage
 #home .jumbotron {
-    background: url(../images/heros/home-dark.jpg) top center no-repeat;
+    background: url(../images/heros/home-yellow-grad.jpg) center center no-repeat;
     background-size: 100% auto;
-    height: 650px;
+    height: 33em;
+    padding-top: 8em;
     color: #fff;
+    h1 {
+        margin-bottom: 0.2em;
+    }
 }
