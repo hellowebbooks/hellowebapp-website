@@ -4510,8 +4510,7 @@ blockquote {
 .jumbotron {
   margin-left: 40px;
   margin-right: 40px;
-  border-radius: 0;
-  background-size: 100% auto; }
+  border-radius: 0; }
   .jumbotron h1 {
     color: #fff;
     font-size: 5rem;
@@ -4529,6 +4528,7 @@ blockquote {
 
 #home .jumbotron {
   background: url(../images/heros/home-yellow-grad.jpg) center center no-repeat;
+  background-size: 100% auto;
   height: 33em;
   padding-top: 8em;
   color: #fff; }
@@ -4537,6 +4537,7 @@ blockquote {
 
 #original .jumbotron {
   background: url(../images/heros/original.jpg) top left no-repeat;
+  background-size: 100% auto;
   height: 33em;
   padding-top: 8em;
   color: #fff; }
@@ -4545,6 +4546,7 @@ blockquote {
 
 #ic .jumbotron {
   background: url(../images/heros/ic.jpg) top center no-repeat;
+  background-size: 100% auto;
   height: 33em;
   padding-top: 8em;
   color: #fff; }
