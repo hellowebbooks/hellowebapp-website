@@ -4461,6 +4461,9 @@ h1, h3 {
 h3 {
   font-size: 1.3rem; }
 
+img {
+  max-width: 100%; }
+
 .btn {
   text-transform: uppercase;
   font-size: 1rem;
@@ -4470,6 +4473,16 @@ h3 {
 
 .btn-secondary-outline:hover {
   background-color: transparent !important; }
+
+hr {
+  background-color: #eceeef;
+  height: 3px;
+  margin: 4em 0; }
+
+blockquote {
+  font-style: italic; }
+  blockquote footer {
+    font-style: normal; }
 
 #main-nav {
   margin-bottom: -20px;
@@ -4508,6 +4521,11 @@ h3 {
     font-size: 1.6rem;
     line-height: 1.6;
     margin-bottom: 1em; }
+
+.newsletter {
+  background-color: #e6c24d;
+  padding: 2em 0;
+  color: #fff; }
 
 #home .jumbotron {
   background: url(../images/heros/home-yellow-grad.jpg) center center no-repeat;

@@ -32,15 +32,19 @@
 
     <hr/>
 
+    <h2 class="text-center">Buy a book (or both!)</h2>
+
     <div class="row">
-        <div class="col-sm-6">
+        <div class="col-sm-6 text-center">
             <h4>Hello Web App</h4>
             <h5>Learn how to build your first Django web app.</h5>
+            <img src="{% static '/images/original.jpg' %}" alt="Hello Web App original" />
             <p>Want to build your first web app? Hello Web App walks you through ideation to deployment of a super simple, easy web app. The project is easily customizable so you can create a web app that is unique to you.</p>
         </div>
-        <div class="col-sm-6">
+        <div class="col-sm-6 text-center">
             <h4>Hello Web App: Intermediate Concepts</h4>
             <h5>Continue building and growing your web app.</h5>
+            <img src="{% static '/images/ic.jpg' %}" alt="Hello Web App: Intermediate Concepts" />
             <p>Learn how to add more advanced features to your app, such as customer payments, an API, user-uploaded images, multiple models, proper database design, and more. The perfect book for any beginner looking for the next step.</p>
         </div>
     </div>
@@ -64,6 +68,7 @@
         <footer>Julian S.</footer>
     </blockquote>
 
+    <!--
     <hr />
 
     <h3>About the Author</h3>
@@ -71,6 +76,7 @@
     <p>I taught myself how to code five years ago. As a visually oriented learner with no real previous experience with programming, I had a lot of problems with pre-existing tutorials and resources. Hello Web App is what I wish I had when I was learning — to the point, simple, down-to-earth introduction to building a web app.</p>
     <p><a href="//twitter.com/limedaring">Feel free to chat with me on Twitter (@limedaring) any time.</a></p>
 
+    -->
     <hr />
 
     <a href="{% url '/order.html' %}" class="btn btn-primary">Order Hello Web App today</a>

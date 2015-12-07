@@ -6,7 +6,7 @@ $btn-border-radius:          0;
 $border-radius:              0 !default;
 //$brand-primary:              #8a9a0f !default;
 $brand-primary:              #a5bb00 !default;
-//$brand-primary:              #e6c24d !default;
+$brand-secondary:            #e6c24d !default;
 $btn-secondary-color:        #fff;
 $btn-secondary-border:       #fff !default;
 $btn-font-weight:            400 !default;
@@ -37,6 +37,7 @@ h1, h3 {
 }
 
 h3 { font-size: 1.3rem; }
+img { max-width: 100%; }
 
 .btn {
     text-transform: uppercase;
@@ -47,6 +48,19 @@ h3 { font-size: 1.3rem; }
 }
 
 .btn-secondary-outline:hover { background-color: transparent !important; }
+
+hr {
+    background-color: $gray-lighter;
+    height: 3px;
+    margin: 4em 0;
+}
+
+blockquote {
+    font-style: italic;
+    footer {
+        font-style: normal;
+    }
+}
 
 #main-nav {
     margin-bottom: -20px;
@@ -90,6 +104,13 @@ h3 { font-size: 1.3rem; }
         line-height: 1.6;
         margin-bottom: 1em;
     }
+}
+
+// newsletter
+.newsletter {
+    background-color: $brand-secondary;
+    padding: 2em 0;
+    color: #fff;
 }
 
 // homepage
