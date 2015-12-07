@@ -4,12 +4,19 @@ $headings-font-weight:       300 !default;
 $font-size-base:             1.25rem !default;
 $btn-border-radius:          0;
 $border-radius:              0 !default;
-$brand-primary:              #8a9a0f !default;
+//$brand-primary:              #8a9a0f !default;
+$brand-primary:              #a5bb00 !default;
+//$brand-primary:              #e6c24d !default;
 $btn-secondary-color:        #fff;
 $btn-secondary-border:       #fff !default;
-$btn-font-weight:            300 !default;
+$btn-font-weight:            400 !default;
 $btn-padding-x:              1.2rem;
 $btn-padding-y:              1rem;
+
+// Fonts I like
+// Mrs Onion
+// Drina
+
 
 // bootstrap
 @import "bootstrap";
@@ -18,6 +25,7 @@ $btn-padding-y:              1rem;
 body { 
     background-color: #fff; 
     font-weight: 300; 
+    font-family: $font-family-serif;
 }
 
 h1, h3 { 
@@ -44,13 +52,14 @@ h3 { font-size: 1.3rem; }
     margin-bottom: -20px;
     background-color: #fff;
     font-weight: 400;
-    a { color: $gray-dark; }
+    a { color: $gray; }
     a:hover { text-decoration: none; }
     li {
         margin-top: 13px;
         text-transform: uppercase;
-        font-size: 0.85rem;
+        font-size: 0.75rem;
         letter-spacing: 0.1em;
+        font-family: "Mrs Onion", Georgia, cursive; 
         padding: 0 1.5em 0 0;
     }
     #home-link {
@@ -69,6 +78,7 @@ h3 { font-size: 1.3rem; }
     margin-left: 40px;
     margin-right: 40px;
     border-radius: 0;
+    background-size: 100% auto;
     h1 {
         color: #fff; 
         font-size: 5rem;
@@ -83,13 +93,40 @@ h3 { font-size: 1.3rem; }
 }
 
 // homepage
-#home .jumbotron {
-    background: url(../images/heros/home-yellow-grad.jpg) center center no-repeat;
-    background-size: 100% auto;
-    height: 33em;
-    padding-top: 8em;
-    color: #fff;
-    h1 {
-        margin-bottom: 0.2em;
+#home {
+    .jumbotron {
+        background: url(../images/heros/home-yellow-grad.jpg) center center no-repeat;
+        height: 33em;
+        padding-top: 8em;
+        color: #fff;
+        h1 {
+            margin-bottom: 0.2em;
+        }
+    }
+}
+
+// ic landing page
+#original {
+    .jumbotron {
+        background: url(../images/heros/original.jpg) top left no-repeat;
+        height: 33em;
+        padding-top: 8em;
+        color: #fff;
+        h1 {
+            margin-bottom: 0.2em;
+        }
+    }
+}
+
+// ic landing page
+#ic {
+    .jumbotron {
+        background: url(../images/heros/ic.jpg) top center no-repeat;
+        height: 33em;
+        padding-top: 8em;
+        color: #fff;
+        h1 {
+            margin-bottom: 0.2em;
+        }
     }
 }

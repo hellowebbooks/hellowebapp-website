@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}Learn how to build your first web app - {{ block.super }}{% endblock %}
+
+{% block bodyclass %}
+<body id="ic">
+{% endblock %}
+
+{% block content %}
+<div class="jumbotron">
+    <div class="container text-center">
+        <h1>Continue building and growing your Django web app.</h1>
+        <h2>Take your web app skills to the next level. Adding payments, and api, and more.</h2>
+
+        <a href="" class="btn btn-secondary-outline">Free Sample</a>
+        <a href="{% url '/order.html' %}" class="btn btn-primary">Order</a>
+    </div>
+</div>
+
+<div class="container">
+
+
+</div>
+{% endblock content %}
