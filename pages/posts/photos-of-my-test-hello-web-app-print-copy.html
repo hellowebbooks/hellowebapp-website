@@ -13,9 +13,16 @@ I've ordered one print copy of the Kickstarter Alpha so I can see how the design
 Already I can see some updates I need to make (for example, the inside edge of the content is too close to the spine, making the perfect-bound book harder to read.) However, that didn't stop me from having a mini-photoshoot in the yard. Enjoy this mini preview of the print book!
 {% endfilter %}
 
-<figure class="full">
-    <img src="/static/images/blog/2015/1/10/IMG_6341.jpg" alt="">
-    <figcaption>A lot of people are asking about buying the book</figcaption>
+<figure class="full row">
+    <div class="grid">
+        <div class="grid-sizer"></div>
+        <div class="grid-item"><img src="/static/images/blog/2015/1/10/IMG_6341.jpg" alt=""/></div>
+        <div class="grid-item"><img src="/static/images/blog/2015/1/10/IMG_6348.jpg" alt=""/></div>
+        <div class="grid-item"><img src="/static/images/blog/2015/1/10/IMG_6350.jpg" alt="" /></div>
+        <div class="grid-item"><img src="/static/images/blog/2015/1/10/IMG_6352.jpg" alt="" /></div>
+        <div class="grid-item"><img src="/static/images/blog/2015/1/10/IMG_6361.jpg" alt="" /></div>
+        <div class="grid-item"><img src="/static/images/blog/2015/1/10/IMG_6358.jpg" alt="" /></div>
+    </div>
 </figure>
 
 {% filter markdown %}
@@ -23,3 +30,21 @@ Oh, sidenote: A lot of people are asking about buying the book (which is pretty 
 {% endfilter %}
 
 {% endblock body %}
+
+{% block scripts %}
+<style>
+    .grid-sizer, .grid-item { width: 32%; }
+    .grid-item { padding: 5px; }
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/3.3.2/masonry.pkgd.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+    $('.grid').masonry({
+      // options
+      itemSelector: '.grid-item',
+      percentPosition: true
+    });
+});
+</script>
+{% endblock scripts %}
