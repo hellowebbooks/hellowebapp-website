@@ -1,24 +1,19 @@
-{% extends "index.html" %}
+{% extends "base.html" %}
 {% block content %}
 
-<section id="wrapper">
+<div class="container">
+    <h1>Articles</h1>
 
-<header id="header">
-<a id="title" class="index" href="/">{% block title %}{{ block.super }}{% endblock %}</a>
-</header> <!--header-->
+    <ul class="list-unstyled" id="archive-list">
+        {% for post in posts %}
+        <li>
+            <!--<a href='/{{ post.path }}'><aside class="dates">{{ post.date|date:"M j" }}</aside></a>-->
+            <a href='/{{ post.path }}'>{{ post.title }}</a>
+            <p>{{ post.headline }}</p>
+        </li>
+        {% endfor %}
+    </ul> <!--post-list-->
 
-<ul id="archive-list">
-	{% for post in posts %}
-		    {% ifchanged %}<h2 class="month">{{ post.date|date:"F Y" }}</h2>{% endifchanged %}	
-	<li> 
-		<a href='/{{ post.path }}'><aside class="dates">{{ post.date|date:"M j" }}</aside></a>
-		<a href='/{{ post.path }}'>{{ post.title }}</a>
-	</li>
-	{% endfor %}
-</ul> <!--post-list-->
+</div>
 
-{% block footer %}
-{{ block.super }}
-{% endblock %}
-</section> <!--wrapper-->
-{% endblock %}
+{% endblock content %}

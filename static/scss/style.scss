@@ -1,7 +1,13 @@
 // bootstrap variable overrides
-$font-family-sans-serif:     "Lato", Helvetica, Arial, sans-serif !default;
+$font-family-sans-serif:     'Open Sans Condensed', Helvetica, Arial, sans-serif !default;
+$font-family-serif:          Georgia, "Times New Roman", Times, serif !default;
+$font-family-base:           $font-family-sans-serif !default;
 $headings-font-weight:       300 !default;
-$font-size-base:             1.25rem !default;
+$font-size-base:             1.4rem !default;
+
+$body-color:                 #666 !default;
+$headings-color:             #111 !default;
+
 $btn-border-radius:          0;
 $border-radius:              0 !default;
 //$brand-primary:              #8a9a0f !default;
@@ -24,8 +30,7 @@ $btn-padding-y:              1rem;
 // new styles
 body { 
     background-color: #fff; 
-    font-weight: 300; 
-    font-family: $font-family-serif;
+    font-weight: 400; 
 }
 
 h1, h3 { 
@@ -36,15 +41,27 @@ h1, h3 {
     font-weight: 100;
 }
 
-h3 { font-size: 1.3rem; }
+h1 { 
+    clear: left; 
+}
+h2 {
+    font-style: italic;
+}
+h3 {
+    font-size: 1.3rem; 
+}
+h4 {
+    font-weight: 700; 
+}
 img { max-width: 100%; }
+strong { color: $headings-color; }
 
 .btn {
     text-transform: uppercase;
-    font-size: 1rem;
     letter-spacing: 0.1em;
-    font-size: 1rem;
+    font-size: 1.3rem;
     padding: .7rem 1.3rem;
+    font-weight: 700;
 }
 
 .btn-secondary-outline:hover { background-color: transparent !important; }
@@ -53,6 +70,7 @@ hr {
     background-color: $gray-lighter;
     height: 3px;
     margin: 4em 0;
+    border: 0;
 }
 
 blockquote {
@@ -102,6 +120,7 @@ blockquote {
         font-size: 1.6rem;
         line-height: 1.6;
         margin-bottom: 1em;
+        font-style: normal;
     }
 }
 
@@ -117,11 +136,17 @@ blockquote {
     .jumbotron {
         background: url(../images/heros/home-yellow-grad.jpg) center center no-repeat;
         background-size: 100% auto;
-        height: 33em;
+        height: 30em;
         padding-top: 8em;
         color: #fff;
         h1 {
             margin-bottom: 0.2em;
+        }
+        h2 {
+            color: #fff;
+            color: rgba(255,255,255,0.9);
+            font-size: 2rem;
+            font-weight: 400;
         }
     }
 }
