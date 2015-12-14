@@ -7,12 +7,14 @@ $font-size-base:             1.4rem !default;
 
 $body-color:                 #666 !default;
 $headings-color:             #111 !default;
-
-$btn-border-radius:          0;
+$enable-rounded:             true !default;
 $border-radius:              0 !default;
+
 //$brand-primary:              #8a9a0f !default;
 $brand-primary:              #a5bb00 !default;
 $brand-secondary:            #e6c24d !default;
+
+$btn-border-radius:          0;
 $btn-secondary-color:        #fff;
 $btn-secondary-border:       #fff !default;
 $btn-font-weight:            400 !default;
@@ -204,5 +206,54 @@ blockquote {
     .jumbotron {
         height: 20em;
         background-size: cover;
+        background-position: top center;
+    }
+    figure {
+        margin: 2em 0;
+        position: relative;
+        figcaption {
+            font-size: 1rem;
+            font-weight: bold;
+            color: $gray-light;
+            padding-top: 0.5em;
+        }
+    }
+    figure.full {
+    }
+    figure.caption {
+        figcaption {
+            top: 0;
+            border-top: 1px solid $gray-lighter;
+        }
+    }
+}
+
+@include media-breakpoint-up(xl) {
+    #post {
+        figure {
+        }
+        figure.caption {
+            margin-right: -304px;
+            figcaption {
+                position: absolute;
+                left: -208px;
+                max-width: 198px;
+            }
+        }
+        figure.full {
+            margin-left: -208px;
+            margin-right: -304px;
+            figcaption {
+                margin-left: 208px;
+            }
+        }
+    }
+}
+
+@include media-breakpoint-up(lg) {
+    #post {
+        figure.full {
+            //margin-left: -200px;
+        }
     }
 }

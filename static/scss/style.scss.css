@@ -5474,5 +5474,32 @@ blockquote {
 
 #post .jumbotron {
   height: 20em;
-  background-size: cover; }
+  background-size: cover;
+  background-position: top center; }
+
+#post figure {
+  margin: 2em 0;
+  position: relative; }
+  #post figure figcaption {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #818a91;
+    padding-top: 0.5em; }
+
+#post figure.caption figcaption {
+  top: 0;
+  border-top: 1px solid #eceeef; }
+
+@media (min-width: 75em) {
+  #post figure.caption {
+    margin-right: -304px; }
+    #post figure.caption figcaption {
+      position: absolute;
+      left: -208px;
+      max-width: 198px; }
+  #post figure.full {
+    margin-left: -208px;
+    margin-right: -304px; }
+    #post figure.full figcaption {
+      margin-left: 208px; } }
 
