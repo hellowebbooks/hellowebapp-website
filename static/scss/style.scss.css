@@ -252,7 +252,7 @@ html {
   -webkit-tap-highlight-color: transparent; }
 
 body {
-  font-family: "Open Sans Condensed", Helvetica, Arial, sans-serif;
+  font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
   font-size: 1.4rem;
   line-height: 1.5;
   color: #666;
@@ -3659,7 +3659,7 @@ button.close {
   position: absolute;
   z-index: 1070;
   display: block;
-  font-family: "Open Sans Condensed", Helvetica, Arial, sans-serif;
+  font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
   font-style: normal;
   font-weight: normal;
   letter-spacing: normal;
@@ -3738,7 +3738,7 @@ button.close {
   display: block;
   max-width: 276px;
   padding: 1px;
-  font-family: "Open Sans Condensed", Helvetica, Arial, sans-serif;
+  font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
   font-style: normal;
   font-weight: normal;
   letter-spacing: normal;
@@ -5339,7 +5339,7 @@ a.bg-danger:focus, a.bg-danger:hover {
 */
 body {
   background-color: #fff;
-  font-weight: 400; }
+  font-weight: 300; }
 
 h1, h3 {
   font-family: "Mrs Onion", Georgia, cursive;
@@ -5368,9 +5368,8 @@ strong {
 .btn {
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  font-size: 1.3rem;
-  padding: .7rem 1.3rem;
-  font-weight: 700; }
+  font-size: 1.2rem;
+  padding: .7rem 1.4rem; }
 
 .btn-secondary-outline:hover {
   background-color: transparent !important; }
@@ -5382,9 +5381,16 @@ hr {
   border: 0; }
 
 blockquote {
-  font-style: italic; }
+  font-style: italic;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 1rem;
+  text-align: center; }
   blockquote footer {
     font-style: normal; }
+
+.content-block {
+  max-width: 800px;
+  margin: 0 auto !important; }
 
 #main-nav {
   margin-bottom: -20px;
@@ -5410,8 +5416,6 @@ blockquote {
     padding: 0 0 0 1.5em; }
 
 .jumbotron {
-  margin-left: 40px;
-  margin-right: 40px;
   border-radius: 0; }
   .jumbotron h1 {
     color: #fff;
@@ -5447,7 +5451,8 @@ blockquote {
     color: #fff;
     color: rgba(255, 255, 255, 0.9);
     font-size: 2rem;
-    font-weight: 400; }
+    font-weight: 400;
+    font-family: 'Open Sans Condensed', sans-serif; }
 
 #original .jumbotron {
   background: url(../images/heros/original.jpg) top left no-repeat;

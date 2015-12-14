@@ -19,7 +19,7 @@
 </div>
 
 <div class="container">
-    <div class="text-center">
+    <div class="text-center content-block">
         <h3>Have you ever wanted to develop your own web product?</h3>
         <p>Not just a basic HTML &amp; CSS website design, but rather a complete functional web app with users.</p>
 
@@ -53,20 +53,22 @@
 
     <hr/>
 
-    <blockquote>
+    <div class="row">
+    <blockquote class="col-sm-4">
         <p>This is a fantastic guide for anyone who is not a developer and has an idea that they wish they could build. The format - “collection of things” - is incredibly flexible and gives you a fast and easy way to start “sketching” out your application without getting overwhelmed by a lot of technology.</p>
         <footer>Olya S.</footer>
     </blockquote>
 
-    <blockquote>
+    <blockquote class="col-sm-4">
         <p>After reading and working through this book, I had a functioning prototype of a fairly complex app within 3 weeks. It really does help in a concrete, practical way. And I love its optimism—the idea that you don’t have to spend years becoming a seasoned programmer to build an interactive web app that’s decent.</p>
         <footer>Blake W.</footer>
     </blockquote>
 
-    <blockquote>
+    <blockquote class="col-sm-4">
         <p>This is a fantastic introduction to the Django framework if you’re getting into it for the first time. It delicately balances introductory content and intermediary content in a way that doesn’t make you feel like you’re being talked down to or that the pacing is too slow.</p>
         <footer>Julian S.</footer>
     </blockquote>
+    </div>
 
     <!--
     <hr />
@@ -79,7 +81,9 @@
     -->
     <hr />
 
-    <a href="{% url '/order.html' %}" class="btn btn-primary">Order Hello Web App today</a>
+    <div class="text-center">
+        <a href="{% url '/order.html' %}" class="btn btn-primary">Order Hello Web App today</a>
+    </div>
 
     <ul id="post-list">
         {% for post in posts %}

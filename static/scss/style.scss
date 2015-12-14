@@ -1,5 +1,5 @@
 // bootstrap variable overrides
-$font-family-sans-serif:     'Open Sans Condensed', Helvetica, Arial, sans-serif !default;
+$font-family-sans-serif:     'Source Sans Pro', Helvetica, Arial, sans-serif !default;
 $font-family-serif:          Georgia, "Times New Roman", Times, serif !default;
 $font-family-base:           $font-family-sans-serif !default;
 $headings-font-weight:       300 !default;
@@ -31,7 +31,7 @@ $btn-padding-y:              1rem;
 // new styles
 body { 
     background-color: #fff; 
-    font-weight: 400; 
+    font-weight: 300; 
 }
 
 h1, h3 { 
@@ -60,9 +60,8 @@ strong { color: $headings-color; }
 .btn {
     text-transform: uppercase;
     letter-spacing: 0.1em;
-    font-size: 1.3rem;
-    padding: .7rem 1.3rem;
-    font-weight: 700;
+    font-size: 1.2rem;
+    padding: .7rem 1.4rem;
 }
 
 .btn-secondary-outline:hover { background-color: transparent !important; }
@@ -76,9 +75,17 @@ hr {
 
 blockquote {
     font-style: italic;
+    font-family: $font-family-serif;
+    font-size: 1rem;
+    text-align: center;
     footer {
         font-style: normal;
     }
+}
+
+.content-block {
+    max-width: 800px;
+    margin: 0 auto !important;
 }
 
 #main-nav {
@@ -108,8 +115,8 @@ blockquote {
 }
 
 .jumbotron { 
-    margin-left: 40px;
-    margin-right: 40px;
+    //margin-left: 40px;
+    //margin-right: 40px;
     border-radius: 0;
     h1 {
         color: #fff; 
@@ -158,6 +165,7 @@ blockquote {
             color: rgba(255,255,255,0.9);
             font-size: 2rem;
             font-weight: 400;
+            font-family: 'Open Sans Condensed', sans-serif;
         }
     }
 }
