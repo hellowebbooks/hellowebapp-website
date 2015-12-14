@@ -5472,3 +5472,7 @@ blockquote {
   #ic .jumbotron h1 {
     margin-bottom: 0.2em; }
 
+#post .jumbotron {
+  height: 20em;
+  background-size: cover; }
+

@@ -1,17 +1,27 @@
 {% extends "base.html" %}
 {% block title %}{{ title }} - {{ block.super }}{% endblock title %}
+{% block bodyclass %}
+<body id="post">
+{% endblock %}
 {% block content %}
 
 <section id="wrapper" class="group">
-    <header id="header">
+    {% if featuredimage %}
+    <div class="jumbotron" style="background-image: url('/static/{{ featuredimage }}')">
+    </div>
+    {% endif %}
+
+    <header id="header" class="container">
         <a id="title" href="/">Home</a>
     </header>
 
     <article class="post">
-        <header>
-            <h1>{{ title }}</h1>
-            <h2 class="headline">{{ headline }}</h2>
-        </header>
+        <div class="container">
+            <header>
+                <h1>{{ title }}</h1>
+                <h2 class="headline">{{ headline }}</h2>
+            </header>
+        </div>
 
         <section id="post-body">
             {% block body %}
@@ -19,27 +29,29 @@
             {% endblock body %}
         </section>
 
-        <footer id="post-meta" class="clearfix">
-            <div><span>Posted on </span> {{ date|date:"M j" }}</div>
-            {% comment %}
-            <div><span>Written by</span> {{ author }}</div>
-            {% endcomment %}
+        <div class="container">
+            <footer id="post-meta" class="clearfix">
+                <div><span>Posted on </span> {{ date|date:"M j" }}</div>
+                {% comment %}
+                <div><span>Written by</span> {{ author }}</div>
+                {% endcomment %}
 
-            <section id="sharing">
-                <a class="twitter" href="https://twitter.com/share"><span class="icon-twitter-circled"></span></a>
+                <section id="sharing">
+                    <a class="twitter" href="https://twitter.com/share"><span class="icon-twitter-circled"></span></a>
 
-                <a class="facebook" href="#" onclick="
-                    window.open(
-                    'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href), 
-                    'facebook-share-dialog', 
-                    'width=626,height=436'); 
-                    return false;"><span class="icon-facebook-circled"></span> 
-                </a>
-            </section> 
-        </footer> 
+                    <a class="facebook" href="#" onclick="
+                        window.open(
+                        'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href), 
+                        'facebook-share-dialog', 
+                        'width=626,height=436'); 
+                        return false;"><span class="icon-facebook-circled"></span> 
+                    </a>
+                </section> 
+            </footer> 
+        </div>
     </article>
 
-    <footer>
+    <footer class="container">
         <nav id="post-nav">
             <span class="prev">
                 {% if prevPost %}

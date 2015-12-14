@@ -53,6 +53,11 @@ def preBuild(site):
             postContext['path'] = page.path
             postContext['body'] = getNode(get_template(page.path), name="body")
 
+            # new contexts that I'm adding
+            postContext['excerpt'] = find('excerpt')
+            postContext['featuredimage'] = find('featuredimage')
+            postContext['page'] = page
+
             # Parse the date into a date object
             try:
                 postContext['date'] = datetime.datetime.strptime(postContext['date'], '%d-%m-%Y')

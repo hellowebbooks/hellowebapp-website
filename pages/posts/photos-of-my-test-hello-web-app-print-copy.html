@@ -1,0 +1,24 @@
+title: Photos of my test Hello Web App print copy!
+headline: An introduction
+excerpt: This is my excerpt
+featuredimage: /images/blog/featured.jpg
+date: 10-1-2015
+
+{% extends "post.html" %}
+{% block body %}
+
+<div class="container">
+{% filter markdown %}
+I've ordered one print copy of the Kickstarter Alpha so I can see how the design translates to print, as well as start updating some of the Hello Web App marketing (see the [homepage of Hello Web App](http://hellowebapp.com/) and the [HWA Twitter](http://twitter.com/hellowebapp).)
+
+Already I can see some updates I need to make (for example, the inside edge of the content is too close to the spine, making the perfect-bound book harder to read.) However, that didn't stop me from having a mini-photoshoot in the yard. Enjoy this mini preview of the print book!
+{% endfilter %}
+</div>
+
+<div class="container">
+{% filter markdown %}
+Oh, sidenote: A lot of people are asking about buying the book (which is pretty exciting.) I am working on a bunch of updates: collecting feedback from the alpha Kickstarter release, creating illustrations, and a bunch of other things that I'll go over in a future blog post. Will announce pre-orders and the launch date soon!
+{% endfilter %}
+</div>
+
+{% endblock body %}

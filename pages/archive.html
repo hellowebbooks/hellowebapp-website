@@ -8,7 +8,7 @@
         {% for post in posts %}
         <li>
             <!--<a href='/{{ post.path }}'><aside class="dates">{{ post.date|date:"M j" }}</aside></a>-->
-            <a href='/{{ post.path }}'>{{ post.title }}</a>
+            <a href='{{ post.page.link_url|cut:".html" }}/'>{{ post.title }}</a>
             <p>{{ post.headline }}</p>
         </li>
         {% endfor %}
