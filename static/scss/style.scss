@@ -3,7 +3,7 @@ $font-family-sans-serif:     'Source Sans Pro', Helvetica, Arial, sans-serif !de
 $font-family-serif:          Georgia, "Times New Roman", Times, serif !default;
 $font-family-base:           $font-family-sans-serif !default;
 $headings-font-weight:       300 !default;
-$font-size-base:             1.4rem !default;
+$font-size-base:             1.3rem !default;
 
 $body-color:                 #666 !default;
 $headings-color:             #111 !default;
@@ -56,6 +56,7 @@ h3 {
 h4 {
     font-weight: 700; 
 }
+p { margin-bottom: 1.5rem; }
 img { max-width: 100%; }
 strong { color: $headings-color; }
 
@@ -208,6 +209,16 @@ blockquote {
         background-size: cover;
         background-position: top center;
     }
+    header {
+        margin-bottom: 2em;
+        h1 {
+            margin-bottom: 0.5em;
+        }
+        h2 {
+            font-size: 1.5rem;
+            color: $gray;
+        }
+    }
     figure {
         margin: 2em 0;
         position: relative;
@@ -224,6 +235,18 @@ blockquote {
         figcaption {
             top: 0;
             border-top: 1px solid $gray-lighter;
+        }
+    }
+    #post-meta {
+        border-top: 1px solid $gray-lighter;
+        border-bottom: 1px solid $gray-lighter;
+        padding: 1.5em 0;
+        color: $gray-light;
+        font-size: 1rem;
+        span {
+            font-weight: bold;
+            width: 100px;
+            display: inline-block;
         }
     }
 }

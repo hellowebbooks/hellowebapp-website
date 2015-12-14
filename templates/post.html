@@ -32,20 +32,21 @@
                 </section>
 
                 <footer id="post-meta" class="clearfix">
-                    {% comment %}
                     <div><span>Posted on </span> {{ date|date:"M j" }}</div>
                     <div><span>Written by</span> {{ author }}</div>
+                    {% comment %}
                     {% endcomment %}
 
                     <section id="sharing">
-                        <a class="twitter" href="https://twitter.com/share"><span class="icon-twitter-circled"></span></a>
+                        <span>Share</span>
+                        <a class="twitter" href="https://twitter.com/share"><i class="fa fa-twitter"></i></a>
 
                         <a class="facebook" href="#" onclick="
                             window.open(
                             'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href), 
                             'facebook-share-dialog', 
                             'width=626,height=436'); 
-                            return false;"><span class="icon-facebook-circled"></span> 
+                            return false;"><span class="fa fa-facebook"></span> 
                         </a>
                     </section> 
                 </footer>
