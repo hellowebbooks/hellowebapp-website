@@ -5503,3 +5503,8 @@ blockquote {
     #post figure.full figcaption {
       margin-left: 208px; } }
 
+@media (min-width: 62em) {
+  #post figure.full {
+    margin-left: -175px;
+    margin-right: -255px; } }
+

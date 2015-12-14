@@ -253,7 +253,8 @@ blockquote {
 @include media-breakpoint-up(lg) {
     #post {
         figure.full {
-            //margin-left: -200px;
+            margin-left: -175px;
+            margin-right: -255px;
         }
     }
 }
