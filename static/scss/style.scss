@@ -24,8 +24,9 @@ $btn-padding-y:              1rem;
 // Drina
 
 
-// bootstrap
+// bootstrap and font-awesome 
 @import "bootstrap";
+@import "font-awesome";
 
 // new styles
 body { 
@@ -129,6 +130,16 @@ blockquote {
     background-color: $brand-secondary;
     padding: 2em 0;
     color: #fff;
+}
+
+// footer
+.social-media-footer {
+    a {
+        color: $headings-color;
+    }
+    a:hover {
+        color: $brand-primary;
+    }
 }
 
 // homepage
