@@ -1,12 +1,21 @@
 {% extends "base.html" %}
-
 {% block title %}Workshops - {{ block.super }}{% endblock %}
 
+{% block bodyclass %}
+<body id="workshops">
+{% endblock %}
 
 {% block content %}
+<div class="jumbotron"></div>
 
 <div class="container">
-    <h1>Workshops</h1>
+
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 text-center">
+            <h1>Workshops</h1>
+            <p>I occasionally give in-person workshops, ranging from two hour to two day sessions. Interested in booking a Hello Web App workshop? Email me <a href="mailto:tracy@hellowebapp.com">tracy@hellowebapp.com</a></p>
+        </div>
+    </div>
 
     <h2>Upcoming Workshops</h2>
     <table class="table">
