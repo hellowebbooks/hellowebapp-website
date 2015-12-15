@@ -1,0 +1,35 @@
+title: Hello Web App has launched!
+# headline: An introduction
+excerpt: This is my excerpt
+author: Tracy Osborn 
+# featuredimage: /images/blog/2014/12/29/download.png
+date: 4-5-2015
+
+{% extends "post.html" %}
+{% block body %}
+
+<figure class="caption">
+    <img src="/static/images/blog/2015/5/4/hellowebapp.jpeg" alt=""/>
+    <figcaption>Hello Web App</figcaption>
+</figure>
+
+{% filter markdown %}
+After a year+ (oy) and thousands of hours of work, Hello Web App v1.0 has now been released. Yay!
+
+You can order your copies from Gumroad ([http://gumroad.com/limedaring](http://gumroad.com/limedaring)), Amazon ([http://amzn.to/1yLsHFH](http://amzn.to/1yLsHFH)), or Leanpub ([https://leanpub.com/hellowebapp/](https://leanpub.com/hellowebapp/)).
+
+FYI Amazon is showing the paperback book as being out of stock. I have been fighting with their automated system but they still didn't order enough. It should be back in stock by the end of the week, and I encourage you to order today even though it's out of stock so Amazon will learn to order more from me at a time. Gumroad paperback orders will be shipped by yours truly on Wednesday.
+
+I am so excited that the book is finally live! Would love any feedback you have (and Amazon reviews too, of course.)
+
+Keep an eye out on the blog, I'll be writing posts on:
+
+* **Kickstarter:** Marketing, breakdown of orders, what I did well and what I regret.
+* **Marketing the book:** Overview of the pre-order campaign, payment breakdown from the thee platforms I launched on, where I shared the book, and how well the pre-order campaign went overall.
+* **Writing the book:** How I wrote the book, platforms I used and platforms I wish I didn't, why I used Markdown.
+* Design of the book:** Overview of taking my Markdown files and creating the print paperback and eBooks.
+
+Lots of explanations and shiny graphs coming up!
+{% endfilter %}
+
+{% endblock body %}
