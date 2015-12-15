@@ -59,6 +59,14 @@ h4 {
 p { margin-bottom: 1.5rem; }
 img { max-width: 100%; }
 strong { color: $headings-color; }
+p code { font-size: 1rem; }
+pre {
+    code { 
+        font-size: 1rem;
+        padding: 0 !important;
+    }
+    code:first-line { line-height: 0px; }
+}
 
 .btn {
     text-transform: uppercase;

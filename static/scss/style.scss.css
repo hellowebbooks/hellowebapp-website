@@ -5368,6 +5368,16 @@ img {
 strong {
   color: #111; }
 
+p code {
+  font-size: 1rem; }
+
+pre code {
+  font-size: 1rem;
+  padding: 0 !important; }
+
+pre code:first-line {
+  line-height: 0px; }
+
 .btn {
   text-transform: uppercase;
   letter-spacing: 0.1em;
