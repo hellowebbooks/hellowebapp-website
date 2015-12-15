@@ -5513,20 +5513,26 @@ blockquote {
     display: inline-block; }
 
 @media (min-width: 75em) {
+  #post figure.full {
+    margin-left: -208px;
+    margin-right: -304px; }
+    #post figure.full figcaption {
+      margin-left: 208px; }
   #post figure.caption {
     margin-right: -304px; }
     #post figure.caption figcaption {
       position: absolute;
       left: -208px;
-      max-width: 198px; }
-  #post figure.full {
-    margin-left: -208px;
-    margin-right: -304px; }
-    #post figure.full figcaption {
-      margin-left: 208px; } }
+      max-width: 188px; } }
 
 @media (min-width: 62em) {
   #post figure.full {
     margin-left: -175px;
-    margin-right: -255px; } }
+    margin-right: -255px; }
+  #post figure.caption {
+    margin-right: -255px; }
+    #post figure.caption figcaption {
+      position: absolute;
+      left: -175px;
+      max-width: 155px; } }
 

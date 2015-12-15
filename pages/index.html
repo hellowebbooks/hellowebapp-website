@@ -88,7 +88,7 @@
     <ul id="post-list">
         {% for post in posts %}
         <li> 
-            <img src="{% static post.featuredimage %}" alt="{{ post.title }} />
+            <img src="{% static post.featuredimage %}" alt="{{ post.title }}" />
             <a href='{{ post.page.link_url }}'>
                 <aside class="dates">{{ post.date|date:"M j" }}</aside>
             </a>

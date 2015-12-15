@@ -255,19 +255,20 @@ blockquote {
     #post {
         figure {
         }
-        figure.caption {
-            margin-right: -304px;
-            figcaption {
-                position: absolute;
-                left: -208px;
-                max-width: 198px;
-            }
-        }
         figure.full {
             margin-left: -208px;
             margin-right: -304px;
             figcaption {
                 margin-left: 208px;
+            }
+        }
+
+        figure.caption {
+            margin-right: -304px;
+            figcaption {
+                position: absolute;
+                left: -208px;
+                max-width: 188px;
             }
         }
     }
@@ -278,6 +279,14 @@ blockquote {
         figure.full {
             margin-left: -175px;
             margin-right: -255px;
+        }
+        figure.caption {
+            margin-right: -255px;
+            figcaption {
+                position: absolute;
+                left: -175px;
+                max-width: 155px;
+            }
         }
     }
 }

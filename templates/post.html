@@ -7,8 +7,9 @@
 
 <section id="wrapper" class="group">
     {% if featuredimage %}
-    <div class="jumbotron" style="background-image: url('/static/{{ featuredimage }}')">
-    </div>
+    <div class="jumbotron" style="background-image: url('/static/{{ featuredimage }}');"></div>
+    {% else %}
+    <div class="jumbotron" style="height: 6em;"></div>
     {% endif %}
 
     {% comment %}
