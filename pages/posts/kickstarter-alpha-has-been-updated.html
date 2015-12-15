@@ -1,0 +1,30 @@
+title: Kickstarter alpha has been updated!
+# headline: An introduction
+excerpt: This is my excerpt
+author: Tracy Osborn 
+# featuredimage: /images/blog/2014/12/29/download.png
+date: 9-3-2015
+
+{% extends "post.html" %}
+{% block body %}
+
+{% filter markdown %}
+I've just released a big update to the Kickstarter alpha PDF that was sent to all backers. A lot of changes have been made, including:
+
+* The Heroku chapter has been completely rewritten. Instead of recommending django-toolbelt, I went ahead and build my own package containing the exact things we want for deployment on Heroku ([https://pypi.python.org/pypi/hellowebapp-deploy/1.0.1](https://pypi.python.org/pypi/hellowebapp-deploy/1.0.1)). I've also updated all the steps to make them simpler and easier to understand.
+* Design-wise, all of the fonts have been updated. New chapter title design. The entire book aligns to a baseline grid, which should (invisibly) make it look more cohesive. 
+* All screenshots have been updated, as well as being print resolution now.
+* Added a few more suggestions in both the "What to do if your app is broken" and "Moving forward" chapters.
+* New subtitle on the cover. Trying to be more marketing-y. Would love your thoughts if you have an alternate suggestion. 
+* More typos and small errors squashed.
+
+If you're a backer, check out your email or go to the Updates tab of the Kickstarter page ([https://www.kickstarter.com/projects/1868398473/hello-web-app-intro-to-building-web-apps-with-djan/posts](https://www.kickstarter.com/projects/1868398473/hello-web-app-intro-to-building-web-apps-with-djan/posts)) to check out the new PDF!
+
+eBook files will be released hopefully this week as well — I'm creating them using [Leanpub](https://leanpub.com/), and I have nothing but good things to say regarding that platform. 
+
+Additionally, I've created a Hello Web App discussion forum, for any questions or commentary about the book: [http://discuss.hellowebapp.com](http://discuss.hellowebapp.com/)
+
+Final stretch!
+{% endfilter %}
+
+{% endblock body %}

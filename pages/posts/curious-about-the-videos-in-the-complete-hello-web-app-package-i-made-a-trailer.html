@@ -1,0 +1,29 @@
+title: Curious about the videos in the Complete Hello Web App Package? I made a trailer:
+# headline: An introduction
+excerpt: This is my excerpt
+author: Tracy Osborn 
+# featuredimage: /images/blog/2014/12/29/download.png
+date: 12-4-2015
+
+{% extends "post.html" %}
+{% block body %}
+
+<figure class="full">
+    <iframe src="https://player.vimeo.com/video/124640285?byline=0&portrait=0" width="900" height="506" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+</figure>
+
+{% filter markdown %}
+Mashed up a few of the videos contained in the Complete Hello Web App Package ([http://gum.co/hellowebapp-videos](http://gum.co/hellowebapp-videos)).
+
+Complete listing of videos in the package:
+
+* Complete code walkthrough of Hello Web App (broken down by chapter.)
+* How to use Git for version control.
+* Using the command line.
+* Walkthrough of real life web app code (taking a look at [WeddingLovely](http://weddinglovely.com/), my startup's code.)
+* Walkthrough of creating a feature not mentioned in Hello Web App.
+
+The video package starts at $79 — [pre-order today](http://gum.co/hellowebapp-videos)!
+{% endfilter %}
+
+{% endblock body %}

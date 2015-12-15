@@ -8,11 +8,6 @@ date: 10-6-2015
 {% extends "post.html" %}
 {% block body %}
 
-<figure class="caption">
-    <img src="/static/images/blog/2014/12/29/download.png" alt=""/>
-    <figcaption>Preview of the Hello Web App PDF</figcaption>
-</figure>
-
 {% filter markdown %}
 *This tutorial is intended as a follow-on to my book, Hello Web App, which teaches the basics of web app development — from ideation to deployment.*
 
@@ -36,8 +31,6 @@ urlpatterns = [
 </code></pre>
 
 {% filter markdown %}
-*__Note:__ I'm using slightly different syntax here due to the new recommendations for Django 1.8, whereas the book was written in Django 1.7. The above should work for both.*
-
 ## Start setting up the view
 
 Now in *views.py*, we need to start setting up the logic. Let's set it up to just display a form for now, and we'll do the rest of the logic for after the form is submitted in a bit:
