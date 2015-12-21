@@ -264,6 +264,19 @@ blockquote {
             border-top: 1px solid $gray-lighter;
         }
     }
+    figure.video {
+        position: relative;
+        padding-bottom: 90%; /* to fit original ks video */
+        padding-top: 25px;
+        height: 0;
+        iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    }
     #post-meta {
         border-top: 1px solid $gray-lighter;
         border-bottom: 1px solid $gray-lighter;
