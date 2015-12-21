@@ -216,13 +216,18 @@ blockquote {
         background: url(../images/heros/workshop.jpg) center -300px no-repeat;
         background-size: cover;
         height: 23em;
-        padding-top: 8em;
-        color: #fff;
-        h1 {
-            margin-bottom: 0.2em;
-        }
     }
 }
+
+// order landing page
+#order {
+    .jumbotron {
+        background: url(../images/heros/both-books.jpg) center center no-repeat;
+        background-size: cover;
+        height: 15em;
+    }
+}
+
 
 // posts
 #post {
