@@ -10,9 +10,11 @@ $headings-color:             #111 !default;
 $enable-rounded:             true !default;
 $border-radius:              0 !default;
 
-//$brand-primary:              #8a9a0f !default;
+//$brand-primary:            #8a9a0f !default;
 $brand-primary:              #a5bb00 !default;
 $brand-secondary:            #e6c24d !default;
+
+$gray-lightish:              #ccc !default;
 
 $btn-border-radius:          0;
 $btn-secondary-color:        #fff;
@@ -95,6 +97,13 @@ blockquote {
     }
 }
 
+form input {
+    padding: 1em 1.3em;
+    font-size: 1rem;
+    color: $gray;
+    border: 1px solid $gray-lightish;
+}
+
 .content-block {
     max-width: 800px;
     margin: 0 auto !important;
@@ -149,6 +158,21 @@ blockquote {
     background-color: $brand-secondary;
     padding: 2em 0;
     color: #fff;
+    h4 {
+        color: #fff;
+        font-size: 2rem;
+        padding-top: 1.3em;
+    }
+    p {
+        font-size: 1rem;
+        padding-top: 0.8em;
+        color: rgba(255,255,255,0.8);
+        letter-spacing: 0.03em;
+    }
+    .mc-field-group {
+        display: inline-block;
+        input { width: 250px; }
+    }
 }
 
 // footer

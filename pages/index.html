@@ -85,7 +85,7 @@
         <a href="{% url '/order.html' %}" class="btn btn-primary">Order Hello Web App today</a>
     </div>
 
-    <ul id="post-list">
+    <ul id="post-list" class="list-unstyled">
         {% for post in posts %}
             {% if post.featured == "True" %}
             <li>

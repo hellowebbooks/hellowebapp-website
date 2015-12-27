@@ -5402,6 +5402,12 @@ blockquote {
   blockquote footer {
     font-style: normal; }
 
+form input {
+  padding: 1em 1.3em;
+  font-size: 1rem;
+  color: #55595c;
+  border: 1px solid #ccc; }
+
 .content-block {
   max-width: 800px;
   margin: 0 auto !important; }
@@ -5446,6 +5452,19 @@ blockquote {
   background-color: #e6c24d;
   padding: 2em 0;
   color: #fff; }
+  .newsletter h4 {
+    color: #fff;
+    font-size: 2rem;
+    padding-top: 1.3em; }
+  .newsletter p {
+    font-size: 1rem;
+    padding-top: 0.8em;
+    color: rgba(255, 255, 255, 0.8);
+    letter-spacing: 0.03em; }
+  .newsletter .mc-field-group {
+    display: inline-block; }
+    .newsletter .mc-field-group input {
+      width: 250px; }
 
 .social-media-footer a {
   color: #111; }
