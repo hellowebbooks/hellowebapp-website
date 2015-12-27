@@ -87,16 +87,20 @@
 
     <ul id="post-list">
         {% for post in posts %}
-        <li> 
-            <img src="{% static post.featuredimage %}" alt="{{ post.title }}" />
-            <a href='{{ post.page.link_url }}'>
-                <aside class="dates">{{ post.date|date:"M j" }}</aside>
-            </a>
-            <a href='{{ post.page.link_url|cut:".html" }}/'>
-                {{ post.title }}
-                <h2>{{ post.excerpt }}</h2>
-            </a>
-        </li>
+            {% if post.featured == "True" %}
+            <li>
+                {% if post.featuredimage %}
+                <img src="{% static post.featuredimage %}" alt="{{ post.title }}" />
+                {% endif %}
+                <a href='{{ post.page.link_url }}'>
+                    <aside class="dates">{{ post.date|date:"M j" }}</aside>
+                </a>
+                <a href='{{ post.page.link_url|cut:".html" }}/'>
+                    {{ post.title }}
+                    <h2>{{ post.excerpt }}</h2>
+                </a>
+            </li>
+            {% endif %}
         {% endfor %}
     </ul>
 </div>

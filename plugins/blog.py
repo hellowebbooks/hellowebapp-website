@@ -56,6 +56,8 @@ def preBuild(site):
             # new contexts that I'm adding
             postContext['excerpt'] = find('excerpt')
             postContext['featuredimage'] = find('featuredimage')
+            postContext['category'] = find('category')
+            postContext['featured'] = find('featured')
             postContext['page'] = page
 
             # Parse the date into a date object
