@@ -1,6 +1,7 @@
 // bootstrap variable overrides
 $font-family-sans-serif:     'Source Sans Pro', Helvetica, Arial, sans-serif !default;
 $font-family-serif:          Georgia, "Times New Roman", Times, serif !default;
+$font-family-display:        "Mrs Onion", Georgia, cursive;
 $font-family-base:           $font-family-sans-serif !default;
 $headings-font-weight:       300 !default;
 $font-size-base:             1.3rem !default;
@@ -120,7 +121,7 @@ form input {
         text-transform: uppercase;
         font-size: 0.75rem;
         letter-spacing: 0.1em;
-        font-family: "Mrs Onion", Georgia, cursive; 
+        font-family: $font-family-display; 
         padding: 0 1.5em 0 0;
     }
     #home-link {
@@ -182,6 +183,26 @@ form input {
     }
     a:hover {
         color: $brand-primary;
+    }
+}
+
+#footer {
+    #footer-nav ul {
+        margin: 3em 0 0.5em 0;;
+        li {
+            margin: 0 0.5em;
+            a {
+                color: $headings-color;
+                text-transform: uppercase;
+                font-family: $font-family-display;
+                font-size: 0.8rem;
+            }
+        }
+    }
+    p {
+        margin-top: 2em;
+        font-size: 0.7em;
+        color: $gray-light;
     }
 }
 

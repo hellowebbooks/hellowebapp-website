@@ -5472,6 +5472,21 @@ form input {
 .social-media-footer a:hover {
   color: #a5bb00; }
 
+#footer #footer-nav ul {
+  margin: 3em 0 0.5em 0; }
+  #footer #footer-nav ul li {
+    margin: 0 0.5em; }
+    #footer #footer-nav ul li a {
+      color: #111;
+      text-transform: uppercase;
+      font-family: "Mrs Onion", Georgia, cursive;
+      font-size: 0.8rem; }
+
+#footer p {
+  margin-top: 2em;
+  font-size: 0.7em;
+  color: #818a91; }
+
 #home .jumbotron {
   background: url(../images/heros/home-yellow-grad.jpg) center center no-repeat;
   background-size: 100% auto;
