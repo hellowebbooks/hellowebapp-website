@@ -85,24 +85,31 @@
         <a href="{% url '/order.html' %}" class="btn btn-primary">Order Hello Web App today</a>
     </div>
 
-    <ul id="post-list" class="list-unstyled">
-        {% for post in posts %}
-            {% if post.featured == "True" %}
-            <li>
-                {% if post.featuredimage %}
-                <img src="{% static post.featuredimage %}" alt="{{ post.title }}" />
+    <hr />
+
+    <div id="featured-post-list">
+        <h2 class="text-center">Recent Featured Posts</h2>
+        <ul class="list-unstyled row">
+            {% for post in posts %}
+                {% if post.featured == "True" %}
+                <li class="col-md-4">
+                    {% if post.featuredimage %}
+                    <div class="thumbnail">
+                        <img src="{% static post.featuredimage %}" alt="{{ post.title }}" />
+                    </div>
+                    {% endif %}
+                    <a href='{{ post.page.link_url }}'>
+                        <aside class="dates">{{ post.date|date:"M j" }}</aside>
+                    </a>
+                    <a href='{{ post.page.link_url|cut:".html" }}/'>
+                        {{ post.title }}
+                        {% comment %}<h2>{{ post.excerpt }}</h2>{% endcomment %}
+                    </a>
+                </li>
                 {% endif %}
-                <a href='{{ post.page.link_url }}'>
-                    <aside class="dates">{{ post.date|date:"M j" }}</aside>
-                </a>
-                <a href='{{ post.page.link_url|cut:".html" }}/'>
-                    {{ post.title }}
-                    <h2>{{ post.excerpt }}</h2>
-                </a>
-            </li>
-            {% endif %}
-        {% endfor %}
-    </ul>
+            {% endfor %}
+        </ul>
+    </div>
 </div>
 
 {% include 'includes/newsletter.html' %}

@@ -105,6 +105,7 @@ form input {
     border: 1px solid $gray-lightish;
 }
 
+// new CSS bits
 .content-block {
     max-width: 800px;
     margin: 0 auto !important;
@@ -154,6 +155,10 @@ form input {
     }
 }
 
+.thumbnail {
+    max-height: 200px;
+    overflow: hidden;
+}
 // newsletter
 .newsletter {
     background-color: $brand-secondary;
@@ -224,6 +229,15 @@ form input {
             font-weight: 400;
             font-family: 'Open Sans Condensed', sans-serif;
         }
+    }
+}
+
+#featured-post-list {
+    li:nth-child(3n+1) {
+        clear:left;
+    }
+    img {
+        border: 1px solid $gray-lightish;
     }
 }
 
