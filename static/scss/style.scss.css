@@ -5375,7 +5375,7 @@ p {
     background-position: 0 1.5rem;
     background-size: 1px 1px; }
 
-li a {
+td a, li a {
   background-position: 0 1.5rem;
   background-size: 1px 1px; }
 
@@ -5576,6 +5576,9 @@ form input {
   background-size: cover;
   height: 23em; }
 
+#workshops h2 {
+  margin: 2em 0 1em 0; }
+
 #order .jumbotron {
   background: url(../images/heros/both-books.jpg) center center no-repeat;
   background-size: cover;
@@ -5686,6 +5689,13 @@ form input {
     left: 0;
     width: 100%;
     height: 100%; }
+
+#post blockquote {
+  text-align: left;
+  border-left: 1px solid #a5bb00;
+  padding-left: 2em;
+  font-size: 1.3rem;
+  margin: 2em 0; }
 
 #post #post-meta {
   border-top: 1px solid #ccc;
