@@ -17,6 +17,7 @@ $brand-primary:              #a5bb00 !default;
 $brand-secondary:            #e6c24d !default;
 
 $gray-lightish:              #ccc !default;
+$gray-lightisher:              #aaa !default;
 
 $btn-border-radius:          0;
 $btn-secondary-color:        #fff;
@@ -40,8 +41,8 @@ body {
     font-weight: 300; 
 }
 
-h1, h3 { 
-    font-family: "Mrs Onion", Georgia, cursive; 
+h1 { 
+    font-family: $font-family-display; 
     //text-transform: uppercase;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
@@ -54,9 +55,20 @@ h1 {
 }
 h2 {
     font-style: italic;
+    a {
+        background-position: 0 2.5rem !important;
+        background-size: 1px 1px;
+    }
 }
 h3 {
-    font-size: 1.3rem; 
+    font-family: $font-family-display-alt;
+    font-weight: bold;
+    font-size: 1.4rem; 
+    color: $gray;
+    a {
+        background-position: 0 2.5rem;
+        background-size: 1px 1px;
+    }
 }
 h4 {
     font-weight: 700; 
@@ -67,6 +79,11 @@ p {
         background-position: 0 1.5rem;
         background-size: 1px 1px;
     }
+}
+li a {
+    background-position: 0 1.5rem;
+    background-size: 1px 1px;
+
 }
 img { max-width: 100%; }
 strong { color: $gray-dark; }
@@ -95,6 +112,11 @@ a {
     //}
 }
 
+.gist a, nav a, #sharing a, .social-media-footer a, .btn { 
+    background-image: none; 
+    &:hover { background-image: none; }
+}
+
 .btn {
     text-transform: uppercase;
     letter-spacing: 0.1em;
@@ -107,10 +129,9 @@ a {
 .btn-secondary-outline:hover { background-color: transparent !important; }
 
 hr {
-    background-color: $gray-lighter;
+    border-top: 1px solid $gray-lightish;
     height: 3px;
-    margin: 4em 0;
-    border: 0;
+    margin: 2.2em 0 2em 0;
 }
 
 blockquote {
@@ -128,6 +149,7 @@ form input {
     font-size: 1rem;
     color: $gray;
     border: 1px solid $gray-lightish;
+    font-family: $font-family-sans-serif;
 }
 
 // new CSS bits
@@ -316,9 +338,9 @@ form input {
 // main blog page
 #archive-list {
     li {
-        border-bottom: 1px solid $gray-lighter;
+        border-bottom: 1px solid #ddd;
         padding-bottom: 1em;
-        margin-bottom: 1em;
+        margin-bottom: 2em;
         .thumbnail {
             margin-bottom: 15px;
         }
@@ -336,6 +358,7 @@ form input {
             font-weight: 700;
             a {
                 color: $headings-color;
+                background-image: none;
             }
         }
         .readmore {

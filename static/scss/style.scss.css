@@ -5341,7 +5341,7 @@ body {
   background-color: #fff;
   font-weight: 300; }
 
-h1, h3 {
+h1 {
   font-family: "Mrs Onion", Georgia, cursive;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -5353,9 +5353,18 @@ h1 {
 
 h2 {
   font-style: italic; }
+  h2 a {
+    background-position: 0 2.5rem !important;
+    background-size: 1px 1px; }
 
 h3 {
-  font-size: 1.3rem; }
+  font-family: "Open Sans Condensed", "Source Sans Pro", Helvetica, Arial, sans-serif;
+  font-weight: bold;
+  font-size: 1.4rem;
+  color: #55595c; }
+  h3 a {
+    background-position: 0 2.5rem;
+    background-size: 1px 1px; }
 
 h4 {
   font-weight: 700; }
@@ -5365,6 +5374,10 @@ p {
   p a {
     background-position: 0 1.5rem;
     background-size: 1px 1px; }
+
+li a {
+  background-position: 0 1.5rem;
+  background-size: 1px 1px; }
 
 img {
   max-width: 100%; }
@@ -5392,6 +5405,11 @@ a {
     background-image: linear-gradient(#fff 50%, #8a9a0f 50%);
     text-decoration: none; }
 
+.gist a, nav a, #sharing a, .social-media-footer a, .btn {
+  background-image: none; }
+  .gist a:hover, nav a:hover, #sharing a:hover, .social-media-footer a:hover, .btn:hover {
+    background-image: none; }
+
 .btn {
   text-transform: uppercase;
   letter-spacing: 0.1em;
@@ -5404,10 +5422,9 @@ a {
   background-color: transparent !important; }
 
 hr {
-  background-color: #eceeef;
+  border-top: 1px solid #ccc;
   height: 3px;
-  margin: 4em 0;
-  border: 0; }
+  margin: 2.2em 0 2em 0; }
 
 blockquote {
   font-style: italic;
@@ -5421,7 +5438,8 @@ form input {
   padding: 1em 1.3em;
   font-size: 1rem;
   color: #55595c;
-  border: 1px solid #ccc; }
+  border: 1px solid #ccc;
+  font-family: "Source Sans Pro", Helvetica, Arial, sans-serif; }
 
 .content-block {
   max-width: 800px;
@@ -5557,9 +5575,9 @@ form input {
   height: 15em; }
 
 #archive-list li {
-  border-bottom: 1px solid #eceeef;
+  border-bottom: 1px solid #ddd;
   padding-bottom: 1em;
-  margin-bottom: 1em; }
+  margin-bottom: 2em; }
   #archive-list li .thumbnail {
     margin-bottom: 15px; }
   #archive-list li .dates {
@@ -5574,7 +5592,8 @@ form input {
     font-style: normal;
     font-weight: 700; }
     #archive-list li h2 a {
-      color: #111; }
+      color: #111;
+      background-image: none; }
   #archive-list li .readmore {
     margin-top: 0; }
 
