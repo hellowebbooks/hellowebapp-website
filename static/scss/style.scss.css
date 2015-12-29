@@ -5405,9 +5405,9 @@ a {
     background-image: linear-gradient(#fff 50%, #8a9a0f 50%);
     text-decoration: none; }
 
-.gist a, nav a, #sharing a, .social-media-footer a, .btn {
+.gist a, nav a, #sharing a, .social-media-footer a, .btn, .sharing a {
   background-image: none; }
-  .gist a:hover, nav a:hover, #sharing a:hover, .social-media-footer a:hover, .btn:hover {
+  .gist a:hover, nav a:hover, #sharing a:hover, .social-media-footer a:hover, .btn:hover, .sharing a:hover {
     background-image: none; }
 
 .btn {
@@ -5417,6 +5417,11 @@ a {
   padding: .7rem 1.4rem;
   font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
   font-weight: 700; }
+
+.btn-sm, .btn-group-sm > .btn {
+  font-size: 0.8rem;
+  font-weight: 400;
+  padding: 0.3rem 0.9rem 0.4rem 0.9rem; }
 
 .btn-secondary-outline:hover {
   background-color: transparent !important; }
@@ -5620,6 +5625,23 @@ form input {
         font-size: 1.1rem;
         color: #8a9a0f; }
 
+.sharing h5 {
+  color: #818a91;
+  font-size: 1rem;
+  font-family: "Source Sans Pro", Helvetica, Arial, sans-serif; }
+
+.sharing a {
+  color: #8a9a0f; }
+
+.sharing input[type="email"] {
+  width: 150px;
+  margin-right: 5px;
+  float: left; }
+
+.sharing input[type="submit"] {
+  position: relative;
+  top: -2px; }
+
 #post .jumbotron {
   height: 20em;
   background-size: cover;
@@ -5686,7 +5708,7 @@ form input {
 @media (min-width: 62em) {
   #post figure.full {
     margin-left: -208px;
-    margin-right: -255px; }
+    margin-right: -288px; }
   #post figure.caption {
     margin-right: -255px; }
     #post figure.caption figcaption {

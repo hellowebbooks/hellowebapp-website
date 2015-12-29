@@ -116,7 +116,7 @@ a {
     //}
 }
 
-.gist a, nav a, #sharing a, .social-media-footer a, .btn { 
+.gist a, nav a, #sharing a, .social-media-footer a, .btn, .sharing a { 
     background-image: none; 
     &:hover { background-image: none; }
 }
@@ -128,6 +128,13 @@ a {
     padding: .7rem 1.4rem;
     font-family: $font-family-sans-serif;
     font-weight: 700;
+}
+
+.btn-sm {
+    font-size: 0.8rem;
+    font-weight: 400;
+    padding: 0.3rem 0.9rem 0.4rem 0.9rem;
+
 }
 
 .btn-secondary-outline:hover { background-color: transparent !important; }
@@ -398,6 +405,26 @@ form input {
     }
 }
 
+.sharing {
+    h5 {
+        color: $gray-light;
+        font-size: 1rem;
+        font-family: $font-family-sans-serif;
+    }
+    a {
+        color: $link-color;
+    }
+    input[type="email"] {
+        width: 150px;
+        margin-right: 5px;
+        float: left;
+    }
+    input[type="submit"] {
+        position: relative;
+        top: -2px;
+    }
+}
+
 
 // posts
 #post {
@@ -488,7 +515,7 @@ form input {
     #post {
         figure.full {
             margin-left: -208px;
-            margin-right: -255px;
+            margin-right: -288px;
         }
         figure.caption {
             margin-right: -255px;
