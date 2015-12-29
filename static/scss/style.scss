@@ -22,8 +22,8 @@ $gray-lightisher:            #aaa !default;
 $link-color:                 $brand-primary-dark;
 
 $btn-border-radius:          0;
-$btn-secondary-color:        #fff;
-$btn-secondary-border:       #fff !default;
+//$btn-secondary-color:        #fff;
+//$btn-secondary-border:       #fff !default;
 $btn-font-weight:            400 !default;
 $btn-padding-x:              1.2rem;
 $btn-padding-y:              1rem;
@@ -129,7 +129,6 @@ a {
     font-size: 1.2rem;
     padding: .7rem 1.4rem;
     font-family: $font-family-sans-serif;
-    font-weight: 700;
 }
 
 .btn-sm {
@@ -348,6 +347,15 @@ form input {
         background: url(../images/heros/both-books.jpg) center center no-repeat;
         background-size: cover;
         height: 15em;
+    }
+    .packages {
+        h3 {
+            margin: 15px 0 0 0;
+        }
+        p {
+            margin: 5px 0 10px 0;
+            font-size: 1.2rem;
+        }
     }
 }
 

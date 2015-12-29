@@ -10,7 +10,37 @@
 <div class="jumbotron"></div>
 
 <div class="container">
-    <h1>Order</h1>
+    <h1 class="text-center">Order</h1>
+    <p class="text-center">Ready to buy? Choose which package you want below!</p>
+    <div class="row packages">
+        <div class="col-md-4 text-center">
+            <a href="">
+                <img src="{% static '/images/products/original-square.jpg' %}" alt="Hello Web App original"/>
+            </a>
+            <h3>Hello Web App</h3>
+            <p>Start building your first Django web app. From project ideation to launching on Heroku.</p>
+            <a href="" class="btn btn-secondary">Choose package</a>
+            <p><small>Starting at $14.95</small></p>
+        </div>
+        <div class="col-md-4 text-center">
+            <a href="">
+            <img src="{% static '/images/products/both-books.jpg' %}" alt="Hello Web App original"/>
+            </a>
+            <h3>Combo pack of both books</h3>
+            <p>Everything you need to build and grow a web app. Create a web app, launch it, and make it a success.</p>
+            <a href="" class="btn btn-primary">Choose package</a>
+            <p><small>Starting at $24.95</small></p>
+        </div>
+        <div class="col-md-4 text-center">
+            <a href="">
+            <img src="{% static '/images/products/ic-square.jpg' %}" alt="Hello Web App original"/>
+            </a>
+            <h3>Hello Web App: Intermediate Concepts</h3>
+            <p>Take your web app to the next level. Add an API, payments, learn intermediate concepts, and more.</p>
+            <a href="" class="btn btn-secondary">Choose package</a>
+            <p><small>Starting at $14.95</small></p>
+        </div>
+    </div>
 </div>
 
 {% endblock content %}

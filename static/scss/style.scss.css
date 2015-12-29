@@ -1692,18 +1692,18 @@ fieldset[disabled] a.btn {
     border-color: #a5bb00; }
 
 .btn-secondary {
-  color: #fff;
+  color: #373a3c;
   background-color: #fff;
-  border-color: #fff; }
+  border-color: #ccc; }
   .btn-secondary:focus, .btn-secondary.focus, .btn-secondary:active, .btn-secondary.active,
   .open > .btn-secondary.dropdown-toggle {
-    color: #fff;
+    color: #373a3c;
     background-color: #e6e6e6;
-    border-color: #e0e0e0; }
+    border-color: #adadad; }
   .btn-secondary:hover {
-    color: #fff;
+    color: #373a3c;
     background-color: #e6e6e6;
-    border-color: #e0e0e0; }
+    border-color: #adadad; }
   .btn-secondary:active, .btn-secondary.active,
   .open > .btn-secondary.dropdown-toggle {
     background-image: none; }
@@ -1711,11 +1711,11 @@ fieldset[disabled] a.btn {
   fieldset[disabled] .btn-secondary:focus,
   fieldset[disabled] .btn-secondary.focus {
     background-color: #fff;
-    border-color: #fff; }
+    border-color: #ccc; }
   .btn-secondary.disabled:hover, .btn-secondary:disabled:hover,
   fieldset[disabled] .btn-secondary:hover {
     background-color: #fff;
-    border-color: #fff; }
+    border-color: #ccc; }
 
 .btn-info {
   color: #fff;
@@ -1844,19 +1844,19 @@ fieldset[disabled] a.btn {
     border-color: #e5ff22; }
 
 .btn-secondary-outline {
-  color: #fff;
+  color: #ccc;
   background-image: none;
   background-color: transparent;
-  border-color: #fff; }
+  border-color: #ccc; }
   .btn-secondary-outline:focus, .btn-secondary-outline.focus, .btn-secondary-outline:active, .btn-secondary-outline.active,
   .open > .btn-secondary-outline.dropdown-toggle {
     color: #fff;
-    background-color: #fff;
-    border-color: #fff; }
+    background-color: #ccc;
+    border-color: #ccc; }
   .btn-secondary-outline:hover {
     color: #fff;
-    background-color: #fff;
-    border-color: #fff; }
+    background-color: #ccc;
+    border-color: #ccc; }
   .btn-secondary-outline.disabled:focus, .btn-secondary-outline.disabled.focus, .btn-secondary-outline:disabled:focus, .btn-secondary-outline:disabled.focus,
   fieldset[disabled] .btn-secondary-outline:focus,
   fieldset[disabled] .btn-secondary-outline.focus {
@@ -5417,8 +5417,7 @@ a {
   letter-spacing: 0.1em;
   font-size: 1.2rem;
   padding: .7rem 1.4rem;
-  font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
-  font-weight: 700; }
+  font-family: "Source Sans Pro", Helvetica, Arial, sans-serif; }
 
 .btn-sm, .btn-group-sm > .btn {
   font-size: 0.8rem;
@@ -5583,6 +5582,13 @@ form input {
   background: url(../images/heros/both-books.jpg) center center no-repeat;
   background-size: cover;
   height: 15em; }
+
+#order .packages h3 {
+  margin: 15px 0 0 0; }
+
+#order .packages p {
+  margin: 5px 0 10px 0;
+  font-size: 1.2rem; }
 
 #archive-list li {
   border-bottom: 1px solid #ddd;
