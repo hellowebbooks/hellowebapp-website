@@ -1,19 +1,44 @@
 {% extends "base.html" %}
 {% block content %}
 
+<div class="jumbotron"></div>
+
 <div class="container">
-    <h1>Articles</h1>
-
-    <ul class="list-unstyled" id="archive-list">
-        {% for post in posts %}
-        <li>
-            <!--<a href='/{{ post.path }}'><aside class="dates">{{ post.date|date:"M j" }}</aside></a>-->
-            <a href='{{ post.page.link_url|cut:".html" }}/'>{{ post.title }}</a>
-            <p>{{ post.headline }}</p>
-        </li>
-        {% endfor %}
-    </ul> <!--post-list-->
-
+    <h1 class="text-center">Articles</h1>
+    <div class="row">
+        <!-- main col -->
+        <div class="col-md-7">
+            <ul class="list-unstyled" id="archive-list">
+                {% for post in posts %}
+                <li>
+                    {% if post.featuredimage %}
+                    <div class="thumbnail">
+                        <img src="{% static post.featuredimage %}" alt="{{ post.title }}" />
+                    </div>
+                    {% endif %}
+                    <aside class="dates">{{ post.date|date:"F j, Y" }}</aside></a>
+                    <h2><a href='{{ post.page.link_url|cut:".html" }}/'>{{ post.title }}</a></h2>
+                    {% if post.headline %}
+                    <p>{{ post.headline }}</p>
+                    {% endif %}
+                    <p class="readmore"><a href='{{ post.page.link_url|cut:".html" }}/'>Read more...</a></p>
+                </li>
+                {% endfor %}
+            </ul> <!--post-list-->
+        </div>
+        <!-- newsletter -->
+        <div class="col-md-5 well">
+            <h3>Sign up to the newsletter</h3>
+        </div>
+        <!-- left col -->
+        <div class="col-md-3">
+            <p>Something</p>
+        </div>
+        <!-- right col -->
+        <div class="col-md-2">
+            <p>Else</p>
+        </div>
+    </div>
 </div>
 
 {% endblock content %}

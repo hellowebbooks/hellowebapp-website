@@ -252,7 +252,7 @@ html {
   -webkit-tap-highlight-color: transparent; }
 
 body {
-  font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
+  font-family: "freight-text-pro", Georgia, "Times New Roman", Times, serif;
   font-size: 1.3rem;
   line-height: 1.5;
   color: #666;
@@ -3659,7 +3659,7 @@ button.close {
   position: absolute;
   z-index: 1070;
   display: block;
-  font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
+  font-family: "freight-text-pro", Georgia, "Times New Roman", Times, serif;
   font-style: normal;
   font-weight: normal;
   letter-spacing: normal;
@@ -3738,7 +3738,7 @@ button.close {
   display: block;
   max-width: 276px;
   padding: 1px;
-  font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
+  font-family: "freight-text-pro", Georgia, "Times New Roman", Times, serif;
   font-style: normal;
   font-weight: normal;
   letter-spacing: normal;
@@ -5367,7 +5367,7 @@ img {
   max-width: 100%; }
 
 strong {
-  color: #111; }
+  color: #373a3c; }
 
 p code {
   font-size: 1rem; }
@@ -5383,7 +5383,9 @@ pre code:first-line {
   text-transform: uppercase;
   letter-spacing: 0.1em;
   font-size: 1.2rem;
-  padding: .7rem 1.4rem; }
+  padding: .7rem 1.4rem;
+  font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
+  font-weight: 700; }
 
 .btn-secondary-outline:hover {
   background-color: transparent !important; }
@@ -5396,7 +5398,7 @@ hr {
 
 blockquote {
   font-style: italic;
-  font-family: Georgia, "Times New Roman", Times, serif;
+  font-family: "freight-text-pro", Georgia, "Times New Roman", Times, serif;
   font-size: 1rem;
   text-align: center; }
   blockquote footer {
@@ -5450,7 +5452,8 @@ form input {
 
 .thumbnail {
   max-height: 200px;
-  overflow: hidden; }
+  overflow: hidden;
+  border: 1px solid #eceeef; }
 
 .newsletter {
   background-color: #e6c24d;
@@ -5504,7 +5507,7 @@ form input {
     color: rgba(255, 255, 255, 0.9);
     font-size: 2rem;
     font-weight: 400;
-    font-family: 'Open Sans Condensed', sans-serif; }
+    font-family: "Open Sans Condensed", "Source Sans Pro", Helvetica, Arial, sans-serif; }
 
 #featured-post-list li:nth-child(3n+1) {
   clear: left; }
@@ -5540,6 +5543,28 @@ form input {
   background-size: cover;
   height: 15em; }
 
+#archive-list li {
+  border-bottom: 1px solid #eceeef;
+  padding-bottom: 1em;
+  margin-bottom: 1em; }
+  #archive-list li .thumbnail {
+    margin-bottom: 15px; }
+  #archive-list li .dates {
+    font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
+    text-transform: uppercase;
+    color: #818a91;
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    margin-bottom: 7px; }
+  #archive-list li h2 {
+    font-family: "Open Sans Condensed", "Source Sans Pro", Helvetica, Arial, sans-serif;
+    font-style: normal;
+    font-weight: 700; }
+    #archive-list li h2 a {
+      color: #111; }
+  #archive-list li .readmore {
+    margin-top: 0; }
+
 #post .jumbotron {
   height: 20em;
   background-size: cover;
@@ -5560,7 +5585,8 @@ form input {
     font-size: 1rem;
     font-weight: bold;
     color: #818a91;
-    padding-top: 0.5em; }
+    padding-top: 0.5em;
+    font-family: "Source Sans Pro", Helvetica, Arial, sans-serif; }
 
 #post figure.caption figcaption {
   top: 0;

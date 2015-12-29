@@ -1,8 +1,9 @@
 // bootstrap variable overrides
 $font-family-sans-serif:     'Source Sans Pro', Helvetica, Arial, sans-serif !default;
-$font-family-serif:          Georgia, "Times New Roman", Times, serif !default;
+$font-family-serif:          "freight-text-pro", Georgia, "Times New Roman", Times, serif !default;
 $font-family-display:        "Mrs Onion", Georgia, cursive;
-$font-family-base:           $font-family-sans-serif !default;
+$font-family-display-alt:    "Open Sans Condensed", "Source Sans Pro", Helvetica, Arial, sans-serif !default;
+$font-family-base:           $font-family-serif !default;
 $headings-font-weight:       300 !default;
 $font-size-base:             1.3rem !default;
 
@@ -62,7 +63,7 @@ h4 {
 }
 p { margin-bottom: 1.5rem; }
 img { max-width: 100%; }
-strong { color: $headings-color; }
+strong { color: $gray-dark; }
 p code { font-size: 1rem; }
 pre {
     code { 
@@ -77,6 +78,8 @@ pre {
     letter-spacing: 0.1em;
     font-size: 1.2rem;
     padding: .7rem 1.4rem;
+    font-family: $font-family-sans-serif;
+    font-weight: 700;
 }
 
 .btn-secondary-outline:hover { background-color: transparent !important; }
@@ -158,6 +161,7 @@ form input {
 .thumbnail {
     max-height: 200px;
     overflow: hidden;
+    border: 1px solid $gray-lighter;
 }
 // newsletter
 .newsletter {
@@ -227,7 +231,7 @@ form input {
             color: rgba(255,255,255,0.9);
             font-size: 2rem;
             font-weight: 400;
-            font-family: 'Open Sans Condensed', sans-serif;
+            font-family: $font-family-display-alt;
         }
     }
 }
@@ -287,6 +291,37 @@ form input {
     }
 }
 
+// main blog page
+#archive-list {
+    li {
+        border-bottom: 1px solid $gray-lighter;
+        padding-bottom: 1em;
+        margin-bottom: 1em;
+        .thumbnail {
+            margin-bottom: 15px;
+        }
+        .dates {
+            font-family: $font-family-sans-serif;
+            text-transform: uppercase;
+            color: $gray-light;
+            font-size: 0.8rem;
+            letter-spacing: 0.1em;
+            margin-bottom: 7px;
+        }
+        h2 {
+            font-family: $font-family-display-alt;
+            font-style: normal;
+            font-weight: 700;
+            a {
+                color: $headings-color;
+            }
+        }
+        .readmore {
+            margin-top: 0;
+        }
+    }
+}
+
 
 // posts
 #post {
@@ -313,6 +348,7 @@ form input {
             font-weight: bold;
             color: $gray-light;
             padding-top: 0.5em;
+            font-family: $font-family-sans-serif;
         }
     }
     figure.full {
