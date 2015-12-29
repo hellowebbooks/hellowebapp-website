@@ -299,10 +299,10 @@ blockquote {
   margin: 0 0 1rem; }
 
 a {
-  color: #a5bb00;
+  color: #8a9a0f;
   text-decoration: none; }
   a:focus, a:hover {
-    color: #626f00;
+    color: #4c5408;
     text-decoration: underline; }
   a:focus {
     outline: thin dotted;
@@ -1955,7 +1955,7 @@ fieldset[disabled] a.btn {
 
 .btn-link {
   font-weight: normal;
-  color: #a5bb00;
+  color: #8a9a0f;
   border-radius: 0; }
   .btn-link, .btn-link:active, .btn-link.active, .btn-link:disabled,
   fieldset[disabled] .btn-link {
@@ -1965,7 +1965,7 @@ fieldset[disabled] a.btn {
   .btn-link:hover {
     border-color: transparent; }
   .btn-link:focus, .btn-link:hover {
-    color: #626f00;
+    color: #4c5408;
     text-decoration: underline;
     background-color: transparent; }
   .btn-link:disabled:focus, .btn-link:disabled:hover,
@@ -2932,7 +2932,7 @@ input[type="button"].btn-block {
       padding: 0.5rem 0.75rem;
       margin-left: -1px;
       line-height: 1.5;
-      color: #a5bb00;
+      color: #8a9a0f;
       text-decoration: none;
       background-color: #fff;
       border: 1px solid #ddd; }
@@ -2948,7 +2948,7 @@ input[type="button"].btn-block {
   .pagination > li > a:focus, .pagination > li > a:hover,
   .pagination > li > span:focus,
   .pagination > li > span:hover {
-    color: #626f00;
+    color: #4c5408;
     background-color: #eceeef;
     border-color: #ddd; }
   .pagination > .active > a, .pagination > .active > a:focus, .pagination > .active > a:hover,
@@ -5598,6 +5598,27 @@ form input {
     margin-bottom: 0.4em; }
   #archive-list li .readmore {
     margin-top: 0; }
+
+.sub-categories {
+  line-height: 1.1;
+  margin-top: 3em; }
+  .sub-categories h3 {
+    font-weight: normal;
+    font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
+    text-transform: uppercase;
+    font-size: 1rem;
+    letter-spacing: 0.1em;
+    margin-top: 1.5em;
+    font-weight: bold; }
+  .sub-categories ul {
+    margin-bottom: 2em; }
+    .sub-categories ul li {
+      margin: 1em 0; }
+      .sub-categories ul li a {
+        background-image: none;
+        font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
+        font-size: 1.1rem;
+        color: #8a9a0f; }
 
 #post .jumbotron {
   height: 20em;

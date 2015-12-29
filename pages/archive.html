@@ -30,16 +30,69 @@
             </ul> <!--post-list-->
         </div>
         <!-- newsletter -->
-        <div class="col-md-5 well">
-            <h3>Sign up to the newsletter</h3>
+        <div class="col-md-4 col-md-offset-1 blog-newsletter text-center">
+            <h2>Get the Hello Web App newsletter</h2>
+            <p><small>Get email notifications of new posts, new books, and more.</small></p>
+
+            <div id="mc_embed_signup">
+                <form action="//hellowebapp.us3.list-manage.com/subscribe/post?u=65146251a5ccb429e109f902f&amp;id=f0a7b0a10c" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                    <div id="mc_embed_signup_scroll">
+                    
+                        <div class="mc-field-group">
+                            <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" placeholder="Email address">
+                        </div>
+                    <div id="mce-responses" class="clear">
+                        <div class="response" id="mce-error-response" style="display:none"></div>
+                        <div class="response" id="mce-success-response" style="display:none"></div>
+                    </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_65146251a5ccb429e109f902f_f0a7b0a10c" tabindex="-1" value=""></div>
+                    <div class="clear"><input type="submit" value="Sign up" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+                    </div>
+                </form>
+            </div>
         </div>
         <!-- left col -->
-        <div class="col-md-3">
-            <p>Something</p>
-        </div>
-        <!-- right col -->
-        <div class="col-md-2">
-            <p>Else</p>
+        <div class="col-md-4 col-md-offset-1 sub-categories">
+            <h2 class="text-center">Posts by category</h2>
+            <h3 class="text-center">Case Studies</h3>
+            <ul class="list-unstyled">
+            {% for post in posts %}
+                {% if post.category == "casestudy" %}
+                <li><a href='{{ post.page.link_url|cut:".html" }}/'>{{ post.title }}</a></li>
+                {% endif %}
+            {% endfor %}
+            </ul>
+            <h3 class="text-center">Tutorials</h3>
+            <ul class="list-unstyled">
+            {% for post in posts %}
+                {% if post.category == "tutorial" %}
+                <li><a href='{{ post.page.link_url|cut:".html" }}/'>
+                    {{ post.title }}
+                </a></li>
+                {% endif %}
+            {% endfor %}
+            </ul>
+            <h3 class="text-center">Production</h3>
+            <ul class="list-unstyled">
+            {% for post in posts %}
+                {% if post.category == "production" %}
+                <li><a href='{{ post.page.link_url|cut:".html" }}/'>
+                    {{ post.title }}
+                </a></li>
+                {% endif %}
+            {% endfor %}
+            </ul>
+            <h3 class="text-center">Design</h3>
+            <ul class="list-unstyled">
+            {% for post in posts %}
+                {% if post.category == "design" %}
+                <li><a href='{{ post.page.link_url|cut:".html" }}/'>
+                    {{ post.title }}
+                    {% comment %}<h2>{{ post.excerpt }}</h2>{% endcomment %}
+                </a></li>
+                {% endif %}
+            {% endfor %}
+            </ul>
         </div>
     </div>
 </div>
