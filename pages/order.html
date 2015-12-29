@@ -12,6 +12,10 @@
 <div class="container">
     <h1 class="text-center">Order</h1>
     <p class="text-center">Ready to buy? Choose which package you want below!</p>
+
+    {% comment %}
+    Choose which books you want
+    {% endcomment %}
     <div class="row packages">
         <div class="col-md-4 text-center">
             <a href="">
@@ -24,7 +28,7 @@
         </div>
         <div class="col-md-4 text-center">
             <a href="">
-            <img src="{% static '/images/products/both-books.jpg' %}" alt="Hello Web App original"/>
+            <img src="{% static '/images/products/both-books.jpg' %}" alt="Hello Web App and Hello Web App: Intermediate Concepts"/>
             </a>
             <h3>Combo pack of both books</h3>
             <p>Everything you need to build and grow a web app. Create a web app, launch it, and make it a success.</p>
@@ -33,12 +37,76 @@
         </div>
         <div class="col-md-4 text-center">
             <a href="">
-            <img src="{% static '/images/products/ic-square.jpg' %}" alt="Hello Web App original"/>
+            <img src="{% static '/images/products/ic-square.jpg' %}" alt="Hello Web App Intermediate Concepts"/>
             </a>
             <h3>Hello Web App: Intermediate Concepts</h3>
             <p>Take your web app to the next level. Add an API, payments, learn intermediate concepts, and more.</p>
             <a href="" class="btn btn-secondary">Choose package</a>
             <p><small>Starting at $14.95</small></p>
+        </div>
+    </div>
+
+    {% comment %}
+    Original - choose which package you want
+    {% endcomment %}
+    <div class="row packages">
+        <hr />
+        <h2 class="text-center">Choose your Hello Web App package</h2>
+        <div class="col-md-4 text-center">
+            <a href="">
+                <img src="{% static '/images/products/original-paperback.jpg' %}" alt="Hello Web App original paperback package"/>
+            </a>
+            <h3>Paperback Package</h3>
+            <p>All eBook files (custom designed PDF, .mobi, and .ePub) as well as the beautifully designed paperback book.</p>
+            <a href="" class="btn btn-secondary">Buy for $29.95</a>
+        </div>
+        <div class="col-md-4 text-center">
+            <a href="">
+                <img src="{% static '/images/products/original-videos.jpg' %}" alt="Hello Web App original video package"/>
+            </a>
+            <h3>Video Package</h3>
+            <p>All eBook files <em>and</em> fourteen screencasts and videos, walking you through every chapter of the book.</p>
+            <a href="" class="btn btn-primary">Buy for $79</a>
+        </div>
+        <div class="col-md-4 text-center">
+            <a href="">
+                <img src="{% static '/images/products/original-ebook.jpg' %}" alt="Hello Web App original ebook package"/>
+            </a>
+            <h3>eBook Package</h3>
+            <p>Three eBook files (custom designed PDF, .mobi, and .ePub) to get you started on your web app journey.</p>
+            <a href="" class="btn btn-secondary">Buy for $14.95</a>
+        </div>
+    </div>
+
+    {% comment %}
+    Both - choose which package you want
+    {% endcomment %}
+    <div class="row packages">
+        <hr />
+        <h2 class="text-center">Choose your combo Hello Web App package</h2>
+        <div class="col-md-4 text-center">
+            <a href="">
+                <img src="{% static '/images/products/both-paperback.jpg' %}" alt="Hello Web App combo paperback package"/>
+            </a>
+            <h3>Paperback Package</h3>
+            <p>All six eBook files (custom designed PDF, .mobi, and .ePub) as well as both beautifully designed paperback books.</p>
+            <a href="" class="btn btn-secondary">Buy for $49.95</a>
+        </div>
+        <div class="col-md-4 text-center">
+            <a href="">
+                <img src="{% static '/images/products/both-videos.jpg' %}" alt="Hello Web App combo video package"/>
+            </a>
+            <h3>Video Package</h3>
+            <p>All eBook files <em>and</em> fourteen screencasts and videos, walking you through every chapter of the book.</p>
+            <a href="" class="btn btn-primary">Buy for $79</a>
+        </div>
+        <div class="col-md-4 text-center">
+            <a href="">
+                <img src="{% static '/images/products/both-ebook.jpg' %}" alt="Hello Web App combo ebook package"/>
+            </a>
+            <h3>eBook Package</h3>
+            <p>Three eBook files (custom designed PDF, .mobi, and .ePub) to get you started on your web app journey.</p>
+            <a href="" class="btn btn-secondary">Buy for $14.95</a>
         </div>
     </div>
 </div>
