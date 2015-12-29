@@ -348,9 +348,6 @@ form input {
         background-size: cover;
         height: 15em;
     }
-    h2 {
-        margin-bottom: 1em;
-    }
     .packages {
         h3 {
             margin: 15px 0 0 0;
@@ -358,6 +355,16 @@ form input {
         p {
             margin: 5px 0 10px 0;
             font-size: 1.2rem;
+        }
+        .intro {
+            margin-bottom: 2em;
+            h2 {
+                margin-bottom: 5px;
+            }
+            p {
+                max-width: 700px;
+                margin: 0 auto;
+            }
         }
     }
 }

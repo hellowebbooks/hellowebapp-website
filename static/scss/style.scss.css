@@ -5583,15 +5583,20 @@ form input {
   background-size: cover;
   height: 15em; }
 
-#order h2 {
-  margin-bottom: 1em; }
-
 #order .packages h3 {
   margin: 15px 0 0 0; }
 
 #order .packages p {
   margin: 5px 0 10px 0;
   font-size: 1.2rem; }
+
+#order .packages .intro {
+  margin-bottom: 2em; }
+  #order .packages .intro h2 {
+    margin-bottom: 5px; }
+  #order .packages .intro p {
+    max-width: 700px;
+    margin: 0 auto; }
 
 #archive-list li {
   border-bottom: 1px solid #ddd;
