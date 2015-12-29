@@ -5362,6 +5362,9 @@ h4 {
 
 p {
   margin-bottom: 1.5rem; }
+  p a {
+    background-position: 0 1.5rem;
+    background-size: 1px 1px; }
 
 img {
   max-width: 100%; }
@@ -5378,6 +5381,16 @@ pre code {
 
 pre code:first-line {
   line-height: 0px; }
+
+a {
+  text-decoration: none;
+  color: #666;
+  background-image: linear-gradient(#fff 50%, #666 50%);
+  background-repeat: repeat-x; }
+  a:hover {
+    color: #8a9a0f;
+    background-image: linear-gradient(#fff 50%, #8a9a0f 50%);
+    text-decoration: none; }
 
 .btn {
   text-transform: uppercase;
@@ -5583,7 +5596,6 @@ form input {
   position: relative; }
   #post figure figcaption {
     font-size: 1rem;
-    font-weight: bold;
     color: #818a91;
     padding-top: 0.5em;
     font-family: "Source Sans Pro", Helvetica, Arial, sans-serif; }
@@ -5631,12 +5643,12 @@ form input {
 
 @media (min-width: 62em) {
   #post figure.full {
-    margin-left: -175px;
+    margin-left: -208px;
     margin-right: -255px; }
   #post figure.caption {
     margin-right: -255px; }
     #post figure.caption figcaption {
       position: absolute;
-      left: -175px;
+      left: -208px;
       max-width: 155px; } }
 

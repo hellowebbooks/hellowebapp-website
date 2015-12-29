@@ -12,7 +12,7 @@ $headings-color:             #111 !default;
 $enable-rounded:             true !default;
 $border-radius:              0 !default;
 
-//$brand-primary:            #8a9a0f !default;
+$brand-primary-dark:         #8a9a0f !default;
 $brand-primary:              #a5bb00 !default;
 $brand-secondary:            #e6c24d !default;
 
@@ -61,7 +61,13 @@ h3 {
 h4 {
     font-weight: 700; 
 }
-p { margin-bottom: 1.5rem; }
+p {
+    margin-bottom: 1.5rem; 
+    a {
+        background-position: 0 1.5rem;
+        background-size: 1px 1px;
+    }
+}
 img { max-width: 100%; }
 strong { color: $gray-dark; }
 p code { font-size: 1rem; }
@@ -71,6 +77,22 @@ pre {
         padding: 0 !important;
     }
     code:first-line { line-height: 0px; }
+}
+
+a {
+    text-decoration: none;
+    color: $body-color;
+    background-image: linear-gradient(#fff 50%, $body-color 50%);
+    background-repeat: repeat-x;
+    &:hover {
+        color: $brand-primary-dark;
+        background-image: linear-gradient(#fff 50%, $brand-primary-dark 50%);
+        text-decoration: none;
+    }
+    //&:visited {
+    //    color: $brand-primary;
+    //    background-image: linear-gradient(#fff 50%, $brand-primary 50%);
+    //}
 }
 
 .btn {
@@ -345,7 +367,6 @@ form input {
         position: relative;
         figcaption {
             font-size: 1rem;
-            font-weight: bold;
             color: $gray-light;
             padding-top: 0.5em;
             font-family: $font-family-sans-serif;
@@ -412,14 +433,14 @@ form input {
 @include media-breakpoint-up(lg) {
     #post {
         figure.full {
-            margin-left: -175px;
+            margin-left: -208px;
             margin-right: -255px;
         }
         figure.caption {
             margin-right: -255px;
             figcaption {
                 position: absolute;
-                left: -175px;
+                left: -208px;
                 max-width: 155px;
             }
         }
