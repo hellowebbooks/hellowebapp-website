@@ -5593,10 +5593,16 @@ form input {
 #order .packages .intro {
   margin-bottom: 2em; }
   #order .packages .intro h2 {
-    margin-bottom: 5px; }
+    margin-bottom: 5px;
+    margin-top: 0.5em; }
   #order .packages .intro p {
     max-width: 700px;
     margin: 0 auto; }
+
+#original, #ic, #both {
+  display: none; }
+  #original:target, #ic:target, #both:target {
+    display: block; }
 
 #archive-list li {
   border-bottom: 1px solid #ddd;

@@ -360,12 +360,20 @@ form input {
             margin-bottom: 2em;
             h2 {
                 margin-bottom: 5px;
+                margin-top: 0.5em;
             }
             p {
                 max-width: 700px;
                 margin: 0 auto;
             }
         }
+    }
+}
+
+#original, #ic, #both {
+    display: none;
+    &:target {
+        display: block;
     }
 }
 
