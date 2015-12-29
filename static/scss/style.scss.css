@@ -5388,12 +5388,14 @@ strong {
 p code {
   font-size: 1rem; }
 
-pre code {
-  font-size: 1rem;
-  padding: 0 !important; }
-
-pre code:first-line {
-  line-height: 0px; }
+pre {
+  margin-bottom: 2em;
+  margin-top: -1em; }
+  pre code {
+    font-size: 1rem;
+    padding: 0 !important; }
+  pre code:first-line {
+    line-height: 0px; }
 
 a {
   text-decoration: none;
@@ -5654,6 +5656,10 @@ form input {
   #post header h2 {
     font-size: 1.5rem;
     color: #55595c; }
+
+#post h2 {
+  margin-bottom: 0.5em;
+  margin-top: 1em; }
 
 #post figure {
   margin: 2em 0;

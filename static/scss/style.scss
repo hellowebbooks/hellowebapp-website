@@ -93,6 +93,8 @@ img { max-width: 100%; }
 strong { color: $gray-dark; }
 p code { font-size: 1rem; }
 pre {
+    margin-bottom: 2em;
+    margin-top: -1em;
     code { 
         font-size: 1rem;
         padding: 0 !important;
@@ -442,6 +444,10 @@ form input {
             font-size: 1.5rem;
             color: $gray;
         }
+    }
+    h2 {
+        margin-bottom: 0.5em; 
+        margin-top: 1em;
     }
     figure {
         margin: 2em 0;
