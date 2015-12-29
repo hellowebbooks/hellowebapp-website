@@ -5594,6 +5594,8 @@ form input {
     #archive-list li h2 a {
       color: #111;
       background-image: none; }
+  #archive-list li .excerpt {
+    margin-bottom: 0.4em; }
   #archive-list li .readmore {
     margin-top: 0; }
 

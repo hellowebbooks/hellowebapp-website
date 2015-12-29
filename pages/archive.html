@@ -21,6 +21,9 @@
                     {% if post.headline %}
                     <p>{{ post.headline }}</p>
                     {% endif %}
+                    {% if post.excerpt %}
+                    <p class="excerpt">{{ post.excerpt|truncatewords:30 }}</p>
+                    {% endif %}
                     <p class="readmore"><a href='{{ post.page.link_url|cut:".html" }}/'>Read more...</a></p>
                 </li>
                 {% endfor %}
