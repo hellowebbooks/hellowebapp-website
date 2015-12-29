@@ -5405,9 +5405,9 @@ a {
     background-image: linear-gradient(#fff 50%, #8a9a0f 50%);
     text-decoration: none; }
 
-.gist a, nav a, #sharing a, .social-media-footer a, .btn, .sharing a {
+.gist a, nav a, .social-media-footer a, .btn, .sharing a {
   background-image: none; }
-  .gist a:hover, nav a:hover, #sharing a:hover, .social-media-footer a:hover, .btn:hover, .sharing a:hover {
+  .gist a:hover, nav a:hover, .social-media-footer a:hover, .btn:hover, .sharing a:hover {
     background-image: none; }
 
 .btn {
@@ -5682,15 +5682,30 @@ form input {
     height: 100%; }
 
 #post #post-meta {
-  border-top: 1px solid #eceeef;
-  border-bottom: 1px solid #eceeef;
-  padding: 1.5em 0;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 2em;
+  padding: 1.5em 0 1.3em 0;
   color: #818a91;
   font-size: 1rem; }
   #post #post-meta span {
     font-weight: bold;
     width: 100px;
-    display: inline-block; }
+    display: inline-block;
+    clear: left; }
+  #post #post-meta #mc_embed_signup {
+    display: inline-block;
+    width: 300px;
+    vertical-align: top; }
+    #post #post-meta #mc_embed_signup form {
+      position: relative;
+      top: -15px; }
+      #post #post-meta #mc_embed_signup form input[type="email"] {
+        padding: 0.1em 0.3em; }
+      #post #post-meta #mc_embed_signup form .btn-sm, #post #post-meta #mc_embed_signup form .btn-group-sm > .btn {
+        padding: 2px 6px 2px 6px;
+        position: relative;
+        top: 0px; }
 
 @media (min-width: 75em) {
   #post figure.full {
