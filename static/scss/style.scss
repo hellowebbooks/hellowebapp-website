@@ -101,6 +101,9 @@ pre {
     }
     code:first-line { line-height: 0px; }
 }
+thead {
+    font-weight: bold;
+}
 
 a {
     text-decoration: none;
@@ -223,6 +226,7 @@ form input {
 .newsletter {
     background-color: $brand-secondary;
     padding: 2em 0;
+    margin: 3em 0 0 0;
     color: #fff;
     h4 {
         color: #fff;

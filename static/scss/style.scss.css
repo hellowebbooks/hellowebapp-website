@@ -5397,6 +5397,9 @@ pre {
   pre code:first-line {
     line-height: 0px; }
 
+thead {
+  font-weight: bold; }
+
 a {
   text-decoration: none;
   color: #666;
@@ -5495,6 +5498,7 @@ form input {
 .newsletter {
   background-color: #e6c24d;
   padding: 2em 0;
+  margin: 3em 0 0 0;
   color: #fff; }
   .newsletter h4 {
     color: #fff;
