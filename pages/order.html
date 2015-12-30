@@ -157,24 +157,17 @@
 {% endblock content %}
 
 {% block scripts %}
-{% comment %}
 {{ block.super }}
 <script type="text/javascript">
-    function scrollToAnchor(aid){
-        var aTag = $("a[name='"+ aid +"']");
-        $('html,body').animate({scrollTop: aTag.offset().top},'slow');
-    }
-
     $(document).ready(function() {
-        //$('.sub-packages').hide();
-        $(".choose-package a").click(function() {
-            var target = $(this).attr("href");
-            //$(target).show();
-            target = target.delay(100).(replace('#','');
-            scrollToAnchor(target);
-            //return false;
+        var shown = false;
+        $('a[href*=#]:not([href=#])').on('click', function (event) {
+            event.preventDefault();
+            var element = $(this.hash).show();
+            if(shown) $(shown).hide();
+            shown = element;
+            $('html,body').animate({ scrollTop: element.offset().top },'normal', 'swing');
         });
     });
 </script>
-{% endcomment %}
 {% endblock %}
