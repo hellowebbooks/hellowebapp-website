@@ -5375,7 +5375,7 @@ p {
     background-position: 0 1.5rem;
     background-size: 1px 1px; }
 
-td a, li a {
+td a, li a, dd a {
   background-position: 0 1.5rem;
   background-size: 1px 1px; }
 
@@ -5404,6 +5404,16 @@ blockquote {
   border-left: 1px solid #a5bb00;
   padding-left: 1em;
   font-style: italic; }
+
+dt {
+  color: #111;
+  font-weight: normal;
+  font-size: 2rem;
+  font-style: italic; }
+
+dd {
+  margin-top: 0.5em;
+  margin-bottom: 2em; }
 
 a {
   text-decoration: none;
