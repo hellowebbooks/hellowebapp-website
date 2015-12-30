@@ -160,12 +160,15 @@
 {{ block.super }}
 <script type="text/javascript">
     $(document).ready(function() {
-        var shown = false;
+        var toHide = false;
         $('a[href*=#]:not([href=#])').on('click', function (event) {
             event.preventDefault();
-            var element = $(this.hash).show();
-            if(shown) $(shown).hide();
-            shown = element;
+            var element = $(this.hash);
+            if(toHide) {
+                $(toHide).hide();
+                toHide = false;
+            }
+            if(element.is(":hidden")) toHide = element.show();
             $('html,body').animate({ scrollTop: element.offset().top },'normal', 'swing');
         });
     });

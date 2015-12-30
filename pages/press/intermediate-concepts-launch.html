@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block title %}Intermediate Concepts Launch - {{ block.super }}{% endblock %}
+
+{% block content %}
+
+<div class="jumbotron"></div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+    <p>
+        FOR IMMEDIATE RELEASE<br/>
+Contact: Tracy Osborn<br/>
+Cell Phone: 650-454-4936<br/>
+Email: tracy@hellowebapp.com<br/>
+Twitter: @HelloWebApp<br/>
+</p>
+    <h1>
+        Learning To Code Easier with New Book, Funding on Kickstarter
+    </h1>
+
+{% filter markdown %}
+
+__On September 4th, [Tracy Osborn launched a Kickstarter project](https://www.kickstarter.com/projects/1868398473/hello-web-app-intermediate-concepts) to raise $5,000 to publish Hello Web App: Intermediate Concepts, aimed at helping interested potential entrepreneurs learn how to code — raising 50% of her goal the first day, and completing initial goal in five days.__
+
+“I had no idea that the book would be so popular this quickly. We’ve entered a learn-to-code revolution and it’s so great seeing so many new people jumping into web app development,” says Osborn.
+
+Hello Web App: Intermediate Concepts is the successor to Hello Web App, also successfully funded on Kickstarter in 2014. Hello Web App walks readers through creating their first web app, from creating an idea to launching in less than 150 pages. Self-published and released on May 4th 2015, the original Hello Web App has thousands of readers and a [5-star rating on Amazon](http://www.amazon.com/Hello-Web-App-Learn-Build-ebook/dp/B00U5MMZ2E).
+
+Hello Web App: Intermediate Concepts is a series of exercises and tutorials aimed at helping beginning web app developers build more difficult features onto their web apps, such as payments and an API, as well as introducing theory like database design and coding style. A successor to Osborn’s first book, Hello Web App: Intermediate Concepts is also aimed at all beginning developers using the Python programming language. These skills will help those that wish to learn how to code build a fully functional professional web app, putting them on the path to running a profitable at-home business or the next big startup. The new book has the support of several prominent Bay Area startups, including the payment processor [Stripe](http://stripe.com/) who is sponsoring a [Hello Web App workshop](http://www.eventbrite.com/e/build-your-first-web-app-with-tracy-osborn-tickets-17559146881?aff=es2) with [Hackbright Academy](https://hackbrightacademy.com/) later this month.
+
+Osborn, a web designer, taught herself to code to launch her startup [WeddingLovely](http://weddinglovely.com/) in 2011 and is a developer member of the Django Software Foundation.
+
+“Being able to code and build my own projects and my startup has been amazing — I just rented my apartment in California and spent three months working while traveling Europe,” Osborn said. “After I taught myself how to code, I realized that there is much better way to teach web app programming, particularly to designers and non-programmers. After seeing no one teaching web app development in a down-to-earth and friendly way, I decided to teach it myself.”
+
+Now that the Kickstarter minimum is reached, Osborn hopes to reach several stretch goals, such as raising $15,000 and releasing additional free tutorials though the Hello Web App website. “I’ve been contacted by so many readers who’ve told me that Hello Web App was the book that finally made them understand programming,” says Osborn. “There are so many great books and schools teaching HTML and static websites, and now it’s time for everyone to learn how to build a dynamic web app as well.”
+
+Hello Web App: Intermediate Concepts’ Kickstarter will be running through October 4th, 2015. For more information, visit the [Hello Web App website](http://hellowebapp.com/) or [Twitter](http://twitter.com/hellowebapp).
+{% endfilter %}
+
+<hr />
+
+<h2 class="text-center">Assets</h2>
+</div>
+
+<p><img src="{% static 'images/press/1.jpeg' %}" alt="" /></p>
+<p><img src="{% static 'images/press/2.jpeg' %}" alt="" /></p>
+<p><img src="{% static 'images/press/3.png' %}" alt="" /></p>
+
+</div></div>
+
+{% endblock content %}
