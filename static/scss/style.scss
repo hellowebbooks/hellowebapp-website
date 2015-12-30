@@ -18,6 +18,7 @@ $brand-secondary:            #e6c24d !default;
 
 $gray-lightish:              #ccc !default;
 $gray-lightisher:            #aaa !default;
+$default-banner:             lighten(#8a9a0f, 50%);
 
 $link-color:                 $brand-primary-dark;
 
@@ -55,10 +56,13 @@ h1 {
 
 h1 { 
     clear: left; 
-    margin-bottom: 0.75em;
+    margin-top: 0.7em;
+    margin-bottom: 1.3em;
 }
 h2 {
     font-style: italic;
+    margin-top: 0.7em;
+    margin-bottom: 1.3em;
     a {
         background-position: 0 2.5rem !important;
         background-size: 1px 1px;
@@ -76,6 +80,9 @@ h3 {
 }
 h4 {
     font-weight: 700; 
+}
+h5 {
+
 }
 p {
     margin-bottom: 1.5rem; 
@@ -208,9 +215,9 @@ form input {
 }
 
 .jumbotron { 
-    //margin-left: 40px;
-    //margin-right: 40px;
+    background-color: $default-banner;
     border-radius: 0;
+    padding: 3rem 2rem;
     h1 {
         color: #fff; 
         font-size: 5rem;
@@ -226,7 +233,9 @@ form input {
 }
 
 .thumbnail {
-    max-height: 200px;
+    height: 200px;
+    line-height: 200px;
+    background-color: $gray-lighter;
     overflow: hidden;
     border: 1px solid $gray-lighter;
 }
@@ -289,7 +298,7 @@ form input {
         background: url(../images/heros/home-yellow-grad.jpg) center center no-repeat;
         background-size: 100% auto;
         height: 30em;
-        padding-top: 8em;
+        padding: 5rem 2rem;
         color: #fff;
         h1 {
             margin-bottom: 0.2em;
@@ -307,19 +316,35 @@ form input {
 .quotes blockquote {
     font-style: italic;
     font-family: $font-family-serif;
-    font-size: 1rem;
+    font-size: 1.1rem;
     text-align: center;
+    border-left: 0;
     footer {
         font-style: normal;
     }
 }
 
 #featured-post-list {
+    li {
+        margin-bottom: 2em;
+        text-align: center;
+        .dates {
+            font-family: $font-family-sans-serif;
+            color: $gray-light;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 0.1em;
+        }
+        h5 {
+            margin-top: 0.5em;
+            a {
+                background-image: none; 
+                color: $link-color;
+            }
+        }
+    }
     li:nth-child(3n+1) {
         clear:left;
-    }
-    img {
-        border: 1px solid $gray-lightish;
     }
 }
 

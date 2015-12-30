@@ -5349,10 +5349,13 @@ h1 {
 
 h1 {
   clear: left;
-  margin-bottom: 0.75em; }
+  margin-top: 0.7em;
+  margin-bottom: 1.3em; }
 
 h2 {
-  font-style: italic; }
+  font-style: italic;
+  margin-top: 0.7em;
+  margin-bottom: 1.3em; }
   h2 a {
     background-position: 0 2.5rem !important;
     background-size: 1px 1px; }
@@ -5485,7 +5488,9 @@ form input {
     padding: 0 0 0 1.5em; }
 
 .jumbotron {
-  border-radius: 0; }
+  background-color: #eff7b1;
+  border-radius: 0;
+  padding: 3rem 2rem; }
   .jumbotron h1 {
     color: #fff;
     font-size: 5rem;
@@ -5498,7 +5503,9 @@ form input {
     font-style: normal; }
 
 .thumbnail {
-  max-height: 200px;
+  height: 200px;
+  line-height: 200px;
+  background-color: #eceeef;
   overflow: hidden;
   border: 1px solid #eceeef; }
 
@@ -5546,7 +5553,7 @@ form input {
   background: url(../images/heros/home-yellow-grad.jpg) center center no-repeat;
   background-size: 100% auto;
   height: 30em;
-  padding-top: 8em;
+  padding: 5rem 2rem;
   color: #fff; }
   #home .jumbotron h1 {
     margin-bottom: 0.2em; }
@@ -5560,16 +5567,29 @@ form input {
 .quotes blockquote {
   font-style: italic;
   font-family: "freight-text-pro", Georgia, "Times New Roman", Times, serif;
-  font-size: 1rem;
-  text-align: center; }
+  font-size: 1.1rem;
+  text-align: center;
+  border-left: 0; }
   .quotes blockquote footer {
     font-style: normal; }
 
+#featured-post-list li {
+  margin-bottom: 2em;
+  text-align: center; }
+  #featured-post-list li .dates {
+    font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
+    color: #818a91;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 0.1em; }
+  #featured-post-list li h5 {
+    margin-top: 0.5em; }
+    #featured-post-list li h5 a {
+      background-image: none;
+      color: #8a9a0f; }
+
 #featured-post-list li:nth-child(3n+1) {
   clear: left; }
-
-#featured-post-list img {
-  border: 1px solid #ccc; }
 
 #original .jumbotron {
   background: url(../images/heros/original.jpg) top left no-repeat;

@@ -20,8 +20,8 @@
 
 <div class="container">
     <div class="text-center content-block">
-        <h3>Have you ever wanted to develop your own web product?</h3>
-        <p>Not just a basic HTML &amp; CSS website design, but rather a complete functional web app with users.</p>
+        <h2>Have you ever wanted to develop your own web product?</h2>
+        <p>Not just a basic HTML &amp; CSS website design,<br/> but rather a complete functional web app with users.</p>
 
         <p><strong>Your side project. Your lifestyle business. Your future startup.</strong></p>
 
@@ -97,15 +97,19 @@
             <li class="col-md-4">
                 {% if post.featuredimage %}
                 <div class="thumbnail">
-                    <img src="{% static post.featuredimage %}" alt="{{ post.title }}" />
+                    <a href='{{ post.page.link_url|cut:".html" }}/'>
+                        <img src="{% static post.featuredimage %}" alt="{{ post.title }}" />
+                    </a>
                 </div>
                 {% endif %}
+                <h5>
+                    <a href='{{ post.page.link_url|cut:".html" }}/'>
+                        {{ post.title }}
+                        {% comment %}<h2>{{ post.excerpt }}</h2>{% endcomment %}
+                    </a>
+                </h5>
                 <a href='{{ post.page.link_url }}'>
                     <aside class="dates">{{ post.date|date:"M j" }}</aside>
-                </a>
-                <a href='{{ post.page.link_url|cut:".html" }}/'>
-                    {{ post.title }}
-                    {% comment %}<h2>{{ post.excerpt }}</h2>{% endcomment %}
                 </a>
             </li>
             {% endif %}
