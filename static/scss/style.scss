@@ -105,6 +105,12 @@ thead {
     font-weight: bold;
 }
 
+blockquote {
+    border-left: 1px solid $brand-primary;
+    padding-left: 1em;
+    font-style: italic;
+}
+
 a {
     text-decoration: none;
     color: $body-color;
@@ -147,16 +153,6 @@ hr {
     border-top: 1px solid $gray-lightish;
     height: 3px;
     margin: 2.2em 0 2em 0;
-}
-
-blockquote {
-    font-style: italic;
-    font-family: $font-family-serif;
-    font-size: 1rem;
-    text-align: center;
-    footer {
-        font-style: normal;
-    }
 }
 
 form input {
@@ -293,6 +289,16 @@ form input {
             font-weight: 400;
             font-family: $font-family-display-alt;
         }
+    }
+}
+
+.quotes blockquote {
+    font-style: italic;
+    font-family: $font-family-serif;
+    font-size: 1rem;
+    text-align: center;
+    footer {
+        font-style: normal;
     }
 }
 

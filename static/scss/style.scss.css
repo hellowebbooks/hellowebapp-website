@@ -5400,6 +5400,11 @@ pre {
 thead {
   font-weight: bold; }
 
+blockquote {
+  border-left: 1px solid #a5bb00;
+  padding-left: 1em;
+  font-style: italic; }
+
 a {
   text-decoration: none;
   color: #666;
@@ -5434,14 +5439,6 @@ hr {
   border-top: 1px solid #ccc;
   height: 3px;
   margin: 2.2em 0 2em 0; }
-
-blockquote {
-  font-style: italic;
-  font-family: "freight-text-pro", Georgia, "Times New Roman", Times, serif;
-  font-size: 1rem;
-  text-align: center; }
-  blockquote footer {
-    font-style: normal; }
 
 form input {
   padding: 1em 1.3em;
@@ -5549,6 +5546,14 @@ form input {
     font-size: 2rem;
     font-weight: 400;
     font-family: "Open Sans Condensed", "Source Sans Pro", Helvetica, Arial, sans-serif; }
+
+.quotes blockquote {
+  font-style: italic;
+  font-family: "freight-text-pro", Georgia, "Times New Roman", Times, serif;
+  font-size: 1rem;
+  text-align: center; }
+  .quotes blockquote footer {
+    font-style: normal; }
 
 #featured-post-list li:nth-child(3n+1) {
   clear: left; }
