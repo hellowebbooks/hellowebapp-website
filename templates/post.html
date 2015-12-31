@@ -70,10 +70,35 @@
                     </section> 
                 </footer>
 
-                {% comment %}{% include 'includes/disqus.html' %}{% endcomment %}
+                {% comment %}
+                {% include 'includes/disqus.html' %}
+
+                <footer class="container">
+                    <nav id="post-nav">
+                        <span class="prev">
+                            {% if prevPost %}
+                            <a href='/{{ prevPost.path }}'>
+                                <span class="arrow">&larr;</span> {{ prevPost.title }}
+                            </a>
+                            {% endif %}
+                        </span>
+
+
+                        <span class="next">
+                            {% if nextPost %}
+                            <a href='/{{ nextPost.path }}'>
+                                {{ nextPost.title }} <span class="arrow">&rarr;</span>
+                            </a>
+                            {% endif %}
+                        </span>
+                    </nav>
+                </footer>
+                {% endcomment %}
             </div>
             <div class="col-lg-3 hidden-md-down sharing">
-                <h5>Share:</h5>
+                <h5 class="share-header">
+                    Share:
+                </h5>
                 <ul class="list-inline">
                     <li><a href="//twitter.com/hellowebapp"><i class="fa fa-twitter"></i></a></li>
                     <li><a href="//github.com/hellowebapp"><i class="fa fa-github"></i></a></li>
@@ -101,27 +126,6 @@
             </div>
         </div>
     </article>
-
-    <footer class="container">
-        <nav id="post-nav">
-            <span class="prev">
-                {% if prevPost %}
-                <a href='/{{ prevPost.path }}'>
-                    <span class="arrow">&larr;</span> {{ prevPost.title }}
-                </a>
-                {% endif %}
-            </span>
-
-
-            <span class="next">
-                {% if nextPost %}
-                <a href='/{{ nextPost.path }}'>
-                    {{ nextPost.title }} <span class="arrow">&rarr;</span>
-                </a>
-                {% endif %}
-            </span>
-        </nav>
-    </footer>
 </section> 
 
 {% include 'includes/newsletter.html' %}

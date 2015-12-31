@@ -5722,6 +5722,10 @@ form input {
   font-size: 1rem;
   font-family: "Source Sans Pro", Helvetica, Arial, sans-serif; }
 
+.sharing .share-header {
+  margin-top: 1em;
+  margin-bottom: 0.2em; }
+
 .sharing a {
   color: #8a9a0f; }
 
@@ -5742,7 +5746,7 @@ form input {
 #post header {
   margin-bottom: 2em; }
   #post header h1 {
-    margin-bottom: 0.5em; }
+    margin-bottom: 1em; }
   #post header h2 {
     font-size: 1.5rem;
     color: #55595c; }
@@ -5785,8 +5789,8 @@ form input {
   margin: 2em 0; }
 
 #post #post-meta {
-  border-top: 1px solid #ccc;
-  border-bottom: 1px solid #ccc;
+  border-top: 1px solid #eceeef;
+  border-bottom: 1px solid #eceeef;
   margin-bottom: 2em;
   padding: 1.5em 0 1.3em 0;
   color: #818a91;
