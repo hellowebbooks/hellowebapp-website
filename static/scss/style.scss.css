@@ -5676,7 +5676,8 @@ form input {
   #archive-list li h2 {
     font-family: "Open Sans Condensed", "Source Sans Pro", Helvetica, Arial, sans-serif;
     font-style: normal;
-    font-weight: 700; }
+    font-weight: 700;
+    margin: 0 0 0.5em 0; }
     #archive-list li h2 a {
       color: #111;
       background-image: none; }
@@ -5685,9 +5686,18 @@ form input {
   #archive-list li .readmore {
     margin-top: 0; }
 
+.blog-newsletter h2 {
+  margin-bottom: 0.5em; }
+
+.blog-newsletter input[type="email"] {
+  max-width: 250px;
+  margin: 0 auto 0.5em auto; }
+
 .sub-categories {
   line-height: 1.1;
   margin-top: 3em; }
+  .sub-categories h2 {
+    margin-bottom: 0.5em; }
   .sub-categories h3 {
     font-weight: normal;
     font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
@@ -5699,7 +5709,8 @@ form input {
   .sub-categories ul {
     margin-bottom: 2em; }
     .sub-categories ul li {
-      margin: 1em 0; }
+      margin: 1em 0;
+      text-align: center; }
       .sub-categories ul li a {
         background-image: none;
         font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;

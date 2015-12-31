@@ -465,6 +465,7 @@ form input {
             font-family: $font-family-display-alt;
             font-style: normal;
             font-weight: 700;
+            margin: 0 0 0.5em 0;
             a {
                 color: $headings-color;
                 background-image: none;
@@ -477,9 +478,22 @@ form input {
     }
 }
 
+.blog-newsletter {
+    h2 {
+        margin-bottom: 0.5em;
+    }
+    input[type="email"] {
+        max-width: 250px;
+        margin: 0 auto 0.5em auto;
+    }
+}
+
 .sub-categories {
     line-height: 1.1;
     margin-top: 3em;
+    h2 {
+        margin-bottom: 0.5em;
+    }
     h3 {
         font-weight: normal;
         font-family: $font-family-sans-serif;
@@ -493,6 +507,7 @@ form input {
         margin-bottom: 2em;
         li {
             margin: 1em 0;
+            text-align: center;
             a {
                 background-image: none;
                 font-family: $font-family-sans-serif;
