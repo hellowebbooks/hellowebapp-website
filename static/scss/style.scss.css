@@ -5448,6 +5448,14 @@ a {
 .btn-secondary-outline:hover {
   background-color: transparent !important; }
 
+.vertical-margin {
+  margin-top: 1em;
+  margin-bottom: 1em; }
+
+.super-vertical-margin {
+  margin-top: 2em;
+  margin-bottom: 2em; }
+
 hr {
   border-top: 1px solid #ccc;
   height: 3px;
@@ -5488,7 +5496,7 @@ form input {
     padding: 0 0 0 1.5em; }
 
 .jumbotron {
-  background-color: #eff7b1;
+  background-color: #e6f382;
   border-radius: 0;
   padding: 3rem 2rem; }
   .jumbotron h1 {
@@ -5517,9 +5525,9 @@ form input {
   .newsletter h4 {
     color: #fff;
     font-size: 2rem;
-    padding-top: 1.3em; }
+    padding-top: 1.1em; }
   .newsletter p {
-    font-size: 1rem;
+    font-size: 1.2rem;
     padding-top: 0.8em;
     color: rgba(255, 255, 255, 0.8);
     letter-spacing: 0.03em; }
@@ -5535,7 +5543,7 @@ form input {
   color: #a5bb00; }
 
 #footer #footer-nav ul {
-  margin: 3em 0 0.5em 0; }
+  margin: 3em 0 0.9em 0; }
   #footer #footer-nav ul li {
     margin: 0 0.5em; }
     #footer #footer-nav ul li a {
@@ -5564,14 +5572,23 @@ form input {
     font-weight: 400;
     font-family: "Open Sans Condensed", "Source Sans Pro", Helvetica, Arial, sans-serif; }
 
+#home hr {
+  margin: 4rem 0; }
+
 .quotes blockquote {
   font-style: italic;
   font-family: "freight-text-pro", Georgia, "Times New Roman", Times, serif;
   font-size: 1.1rem;
   text-align: center;
   border-left: 0; }
+  .quotes blockquote p {
+    margin-bottom: 0.5em; }
   .quotes blockquote footer {
-    font-style: normal; }
+    font-style: normal;
+    font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #818a91; }
 
 #featured-post-list li {
   margin-bottom: 2em;

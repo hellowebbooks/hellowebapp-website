@@ -2,11 +2,14 @@
 
 {% block title %}About - {{ block.super }}{% endblock %}
 
-
 {% block content %}
 
+<div class="jumbotron"></div>
+
 <div class="container">
-    <h1>About</h1>
+    <h1 class="text-center">About</h1>
 </div>
+
+{% include 'includes/newsletter.html' %}
 
 {% endblock content %}

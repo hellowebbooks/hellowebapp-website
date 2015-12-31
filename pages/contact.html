@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}Contact - {{ block.super }}{% endblock %}
+
+{% block content %}
+
+<div class="jumbotron"></div>
+
+<div class="container">
+    <h1 class="text-center">Contact</h1>
+
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2 text-center" style="margin-bottom: 6rem;">
+
+            <p>Hello Web App was written by Tracy Osborn, and she can be reached at <a href="mailto:tracy@hellowebapp.com">tracy@hellowebapp.com</a>.
+        </div>
+    </div>
+</div>
+
+{% include 'includes/newsletter.html' %}
+
+{% endblock content %}
