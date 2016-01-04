@@ -1,6 +1,10 @@
 {% extends "base.html" %}
 
-{% block title %}FAQ - {{ block.super }}{% endblock %}
+{% block title %}Start - {{ block.super }}{% endblock %}
+
+{% block analytics %}
+analytics.page("Start");
+{% endblock %}
 
 {% block content %}
 
@@ -38,4 +42,10 @@ I highly encourage you to build something unique to you, because what you'll lea
 
 </div>
 
+{% include 'includes/newsletter.html' %}
 {% endblock content %}
+
+{% block scripts %}
+{{ block.super }}
+{% include 'includes/newsletter-analytics.html' %}
+{% endblock scripts %}

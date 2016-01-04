@@ -2,6 +2,10 @@
 
 {% block title %}Create your first web app with {{ block.super }}{% endblock %}
 
+{% block analytics %}
+analytics.page("Homepage");
+{% endblock %}
+
 {% block bodyclass %}
 <body id="home">
 {% endblock %}
@@ -13,7 +17,7 @@
         <h2>Design and build your own custom web app using Python and Django. <br/>
             Tailored for non-programmers, written by a designer.</h2>
 
-        <a href="" class="btn btn-secondary-outline">Free Sample</a>
+        <a href="" class="btn btn-secondary-outline free-sample-link" data-loc="Jumbotron">Free Sample</a>
         <a href="{% url '/order.html' %}" class="btn btn-primary">Order</a>
     </div>
 </div>
@@ -27,7 +31,7 @@
 
         <p>Hello Web App teaches the basics of web app programming using Python and Django. In less than 150 pages, you'll learn how to choose a project, set up a database, create your templates, and launch your app.</p>
 
-        <p><a href="" class="btn btn-secondary">Get a free sample</a></p>
+        <p><a href="" class="btn btn-secondary free-sample-link" data-loc="After intro">Get a free sample</a></p>
     </div>
 
     <hr/>
@@ -50,7 +54,7 @@
     </div>
 
     <p class="text-center super-vertical-margin">
-        <a href="" class="btn btn-primary">Buy the books</a>
+        <a href="{% url '/order.html' %}" class="btn btn-primary">Buy the books</a>
     </p>
 
     <hr/>
@@ -117,5 +121,17 @@
 </div>
 
 {% include 'includes/newsletter.html' %}
-
 {% endblock content %}
+
+{% block scripts %}
+{{ block.super }}
+<script type="text/javascript">
+    $(document).ready(function() {
+        var link = $(".free-sample-link");
+        analytics.trackLink(link, 'Clicked Free Sample Link', {
+            location: $(link).data("loc"),
+        });
+    });
+</script>
+{% include 'includes/newsletter-analytics.html' %}
+{% endblock scripts %}

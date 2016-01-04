@@ -5354,8 +5354,8 @@ h1 {
 
 h2 {
   font-style: italic;
-  margin-top: 0.7em;
-  margin-bottom: 1.3em; }
+  margin-top: 1.3em;
+  margin-bottom: 0.7em; }
   h2 a {
     background-position: 0 2.5rem !important;
     background-size: 1px 1px; }
@@ -5496,7 +5496,7 @@ form input {
     padding: 0 0 0 1.5em; }
 
 .jumbotron {
-  background-color: #e6f382;
+  background-color: #eceeef;
   border-radius: 0;
   padding: 3rem 2rem; }
   .jumbotron h1 {
@@ -5571,6 +5571,10 @@ form input {
     font-size: 2rem;
     font-weight: 400;
     font-family: "Open Sans Condensed", "Source Sans Pro", Helvetica, Arial, sans-serif; }
+  #home .jumbotron .btn-secondary-outline {
+    color: #fff; }
+    #home .jumbotron .btn-secondary-outline:hover {
+      border-color: #fff; }
 
 #home hr {
   margin: 4rem 0; }

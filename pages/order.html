@@ -2,6 +2,10 @@
 
 {% block title %}Order - {{ block.super }}{% endblock %}
 
+{% block analytics %}
+analytics.page("Order");
+{% endblock %}
+
 {% block bodyclass %}
 <body id="order">
 {% endblock %}
@@ -62,7 +66,7 @@
             </a>
             <h3>Paperback Package</h3>
             <p>All eBook files (custom designed PDF, .mobi, and .ePub) as well as the beautifully designed paperback book.</p>
-            <a href="https://gum.co/hellowebapp" class="btn btn-secondary">Buy for $29.95</a>
+            <a href="https://gum.co/hellowebapp" class="btn btn-secondary buy-button" data-title="Original Paperbacks" data-price="29.95">Buy for $29.95</a>
         </div>
         <div class="col-md-4 text-center">
             <a href="https://gum.co/hellowebapp-videos">
@@ -70,7 +74,7 @@
             </a>
             <h3>Video Package</h3>
             <p>All eBook files <em>and</em> fourteen screencasts and videos, walking you through every chapter of the book.</p>
-            <a href="https://gum.co/hellowebapp-videos" class="btn btn-primary">Buy for $79</a>
+            <a href="https://gum.co/hellowebapp-videos" class="btn btn-primary buy-button" data-title="Original Videos" data-price="79">Buy for $79</a>
         </div>
         <div class="col-md-4 text-center">
             <a href="https://gum.co/hellowebapp-ebook">
@@ -78,7 +82,7 @@
             </a>
             <h3>eBook Package</h3>
             <p>Three eBook files (custom designed PDF, .mobi, and .ePub) to get you started on your web app journey.</p>
-            <a href="https://gum.co/hellowebapp-ebook" class="btn btn-secondary">Buy for $14.95</a>
+            <a href="https://gum.co/hellowebapp-ebook" class="btn btn-secondary buy-button" data-title="Original eBooks" data-price="14.95">Buy for $14.95</a>
         </div>
     </div>
 
@@ -97,7 +101,7 @@
             </a>
             <h3>Combo Paperback Package</h3>
             <p>All six eBook files (custom designed PDF, .mobi, and .ePub) as well as both beautifully designed paperback books.</p>
-            <a href="https://gum.co/double-hwa-pb" class="btn btn-secondary">Buy for $49.95</a>
+            <a href="https://gum.co/double-hwa-pb" class="btn btn-secondary buy-button" data-title="Double Paperbacks" data-price="49.95">Buy for $49.95</a>
         </div>
         <div class="col-md-4 text-center">
             <a href="https://gum.co/double-hwa-video">
@@ -105,7 +109,7 @@
             </a>
             <h3>Combo Video Package</h3>
             <p>All six eBook files <em>and</em> twenty screencasts and videos, walking you through every chapter of both books.</p>
-            <a href="https://gum.co/double-hwa-video" class="btn btn-primary">Buy for $124</a>
+            <a href="https://gum.co/double-hwa-video" class="btn btn-primary buy-button" data-title="Double Videos" data-price="124">Buy for $124</a>
         </div>
         <div class="col-md-4 text-center">
             <a href="https://gum.co/double-hwa-ebook">
@@ -113,7 +117,7 @@
             </a>
             <h3>Combo eBook Package</h3>
             <p>Six eBook files (custom designed PDF, .mobi, and .ePub for each book) to get you started on your web app journey.</p>
-            <a href="https://gum.co/double-hwa-ebook" class="btn btn-secondary">Buy for $24.95</a>
+            <a href="https://gum.co/double-hwa-ebook" class="btn btn-secondary buy-button" data-title="Double eBooks" data-price="24.95">Buy for $24.95</a>
         </div>
     </div>
 
@@ -132,7 +136,7 @@
             </a>
             <h3>Paperback Package</h3>
             <p>All three eBook files (custom designed PDF, .mobi, and .ePub) as well as the beautifully designed paperback book.</p>
-            <a href="https://gum.co/hwa-ic-paperback" class="btn btn-secondary">Buy for $29.95</a>
+            <a href="https://gum.co/hwa-ic-paperback" class="btn btn-secondary buy-button" data-title="Intermediate Concepts Paperback" data-price="29.95">Buy for $29.95</a>
         </div>
         <div class="col-md-4 text-center">
             <a href="https://gum.co/hwa-ic-complete">
@@ -140,7 +144,7 @@
             </a>
             <h3>Video Package</h3>
             <p>All eBook files <em>and</em> ten screencasts and videos, walking you through every chapter of the book.</p>
-            <a href="https://gum.co/hwa-ic-complete" class="btn btn-primary">Buy for $79</a>
+            <a href="https://gum.co/hwa-ic-complete" class="btn btn-primary buy-button" data-title="Intermediate Concepts Videos" data-price="79">Buy for $79</a>
         </div>
         <div class="col-md-4 text-center">
             <a href="https://gum.co/hwa-ic-ebooks">
@@ -148,7 +152,7 @@
             </a>
             <h3>eBook Package</h3>
             <p>Three eBook files (custom designed PDF, .mobi, and .ePub) to help you take your web app to the next level.</p>
-            <a href="https://gum.co/hwa-ic-ebooks" class="btn btn-secondary">Buy for $14.95</a>
+            <a href="https://gum.co/hwa-ic-ebooks" class="btn btn-secondary buy-button" data-title="Intermediate Concepts eBooks" data-price="14.95">Buy for $14.95</a>
         </div>
     </div>
 </div>
@@ -172,6 +176,13 @@
             if(element.is(":hidden")) toHide = element.show();
             $('html,body').animate({ scrollTop: element.offset().top },'normal', 'swing');
         });
+
+        var link = $(".buy-button");
+        analytics.trackLink(link, 'Clicked Buy Link', {
+            title: $(link).data("title"),
+            price: $(link).data("price")
+        });
     });
 </script>
+{% include 'includes/newsletter-analytics.html' %}
 {% endblock %}

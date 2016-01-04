@@ -1,6 +1,10 @@
 {% extends "base.html" %}
 {% block title %}Learn how to build your first web app - {{ block.super }}{% endblock %}
 
+{% block analytics %}
+analytics.page("Original book landing page");
+{% endblock %}
+
 {% block bodyclass %}
 <body id="original">
 {% endblock %}
@@ -18,5 +22,12 @@
 </div>
 
 <div class="container">
+</div>
 
+{% include 'includes/newsletter.html' %}
 {% endblock content %}
+
+{% block scripts %}
+{{ block.super }}
+{% include 'includes/newsletter-analytics.html' %}
+{% endblock scripts %}

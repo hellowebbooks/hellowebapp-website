@@ -2,6 +2,10 @@
 
 {% block title %}Contact - {{ block.super }}{% endblock %}
 
+{% block analytics %}
+analytics.page("Contact");
+{% endblock %}
+
 {% block content %}
 
 <div class="jumbotron"></div>
@@ -20,3 +24,8 @@
 {% include 'includes/newsletter.html' %}
 
 {% endblock content %}
+
+{% block scripts %}
+{{ block.super }}
+{% include 'includes/newsletter-analytics.html' %}
+{% endblock scripts %}

@@ -4,6 +4,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% block header %}
+    <title>{% block title %}Hello Web App{% endblock %}</title>
+    {% endblock header %}
     <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}">
     <link rel="apple-touch-icon" sizes="57x57" href="{% static '/images/favicons/apple-touch-icon-57x57.png' %}">
     <link rel="apple-touch-icon" sizes="60x60" href="{% static '/images/favicons/apple-touch-icon-60x60.png' %}">
@@ -18,32 +21,31 @@
     <link rel="icon" type="image/png" href="{% static '/images/favicons/android-chrome-192x192.png' %}" sizes="192x192">
     <link rel="icon" type="image/png" href="{% static '/images/favicons/favicon-96x96.png' %}" sizes="96x96">
     <link rel="icon" type="image/png" href="{% static '/images/favicons/favicon-16x16.png' %}" sizes="16x16">
-    <!--<link rel="manifest" href="/manifest.json">
-    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
-    <meta name="msapplication-TileColor" content="#da532c">
-    <meta name="msapplication-TileImage" content="/mstile-144x144.png">
-    <meta name="theme-color" content="#ffffff">-->
     <link rel="stylesheet" href="{% static '/scss/style.scss.css' %}">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,400italic,600,600italic,300italic' rel='stylesheet' type='text/css'>
     <script src="https://use.typekit.net/bnn5job.js"></script>
     <script>try{Typekit.load({ async: true });}catch(e){}</script>
-    {% block header %}
-    <title>{% block title %}Hello Web App{% endblock %}</title>
-    {% endblock header %}
-
-<script type="text/javascript">
-    (function() {
-        var path = '//easy.myfonts.net/v2/js?sid=278387(font-family=Mrs+Onion)&key=aUAlZEhS0M',
-            protocol = ('https:' == document.location.protocol ? 'https:' : 'http:'),
-            trial = document.createElement('script');
-        trial.type = 'text/javascript';
-        trial.async = true;
-        trial.src = protocol + path;
-        var head = document.getElementsByTagName("head")[0];
-        head.appendChild(trial);
-    })();
-</script>
+    <script type="text/javascript">
+    !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","page","once","off","on"];analytics.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics}};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.load=function(t){var e=document.createElement("script");e.type="text/javascript";e.async=!0;e.src=("https:"===document.location.protocol?"https://":"http://")+"cdn.segment.com/analytics.js/v1/"+t+"/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(e,n)};analytics.SNIPPET_VERSION="3.1.0";
+    analytics.load("RYGBe9lnLwGVU8NK5t6tN1SkDdDNL4SC");
+    {% block analytics %}
+    analytics.page()
+    {% endblock %}
+    }}();
+    </script>
+    <script type="text/javascript">
+        (function() {
+            var path = '//easy.myfonts.net/v2/js?sid=278387(font-family=Mrs+Onion)&key=aUAlZEhS0M',
+                protocol = ('https:' == document.location.protocol ? 'https:' : 'http:'),
+                trial = document.createElement('script');
+            trial.type = 'text/javascript';
+            trial.async = true;
+            trial.src = protocol + path;
+            var head = document.getElementsByTagName("head")[0];
+            head.appendChild(trial);
+        })();
+    </script>
 </head>
 
 {% block bodyclass %}
@@ -75,7 +77,8 @@
         <nav id="footer-nav">
             <ul class="list-inline list-unstyled">
                 <li><a href="{% url '/donate.html' %}">Donate</a></li>
-                <li><a href="//discuss.hellowebapp.com">Discussion Forum</a></li>
+                <li><a href="//discuss.hellowebapp.com">Discuss</a></li>
+                <li><a href="{% url '/privacy-policy.html' %}">Privacy Policy</a></li>
                 <li><a href="{% url '/contact.html' %}">Contact</a></li>
                 <li><a href="{% url '/order.html' %}">Order</a></li>
             </ul>

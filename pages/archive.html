@@ -1,4 +1,11 @@
 {% extends "base.html" %}
+
+{% block title %}Blog - {{ block.super }}{% endblock %}
+
+{% block analytics %}
+analytics.page("Blog Home");
+{% endblock %}
+
 {% block content %}
 
 <div class="jumbotron"></div>
@@ -97,5 +104,9 @@
 </div>
 
 {% include 'includes/newsletter.html' %}
-
 {% endblock content %}
+
+{% block scripts %}
+{{ block.super }}
+{% include 'includes/newsletter-analytics.html' %}
+{% endblock scripts %}

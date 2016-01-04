@@ -2,6 +2,10 @@
 
 {% block title %}FAQ - {{ block.super }}{% endblock %}
 
+{% block analytics %}
+analytics.page("FAQ");
+{% endblock %}
+
 {% block bodyclass %}
 <body id="faq">
 {% endblock %}
@@ -47,3 +51,8 @@ I highly encourage you to build something unique to you, because what you'll lea
 {% include 'includes/newsletter.html' %}
 
 {% endblock content %}
+
+{% block scripts %}
+{{ block.super }}
+{% include 'includes/newsletter-analytics.html' %}
+{% endblock scripts %}
