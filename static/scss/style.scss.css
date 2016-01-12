@@ -5342,7 +5342,7 @@ body {
   font-weight: 300; }
 
 h1 {
-  font-family: "Mrs Onion", Georgia, cursive;
+  font-family: "MrsOnion-Regular", Georgia, cursive;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   font-weight: 100; }
@@ -5485,7 +5485,7 @@ form input {
     text-transform: uppercase;
     font-size: 0.75rem;
     letter-spacing: 0.1em;
-    font-family: "Mrs Onion", Georgia, cursive;
+    font-family: "MrsOnion-Regular", Georgia, cursive;
     padding: 0 1.5em 0 0; }
   #main-nav #home-link {
     background-color: #fff;
@@ -5549,7 +5549,7 @@ form input {
     #footer #footer-nav ul li a {
       color: #111;
       text-transform: uppercase;
-      font-family: "Mrs Onion", Georgia, cursive;
+      font-family: "MrsOnion-Regular", Georgia, cursive;
       font-size: 0.8rem; }
 
 #footer p {
