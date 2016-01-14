@@ -5563,6 +5563,8 @@ form input {
       text-transform: uppercase;
       font-family: "MrsOnion-Regular", Georgia, cursive;
       font-size: 0.8rem; }
+      #footer #footer-nav ul li a:hover {
+        color: #8a9a0f; }
 
 #footer p.copy {
   margin-top: 2em;

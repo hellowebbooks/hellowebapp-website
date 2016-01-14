@@ -308,6 +308,9 @@ form input {
                     text-transform: uppercase;
                     font-family: $font-family-display;
                     font-size: 0.8rem;
+                    &:hover {
+                        color: $link-color;
+                    }
                 }
             }
         }
