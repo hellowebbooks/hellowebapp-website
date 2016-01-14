@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% block title %}Learn how to build your first web app - {{ block.super }}{% endblock %}
+{% block title %}Intermediate Concepts: Continue Growing Your Web App - {{ block.super }}{% endblock %}
 
 {% block analytics %}
 analytics.page("Intermediate Concepts landing page");
@@ -12,8 +12,8 @@ analytics.page("Intermediate Concepts landing page");
 {% block content %}
 <div class="jumbotron">
     <div class="container text-center">
-        <h1>Continue building and growing your Django web app.</h1>
-        <h2>Take your web app skills to the next level. Adding payments, and api, and more.</h2>
+        <h1>Continue building your web app.</h1>
+        <h2>Learn how to add more complex features like payments or an API, learn harder skills, and grow your web app into a success.</h2>
 
         <a href="" class="btn btn-secondary-outline">Free Sample</a>
         <a href="{% url '/order.html' %}" class="btn btn-primary">Order</a>
@@ -21,8 +21,52 @@ analytics.page("Intermediate Concepts landing page");
 </div>
 
 <div class="container">
+    <h2 class="content-block text-center">Take your web app to the next level with Hello Web App: Intermediate Concepts.</h2>
+    <p class="content-block text-center"><strong>Hello Web App: Intermediate Concepts is for anyone who wants to build upon and improve their Django web app.</strong> Each chapter teaches a different skill, from walkthroughs of harder features like payments and user-uploaded images, to teaching skills like proper database design.</p>
+</div>
 
+<div class="container-fluid photo-row">
+    <div class="row">
+        <div class="col-sm-3">
+            <img src="{% static 'images/ic/2.jpg' %}" alt="" />
+        </div>
 
+        <div class="col-sm-3">
+            <img src="{% static 'images/ic/1.jpg' %}" alt="" />
+        </div>
+
+        <div class="col-sm-3">
+            <img src="{% static 'images/original/2.jpg' %}" alt="" />
+        </div>
+        <div class="col-sm-3">
+            <img src="{% static 'images/products/both-books.jpg' %}" alt="Both Hello Web App books" />
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row table-of-contents content-block">
+        <h2 class="text-center">Table of Contents</h2>
+        <ul class="col-sm-6">
+            <li>Introduction</li>
+            <li>Creating a Contact Form and Working with Custom Forms</li>
+            <li>Adding a New Model</li>
+            <li>Adding Easy Admin Emails, Helpers, Sitemaps, and More</li>
+            <li>Adding User-Uploaded Images</li>
+            <li>Editing and Resizing Images</li>
+            <li>Setting Up Django Messages for Alerts</li>
+            <li>Front-End Fun: Adding Gulp, Sass, and Bootstrap</li>
+        </ul>
+        <ul class="col-sm-5 col-sm-offset-1">
+            <li>Reading Source Code And Setting Up a Form to Edit User Email Addresses</li>
+            <li>Adding Payments with Stripe</li>
+            <li>Adding an API</li>
+            <li>Working with Sessions</li>
+            <li>Creating Your Own Scripts and a Bit About Cron Jobs</li>
+            <li>Database Pitfalls</li>
+            <li>Additional Information and Resources</li>
+        </ul>
+    </div>
 </div>
 
 {% include 'includes/newsletter.html' %}

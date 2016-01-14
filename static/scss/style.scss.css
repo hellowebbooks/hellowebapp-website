@@ -5390,6 +5390,9 @@ strong {
 p code {
   font-size: 1rem; }
 
+ul {
+  list-style-type: circle; }
+
 pre {
   margin-bottom: 2em;
   margin-top: -1em; }
@@ -5470,9 +5473,19 @@ form input {
   border: 1px solid #ccc;
   font-family: "Source Sans Pro", Helvetica, Arial, sans-serif; }
 
+.container-fluid.photo-row {
+  margin: 2em 0;
+  padding-left: 0; }
+  .container-fluid.photo-row .row {
+    margin-left: -5px; }
+  .container-fluid.photo-row .col-sm-3 {
+    padding-left: 5px;
+    padding-right: 0; }
+
 .content-block {
   max-width: 800px;
-  margin: 0 auto !important; }
+  margin-left: auto !important;
+  margin-right: auto !important; }
 
 #main-nav {
   margin-bottom: -20px;
@@ -5504,13 +5517,20 @@ form input {
   .jumbotron h1 {
     color: #fff;
     font-size: 5rem;
-    font-weight: 700; }
+    font-weight: 700;
+    margin-top: 0; }
   .jumbotron h2 {
-    font-weight: 300;
-    font-size: 1.6rem;
     line-height: 1.6;
     margin-bottom: 1em;
-    font-style: normal; }
+    font-style: normal;
+    color: #fff;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 2rem;
+    font-weight: 400;
+    font-family: "Open Sans Condensed", "Source Sans Pro", Helvetica, Arial, sans-serif;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto; }
 
 .thumbnail {
   height: 200px;
@@ -5579,12 +5599,6 @@ form input {
   color: #fff; }
   #home .jumbotron h1 {
     margin-bottom: 0.2em; }
-  #home .jumbotron h2 {
-    color: #fff;
-    color: rgba(255, 255, 255, 0.9);
-    font-size: 2rem;
-    font-weight: 400;
-    font-family: "Open Sans Condensed", "Source Sans Pro", Helvetica, Arial, sans-serif; }
   #home .jumbotron .btn-secondary-outline {
     color: #fff; }
     #home .jumbotron .btn-secondary-outline:hover {
@@ -5636,13 +5650,16 @@ form input {
     margin-bottom: 0.2em; }
 
 #ic .jumbotron {
-  background: url(../images/heros/ic.jpg) top center no-repeat;
+  background: url(../images/heros/ic-2.jpg) top center no-repeat;
   background-size: 100% auto;
   height: 33em;
   padding-top: 8em;
   color: #fff; }
   #ic .jumbotron h1 {
     margin-bottom: 0.2em; }
+
+.table-of-contents li {
+  margin: 1em 0; }
 
 #workshops .jumbotron {
   background: url(../images/heros/workshop.jpg) center -300px no-repeat;
@@ -5688,9 +5705,9 @@ form input {
     max-width: 700px;
     margin: 0 auto; }
 
-#original, #ic, #both {
+#order #original, #order #ic, #order #both {
   display: none; }
-  #original:target, #ic:target, #both:target {
+  #order #original:target, #order #ic:target, #order #both:target {
     display: block; }
 
 #archive-list li {
