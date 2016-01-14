@@ -5363,8 +5363,7 @@ h2 {
 h3 {
   font-family: "Open Sans Condensed", "Source Sans Pro", Helvetica, Arial, sans-serif;
   font-weight: bold;
-  font-size: 1.4rem;
-  color: #55595c; }
+  font-size: 1.4rem; }
   h3 a {
     background-position: 0 2.5rem;
     background-size: 1px 1px; }
@@ -5455,6 +5454,9 @@ a {
 .super-vertical-margin {
   margin-top: 2em;
   margin-bottom: 2em; }
+
+.clear {
+  clear: both; }
 
 hr {
   border-top: 1px solid #ccc;
@@ -5637,6 +5639,21 @@ form input {
 
 #workshops h2 {
   margin: 2em 0 1em 0; }
+
+#start .jumbotron {
+  background: url(../images/heros/start.jpg) center center no-repeat;
+  background-size: cover;
+  height: 27em; }
+  #start .jumbotron h1 {
+    font-size: 5rem;
+    margin-bottom: 0;
+    margin-top: 1em; }
+  #start .jumbotron h2 {
+    margin: 1em auto 1em auto;
+    color: #fff;
+    font-family: "Open Sans Condensed", "Source Sans Pro", Helvetica, Arial, sans-serif;
+    font-size: 2.2rem;
+    max-width: 600px; }
 
 #order .jumbotron {
   background: url(../images/heros/both-books.jpg) center center no-repeat;

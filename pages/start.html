@@ -1,45 +1,77 @@
 {% extends "base.html" %}
 
-{% block title %}Start - {{ block.super }}{% endblock %}
+{% block title %}Start Here - {{ block.super }}{% endblock %}
 
 {% block analytics %}
 analytics.page("Start");
 {% endblock %}
 
+{% block bodyclass %}
+<body id="start">
+{% endblock %}
+
 {% block content %}
+<div class="jumbotron">
+    <div class="container text-center">
+        <h1>Join over<br/>2,000 readers.</h1>
+        <h2>Learn how to create your first web app, or improve your existing Django web app, using Hello Web App.</h2>
+    </div>
+
+</div>
 
 <div class="container">
-    <h1>Frequently Asked Questions</h1>
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
 
-    <dl>
-        <dt>
-        What level of programming experience do I need? What about HTML and CSS?
-        </dt>
-        <dd>
-        <strong>Hello Web App assumes you have no previous programming knowledge.</strong> But it's best if you know a bit about HTML markup — since the book starts out building a website and setting up static files, things will fit a lot faster if you know a bit about website creation. That said, if you like to learn-by-doing, feel free to walk through the tutorial verbatim and you'll learn some HTML as you go.
-        </dd>
-        <dt>
-        What do you build in the tutorial?
-        </dt>
-        <dd>
-        <strong>We're building a "collection of things."</strong> That sounds generic, but you can alter the generic examples ("Thing") to something that fits this metric (like building a directory of web designers, so your "Thing" will be a "Profile.") A lot of different ideas fit this — for example, Twitter is a collection of small paragraphs. Pinterest is a collection of photos. Facebook used to be a collection of personal data.
+            <h2 class="text-center">Hi, I'm the author, Tracy.</h2>
+            <img src="{% static 'images/me.png' %}" alt="Tracy Osborn" class="pull-right"/>
+            <p><strong>I taught myself how to program in 2009 because I wanted to launch a startup</strong> and I couldn't find a cofounder. I heard a lot about Python and Django and how easy they were to use, and after six weeks, I launched the first version of my new app, which eventually grew into my startup, <a href="//weddinglovely.com" target="_blank">WeddingLovely</a>.</p>
 
-I highly encourage you to build something unique to you, because what you'll learn will stick better!
-</dd>
-    <dt>
-    What version of Python and Django is Hello Web App written for?
-    </dt>
-    <dd>
-    <strong>Hello Web App is written with Python 2.7 and Django 1.8.</strong> The book is basically Python 3 ready, but since a ton of resources (like plugins) are still on Python 2.7, I feel that beginner content should teach 2.7 so most resources are accessible. That said, I might release an additional Python 3 version in addition to the main book if demand is high enough.
-    </dd>
-    <dt>
-    Where should I buy to give you the most amount of profit?
-    </dt>
-    <dd>
-    Seriously, I get this question a lot. <strong><a href="http://gumroad.com/limedaring">Buy from Gumroad!</a></strong>
-    </dd>
-    </dl>
+            <p>It wasn't all magic and rainbows &#8212; I'm a visual learner and I had a hard time understanding most tutorials since I didn't have a technical background. Over five years, I slowly became a better programmer, and <strong>I realized that web app programming could be taught (and should be) taught in a different way to learners like myself.</strong></p>
 
+            <p><strong>Hello Web App is down-to-earth with no nonsense.</strong> The book is written in an informal and friendly tone with no jargon. Many programming books suffer from wordiness and bloat &#8212; <strong>Hello Web App is simply the basics in an easy-to-read and understand manner.</strong></p>
+        </div>
+    </div>
+
+    {% comment %}
+    <div class="row">
+        <h2 class="text-center">Why Hello Web App is awesome</h2>
+        <div class="col-md-4 text-center">
+            <h3>No jargon</h3>
+        </div>
+        <div class="col-md-4 text-center">
+            <h3>Only the basics</h3>
+
+        </div>
+        <div class="col-md-4 text-center">
+            <h3>Easy to understand</h3>
+        </div>
+    </div>
+    {% endcomment %}
+
+    <div class="row">
+        <h2 class="text-center vertical-margin" style="font-size: 3rem;">Buy the books</h2>
+        <div class="col-sm-5">
+            <img src="{% static 'images/products/both-books.jpg' %}" alt="Both Hello Web App books" />
+        </div>
+        <div class="col-sm-7">
+            <h3 style="font-size: 2rem;">The Complete Double Hello Web App Package</h3>
+            <p>This package contains the entire Hello Web App series &#8212; the paperback books, the videos, and the eBooks. Learn how to build, grow, and monetize your web app all in one purchase.</p>
+            <h4>Full contents:</h4>
+            <ul>
+                <li>Six eBook files &#8212; PDF, .mobi, and .ePub files for both books.</li>
+                <li>28 videos &#8212; screencasts walking you through all chapters of the books plus four bonus beginner videos.</li>
+                <li>Two gorgeously designed paperback books.</li>
+            </ul>
+            <p class="text-center vertical-margin">
+                <a href="//gum.co/double-hwa-video-pb" class="btn btn-primary buy-button" data-title="Intermediate Concepts Video Paperback package" data-price="144">Buy for $144</a>
+            </p>
+        </div>
+    </div>
+
+    <div class="row super-vertical-margin">
+        <p class="text-center"><a href="{% url '/order.html' %}" class="btn btn-secondary">See all buying options here, starting at $14.95</a></p>
+    </div>
 </div>
 
 {% include 'includes/newsletter.html' %}
@@ -48,4 +80,13 @@ I highly encourage you to build something unique to you, because what you'll lea
 {% block scripts %}
 {{ block.super }}
 {% include 'includes/newsletter-analytics.html' %}
+<script type="text/javascript">
+    $(document).ready(function() {
+        var link = $(".buy-button");
+        analytics.trackLink(link, 'Clicked Buy Link', {
+            title: $(link).data("title"),
+            price: $(link).data("price")
+        });
+    });
+</script>
 {% endblock scripts %}

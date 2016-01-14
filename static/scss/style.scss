@@ -73,7 +73,7 @@ h3 {
     font-family: $font-family-display-alt;
     font-weight: bold;
     font-size: 1.4rem; 
-    color: $gray;
+    //color: $gray;
     a {
         background-position: 0 2.5rem;
         background-size: 1px 1px;
@@ -177,6 +177,10 @@ a {
 .super-vertical-margin {
     margin-top: 2em;
     margin-bottom: 2em;
+}
+
+.clear {
+    clear: both;
 }
 
 hr {
@@ -412,6 +416,27 @@ form input {
     }
     h2 {
         margin: 2em 0 1em 0;
+    }
+}
+
+// start landing page
+#start {
+    .jumbotron {
+        background: url(../images/heros/start.jpg) center center no-repeat;
+        background-size: cover;
+        height: 27em;
+        h1 {
+            font-size: 5rem;
+            margin-bottom: 0;
+            margin-top: 1em;
+        }
+        h2 {
+            margin: 1em auto 1em auto;
+            color: #fff;
+            font-family: $font-family-display-alt;
+            font-size: 2.2rem;
+            max-width: 600px;
+        }
     }
 }
 
