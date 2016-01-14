@@ -5544,8 +5544,18 @@ form input {
 .social-media-footer a:hover {
   color: #a5bb00; }
 
+#footer #footer-nav p {
+  text-transform: uppercase;
+  font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
+  letter-spacing: 0.15em;
+  margin: 0;
+  font-size: 0.8rem;
+  margin-top: 3em;
+  font-weight: 500;
+  color: #ccc; }
+
 #footer #footer-nav ul {
-  margin: 3em 0 0.9em 0; }
+  margin: 0 0 0.9em 0; }
   #footer #footer-nav ul li {
     margin: 0 0.5em; }
     #footer #footer-nav ul li a {
@@ -5554,7 +5564,7 @@ form input {
       font-family: "MrsOnion-Regular", Georgia, cursive;
       font-size: 0.8rem; }
 
-#footer p {
+#footer p.copy {
   margin-top: 2em;
   font-size: 0.7em;
   color: #818a91; }

@@ -88,6 +88,13 @@
 
     <div id="footer" class="container text-center">
         <nav id="footer-nav">
+            <p>The books</p>
+            <ul class="list-inline list-unstyled">
+                <li><a href="{% url '/original.html' %}">Hello Web App</a></li>
+                <li><a href="{% url '/intermediate-concepts.html' %}">Intermediate Concepts</a></li>
+            </ul>
+
+            <p>More links</p>
             <ul class="list-inline list-unstyled">
                 <li><a href="{% url '/donate.html' %}">Donate</a></li>
                 <li><a href="//discuss.hellowebapp.com">Discuss</a></li>
@@ -101,7 +108,7 @@
             <li><a href="//twitter.com/hellowebapp"><i class="fa fa-twitter"></i></a></li>
             <li><a href="//github.com/hellowebapp"><i class="fa fa-github"></i></a></li>
             <li><a href="mailto:tracy@hellowebapp.com"><i class="fa fa-envelope"></i></a></li>
-        <p>Hello Web App by Tracy Osborn, &copy; 2015</p>
+        <p class="copy">Hello Web App by Tracy Osborn, &copy; {% now "Y" %}</p>
     </div>
 
     {% block scripts %}
