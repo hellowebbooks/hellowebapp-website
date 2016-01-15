@@ -71,6 +71,32 @@ analytics.page("Original book landing page");
             <li>Moving Forward</li>
         </ul>
     </div>
+
+
+    <div class="row">
+        <h2 class="text-center vertical-margin" style="font-size: 3rem;">Buy the book</h2>
+        <div class="col-sm-5">
+            <img src="{% static 'images/products/original-videos.jpg' %}" alt="Hello Web App complete video package" />
+        </div>
+        <div class="col-sm-7">
+            <h3 style="font-size: 2rem;">The Complete Hello Web App Package</h3>
+            <p>This package contains the entire Hello Web App series &#8212; the paperback books, the videos, and the eBooks. Learn how to build, grow, and monetize your web app all in one purchase.</p>
+            <h4>Full contents:</h4>
+            <ul>
+                <li>Thee eBook files &#8212; PDF, .mobi, and .ePub.</li>
+                <li>15 videos &#8212; screencasts walking you through all chapters of the book plus four bonus beginner videos.</li>
+                <li>The gorgeously designed paperback book.</li>
+            </ul>
+            <p class="text-center vertical-margin">
+                <a href="//gum.co/complete-hwa-pb" class="btn btn-primary buy-button" data-title="Hello Web App Video Paperback package" data-price="89">Buy for $89</a>
+            </p>
+        </div>
+    </div>
+
+    <div class="row super-vertical-margin">
+        <p class="text-center"><a href="{% url '/order.html' %}" class="btn btn-secondary">See all buying options here, starting at $14.95</a></p>
+    </div>
+    
 </div>
 
 {% include 'includes/newsletter.html' %}
@@ -79,4 +105,13 @@ analytics.page("Original book landing page");
 {% block scripts %}
 {{ block.super }}
 {% include 'includes/newsletter-analytics.html' %}
+<script type="text/javascript">
+    $(document).ready(function() {
+        var link = $(".buy-button");
+        analytics.trackLink(link, 'Clicked Buy Link', {
+            title: $(link).data("title"),
+            price: $(link).data("price")
+        });
+    });
+</script>
 {% endblock scripts %}
