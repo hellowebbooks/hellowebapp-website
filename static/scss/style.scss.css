@@ -5531,6 +5531,10 @@ form input {
     max-width: 800px;
     margin-left: auto;
     margin-right: auto; }
+  .jumbotron .btn-secondary-outline {
+    color: #fff; }
+    .jumbotron .btn-secondary-outline:hover {
+      border-color: #fff; }
 
 .thumbnail {
   height: 200px;
@@ -5599,10 +5603,6 @@ form input {
   color: #fff; }
   #home .jumbotron h1 {
     margin-bottom: 0.2em; }
-  #home .jumbotron .btn-secondary-outline {
-    color: #fff; }
-    #home .jumbotron .btn-secondary-outline:hover {
-      border-color: #fff; }
 
 #home hr {
   margin: 4rem 0; }
