@@ -165,8 +165,8 @@ analytics.page("Order");
 
     <div class="content-block text-center">
         <h2>Additional buying options</h2>
-        <p><i>Hello Web App</i> is also available on <a href="https://leanpub.com/hellowebapp?a=0Qu1J8dLjF2QeO0ymkzQOs">Leanpub</a> and <a href="http://amzn.to/1yaeBNz">Amazon</a>.</p>
-        <p><i>Hello Web App: Intermediate Concepts</i> is available on <a href="https://leanpub.com/hellowebapp-intermediate-concepts">Leanpub</a> or <a href="http://amzn.to/1lsXlxL">Amazon</a> as well.</p>
+        <p><i>Hello Web App</i> is also available on <a href="https://leanpub.com/hellowebapp?a=0Qu1J8dLjF2QeO0ymkzQOs" class="buy-button" data-title="Leanpub Hello Web App" data-price="9.95">Leanpub</a> and <a href="http://amzn.to/1yaeBNz" class="buy-button" data-title="Amazon Hello Web App" data-price="9.95">Amazon</a>.</p>
+        <p><i>Hello Web App: Intermediate Concepts</i> is available on <a href="https://leanpub.com/hellowebapp-intermediate-concepts" class="buy-button" data-title="Leanpub Intermediate Concepts" data-price="9.95">Leanpub</a> or <a href="http://amzn.to/1lsXlxL" class="buy-button" data-title="Amazon Intermediate Concepts" data-price="9.95">Amazon</a> as well.</p>
     </div>
 
     <hr/>
@@ -196,10 +196,12 @@ analytics.page("Order");
             $('html,body').animate({ scrollTop: element.offset().top },'normal', 'swing');
         });
 
-        var link = $(".buy-button");
-        analytics.trackLink(link, 'Clicked Buy Link', {
-            title: $(link).data("title"),
-            price: $(link).data("price")
+        $(".buy-button").each(function() {
+            var link = $(this);
+            analytics.trackLink(link, 'Clicked Buy Link', {
+                title: $(link).data("title"),
+                price: $(link).data("price")
+            });
         });
     });
 </script>
