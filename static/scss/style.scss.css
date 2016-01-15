@@ -5510,12 +5510,28 @@ form input {
     #main-nav #home-link img {
       max-width: 100%; }
   #main-nav #right-nav {
-    padding: 0 0 0 1.5em; }
+    padding: 0 0 0 1.5em;
+    text-align: right; }
+
+@media (max-width: 47.9em) {
+  #main-nav {
+    margin-bottom: -13px; }
+    #main-nav li {
+      margin-top: 7px; }
+    #main-nav #home-link {
+      padding: 0; }
+      #main-nav #home-link div {
+        padding-top: 5px;
+        padding-bottom: 7px; } }
+
+@media (max-width: 33.9em) {
+  #main-nav, #main-nav #right-nav {
+    text-align: center; } }
 
 .jumbotron {
   background-color: #eceeef;
   border-radius: 0;
-  padding: 3rem 2rem; }
+  padding: 0rem 2rem; }
   .jumbotron h1 {
     color: #fff;
     font-size: 5rem;
