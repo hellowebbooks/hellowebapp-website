@@ -5602,7 +5602,8 @@ form input {
   padding: 5rem 2rem;
   color: #fff; }
   #home .jumbotron h1 {
-    margin-bottom: 0.2em; }
+    margin-bottom: 0.2em;
+    margin-top: 0.5em; }
 
 #home hr {
   margin: 4rem 0; }
@@ -5673,9 +5674,9 @@ form input {
   margin: 2em 0 1em 0; }
 
 #start .jumbotron {
-  background: url(../images/heros/start.jpg) center center no-repeat;
+  background: url(../images/heros/start.jpg) bottom center no-repeat;
   background-size: cover;
-  height: 27em; }
+  height: 19em; }
   #start .jumbotron h1 {
     font-size: 5rem;
     margin-bottom: 0;

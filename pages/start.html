@@ -11,26 +11,18 @@ analytics.page("Start");
 {% endblock %}
 
 {% block content %}
-<div class="jumbotron">
-    <div class="container text-center">
-        <h1>Join over<br/>2,000 readers.</h1>
-        <h2>Learn how to create your first web app, or improve your existing Django web app, using Hello Web App.</h2>
-    </div>
-
-</div>
+<div class="jumbotron"></div>
 
 <div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
+    <div class="content-block">
+        <h1 class="text-center">Join 2,000+ other first-time programmers and other readers of Hello Web App.</h1>
+        <img src="{% static 'images/me.png' %}" alt="Tracy Osborn" class="pull-right"/>
+        <p>Hi, I'm the author, Tracy.</p>
+        <p><strong>I taught myself how to program in 2009 because I wanted to launch a startup</strong> and I couldn't find a cofounder. I heard a lot about Python and Django and how easy they were to use, and after six weeks, I launched the first version of my new app, which eventually grew into my startup, <a href="//weddinglovely.com" target="_blank">WeddingLovely</a>.</p>
 
-            <h2 class="text-center">Hi, I'm the author, Tracy.</h2>
-            <img src="{% static 'images/me.png' %}" alt="Tracy Osborn" class="pull-right"/>
-            <p><strong>I taught myself how to program in 2009 because I wanted to launch a startup</strong> and I couldn't find a cofounder. I heard a lot about Python and Django and how easy they were to use, and after six weeks, I launched the first version of my new app, which eventually grew into my startup, <a href="//weddinglovely.com" target="_blank">WeddingLovely</a>.</p>
+        <p>It wasn't all magic and rainbows &#8212; I'm a visual learner and I had a hard time understanding most tutorials since I didn't have a technical background. Over five years, I slowly became a better programmer, and <strong>I realized that web app programming could be taught (and should be) taught in a different way to learners like myself.</strong></p>
 
-            <p>It wasn't all magic and rainbows &#8212; I'm a visual learner and I had a hard time understanding most tutorials since I didn't have a technical background. Over five years, I slowly became a better programmer, and <strong>I realized that web app programming could be taught (and should be) taught in a different way to learners like myself.</strong></p>
-
-            <p><strong>Hello Web App is down-to-earth with no nonsense.</strong> The book is written in an informal and friendly tone with no jargon. Many programming books suffer from wordiness and bloat &#8212; <strong>Hello Web App is simply the basics in an easy-to-read and understand manner.</strong></p>
-        </div>
+        <p><strong>Hello Web App is down-to-earth with no nonsense.</strong> The book is written in an informal and friendly tone with no jargon. Many programming books suffer from wordiness and bloat &#8212; <strong>Hello Web App is simply the basics in an easy-to-read and understand manner.</strong></p>
     </div>
 
     {% comment %}
