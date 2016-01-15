@@ -408,6 +408,9 @@ form input {
     li:nth-child(3n+1) {
         clear:left;
     }
+    li:nth-child(1n+7) {
+        display: none;
+    }
 }
 
 // ic landing page

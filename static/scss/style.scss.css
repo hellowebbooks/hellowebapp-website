@@ -5640,6 +5640,9 @@ form input {
 #featured-post-list li:nth-child(3n+1) {
   clear: left; }
 
+#featured-post-list li:nth-child(1n+7) {
+  display: none; }
+
 #original .jumbotron {
   background: url(../images/heros/original.jpg) top left no-repeat;
   background-size: 100% auto;
