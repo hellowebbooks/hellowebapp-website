@@ -5463,7 +5463,7 @@ a {
   clear: both; }
 
 hr {
-  border-top: 1px solid #ccc;
+  border-top: 1px solid #e1e1e1;
   height: 3px;
   margin: 2.2em 0 2em 0; }
 
@@ -5711,10 +5711,18 @@ form input {
     max-width: 700px;
     margin: 0 auto; }
 
+#order .sub-packages {
+  margin-bottom: 3em;
+  border-bottom: 1px solid #e1e1e1;
+  padding-bottom: 3em; }
+
 #order #original, #order #ic, #order #both {
   display: none; }
   #order #original:target, #order #ic:target, #order #both:target {
     display: block; }
+
+#order figure.video {
+  padding-bottom: 50%; }
 
 #archive-list li {
   border-bottom: 1px solid #ddd;
@@ -5824,19 +5832,6 @@ form input {
   top: 0;
   border-top: 1px solid #eceeef; }
 
-#post figure.video {
-  position: relative;
-  padding-bottom: 90%;
-  /* to fit original ks video */
-  padding-top: 25px;
-  height: 0; }
-  #post figure.video iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%; }
-
 #post blockquote {
   text-align: left;
   border-left: 1px solid #a5bb00;
@@ -5869,6 +5864,20 @@ form input {
         padding: 2px 6px 2px 6px;
         position: relative;
         top: 0px; }
+
+/* a couple other places have a video so removed from the .post scope */
+figure.video {
+  position: relative;
+  padding-bottom: 90%;
+  /* to fit original ks video */
+  padding-top: 25px;
+  height: 0; }
+  figure.video iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; }
 
 @media (min-width: 75em) {
   #post figure.full {

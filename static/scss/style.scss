@@ -18,6 +18,7 @@ $brand-secondary:            #e6c24d !default;
 
 $gray-lightish:              #ccc !default;
 $gray-lightisher:            #aaa !default;
+$gray-superlight:            #e1e1e1;
 $default-banner:             #eceeef;
 //$default-banner:             lighten(#8a9a0f, 40%);
 
@@ -186,7 +187,7 @@ a {
 }
 
 hr {
-    border-top: 1px solid $gray-lightish;
+    border-top: 1px solid $gray-superlight;
     height: 3px;
     margin: 2.2em 0 2em 0;
 }
@@ -511,11 +512,19 @@ form input {
             }
         }
     }
+    .sub-packages {
+        margin-bottom: 3em;
+        border-bottom: 1px solid $gray-superlight;
+        padding-bottom: 3em;
+    }
     #original, #ic, #both {
         display: none;
         &:target {
             display: block;
         }
+    }
+    figure.video {
+        padding-bottom: 50%;
     }
 }
 
@@ -657,19 +666,6 @@ form input {
             border-top: 1px solid $gray-lighter;
         }
     }
-    figure.video {
-        position: relative;
-        padding-bottom: 90%; /* to fit original ks video */
-        padding-top: 25px;
-        height: 0;
-        iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
-    }
     blockquote {
         text-align: left;
         border-left: 1px solid $brand-primary;
@@ -705,6 +701,21 @@ form input {
                 }
             }
         }
+    }
+}
+
+/* a couple other places have a video so removed from the .post scope */
+figure.video {
+    position: relative;
+    padding-bottom: 90%; /* to fit original ks video */
+    padding-top: 25px;
+    height: 0;
+    iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
     }
 }
 
