@@ -5430,9 +5430,9 @@ a {
     background-image: linear-gradient(#fff 50%, #8a9a0f 50%);
     text-decoration: none; }
 
-.gist a, nav a, .social-media-footer a, .btn, .sharing a {
+.gist a, nav a, .social-media a, .btn, .sharing a {
   background-image: none; }
-  .gist a:hover, nav a:hover, .social-media-footer a:hover, .btn:hover, .sharing a:hover {
+  .gist a:hover, nav a:hover, .social-media a:hover, .btn:hover, .sharing a:hover {
     background-image: none; }
 
 .btn {
@@ -5564,11 +5564,11 @@ form input {
     .newsletter .mc-field-group input {
       width: 250px; }
 
-.social-media-footer a {
-  color: #111; }
+.social-media a {
+  color: #111 !important; }
 
-.social-media-footer a:hover {
-  color: #a5bb00; }
+.social-media a:hover {
+  color: #a5bb00 !important; }
 
 #footer #footer-nav p {
   text-transform: uppercase;
@@ -5750,6 +5750,12 @@ form input {
   #archive-list li .readmore {
     margin-top: 0; }
 
+.right-sidebar .social-media {
+  margin-top: 1.5em;
+  text-align: center; }
+  .right-sidebar .social-media a {
+    font-size: 1.5rem; }
+
 .blog-newsletter h2 {
   margin-bottom: 0.5em; }
 
@@ -5793,7 +5799,7 @@ form input {
 .sharing a {
   color: #8a9a0f; }
 
-.sharing input[type="email"] {
+.sharing .mc-field-group input[type="email"] {
   width: 150px;
   margin-right: 5px;
   float: left; }
@@ -5801,6 +5807,14 @@ form input {
 .sharing input[type="submit"] {
   position: relative;
   top: -2px; }
+
+.top-sharing .mc-field-group {
+  display: inline-block; }
+
+.top-sharing input[type="submit"] {
+  top: -10px;
+  padding-left: 7px;
+  padding-right: 7px; }
 
 #post .jumbotron {
   height: 20em;

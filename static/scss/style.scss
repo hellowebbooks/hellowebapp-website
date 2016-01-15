@@ -149,7 +149,7 @@ a {
     //}
 }
 
-.gist a, nav a, .social-media-footer a, .btn, .sharing a { 
+.gist a, nav a, .social-media a, .btn, .sharing a { 
     background-image: none; 
     &:hover { background-image: none; }
 }
@@ -311,12 +311,12 @@ form input {
 }
 
 // footer
-.social-media-footer {
+.social-media {
     a {
-        color: $headings-color;
+        color: $headings-color !important;
     }
     a:hover {
-        color: $brand-primary;
+        color: $brand-primary !important;
     }
 }
 
@@ -562,6 +562,16 @@ form input {
     }
 }
 
+.right-sidebar {
+    .social-media {
+        margin-top: 1.5em;
+        text-align: center;
+        a {
+            font-size: 1.5rem;
+        }
+    }
+}
+
 .blog-newsletter {
     h2 {
         margin-bottom: 0.5em;
@@ -615,14 +625,27 @@ form input {
     a {
         color: $link-color;
     }
-    input[type="email"] {
-        width: 150px;
-        margin-right: 5px;
-        float: left;
+    .mc-field-group {
+        input[type="email"] {
+            width: 150px;
+            margin-right: 5px;
+            float: left;
+        }
     }
     input[type="submit"] {
         position: relative;
         top: -2px;
+    }
+}
+
+.top-sharing {
+    .mc-field-group {
+        display: inline-block;
+    }
+    input[type="submit"] {
+        top: -10px;
+        padding-left: 7px;
+        padding-right: 7px;
     }
 }
 
