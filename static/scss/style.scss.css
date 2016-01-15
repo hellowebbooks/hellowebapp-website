@@ -5341,6 +5341,10 @@ body {
   background-color: #fff;
   font-weight: 300; }
 
+@media (max-width: 47.9em) {
+  body {
+    font-size: 1.1rem; } }
+
 h1 {
   font-family: "MrsOnion-Regular", Georgia, cursive;
   text-rendering: optimizeLegibility;
@@ -5420,6 +5424,13 @@ dd {
   margin-top: 0.5em;
   margin-bottom: 2em; }
 
+@media (max-width: 47.9em) {
+  h1 {
+    margin-top: 0;
+    font-size: 2rem; }
+  dt {
+    font-size: 1.5rem; } }
+
 a {
   text-decoration: none;
   color: #666;
@@ -5429,6 +5440,10 @@ a {
     color: #8a9a0f;
     background-image: linear-gradient(#fff 50%, #8a9a0f 50%);
     text-decoration: none; }
+
+@media (max-width: 47.9em) {
+  a {
+    text-decoration: underline; } }
 
 .gist a, nav a, .social-media a, .btn, .sharing a {
   background-image: none; }
@@ -5441,7 +5456,8 @@ a {
   font-size: 1.2rem;
   padding: .7rem 1.4rem;
   font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
-  white-space: normal; }
+  white-space: normal;
+  text-decoration: none; }
 
 .btn-sm, .btn-group-sm > .btn {
   font-size: 0.8rem;
@@ -5481,7 +5497,8 @@ form input {
     margin-left: -5px; }
   .container-fluid.photo-row .col-sm-3 {
     padding-left: 5px;
-    padding-right: 0; }
+    padding-right: 0;
+    padding-top: 5px; }
 
 .content-block {
   max-width: 800px;
@@ -5493,7 +5510,8 @@ form input {
   background-color: #fff;
   font-weight: 400; }
   #main-nav a {
-    color: #55595c; }
+    color: #55595c;
+    text-decoration: none; }
   #main-nav a:hover {
     text-decoration: none; }
   #main-nav li {
@@ -5531,7 +5549,7 @@ form input {
 .jumbotron {
   background-color: #eceeef;
   border-radius: 0;
-  padding: 0rem 2rem; }
+  padding: 3rem 2rem; }
   .jumbotron h1 {
     color: #fff;
     font-size: 5rem;
@@ -5553,6 +5571,14 @@ form input {
     color: #fff; }
     .jumbotron .btn-secondary-outline:hover {
       border-color: #fff; }
+
+@media (max-width: 47.9em) {
+  .jumbotron {
+    padding: 1.5rem 2rem; }
+    .jumbotron h1 {
+      font-size: 2rem; }
+    .jumbotron h2 {
+      font-size: 1.5rem; } }
 
 .thumbnail {
   height: 200px;
@@ -5576,7 +5602,8 @@ form input {
     color: rgba(255, 255, 255, 0.8);
     letter-spacing: 0.03em; }
   .newsletter .mc-field-group {
-    display: inline-block; }
+    display: inline-block;
+    margin-bottom: 5px; }
     .newsletter .mc-field-group input {
       width: 250px; }
 
@@ -5604,7 +5631,8 @@ form input {
       color: #111;
       text-transform: uppercase;
       font-family: "MrsOnion-Regular", Georgia, cursive;
-      font-size: 0.8rem; }
+      font-size: 0.8rem;
+      text-decoration: none; }
       #footer #footer-nav ul li a:hover {
         color: #8a9a0f; }
 
@@ -5615,7 +5643,7 @@ form input {
 
 #home .jumbotron {
   background: url(../images/heros/home-yellow-grad.jpg) center center no-repeat;
-  background-size: 100% auto;
+  background-size: cover;
   height: 30em;
   padding: 5rem 2rem;
   color: #fff; }
@@ -5625,6 +5653,15 @@ form input {
 
 #home hr {
   margin: 4rem 0; }
+
+@media (max-width: 47.9em) {
+  #home .jumbotron {
+    padding: 2rem;
+    height: auto; }
+    #home .jumbotron br {
+      display: none; }
+  #home hr {
+    margin: 2em 0; } }
 
 .quotes blockquote {
   font-style: italic;
@@ -5656,6 +5693,9 @@ form input {
       background-image: none;
       color: #8a9a0f; }
 
+#featured-post-list a {
+  text-decoration: none; }
+
 #featured-post-list li:nth-child(3n+1) {
   clear: left; }
 
@@ -5679,6 +5719,10 @@ form input {
   color: #fff; }
   #ic .jumbotron h1 {
     margin-bottom: 0.2em; }
+
+@media (max-width: 47.9em) {
+  #ic .jumbotron, #original .jumbotron {
+    padding-top: 2em; } }
 
 .table-of-contents li {
   margin: 1em 0; }
@@ -5760,7 +5804,8 @@ form input {
     margin: 0 0 0.5em 0; }
     #archive-list li h2 a {
       color: #111;
-      background-image: none; }
+      background-image: none;
+      text-decoration: none; }
   #archive-list li .excerpt {
     margin-bottom: 0.4em; }
   #archive-list li .readmore {
@@ -5833,7 +5878,6 @@ form input {
   padding-right: 7px; }
 
 #post .jumbotron {
-  height: 20em;
   background-size: cover;
   background-position: center center; }
 
@@ -5848,6 +5892,17 @@ form input {
 #post h2 {
   margin-bottom: 0.5em;
   margin-top: 1em; }
+
+#post #post-body p a {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  -ms-word-break: break-all;
+  word-break: break-all;
+  word-break: break-word;
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto; }
 
 #post figure {
   margin: 2em 0;

@@ -48,6 +48,12 @@ body {
     font-weight: 300; 
 }
 
+@include media-breakpoint-down(sm) {
+    body {
+        font-size: 1.1rem;
+    }
+}
+
 h1 { 
     font-family: $font-family-display; 
     //text-transform: uppercase;
@@ -132,6 +138,15 @@ dd {
     margin-top: 0.5em;
     margin-bottom: 2em;
 }
+@include media-breakpoint-down(sm) {
+    h1 {
+        margin-top: 0;
+        font-size: 2rem;
+    }
+    dt {
+        font-size: 1.5rem;
+    }
+}
 
 a {
     text-decoration: none;
@@ -149,6 +164,12 @@ a {
     //}
 }
 
+@include media-breakpoint-down(sm) {
+    a {
+        text-decoration: underline;
+    }
+}
+
 .gist a, nav a, .social-media a, .btn, .sharing a { 
     background-image: none; 
     &:hover { background-image: none; }
@@ -160,7 +181,8 @@ a {
     font-size: 1.2rem;
     padding: .7rem 1.4rem;
     font-family: $font-family-sans-serif;
-    white-space:normal;
+    white-space: normal;
+    text-decoration: none;
 }
 
 .btn-sm {
@@ -209,8 +231,7 @@ form input {
     .col-sm-3 {
         padding-left: 5px;
         padding-right: 0;
-    }
-    .container-fluid .col-sm-3:first-child {
+        padding-top:5px;
     }
 }
 
@@ -225,7 +246,10 @@ form input {
     margin-bottom: -20px;
     background-color: #fff;
     font-weight: 400;
-    a { color: $gray; }
+    a {
+        color: $gray;
+        text-decoration: none;
+    }
     a:hover { text-decoration: none; }
     li {
         margin-top: 13px;
@@ -275,7 +299,7 @@ form input {
 .jumbotron { 
     background-color: $default-banner;
     border-radius: 0;
-    padding: 0rem 2rem;
+    padding: 3rem 2rem;
     h1 {
         color: #fff; 
         font-size: 5rem;
@@ -299,6 +323,18 @@ form input {
         color: #fff;
         &:hover {
             border-color: #fff;
+        }
+    } 
+}
+
+@include media-breakpoint-down(sm) {
+    .jumbotron {
+        padding: 1.5rem 2rem;
+        h1 {
+            font-size: 2rem;
+        }
+        h2 {
+            font-size: 1.5rem;
         }
     }
 }
@@ -329,6 +365,7 @@ form input {
     }
     .mc-field-group {
         display: inline-block;
+        margin-bottom: 5px;
         input { width: 250px; }
     }
 }
@@ -364,6 +401,7 @@ form input {
                     text-transform: uppercase;
                     font-family: $font-family-display;
                     font-size: 0.8rem;
+                    text-decoration: none;
                     &:hover {
                         color: $link-color;
                     }
@@ -382,7 +420,7 @@ form input {
 #home {
     .jumbotron {
         background: url(../images/heros/home-yellow-grad.jpg) center center no-repeat;
-        background-size: 100% auto;
+        background-size: cover;
         height: 30em;
         padding: 5rem 2rem;
         color: #fff;
@@ -393,6 +431,21 @@ form input {
     }
     hr {
         margin: 4rem 0;
+    }
+}
+
+@include media-breakpoint-down(sm) {
+    #home {
+        .jumbotron {
+            padding: 2rem;
+            height: auto;
+            br {
+                display: none;
+            }
+        }
+        hr {
+            margin: 2em 0;
+        }
     }
 }
 
@@ -433,6 +486,9 @@ form input {
             }
         }
     }
+    a {
+        text-decoration: none;
+    }
     li:nth-child(3n+1) {
         clear:left;
     }
@@ -466,6 +522,12 @@ form input {
         h1 {
             margin-bottom: 0.2em;
         }
+    }
+}
+
+@include media-breakpoint-down(sm) {
+    #ic .jumbotron, #original .jumbotron {
+        padding-top: 2em;
     }
 }
 
@@ -576,6 +638,7 @@ form input {
             a {
                 color: $headings-color;
                 background-image: none;
+                text-decoration: none;
             }
         }
         .excerpt { margin-bottom: 0.4em; }
@@ -676,7 +739,6 @@ form input {
 // posts
 #post {
     .jumbotron {
-        height: 20em;
         background-size: cover;
         background-position: center center;
     }
@@ -693,6 +755,17 @@ form input {
     h2 {
         margin-bottom: 0.5em; 
         margin-top: 1em;
+    }
+    #post-body p a {
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+        -ms-word-break: break-all;
+        word-break: break-all;
+        word-break: break-word;
+        -ms-hyphens: auto;
+        -moz-hyphens: auto;
+        -webkit-hyphens: auto;
+        hyphens: auto;
     }
     figure {
         margin: 2em 0;
