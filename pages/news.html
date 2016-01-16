@@ -17,6 +17,7 @@ analytics.page("Blog Home");
         <div class="col-md-7">
             <ul class="list-unstyled" id="archive-list">
                 {% for post in posts %}
+                {% if forloop.counter0 < 20 %}
                 <li>
                     {% if post.featuredimage %}
                     <div class="thumbnail">
@@ -33,6 +34,7 @@ analytics.page("Blog Home");
                     {% endif %}
                     <p class="readmore"><a href='{{ post.page.link_url|cut:".html" }}/'>Read more...</a></p>
                 </li>
+                {% endif %}
                 {% endfor %}
             </ul> <!--post-list-->
         </div>
@@ -80,6 +82,16 @@ analytics.page("Blog Home");
                 <ul class="list-unstyled">
                 {% for post in posts %}
                     {% if post.category == "tutorial" %}
+                    <li><a href='{{ post.page.link_url|cut:".html" }}/'>
+                        {{ post.title }}
+                    </a></li>
+                    {% endif %}
+                {% endfor %}
+                </ul>
+                <h3 class="text-center">Interviews</h3>
+                <ul class="list-unstyled">
+                {% for post in posts %}
+                    {% if post.category == "interview" %}
                     <li><a href='{{ post.page.link_url|cut:".html" }}/'>
                         {{ post.title }}
                     </a></li>
