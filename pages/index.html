@@ -147,11 +147,28 @@ analytics.page("Homepage");
 
 {% block scripts %}
 {{ block.super }}
+<script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/signup-forms/popup/embed.js" data-dojo-config="usePlainJson: true, isDebug: false"></script>
 <script type="text/javascript">
+    function showMailingPopUp() {
+        require(["mojo/signup-forms/Loader"], function(L) {
+            L.start({
+                "baseUrl": "mc.us3.list-manage.com",
+                "uuid": "65146251a5ccb429e109f902f",
+                "lid": "f0a7b0a10c"
+            })
+        })
+        document.cookie = "MCEvilPopupClosed=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+    };
+
     $(document).ready(function() {
         var link = $(".free-sample-link");
         analytics.trackLink(link, 'Clicked Free Sample Link', {
             location: $(link).data("loc"),
+        });
+
+        $('.free-sample-link').click(function(e) {
+            e.preventDefault();
+            showMailingPopUp();
         });
     });
 </script>

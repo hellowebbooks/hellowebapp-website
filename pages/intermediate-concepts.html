@@ -15,7 +15,7 @@ analytics.page("Intermediate Concepts landing page");
         <h1>Continue building your web app.</h1>
         <h2>Learn how to add more complex features like payments or an API, learn harder skills, and grow your web app into a success.</h2>
 
-        <a href="" class="btn btn-secondary-outline">Free Sample</a>
+        <a href="" class="btn btn-secondary-outline free-sample-link" data-loc="Jumbotron">Free Sample</a>
         <a href="{% url '/order.html' %}" class="btn btn-primary">Order</a>
     </div>
 </div>
@@ -99,14 +99,41 @@ analytics.page("Intermediate Concepts landing page");
 
 {% block scripts %}
 {{ block.super }}
-{% include 'includes/newsletter-analytics.html' %}
+<script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/signup-forms/popup/embed.js" data-dojo-config="usePlainJson: true, isDebug: false"></script>
 <script type="text/javascript">
+    function showMailingPopUp() {
+        console.log("thisthing");
+        require(["mojo/signup-forms/Loader"], function(L) {
+            L.start({
+                "baseUrl": "mc.us3.list-manage.com",
+                "uuid": "65146251a5ccb429e109f902f",
+                "lid": "f0a7b0a10c"
+            })
+        })
+        document.cookie = "MCEvilPopupClosed=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+    };
+
     $(document).ready(function() {
-        var link = $(".buy-button");
-        analytics.trackLink(link, 'Clicked Buy Link', {
-            title: $(link).data("title"),
-            price: $(link).data("price")
+        $(".buy-button").each(function() {
+            var link = $(this);
+            analytics.trackLink(link, 'Clicked Buy Link', {
+                title: $(link).data("title"),
+                price: $(link).data("price"),
+            });
+        });
+
+        var link = $(".free-sample-link");
+        analytics.trackLink(link, 'Clicked Free Sample Link', {
+            location: $(link).data("loc"),
+        });
+
+
+        $(".free-sample-link").click(function(e) {
+            console.log("hello");
+            e.preventDefault();
+            showMailingPopUp();
         });
     });
 </script>
+{% include 'includes/newsletter-analytics.html' %}
 {% endblock scripts %}

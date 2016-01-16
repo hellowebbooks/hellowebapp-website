@@ -16,7 +16,7 @@ analytics.page("Original book landing page");
         <h2>Design and build your own custom web app using Python and Django. <br/>
             Tailored for non-programmers, written by a designer.</h2>
 
-        <a href="" class="btn btn-secondary-outline">Free Sample</a>
+        <a href="" class="btn btn-secondary-outline free-sample-link" data-loc="Jumbotron">Free Sample</a>
         <a href="{% url '/order.html' %}" class="btn btn-primary">Order</a>
     </div>
 </div>
@@ -96,7 +96,6 @@ analytics.page("Original book landing page");
     <div class="row super-vertical-margin">
         <p class="text-center"><a href="{% url '/order.html' %}" class="btn btn-secondary">See all buying options here, starting at $14.95</a></p>
     </div>
-    
 </div>
 
 {% include 'includes/newsletter.html' %}
@@ -104,14 +103,40 @@ analytics.page("Original book landing page");
 
 {% block scripts %}
 {{ block.super }}
-{% include 'includes/newsletter-analytics.html' %}
+<script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/signup-forms/popup/embed.js" data-dojo-config="usePlainJson: true, isDebug: false"></script>
 <script type="text/javascript">
+    function showMailingPopUp() {
+        require(["mojo/signup-forms/Loader"], function(L) {
+            L.start({
+                "baseUrl": "mc.us3.list-manage.com",
+                "uuid": "65146251a5ccb429e109f902f",
+                "lid": "f0a7b0a10c"
+            })
+        })
+        document.cookie = "MCEvilPopupClosed=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+    };
+
     $(document).ready(function() {
-        var link = $(".buy-button");
-        analytics.trackLink(link, 'Clicked Buy Link', {
-            title: $(link).data("title"),
-            price: $(link).data("price")
+        $(".buy-button").each(function() {
+            var link = $(this);
+            analytics.trackLink(link, 'Clicked Buy Link', {
+                title: $(link).data("title"),
+                price: $(link).data("price"),
+            });
+        });
+
+        $(".free-sample-link").each(function() {
+            var link = $(this);
+            analytics.trackLink(link, 'Clicked Free Sample Link', {
+                title: $(link).data("loc"),
+            });
+        });
+
+        $('.free-sample-link').click(function(e) {
+            e.preventDefault();
+            showMailingPopUp();
         });
     });
 </script>
+{% include 'includes/newsletter-analytics.html' %}
 {% endblock scripts %}

@@ -74,10 +74,12 @@ analytics.page("Start");
 {% include 'includes/newsletter-analytics.html' %}
 <script type="text/javascript">
     $(document).ready(function() {
-        var link = $(".buy-button");
-        analytics.trackLink(link, 'Clicked Buy Link', {
-            title: $(link).data("title"),
-            price: $(link).data("price")
+        $(".buy-button").each(function() {
+            var link = $(this);
+            analytics.trackLink(link, 'Clicked Buy Link', {
+                title: $(link).data("title"),
+                price: $(link).data("price"),
+            });
         });
     });
 </script>
