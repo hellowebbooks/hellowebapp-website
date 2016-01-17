@@ -1,7 +1,7 @@
 {
     "port":8857, 
     "prettify": true,
-    "site-url": "http://hellowebapp.com",
+    "site-url": "https://hellowebapp.com",
     "optimize": [
         "css"
     ]
