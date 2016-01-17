@@ -249,6 +249,9 @@ form input {
     a {
         color: $gray;
         text-decoration: none;
+        &:hover {
+            color: $link-color;
+        }
     }
     a:hover { text-decoration: none; }
     li {

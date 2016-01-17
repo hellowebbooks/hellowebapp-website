@@ -5512,6 +5512,8 @@ form input {
   #main-nav a {
     color: #55595c;
     text-decoration: none; }
+    #main-nav a:hover {
+      color: #8a9a0f; }
   #main-nav a:hover {
     text-decoration: none; }
   #main-nav li {
