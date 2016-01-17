@@ -5500,6 +5500,16 @@ form input {
     padding-right: 0;
     padding-top: 5px; }
 
+.small-sans {
+  font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+  font-weight: 100;
+  margin: 0;
+  letter-spacing: 0.1em;
+  color: #ccc;
+  font-size: 1rem;
+  margin-bottom: 5px; }
+
 .content-block {
   max-width: 800px;
   margin-left: auto !important;

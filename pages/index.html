@@ -25,7 +25,7 @@ analytics.page("Homepage");
 <div class="container">
     <div class="text-center content-block">
         <h2>Have you ever wanted to develop your own web product?</h2>
-        <p>Not just a basic HTML &amp; CSS website design,<br/> but rather a complete functional web app with users.</p>
+        <p>Not just a basic HTML &amp; CSS website design,<br/> but rather a complete functional web app with a database and user support.</p>
 
         <p><strong>Your side project. Your lifestyle business. Your future startup.</strong></p>
 
@@ -58,12 +58,14 @@ analytics.page("Homepage");
 
     <div class="row">
         <div class="col-sm-6 text-center">
+            <p class="small-sans"><small>Released May 4th, 2015</small></p>
             <h4>Hello Web App</h4>
             <h5>Learn how to build your first Django web app.</h5>
             <img src="{% static '/images/original.jpg' %}" alt="Hello Web App original" class="vertical-margin" />
             <p>Want to build your first web app? Hello Web App walks you through ideation to deployment of a super simple, easy web app. The project is easily customizable so you can create a web app that is unique to you.</p>
         </div>
         <div class="col-sm-6 text-center">
+            <p class="small-sans"><small>Released December 7th, 2015</small></p>
             <h4>Hello Web App: Intermediate Concepts</h4>
             <h5>Continue building and growing your web app.</h5>
             <img src="{% static '/images/ic.jpg' %}" alt="Hello Web App: Intermediate Concepts" class="vertical-margin" />
@@ -128,9 +130,11 @@ analytics.page("Homepage");
                         {% comment %}<h2>{{ post.excerpt }}</h2>{% endcomment %}
                     </a>
                 </h5>
+                {% comment %}
                 <a href='{{ post.page.link_url }}'>
                     <aside class="dates">{{ post.date|date:"F j, Y" }}</aside>
                 </a>
+                {% endcomment %}
             </li>
             {% endif %}
         {% endfor %}
