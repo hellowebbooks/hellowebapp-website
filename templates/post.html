@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block title %}{{ title }} - {{ block.super }}{% endblock title %}
 {% block bodyclass %}
-<body id="post">
+<body id="post" class="{{ title|slugify }}">
 {% endblock %}
 {% block content %}
 

@@ -5988,3 +5988,8 @@ figure.video {
       left: -208px;
       max-width: 155px; } }
 
+.preview-of-hello-web-app-intermediate-concepts .jumbotron,
+.hello-web-app-has-a-new-website .jumbotron {
+  background-image: none !important;
+  height: 3em !important; }
+

@@ -877,3 +877,15 @@ figure.video {
         }
     }
 }
+
+// Individual post overrides
+
+// posts that need a "featured image" for the blog page but not on their actual pages
+
+.preview-of-hello-web-app-intermediate-concepts,
+.hello-web-app-has-a-new-website {
+    .jumbotron {
+        background-image: none !important;
+        height: 3em !important;
+    }
+}
