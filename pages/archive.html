@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block title %}FAQ - {{ block.super }}{% endblock %}
+
+{% block analytics %}
+analytics.page("FAQ");
+{% endblock %}
+
+{% block bodyclass %}
+<body id="faq">
+{% endblock %}
+
+{% block content %}
+
+<div class="jumbotron"></div>
+
+<div class="container">
+    <h1 class="text-center">All articles</h1>
+    <div class="content-block">
+        <ul class="list-unstyled" id="archive-list">
+            {% for post in posts %}
+            <li style="padding-bottom: 0px; margin-bottom: 10px; border-bottom: 0;">
+                <aside class="dates" style="margin-bottom: 2px;">{{ post.date|date:"F j, Y" }} &middot; {{ post.category }}</aside></a>
+                <p><a href='{{ post.page.link_url|cut:".html" }}/'>{{ post.title }}</a></p>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+
+{% include 'includes/newsletter.html' %}
+
+{% endblock content %}
+
+{% block scripts %}
+{{ block.super }}
+{% include 'includes/newsletter-analytics.html' %}
+{% endblock scripts %}

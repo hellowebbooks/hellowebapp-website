@@ -21,7 +21,9 @@ analytics.page("Blog Home");
                 <li>
                     {% if post.featuredimage %}
                     <div class="thumbnail">
-                        <img src="{% static post.featuredimage %}" alt="{{ post.title }}" />
+                        <a href="{{ post.page.link_url|cut:".html" }}">
+                            <img src="{% static post.featuredimage %}" alt="{{ post.title }}" />
+                        </a>
                     </div>
                     {% endif %}
                     <aside class="dates">{{ post.date|date:"F j, Y" }}</aside></a>
@@ -32,7 +34,7 @@ analytics.page("Blog Home");
                     {% if post.excerpt %}
                     <p class="excerpt">{{ post.excerpt|truncatewords:30 }}</p>
                     {% endif %}
-                    <p class="readmore"><a href='{{ post.page.link_url|cut:".html" }}/'>Read more...</a></p>
+                    <p class="readmore"><a href="{{ post.page.link_url|cut:".html" }}/">Read more...</a></p>
                 </li>
                 {% endif %}
                 {% endfor %}
@@ -118,6 +120,10 @@ analytics.page("Blog Home");
                     </a></li>
                     {% endif %}
                 {% endfor %}
+                </ul>
+                <h2 class="text-center">Other links</h2>
+                <ul class="list-unstyled">
+                    <li><a href="{% url '/archive.html' %}">All articles</a></li>
                 </ul>
             </div>
         </div>
