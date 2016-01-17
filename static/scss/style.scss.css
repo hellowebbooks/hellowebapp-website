@@ -5990,6 +5990,13 @@ figure.video {
       left: -208px;
       max-width: 155px; } }
 
+.two-workshops-scheduled-for-may .jumbotron,
+.the-hello-web-app-intermediate-concepts-kickstarter-ends-in-less-than-a-week .jumbotron,
+.kickstarter-alpha-has-been-updated .jumbotron,
+.hello-web-app-is-on-product-hunt-today .jumbotron,
+.first-round-of-books-are-here-from-the-printer .jumbotron,
+.curious-about-the-videos-in-the-complete-hello-web-app-package-i-made-a-trailer .jumbotron,
+.announcing-hello-web-app-intermediate-concepts-and-the-kickstarter-campaign .jumbotron,
 .preview-of-hello-web-app-intermediate-concepts .jumbotron,
 .hello-web-app-has-a-new-website .jumbotron {
   background-image: none !important;

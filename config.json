@@ -1,1 +1,13 @@
-{"port":8857, "prettify": true}
+{
+    "port":8857, 
+    "prettify": true,
+    "site-url": "http://hellowebapp.com",
+    "fingerprint": [
+        "js",
+        "css"
+    ],
+    "optimize": [
+        "js",
+        "css"
+    ]
+}
