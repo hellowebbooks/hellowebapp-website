@@ -5534,8 +5534,9 @@ form input {
     text-transform: uppercase;
     font-size: 0.75rem;
     letter-spacing: 0.1em;
-    font-family: "MrsOnion-Regular", Georgia, cursive;
-    padding: 0 1.5em 0 0; }
+    font-family: "MrsOnion-Regular", Georgia, cursive; }
+    #main-nav li a {
+      padding: 10px 1.5em 10px 0; }
   #main-nav #home-link {
     background-color: #fff; }
     #main-nav #home-link div {

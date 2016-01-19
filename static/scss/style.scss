@@ -277,7 +277,9 @@ form input {
         font-size: 0.75rem;
         letter-spacing: 0.1em;
         font-family: $font-family-display; 
-        padding: 0 1.5em 0 0;
+        a {
+            padding: 10px 1.5em 10px 0;
+        }
     }
     #home-link {
         background-color: #fff;
