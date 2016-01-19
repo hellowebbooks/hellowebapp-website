@@ -5464,6 +5464,9 @@ a {
   font-weight: 400;
   padding: 0.3rem 0.9rem 0.4rem 0.9rem; }
 
+.btn-secondary, .btn-secondary-outline {
+  border-width: 3px; }
+
 .btn-secondary-outline:hover {
   background-color: transparent !important; }
 
@@ -5580,9 +5583,11 @@ form input {
     margin-left: auto;
     margin-right: auto; }
   .jumbotron .btn-secondary-outline {
-    color: #fff; }
+    color: #fff;
+    border-color: #fff;
+    padding: 9px 25px; }
     .jumbotron .btn-secondary-outline:hover {
-      border-color: #fff; }
+      border-color: #ccc; }
 
 @media (max-width: 61.9em) {
   .jumbotron {

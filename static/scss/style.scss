@@ -192,7 +192,13 @@ a {
 
 }
 
-.btn-secondary-outline:hover { background-color: transparent !important; }
+.btn-secondary, .btn-secondary-outline {
+    border-width: 3px;
+}
+
+.btn-secondary-outline:hover {
+    background-color: transparent !important;
+}
 
 .vertical-margin {
     margin-top: 1em;
@@ -335,8 +341,10 @@ form input {
     }
     .btn-secondary-outline {
         color: #fff;
+        border-color: #fff;
+        padding: 9px 25px;
         &:hover {
-            border-color: #fff;
+            border-color: #ccc;
         }
     } 
 }
