@@ -5584,13 +5584,23 @@ form input {
     .jumbotron .btn-secondary-outline:hover {
       border-color: #fff; }
 
+@media (max-width: 61.9em) {
+  .jumbotron {
+    height: auto !important; }
+    .jumbotron h1 {
+      font-size: 4rem; }
+    .jumbotron h2 {
+      font-size: 1.5rem; }
+    .jumbotron .btn {
+      font-size: 1rem; } }
+
 @media (max-width: 47.9em) {
   .jumbotron {
     padding: 1.5rem 2rem; }
     .jumbotron h1 {
       font-size: 2rem; }
     .jumbotron h2 {
-      font-size: 1.5rem; } }
+      font-size: 1.4rem; } }
 
 .thumbnail {
   height: 200px;
@@ -5618,6 +5628,11 @@ form input {
     margin-bottom: 5px; }
     .newsletter .mc-field-group input {
       width: 250px; }
+
+#newsletter-iframe {
+  border: 0 !important;
+  width: 100%;
+  height: 130px; }
 
 .social-media a {
   color: #111 !important; }
@@ -5668,8 +5683,9 @@ form input {
 
 @media (max-width: 47.9em) {
   #home .jumbotron {
-    padding: 2rem;
-    height: auto; }
+    padding: 2rem 2rem 3rem 2rem;
+    height: auto;
+    margin-bottom: 0; }
     #home .jumbotron br {
       display: none; }
   #home hr {
@@ -5716,7 +5732,7 @@ form input {
 
 #original .jumbotron {
   background: url(../images/heros/original.jpg) top left no-repeat;
-  background-size: 100% auto;
+  background-size: cover;
   height: 33em;
   padding-top: 8em;
   color: #fff; }
@@ -5725,23 +5741,32 @@ form input {
 
 #ic .jumbotron {
   background: url(../images/heros/ic-2.jpg) top center no-repeat;
-  background-size: 100% auto;
+  background-size: 100% cover;
   height: 33em;
   padding-top: 8em;
   color: #fff; }
   #ic .jumbotron h1 {
     margin-bottom: 0.2em; }
 
+@media (max-width: 61.9em) {
+  #ic .jumbotron, #original .jumbotron {
+    padding-top: 4em;
+    padding-bottom: 3em; } }
+
 @media (max-width: 47.9em) {
   #ic .jumbotron, #original .jumbotron {
-    padding-top: 2em; } }
+    padding-top: 2em;
+    height: 25em;
+    margin-bottom: 0; }
+  #ic .jumbotron {
+    height: 26em; } }
 
 .table-of-contents li {
   margin: 1em 0; }
 
 #workshops .jumbotron {
   background: url(../images/heros/workshop.jpg) center -300px no-repeat;
-  background-size: cover;
+  background-size: 100% cover;
   height: 23em; }
 
 #workshops h2 {
