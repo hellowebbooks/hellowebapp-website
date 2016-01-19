@@ -5979,6 +5979,8 @@ form input {
     width: 100px;
     display: inline-block;
     clear: left; }
+  #post #post-meta i {
+    margin-right: 5px; }
   #post #post-meta #mc_embed_signup {
     display: inline-block;
     width: 300px;

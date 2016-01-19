@@ -41,15 +41,16 @@
                     <section class="sharing">
                         <div>
                             <span>Share</span>
-                            <a class="twitter" href="https://twitter.com/share"><i class="fa fa-twitter"></i></a>
+                            <a class="twitter" href="http://twitter.com/home/?status={{ title }} https://hellowebapp.com/{{ path|cut:".html" }}/ (via @hellowebapp)"><i class="fa fa-twitter"></i></a>
 
                             <a class="facebook" href="#" onclick="
                                 window.open(
                                 'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href), 
                                 'facebook-share-dialog', 
                                 'width=626,height=436'); 
-                                return false;"><span class="fa fa-facebook"></span> 
+                                return false;"><i class="fa fa-facebook"></i> 
                             </a>
+                            <a class="mail" href="mailto:?subject={{ title }}&amp;body=Here's the link: https://hellowebapp.com/{{ path|cut:".html" }}/"><i class="fa fa-envelope"></i></a>
                         </div>
                         <span>Subscribe</span>
                         <div id="mc_embed_signup">
@@ -101,9 +102,16 @@
                     Share:
                 </h5>
                 <ul class="list-inline">
-                    <li><a href="//twitter.com/hellowebapp"><i class="fa fa-twitter"></i></a></li>
-                    <li><a href="//github.com/hellowebapp"><i class="fa fa-github"></i></a></li>
-                    <li><a href="mailto:tracy@hellowebapp.com"><i class="fa fa-envelope"></i></a></li>
+                    <li><a href="http://twitter.com/home/?status={{ title }} https://hellowebapp.com/{{ path|cut:".html" }}/ (via @hellowebapp)"><i class="fa fa-twitter"></i></a></li>
+                    <li><a class="facebook" href="#" onclick="
+                        window.open(
+                        'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href), 
+                        'facebook-share-dialog', 
+                        'width=626,height=436'); 
+                        return false;"><i class="fa fa-facebook"></i> 
+                    </a>
+                    </li>
+                    <li><a href="mailto:?subject={{ title }}&amp;body=Here's the link: https://hellowebapp.com/{{ path|cut:".html" }}/"><i class="fa fa-envelope"></i></a></li>
                 </ul>
                 <h5>
                     Subscribe for news and updates:
