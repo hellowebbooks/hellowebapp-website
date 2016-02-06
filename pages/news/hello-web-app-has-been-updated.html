@@ -1,0 +1,36 @@
+title: Hello Web App has been updated for Django 1.9
+# headline: An introduction
+excerpt: Hello Web App (the original book) has been updated! The changes are fairly minor (no worries if you have the old paperback, which is still completely usable). With Django 1.8 and 1.9, there were a few things I needed to update in the content as well as fix some typos and formatting issues with the text.
+author: Tracy Osborn 
+featuredimage: /images/blog/2016/1/26/interior.png
+date: 26-1-2016
+category: announcements
+featured: False
+
+{% extends "post.html" %}
+{% block body %}
+
+{% filter markdown %}
+Hello Web App (the original book) has been updated!
+
+The changes are fairly minor (no worries if you have the old paperback, which is still completely usable). With Django 1.8 and 1.9, there were a few things I needed to update in the content as well as fix some typos and formatting issues with the text.
+
+Full list of changes:
+
+* The registration chapter has been split in two, between adding registration and then associating users with objects. The chapter was giant before so this makes it more managable.
+* Screenshots of the admin have been updated to reflect the new Django 1.9 styles.
+* The few minor typos have been fixed.
+* A few recommendations in the "Moving Forward" chapter has been added, most notably recommending the Django Girls tutorial as well as now mentioning *Hello Web App: Intermediate Concepts*.
+* Template code has been reformatted for better readability.
+* *base.html* has been moved from its own directory to in the main templates directory.
+* Updated the version of *django-registration-redux* that we use to 1.3.
+* Introduction has been updated.
+
+Additionally, the code repo on GitHub has been updated to reflect the new version of the book as well: [https://github.com/hellowebapp/hellowebapp-code](https://github.com/hellowebapp/hellowebapp-code)
+
+You should be able to download the new version of the files if you bought on Gumroad or through Leanpub. All Kickstarter backers have been messaged a link to download the new files as well.
+
+Thanks everyone!
+{% endfilter %}
+
+{% endblock body %}
