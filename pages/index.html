@@ -63,6 +63,7 @@ analytics.page("Homepage");
             <h5>Learn how to build your first Django web app.</h5>
             <img src="{% static '/images/original.jpg' %}" alt="Hello Web App original" class="vertical-margin" />
             <p>Want to build your first web app? Hello Web App walks you through ideation to deployment of a super simple, easy web app. The project is easily customizable so you can create a web app that is unique to you.</p>
+            <p><a href="{% url '/original.html' %}" class="btn btn-secondary btn-sm">More about Hello Web App</a></p>
         </div>
         <div class="col-sm-6 text-center">
             <p class="small-sans"><small>Released December 7th, 2015</small></p>
@@ -70,6 +71,7 @@ analytics.page("Homepage");
             <h5>Continue building and growing your web app.</h5>
             <img src="{% static '/images/ic.jpg' %}" alt="Hello Web App: Intermediate Concepts" class="vertical-margin" />
             <p>Learn how to add more advanced features to your app, such as customer payments, an API, user-uploaded images, multiple models, proper database design, and more. The perfect book for any beginner looking for the next step.</p>
+            <p><a href="{% url '/intermediate-concepts.html' %}" class="btn btn-secondary btn-sm">More about Hello Web App: Intermediate Concepts</a></p>
         </div>
     </div>
 
