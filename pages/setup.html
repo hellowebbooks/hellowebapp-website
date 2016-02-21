@@ -1,0 +1,434 @@
+{% extends "base.html" %}
+
+{% block title %}Set Up - {{ block.super }}{% endblock %}
+
+{% block analytics %}
+analytics.page("Setup");
+{% endblock %}
+
+{% block bodyclass %}
+<body id="setup">
+{% endblock %}
+
+{% block content %}
+<div class="jumbotron"></div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-9 col-md-offset-3">
+            <h1>Hello Web App Set Up Instructions</h1>
+        </div>
+
+        <div class="col-md-3 text-right" style="padding-right: 40px;">
+            <h3 style="margin-top:0;">Table of Contents</h3>
+            <ol class="list-unstyled toc">
+                <li><a href="#install-python">Install Python</a>
+                    {% comment %}
+                    <ol class="list-unstyled">
+                        <li>
+                            <a href="#install-pip">Install pip</a>
+                        </li>
+                    </ol>
+                    {% endcomment %}
+                </li>
+                <li><a href="#install-virtualenv">Install Virtualenv</a></li>
+                <li><a href="#setup-django">Set up Django</a>
+                    {% comment %}
+                    <ol class="list-unstyled">
+                        <li>
+                            <a href="#install-pip">Start your Virtualenv</a>
+                        </li>
+                        <li>
+                            <a href="#install-pip">Install Django</a>
+                        </li>
+                        <li>
+                            <a href="#install-pip">Start git</a>
+                        </li>
+                        <li>
+                            <a href="#install-pip">Start your project</a>
+                        </li>
+                        <li>
+                            <a href="#install-pip">Create an app</a>
+                        </li>
+                        <li>
+                            <a href="#install-pip">Add your app to your settings</a>
+                        </li>
+                        <li>
+                            <a href="#install-pip">Set up your database</a>
+                        </li>
+                        <li>
+                            <a href="#install-pip">Start your local server</a>
+                        </li>
+                    </ol>
+                    {% endcomment %}
+                </li>
+            </ol>
+        </div>
+
+        <div class="col-md-9">
+            <p>Hey friends! Let's get your computers set up so you can run the <a href="{% url '/order.html' %}">Hello Web App tutorial</a>. This page might look long but it should be fairly simple. Just a lot of steps. One of the hardest parts about web app development is installation (the other is deployment) so once we're through this challenging beginning bit, everything will get a lot easier.</p>
+
+            <p>(Why didn't I include these instructions in the book? Here, I can
+update whenever I need since the programming ecosystem changes a lot.  This
+way, the books won't go out of date as quickly!)</p>
+
+            <hr/>
+        </div>
+    </div>
+
+    <div class="row">
+         <div class="col-md-9 col-md-push-3">
+            <h2 id="install-python" style="margin-top: 0;">1. Install Python</h2>
+
+{% filter markdown %}
+Unfortunately, unlike making web pages with HTML, we need to install Python before our computers can run the files that we're building.
+
+Head over to these links to install Python 2.7 onto your computer:
+
+* [Mac OSX](https://github.com/limedaring/HelloWebApp/blob/master/installation-instructions/python-installation-mac.md)
+* [Windows](https://github.com/limedaring/HelloWebApp/blob/master/installation-instructions/python-installation-windows.md)
+* [Linux](http://docs.python-guide.org/en/latest/starting/install/linux/)
+
+{% endfilter %}
+        </div>
+        <div class="col-md-3 col-md-pull-9 text-right" style="padding-right: 40px;">
+            <p><small style="display:block"><i>Why Python 2.7 and not Python 3+? This is beginner material and while a lot of projects have been ported to Python 3, I prefer to teach Python 2.7 first. If you're experienced and already know the differences between 2 and 3, feel free to use Python 3+.</i></small></p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-9 col-md-offset-3">
+
+<h3 id="install-pip">Do you have pip installed?</h3>
+
+{% filter markdown %}
+*pip* is the Python package installer — you'll use it heavily with *Hello Web App* and pretty much any Python project. If you followed the Python install instructions, you should have pip installed already.
+
+To check whether it's installed, open up your command line and run this *(don't include the* `$`*, it's an indicator that this command is being run in your command line utility)*: 
+{% endfilter %}
+
+<pre><code class="sh">
+<span class="cmd">$</span> pip list
+</code></pre>
+
+{% filter markdown %}
+It should be pretty obvious if it didn't work. If it didn't work, [check out this page](https://pip.pypa.io/en/stable/installing/).
+
+{% endfilter %}
+
+<hr/>
+
+<h2 id="install-virtualenv">2. Install Virtualenv</h2>
+
+{% filter markdown %}
+When we start developing our Django apps, we want to make sure our projects are enclosed in "bubbles" known as virtual environments. 
+
+For example, as of this writing, Django's current version is 1.9. When new versions of Django are released, they may not be backwards compatible with previous versions of Django.
+
+Without a virtual environment, we'd have Django 1.9.2 installed *globally* on our computer, and every Django project you build would use that version. If you wanted to upgrade your version of Django, you'd have to go through every one of your projects to make sure they don't break.
+
+**With a virtual environment, every project can have a separate version of Django and other plugins that you install.** You can install Django 1.9 on one project, and down the line, start another project with Django 1.10. Every project can work off of whatever version of whatever you install, keeping them separate from each other. This is very important when you're programming.
+
+We should already have pip, so we'll use it to install virtualenv *(again, don't paste in the* `$` *)*:
+{% endfilter %}
+
+<pre><code class="sh commandline">
+<span class="cmd">$</span> pip install virtualenv
+</code></pre>
+
+<hr/>
+
+<h2 id="setup-django">3. Set up Django and start your project</h2>
+
+{% filter markdown %}
+First thing we need to do is create a folder for your project. I personally use
+a "projects" folder in my top level user folder on my computer, which contains
+all my programming projects. If you'd like to do this as well, follow these
+commands in your terminal to create the projects folder, and a folder within for
+this individual project:
+{% endfilter %}
+
+<pre><code class="sh">
+<span class="cmd">$</span> mkdir projects
+<span class="cmd">$</span> cd projects
+<span class="cmd">projects $</span> mkdir myhellowebapp
+<span class="cmd">projects $</span> cd myhellowebapp
+</code></pre>
+
+{% filter markdown %}
+If you need a command line review, `mkdir` creates folders, and `cd` changes
+directories into that folder. If you ever get lost, your terminal should show
+which directory you're in, and running `ls` (on Mac or Linux, `dir` on Windows),
+will list out the contents of the folder you're in. Use `cd ..` to back up out
+of a folder.
+
+### Start your virtual environment
+
+Now that you're within your empty project folder, create your virtual
+environment. 
+{% endfilter %}
+
+<pre><code class="sh">
+<span class="cmd">projects/myhellowebapp $</span> virtualenv venv
+</code></pre>
+
+{% filter markdown %}
+And then activate the environment:
+{% endfilter %}
+
+<pre><code class="sh">
+<span class="cmd">projects/myhellowebapp $</span> source venv/bin/activate
+</code></pre>
+
+{% filter markdown %}
+You should see something like this in your command line before the folder
+structure — the (venv) indicates you're in the virtual environment:
+{% endfilter %}
+
+<pre><code class="sh">
+(venv)limedaring@Orion ~/projects/myhellowebapp $
+</code></pre>
+
+{% filter markdown %}
+(Orion is my computer's name and limedaring is my username — your exact setup
+will be different.)
+
+Now you're in your bubble, so we can start installing project-specific utilities.
+If you ever need to deactivate your environment, run `deactivate`.
+
+### Install Django
+
+Finally, it's Django time! We'll use pip to install Django, so run this in your
+command line, making sure you're in your project folder and the virtual
+environment is activated:
+{% endfilter %}
+
+<pre><code class="sh">
+<span class="cmd">$</span> pip install Django==1.8.4
+</code></pre>
+
+{% filter markdown %}
+We're telling pip to install a specific version of Django, in case Django
+releases a new version that this tutorial doesn't cover.
+
+### Start git
+
+We also want to start our version control system. Now that we're in our project
+folder, run this command to start git:
+{% endfilter %}
+
+<pre><code class="sh">
+<span class="cmd">$</span> git init
+</code></pre>
+
+{% filter markdown %}
+Running this command in your project folder will make the entire folder and its
+contents part of a new Git repository. For more about git and why we should use
+it (spoiler: version control is very important *and* it's needed for deployment
+to Heroku), see the [Git tips page
+here](https://github.com/limedaring/HelloWebApp/tree/master/git-tips).
+
+### Start your Django project
+
+We installed Django, now we can use Django to build all the starting files we
+need for our web app. In your command line (again, in your project folder with
+your environment activated):
+{% endfilter %}
+
+<pre><code class="sh">
+<span class="cmd">$</span> django-admin.py startproject hellowebapp .
+</code></pre>
+
+{% filter markdown %}
+This is going to start a Django project in your currect directory.
+
+* `django-admin.py`: The script we'll be running.
+* `startproject`: The specific utility we're using.
+* `hellowebapp`: The name we're giving the project.
+* `.`: The location where we're starting the project, with `.` denoting the
+  current directory.
+
+`startproject` will create these files and folders:
+{% endfilter %}
+
+<pre><code class="sh">
+myhellowebapp/
+    manage.py
+    hellowebapp/
+        __init__.py
+        settings.py
+        urls.py
+        wsgi.py
+</code></pre>
+
+{% filter markdown %}
+The *myhellowebapp* folder is your top level directory.
+
+* *manage.py*: We won't edit this file, but will use this file in the command line
+  to interact with your project. You'll see it in action soon.
+* The inner *hellowebapp* folder holds your project.
+* *\__init\__.py*: Ignorable — tells Python that this is a Python "package".
+* *settings.py*: Aptly named — contains your settings.
+* *urls.py*: URL declarations for the project. Important and we'll go over this
+  soon.
+* *wsgi.py*: Not needed at this point until you deploy your project.
+
+### Create a Django app
+
+A project can run many apps (all doing something distinct), but we're just going
+to focus on having one for now, which is all you'll need for a very long
+time.
+
+In your top level folder (the one with *manage.py* in it), run this command:
+{% endfilter %}
+
+<pre><code class="sh">
+<span class="cmd">$</span> django-admin.py startapp collection
+</code></pre>
+
+{% filter markdown %}
+Like before, `django-admin.py` is the script, `startapp` is the command, and
+`collection` is the name we're giving the app, which you can change if you wish.
+
+`startapp` will create an additional folder and a few files:
+{% endfilter %}
+
+<pre><code class="sh">
+myhellowebapp/
+    manage.py
+    collection/
+        __init__.py
+        admin.py
+        models.py
+        tests.py
+        views.py
+    hellowebapp/
+        __init__.py
+        settings.py
+        urls.py
+        wsgi.py
+</code></pre>
+
+{% filter markdown %}
+Note the additional "collection" folder in your project.
+
+* *\__init\__.py*: Ignorable — again, Python just needs this empty file.
+* *admin.py*: Contains admin codebits.
+* *models.py*: Where you'll define your database eventually.
+* *tests.py*: We'll eventually write tests to test your code for errors here.
+* *views.py*: Where the logic goes that powers your website.
+
+If that's a bit complicated, don't worry about it yet because we'll review it
+all later when we specifically start working with all those files.
+{% endfilter %}
+
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-9 col-md-push-3">
+            <h3 style="margin-top: 0;">Add your new app to your settings file</h3>
+{% filter markdown %}
+
+We need to tell the project that we've added an app to it — it doesn't find it
+automatically.  Open up your *settings.py* file (which is under the
+*hellowebapp* directory, see the directory tree above) and find the
+`INSTALLED_APPS` section. Add the name of your app to the beginning of the list
+(don't forget the trailing comma):
+{% endfilter %}
+
+            <pre><code class="python">
+            INSTALLED_APPS = (
+                'collection', # this is the app we added
+                'django.contrib.admin',
+                'django.contrib.auth',
+                'django.contrib.contenttypes',
+                'django.contrib.sessions',
+                'django.contrib.messages',
+                'django.contrib.staticfiles',
+            )
+            </code></pre>
+        </div>
+        <div class="col-md-3 col-md-pull-9 text-right" style="padding-right: 40px;">
+            <p><small style="display:block;"><i>If you've used Django before, you might be wondering why I put collection at the top of the list. It's a bit of trickery to make sure our templates are used rather than the default Django admin templates when we set up our login pages. Shouldn't affect anything else.</i></small></p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-9 col-md-offset-3">
+
+{% filter markdown %}
+### Set up your database
+
+Django has some fancypants utilities built in to keep your database (where
+all your dynamic information is stored) managable. We need to run the initial
+migration before we start the app, so in your top level folder (the one with *manage.py* in it), type this in:
+{% endfilter %}
+
+<pre><code class="sh">
+<span class="cmd">$</span> python manage.py migrate
+</code></pre>
+
+{% filter markdown %}
+It's going to create your database automatically for you and port over some
+information. Don't worry about understanding this just yet — we'll go over
+databases and migrations a bit more in the "Adding Dynamic Data" chapter of
+Hello Web App.
+
+### Start your local server
+
+Want to see if everything worked? In your terminal, head over to your top level
+myhellowebapp folder (make sure you're in the same directory as *manage.py*)
+and run this command:
+{% endfilter %}
+
+<pre><code class="sh">
+<span class="cmd">$</span> python manage.py runserver
+</code></pre>
+
+{% filter markdown %}
+...and you'll see the local Django development server starting, which'll serve
+your project to your computer.
+{% endfilter %}
+
+<pre><code class="sh">
+<span class="cmd">$</span> python manage.py runserver
+Validating models...
+
+0 errors found
+March 26, 2014 - 15:50:53
+Django version 1.7.8, using settings 'mysite.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CONTROL-C.
+</code></pre>
+
+{% filter markdown %}
+Now just head to your favorite web browser and visit
+[http://localhost:8000](http://localhost:8000), where you'll see a "Welcome to
+Django" page. Congrats on starting Django!
+
+{% endfilter %}
+
+<img src="{% static 'images/newproject.png' %}" alt="New project with Django" style="border: 1px solid #e1e1e1; margin-bottom: 1em;"/>
+
+<p>At this point you can continue working on the book. Best of luck and remember to use the <a href="http://discuss.hellowebapp.com">discussion forum</a> if you need any help!</p>
+
+<hr/>
+
+<p><strong>Learn how to create your first web app and get on the path of a fun side project, a lifestyle business, or your first startup. <a href="{% url '/order.html' %}">Order Hello Web App today.</a></strong></p>
+
+        </div>
+    </div>
+</div>
+
+{% include 'includes/newsletter.html' %}
+
+{% endblock content %}
+
+{% block scripts %}
+{{ block.super }}
+{% include 'includes/newsletter-analytics.html' %}
+<link rel="stylesheet" href="{% static '/css/tomorrow.css' %}">
+<script src="{% static '/js/highlight.pack.js' %}"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+{% endblock scripts %}

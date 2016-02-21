@@ -127,7 +127,9 @@ blockquote {
     padding-left: 1em;
     font-style: italic;
 }
-
+small {
+    line-height: 1.4;
+}
 dt {
     color: $headings-color;
     font-weight: normal;
@@ -601,6 +603,35 @@ form input {
 .table-of-contents {
     li {
         margin: 1em 0;
+    }
+}
+
+// setup page
+
+#setup {
+    .toc li li {
+        font-style: italic;
+        font-size: 80%;
+        margin-top: 2px;
+    }
+    pre {
+        margin: 1em 0 1em -15px;
+        code {
+            background-color: #f7f7f7;
+            padding: 13px 15px !important;
+            span.cmd {
+                color: #999;
+                color: rgba(0,0,0,0.4);
+            }
+            .hljs-built_in { color: #4d4d4c !important; }
+        }
+    }
+    h3 {
+        font-size: 1.6rem;
+        margin: 1.5em 0 0.5em 0;
+    }
+    li code {
+        font-size: 80%;
     }
 }
 

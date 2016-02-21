@@ -5414,6 +5414,9 @@ blockquote {
   padding-left: 1em;
   font-style: italic; }
 
+small {
+  line-height: 1.4; }
+
 dt {
   color: #111;
   font-weight: normal;
@@ -5769,6 +5772,29 @@ form input {
 
 .table-of-contents li {
   margin: 1em 0; }
+
+#setup .toc li li {
+  font-style: italic;
+  font-size: 80%;
+  margin-top: 2px; }
+
+#setup pre {
+  margin: 1em 0 1em -15px; }
+  #setup pre code {
+    background-color: #f7f7f7;
+    padding: 13px 15px !important; }
+    #setup pre code span.cmd {
+      color: #999;
+      color: rgba(0, 0, 0, 0.4); }
+    #setup pre code .hljs-built_in {
+      color: #4d4d4c !important; }
+
+#setup h3 {
+  font-size: 1.6rem;
+  margin: 1.5em 0 0.5em 0; }
+
+#setup li code {
+  font-size: 80%; }
 
 #workshops .jumbotron {
   background: url(../images/heros/workshop.jpg) center -300px no-repeat;
