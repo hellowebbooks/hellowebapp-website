@@ -1,155 +1,155 @@
-/secret-book -> http://goo.gl/3GiECI 301
-/free-sample -> http://goo.gl/ZTEyoy 301
-/sample -> http://goo.gl/ZTEyoy 301
-/ic-sample -> https://goo.gl/sp5pTn 301
-/preorder -> /order 301
-/install-django -> https://hellowebapp.com/setup/#setup-django 301
-/install-python -> https://hellowebapp.com/setup/ 301
-/kickstarter -> https://www.kickstarter.com/projects/1868398473/hello-web-app-intermediate-concepts 301
-/1 -> http://amzn.to/1qUIE8o 301
-/2 -> http://learn.shayhowe.com/html-css/ 301
-/3 -> http://www.dontfeartheinternet.com/ 301
-/4 -> http://learnpythonthehardway.org/ 301
-/5 -> http://pyvideo.org/video/2559/hands-on-intro-to-python-for-beginning-programmer 301
-/6 -> https://github.com/limedaring/HelloWebApp/tree/master/python-tips 301
-/7 -> https://github.com/hellowebapp/hellowebapp/tree/master/windows-help 301
-/8 -> https://hellowebapp.com/setup/ 301
-/9 -> https://github.com/limedaring/HelloWebApp-Code 301
-/10 -> http://discuss.hellowebapp.com 301
-/11 -> https://github.com/limedaring/HelloWebApp 301
-/12 -> https://github.com/limedaring/HelloWebApp/tree/master/git-tips 301
-/13 -> http://learnpythonthehardway.org/book/ex29.html 301
-/14 -> https://docs.djangoproject.com/en/1.7/ref/templates/builtins/ 301
-/15 -> https://docs.djangoproject.com/en/1.7/ref/contrib/humanize/ 301
-/16 -> https://hellowebapp.com/setup/ 301
-/17 -> https://docs.djangoproject.com/en/dev/ref/models/fields/#slugfield 301
-/18 -> https://docs.djangoproject.com/en/1.7/ref/models/querysets/ 301
-/19 -> https://docs.python.org/2/howto/regex.html 301
-/20 -> https://docs.djangoproject.com/en/dev/topics/forms/modelforms/ 301
-/21 -> https://docs.djangoproject.com/en/dev/ref/csrf/ 301
-/22 -> https://docs.djangoproject.com/en/dev/topics/forms/#form-rendering-options 301
-/23 -> https://django-registration-redux.readthedocs.org 301
-/24 -> https://django-registration-redux.readthedocs.org/en/latest/quickstart.html#settings 301
-/25 -> https://django-registration-redux.readthedocs.org/en/latest/quickstart.html#required-templates 301
-/26 -> http://django-registration-redux.readthedocs.org/en/stable/views.html 301
-/27 -> https://github.com/macropin/django-registration/ 301
-/28 -> http://haystacksearch.org/ 301
-/29 -> https://docs.djangoproject.com/en/dev/ref/models/querysets/#istartswith 301
-/30 -> http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html 301
-/31 -> https://docs.djangoproject.com/en/1.7/topics/testing/overview/ 301
-/32 -> http://heroku.com 301
-/33 -> https://devcenter.heroku.com/articles/getting-started-with-python#set-up 301
-/34 -> https://devcenter.heroku.com/articles/procfile 301
-/35 -> https://devcenter.heroku.com/articles/getting-started-with-django#django-settings 301
-/36 -> http://stackoverflow.com/ 301
-/37 -> https://github.com/limedaring/HelloWebApp/tree/master/irc-tips 301
-/38 -> https://stackoverflow.com/users/login?returnurl=%2fquestions%2fask 301
-/39 -> https://docs.djangoproject.com/en/1.7/internals/mailing-lists/#django-users 301
-/40 -> https://groups.google.com/forum/#!forum/django-users 301
-/41 -> http://www.pyladies.com/ 301
-/42 -> http://python.meetup.com/ 301
-/43 -> http://djangogirls.org/ 301
-/44 -> https://www.python.org/dev/peps/pep-0008/ 301
-/45 -> http://docs.writethedocs.org/writing/beginners-guide-to-docs/ 301
-/46 -> http://www.djangobook.com/en/2.0/chapter20.html 301
-/47 -> http://amzn.to/13sLUh6 301
-/48 -> http://amzn.to/1GrwlUF 301
-/49 -> http://gettingstartedwithdjango.com/ 301
-/50 -> https://docs.djangoproject.com/en/dev/intro/tutorial01/ 301
-/51 -> http://www.tangowithdjango.com/ 301
-/52 -> http://www.codecademy.com/ 301
-/53 -> https://www.coursera.org/courses?query=python 301
-/54 -> https://github.com/limedaring/HelloWebApp/tree/master/additional-resources 301
-/55 -> http://www.hackbrightacademy.com/ 301
-/56 -> https://www.hackerschool.com/ 301
-/57 -> http://ladieslearningcode.com/ 301
-/58 -> http://rocket-space.com/rocketu/ 301
-/59 -> https://generalassemb.ly/education/ 301
-/60 -> https://kinsights.com 301
-/ic/1/ -> https://git-for-windows.github.io/ 301
-/ic/2/ -> https://docs.djangoproject.com/en/1.8/ref/forms/fields/ 301
-/ic/3/ -> http://www.pydanny.com/overloading-form-fields.html 301
-/ic/4/ -> https://sendgrid.com/ 301
-/ic/5/ -> https://www.mandrill.com/ 301
-/ic/6/ -> https://sendgrid.com/docs/Integrate/Frameworks/django.html 301
-/ic/7/ -> https://docs.djangoproject.com/en/1.8/ref/models/options/ 301
-/ic/8/ -> https://docs.djangoproject.com/en/1.8/ref/models/instances/#get-absolute-url 301
-/ic/9/ -> https://www.google.com/webmasters/tools/ 301
-/ic/10/ -> http://www.sitemaps.org/ 301
-/ic/11/ -> https://docs.djangoproject.com/en/1.8/ref/contrib/sitemaps/  301
-/ic/12/ -> http://lgiordani.com/blog/2013/10/28/digging-up-django-class-based-views-1/ 301
-/ic/13/ -> https://docs.djangoproject.com/en/1.9/ref/class-based-views/generic-display/#listview 301
-/ic/14/ -> https://docs.djangoproject.com/en/1.9/topics/class-based-views/intro/ 301
-/ic/15/ -> https://ccbv.co.uk/ 301
-/ic/16/ -> https://godjango.com/15-class-based-views-part-1-templateview-and-redirectview/ 301
-/ic/17/ -> https://hellowebapp.com/news/tutorial-class-based-views 301
-/ic/18/ -> https://devcenter.heroku.com/articles/s3-upload-python 301
-/ic/19/ -> https://docs.djangoproject.com/en/1.8/howto/static-files/deployment/ 301
-/ic/20/ -> http://pillow.readthedocs.org/en/latest/handbook/tutorial.html 301
-/ic/21/ -> https://github.com/mariocesar/sorl-thumbnail 301
-/ic/22/ -> https://github.com/SmileyChris/easy-thumbnails 301
-/ic/23/ -> https://www.youtube.com/watch?v=_H9uPRJWMNk 301
-/ic/24/ -> https://docs.djangoproject.com/en/1.8/ref/contrib/messages/ 301
-/ic/25/ -> https://www.codecademy.com/tracks/web 301
-/ic/26/ -> http://sass-lang.com/ 301
-/ic/27/ -> http://getbootstrap.com/ 301
-/ic/28/ -> https://github.com/postcss/autoprefixer 301
-/ic/29/ -> https://github.com/postcss/postcss 301
-/ic/30/ -> http://gulpjs.com/ 301
-/ic/31/ -> https://github.com/dahlia/libsass-python 301
-/ic/32/ -> http://howtonode.org/how-to-install-nodejs 301
-/ic/33/ -> http://v4-alpha.getbootstrap.com/getting-started/download/ 301
-/ic/34/ -> https://www.npmjs.com/ 301
-/ic/35/ -> http://gulpjs.com/plugins/ 301
-/ic/36/ -> https://www.npmjs.com/package/gulp-livereload 301
-/ic/37/ -> http://sass-lang.com/guide 301
-/ic/38/ -> https://help.github.com/articles/ignoring-files/ 301
-/ic/39/ -> https://github.com/django/django/blob/58195f0b16999245ada6bd010b71c9c5352ae608/django/contrib/auth/models.py#L366 301
-/ic/40/ -> https://github.com/django/django/blob/58195f0b16999245ada6bd010b71c9c5352ae608/django/contrib/auth/models.py#L297 301
-/ic/41/ -> https://stripe.com 301
-/ic/42/ -> https://devcenter.heroku.com/articles/ssl-endpoint 301
-/ic/43/ -> https://cloudflare.com 301
-/ic/44/ -> http://andrewtorkbaker.com/using-environment-variables-with-django-settings 301
-/ic/45/ -> https://devcenter.heroku.com/articles/config-vars 301
-/ic/46/ -> https://stripe.com/checkout 301
-/ic/47/ -> https://stripe.com/docs/testing#cards 301
-/ic/48/ -> https://stripe.com/docs/api/python#errors 301
-/ic/49/ -> https://stripe.com/blog/improved-email-receipts 301
-/ic/50/ -> https://zapier.com/ 301
-/ic/51/ -> https://stripe.com/docs/webhooks 301
-/ic/52/ -> https://stripe.com/docs/api/python#retrieve_customer 301
-/ic/53/ -> https://stripe.com/docs/api/python#update_customer 301
-/ic/54/ -> https://stripe.com/docs/guides/subscriptions#canceling-subscriptions 301
-/ic/55/ -> https://stripe.com/docs/examples 301
-/ic/56/ -> http://dj-stripe.readthedocs.org/ 301
-/ic/57/ -> https://godjango.com/57-starting-with-stripejs/ 301
-/ic/58/ -> http://www.django-rest-framework.org/ 301
-/ic/59/ -> http://www.django-rest-framework.org/api-guide/permissions/ 301
-/ic/60/ -> https://docs.djangoproject.com/en/1.8/topics/serialization/ 301
-/ic/61/ -> https://docs.djangoproject.com/en/1.8/ref/request-response/#jsonresponse-objects 301
-/ic/62/ -> http://www.django-rest-framework.org/tutorial/quickstart/ 301
-/ic/63/ -> https://godjango.com/blog/working-with-json-and-django/ 301
-/ic/64/ -> https://godjango.com/41-start-your-api-django-rest-framework-part-1/ 301
-/ic/65/ -> http://heroku.com 301
-/ic/66/ -> https://addons.heroku.com/scheduler 301
-/ic/67/ -> http://guidovanoorschot.nl/adding-cron-jobs-to-a-django-project-with-heroku-scheduler/ 301
-/ic/68/ -> https://github.com/kraiz/django-crontab 301
-/ic/69/ -> https://www.easycron.com/ 301
-/ic/70/ -> http://amzn.to/1LQKpvW 301
-/ic/71/ -> http://django-debug-toolbar.readthedocs.org/ 301
-/ic/72/ -> https://docs.djangoproject.com/en/1.8/ref/models/querysets/#prefetch-related 301
-/ic/73/ -> https://docs.djangoproject.com/en/1.8/ref/models/querysets/#select-related 301
-/ic/74/ -> https://docs.djangoproject.com/en/1.8/topics/db/optimization/ 301
-/ic/75/ -> https://docs.djangoproject.com/en/stable/releases/ 301
-/ic/76/ -> https://wiki.python.org/moin/Python2orPython3 301
-/ic/77/ -> http://www.diveintopython3.net/ 301
-/ic/78/ -> http://amzn.to/1JN0NHK 301
-/ic/79/ -> http://amzn.to/1OgbQRr 301
-/ic/80/ -> http://amzn.to/1OgbXfT 301
-/ic/81/ -> http://amzn.to/1jIeAub 301
-/ic/82/ -> https://godjango.com 301
-/ic/83/ -> https://www.codecademy.com/courses/learn-the-command-line  301
-/ic/84/ -> https://www.udacity.com/course/intro-to-relational-databases--ud197 301
-/ic/85/ -> https://teamtreehouse.com/  301
-/ic/86/ -> http://regex.learncodethehardway.org/  301
-/ic/87/ -> http://sql.learncodethehardway.org/ 301
+/secret-book http://goo.gl/3GiECI;
+/free-sample http://goo.gl/ZTEyoy;
+/sample http://goo.gl/ZTEyoy;
+/ic-sample https://goo.gl/sp5pTn;
+/preorder /order;
+/install-django https://hellowebapp.com/setup/#setup-django;
+/install-python https://hellowebapp.com/setup/;
+/kickstarter https://www.kickstarter.com/projects/1868398473/hello-web-app-intermediate-concepts;
+/1 http://amzn.to/1qUIE8o;
+/2 http://learn.shayhowe.com/html-css/;
+/3 http://www.dontfeartheinternet.com/;
+/4 http://learnpythonthehardway.org/;
+/5 http://pyvideo.org/video/2559/hands-on-intro-to-python-for-beginning-programmer;
+/6 https://github.com/limedaring/HelloWebApp/tree/master/python-tips;
+/7 https://github.com/hellowebapp/hellowebapp/tree/master/windows-help;
+/8 https://hellowebapp.com/setup/;
+/9 https://github.com/limedaring/HelloWebApp-Code;
+/10 http://discuss.hellowebapp.com;
+/11 https://github.com/limedaring/HelloWebApp;
+/12 https://github.com/limedaring/HelloWebApp/tree/master/git-tips;
+/13 http://learnpythonthehardway.org/book/ex29.html;
+/14 https://docs.djangoproject.com/en/1.7/ref/templates/builtins/;
+/15 https://docs.djangoproject.com/en/1.7/ref/contrib/humanize/;
+/16 https://hellowebapp.com/setup/;
+/17 https://docs.djangoproject.com/en/dev/ref/models/fields/#slugfield;
+/18 https://docs.djangoproject.com/en/1.7/ref/models/querysets/;
+/19 https://docs.python.org/2/howto/regex.html;
+/20 https://docs.djangoproject.com/en/dev/topics/forms/modelforms/;
+/21 https://docs.djangoproject.com/en/dev/ref/csrf/;
+/22 https://docs.djangoproject.com/en/dev/topics/forms/#form-rendering-options;
+/23 https://django-registration-redux.readthedocs.org;
+/24 https://django-registration-redux.readthedocs.org/en/latest/quickstart.html#settings;
+/25 https://django-registration-redux.readthedocs.org/en/latest/quickstart.html#required-templates;
+/26 http://django-registration-redux.readthedocs.org/en/stable/views.html;
+/27 https://github.com/macropin/django-registration/;
+/28 http://haystacksearch.org/;
+/29 https://docs.djangoproject.com/en/dev/ref/models/querysets/#istartswith;
+/30 http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html;
+/31 https://docs.djangoproject.com/en/1.7/topics/testing/overview/;
+/32 http://heroku.com;
+/33 https://devcenter.heroku.com/articles/getting-started-with-python#set-up;
+/34 https://devcenter.heroku.com/articles/procfile;
+/35 https://devcenter.heroku.com/articles/getting-started-with-django#django-settings;
+/36 http://stackoverflow.com/;
+/37 https://github.com/limedaring/HelloWebApp/tree/master/irc-tips;
+/38 https://stackoverflow.com/users/login?returnurl=%2fquestions%2fask;
+/39 https://docs.djangoproject.com/en/1.7/internals/mailing-lists/#django-users;
+/40 https://groups.google.com/forum/#!forum/django-users;
+/41 http://www.pyladies.com/;
+/42 http://python.meetup.com/;
+/43 http://djangogirls.org/;
+/44 https://www.python.org/dev/peps/pep-0008/;
+/45 http://docs.writethedocs.org/writing/beginners-guide-to-docs/;
+/46 http://www.djangobook.com/en/2.0/chapter20.html;
+/47 http://amzn.to/13sLUh6;
+/48 http://amzn.to/1GrwlUF;
+/49 http://gettingstartedwithdjango.com/;
+/50 https://docs.djangoproject.com/en/dev/intro/tutorial01/;
+/51 http://www.tangowithdjango.com/;
+/52 http://www.codecademy.com/;
+/53 https://www.coursera.org/courses?query=python;
+/54 https://github.com/limedaring/HelloWebApp/tree/master/additional-resources;
+/55 http://www.hackbrightacademy.com/;
+/56 https://www.hackerschool.com/;
+/57 http://ladieslearningcode.com/;
+/58 http://rocket-space.com/rocketu/;
+/59 https://generalassemb.ly/education/;
+/60 https://kinsights.com;
+/ic/1 https://git-for-windows.github.io/;
+/ic/2 https://docs.djangoproject.com/en/1.8/ref/forms/fields/;
+/ic/3 http://www.pydanny.com/overloading-form-fields.html;
+/ic/4 https://sendgrid.com/;
+/ic/5 https://www.mandrill.com/;
+/ic/6 https://sendgrid.com/docs/Integrate/Frameworks/django.html;
+/ic/7 https://docs.djangoproject.com/en/1.8/ref/models/options/;
+/ic/8 https://docs.djangoproject.com/en/1.8/ref/models/instances/#get-absolute-url;
+/ic/9 https://www.google.com/webmasters/tools/;
+/ic/10 http://www.sitemaps.org/;
+/ic/11 https://docs.djangoproject.com/en/1.8/ref/contrib/sitemaps/;
+/ic/12 http://lgiordani.com/blog/2013/10/28/digging-up-django-class-based-views-1/;
+/ic/13 https://docs.djangoproject.com/en/1.9/ref/class-based-views/generic-display/#listview;
+/ic/14 https://docs.djangoproject.com/en/1.9/topics/class-based-views/intro/;
+/ic/15 https://ccbv.co.uk/;
+/ic/16 https://godjango.com/15-class-based-views-part-1-templateview-and-redirectview/;
+/ic/17 https://hellowebapp.com/news/tutorial-class-based-views;
+/ic/18 https://devcenter.heroku.com/articles/s3-upload-python;
+/ic/19 https://docs.djangoproject.com/en/1.8/howto/static-files/deployment/;
+/ic/20 http://pillow.readthedocs.org/en/latest/handbook/tutorial.html;
+/ic/21 https://github.com/mariocesar/sorl-thumbnail;
+/ic/22 https://github.com/SmileyChris/easy-thumbnails;
+/ic/23 https://www.youtube.com/watch?v=_H9uPRJWMNk;
+/ic/24 https://docs.djangoproject.com/en/1.8/ref/contrib/messages/;
+/ic/25 https://www.codecademy.com/tracks/web;
+/ic/26 http://sass-lang.com/;
+/ic/27 http://getbootstrap.com/;
+/ic/28 https://github.com/postcss/autoprefixer;
+/ic/29 https://github.com/postcss/postcss;
+/ic/30 http://gulpjs.com/;
+/ic/31 https://github.com/dahlia/libsass-python;
+/ic/32 http://howtonode.org/how-to-install-nodejs;
+/ic/33 http://v4-alpha.getbootstrap.com/getting-started/download/;
+/ic/34 https://www.npmjs.com/;
+/ic/35 http://gulpjs.com/plugins/;
+/ic/36 https://www.npmjs.com/package/gulp-livereload;
+/ic/37 http://sass-lang.com/guide;
+/ic/38 https://help.github.com/articles/ignoring-files/;
+/ic/39 https://github.com/django/django/blob/58195f0b16999245ada6bd010b71c9c5352ae608/django/contrib/auth/models.py#L366;
+/ic/40 https://github.com/django/django/blob/58195f0b16999245ada6bd010b71c9c5352ae608/django/contrib/auth/models.py#L297;
+/ic/41 https://stripe.com;
+/ic/42 https://devcenter.heroku.com/articles/ssl-endpoint;
+/ic/43 https://cloudflare.com;
+/ic/44 http://andrewtorkbaker.com/using-environment-variables-with-django-settings;
+/ic/45 https://devcenter.heroku.com/articles/config-vars;
+/ic/46 https://stripe.com/checkout;
+/ic/47 https://stripe.com/docs/testing#cards;
+/ic/48 https://stripe.com/docs/api/python#errors;
+/ic/49 https://stripe.com/blog/improved-email-receipts;
+/ic/50 https://zapier.com/;
+/ic/51 https://stripe.com/docs/webhooks;
+/ic/52 https://stripe.com/docs/api/python#retrieve_customer;
+/ic/53 https://stripe.com/docs/api/python#update_customer;
+/ic/54 https://stripe.com/docs/guides/subscriptions#canceling-subscriptions;
+/ic/55 https://stripe.com/docs/examples;
+/ic/56 http://dj-stripe.readthedocs.org/;
+/ic/57 https://godjango.com/57-starting-with-stripejs/;
+/ic/58 http://www.django-rest-framework.org/;
+/ic/59 http://www.django-rest-framework.org/api-guide/permissions/;
+/ic/60 https://docs.djangoproject.com/en/1.8/topics/serialization/;
+/ic/61 https://docs.djangoproject.com/en/1.8/ref/request-response/#jsonresponse-objects;
+/ic/62 http://www.django-rest-framework.org/tutorial/quickstart/;
+/ic/63 https://godjango.com/blog/working-with-json-and-django/;
+/ic/64 https://godjango.com/41-start-your-api-django-rest-framework-part-1/;
+/ic/65 http://heroku.com;
+/ic/66 https://addons.heroku.com/scheduler;
+/ic/67 http://guidovanoorschot.nl/adding-cron-jobs-to-a-django-project-with-heroku-scheduler/;
+/ic/68 https://github.com/kraiz/django-crontab;
+/ic/69 https://www.easycron.com/;
+/ic/70 http://amzn.to/1LQKpvW;
+/ic/71 http://django-debug-toolbar.readthedocs.org/;
+/ic/72 https://docs.djangoproject.com/en/1.8/ref/models/querysets/#prefetch-related;
+/ic/73 https://docs.djangoproject.com/en/1.8/ref/models/querysets/#select-related;
+/ic/74 https://docs.djangoproject.com/en/1.8/topics/db/optimization/;
+/ic/75 https://docs.djangoproject.com/en/stable/releases/;
+/ic/76 https://wiki.python.org/moin/Python2orPython3;
+/ic/77 http://www.diveintopython3.net/;
+/ic/78 http://amzn.to/1JN0NHK;
+/ic/79 http://amzn.to/1OgbQRr;
+/ic/80 http://amzn.to/1OgbXfT;
+/ic/81 http://amzn.to/1jIeAub;
+/ic/82 https://godjango.com;
+/ic/83 https://www.codecademy.com/courses/learn-the-command-line;
+/ic/84 https://www.udacity.com/course/intro-to-relational-databases--ud197;
+/ic/85 https://teamtreehouse.com/;
+/ic/86 http://regex.learncodethehardway.org/;
+/ic/87 http://sql.learncodethehardway.org/;
