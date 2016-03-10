@@ -2298,9 +2298,9 @@ input[type="button"].btn-block {
 .input-group-btn,
 .input-group .form-control {
   display: table-cell; }
-  .input-group-addon:not(:first-child):not(:last-child),
-  .input-group-btn:not(:first-child):not(:last-child),
-  .input-group .form-control:not(:first-child):not(:last-child) {
+  .input-group-addon:not(:first-child, :first-child, :first-child):not(:last-child, :last-child, :last-child),
+  .input-group-btn:not(:first-child, :first-child, :first-child):not(:last-child, :last-child, :last-child),
+  .input-group .form-control:not(:first-child, :first-child, :first-child):not(:last-child, :last-child, :last-child) {
     border-radius: 0; }
 
 .input-group-addon,
@@ -4446,4 +4446,3 @@ a.bg-danger:focus, a.bg-danger:hover {
 @media print {
   .hidden-print .hidden-print {
     display: none !important; } }
-
