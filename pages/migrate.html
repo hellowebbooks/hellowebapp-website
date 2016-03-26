@@ -27,11 +27,9 @@ analytics.page("Setup");
 
     <div class="row">
          <div class="col-md-9 col-md-push-3">
-            <h2 id="install-python" style="margin-top: 0;">1. Install Python</h2>
-
             <h3> Before (Django 1.7 and below):</h3>
 <pre><code class="sh">
-urlpatterns = patterns('',
+<b>urlpatterns = patterns('',</b>
     url(r'^$', views.index, name='home'),
     url(r'^about/$',
         TemplateView.as_view(template_name='about.html'),
@@ -42,7 +40,7 @@ urlpatterns = patterns('',
 
             <h3> After (Django 1.8 and higher):</h3>
 <pre><code class="sh">
-urlpatterns = [
+<b>urlpatterns = [</b>
     url(r'^$', views.index, name='home'),
     url(r'^about/$',
         TemplateView.as_view(template_name='about.html'),
