@@ -20,13 +20,13 @@ analytics.page("Setup");
         </div>
 
         <div class="col-md-3 text-right" style="padding-right: 40px;">
-            <h3 style="margin-top:0;">Table of Contents</h3>
         </div>
 
     </div>
 
     <div class="row">
          <div class="col-md-9 col-md-push-3">
+             <p>Django changed the way that the <i>urls.py</i> was formatted between 1.7 and 1.8. It's pretty simple to update though:</p>
             <h3> Before (Django 1.7 and below):</h3>
 <pre><code class="sh">
 <b>urlpatterns = patterns('',</b>
@@ -34,7 +34,7 @@ analytics.page("Setup");
     url(r'^about/$',
         TemplateView.as_view(template_name='about.html'),
         name='about'),
-)
+<b>)</b>
 </code></pre>
 
 
@@ -45,7 +45,7 @@ analytics.page("Setup");
     url(r'^about/$',
         TemplateView.as_view(template_name='about.html'),
         name='about'),
-]
+<b>]</b>
 </code></pre>
 
 
