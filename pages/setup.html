@@ -337,17 +337,17 @@ automatically.  Open up your *settings.py* file (which is under the
 (don't forget the trailing comma):
 {% endfilter %}
 
-            <pre><code class="python">
-            INSTALLED_APPS = (
-                'collection', # this is the app we added
-                'django.contrib.admin',
-                'django.contrib.auth',
-                'django.contrib.contenttypes',
-                'django.contrib.sessions',
-                'django.contrib.messages',
-                'django.contrib.staticfiles',
-            )
-            </code></pre>
+<pre><code class="python">
+INSTALLED_APPS = (
+    'collection', # this is the app we added
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+)
+</code></pre>
         </div>
         <div class="col-md-3 col-md-pull-9 text-right" style="padding-right: 40px;">
             <p><small style="display:block;"><i>If you've used Django before, you might be wondering why I put collection at the top of the list. It's a bit of trickery to make sure our templates are used rather than the default Django admin templates when we set up our login pages. Shouldn't affect anything else.</i></small></p>
