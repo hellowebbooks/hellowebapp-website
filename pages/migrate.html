@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+
+{% block title %}Migrate - {{ block.super }}{% endblock %}
+
+{% block analytics %}
+analytics.page("Setup");
+{% endblock %}
+
+{% block bodyclass %}
+<body id="setup">
+{% endblock %}
+
+{% block content %}
+<div class="jumbotron"></div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-9 col-md-offset-3">
+            <h1>Migrate</h1>
+        </div>
+
+        <div class="col-md-3 text-right" style="padding-right: 40px;">
+            <h3 style="margin-top:0;">Table of Contents</h3>
+        </div>
+
+    </div>
+
+    <div class="row">
+         <div class="col-md-9 col-md-push-3">
+            <h2 id="install-python" style="margin-top: 0;">1. Install Python</h2>
+
+            <h3> Before (Django 1.7 and below):</h3>
+<pre><code class="sh">
+urlpatterns = patterns('',
+    url(r'^$', views.index, name='home'),
+    url(r'^about/$',
+        TemplateView.as_view(template_name='about.html'),
+        name='about'),
+)
+</code></pre>
+
+
+            <h3> After (Django 1.8 and higher):</h3>
+<pre><code class="sh">
+urlpatterns = [
+    url(r'^$', views.index, name='home'),
+    url(r'^about/$',
+        TemplateView.as_view(template_name='about.html'),
+        name='about'),
+]
+</code></pre>
+
+
+
+
+<hr/>
+
+<p><strong>Learn how to create your first web app and get on the path of a fun side project, a lifestyle business, or your first startup. <a href="{% url '/order.html' %}">Order Hello Web App today.</a></strong></p>
+
+        </div>
+    </div>
+</div>
+
+{% include 'includes/newsletter.html' %}
+
+{% endblock content %}
+
+{% block scripts %}
+{{ block.super }}
+{% include 'includes/newsletter-analytics.html' %}
+<link rel="stylesheet" href="{% static '/css/tomorrow.css' %}">
+<script src="{% static '/js/highlight.pack.js' %}"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+{% endblock scripts %}
