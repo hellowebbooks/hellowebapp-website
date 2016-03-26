@@ -30,7 +30,7 @@ analytics.page("Setup");
             <h3> Before (Django 1.7 and below):</h3>
 <pre><code class="sh">
 <b>urlpatterns = patterns('',</b>
-    url(r'^$', views.index, name='home'),
+    url(r'^$', <b>'collection.views.index'</b>, name='home'),
     url(r'^about/$',
         TemplateView.as_view(template_name='about.html'),
         name='about'),
@@ -40,8 +40,10 @@ analytics.page("Setup");
 
             <h3> After (Django 1.8 and higher):</h3>
 <pre><code class="sh">
+<b>from collection import views</b>
+
 <b>urlpatterns = [</b>
-    url(r'^$', views.index, name='home'),
+    url(r'^$', <b>views.index</b>, name='home'),
     url(r'^about/$',
         TemplateView.as_view(template_name='about.html'),
         name='about'),
