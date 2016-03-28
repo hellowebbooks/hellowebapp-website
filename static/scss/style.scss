@@ -72,8 +72,8 @@ h2 {
     margin-top: 1.3em;
     margin-bottom: 0.7em;
     a {
-        background-position: 0 2.5rem !important;
-        background-size: 1px 1px;
+        //background-position: 0 2.5rem !important;
+        //background-size: 1px 1px;
     }
 }
 h3 {
@@ -82,8 +82,8 @@ h3 {
     font-size: 1.4rem; 
     //color: $gray;
     a {
-        background-position: 0 2.5rem;
-        background-size: 1px 1px;
+        //background-position: 0 2.5rem;
+        //background-size: 1px 1px;
     }
 }
 h4 {
@@ -95,13 +95,13 @@ h5 {
 p {
     margin-bottom: 1.5rem; 
     a {
-        background-position: 0 1.5rem;
-        background-size: 1px 1px;
+        //background-position: 0 1.5rem;
+        //background-size: 1px 1px;
     }
 }
 td a, li a, dd a {
-    background-position: 0 1.5rem;
-    background-size: 1px 1px;
+    //background-position: 0 1.5rem;
+    //background-size: 1px 1px;
 
 }
 img { max-width: 100%; }
@@ -153,11 +153,17 @@ dd {
 a {
     text-decoration: none;
     color: $body-color;
-    background-image: linear-gradient(#fff 50%, $body-color 50%);
-    background-repeat: repeat-x;
+    //background-image: linear-gradient(#fff 50%, $body-color 50%);
+    background-image: linear-gradient(to top,
+        rgba(0,0,0,0) 11%,
+        rgba(0,0,0,.3) 11%,
+        rgba(0,0,0,.3) 16%,
+        rgba(0,0,0,0) 16%
+    );
+    //background-repeat: repeat-x;
     &:hover {
         color: $brand-primary-dark;
-        background-image: linear-gradient(#fff 50%, $brand-primary-dark 50%);
+        //background-image: linear-gradient(#fff 50%, $brand-primary-dark 50%);
         text-decoration: none;
     }
     //&:visited {
@@ -980,6 +986,7 @@ figure.video {
 // Individual post overrides
 
 // posts that need a "featured image" for the blog page but not on their actual pages
+.tutorial-setting-up-the-password-change-functionality,
 .hello-web-app-has-been-updated-for-django-19,
 .hello-web-app-intermediate-concepts-is-on-product-hunt-today,
 .hello-web-apps-kickstarter-campaign-how-i-did-it-what-i-regret,

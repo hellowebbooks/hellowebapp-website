@@ -5360,30 +5360,17 @@ h2 {
   font-style: italic;
   margin-top: 1.3em;
   margin-bottom: 0.7em; }
-  h2 a {
-    background-position: 0 2.5rem !important;
-    background-size: 1px 1px; }
 
 h3 {
   font-family: "Open Sans Condensed", "Source Sans Pro", Helvetica, Arial, sans-serif;
   font-weight: bold;
   font-size: 1.4rem; }
-  h3 a {
-    background-position: 0 2.5rem;
-    background-size: 1px 1px; }
 
 h4 {
   font-weight: 700; }
 
 p {
   margin-bottom: 1.5rem; }
-  p a {
-    background-position: 0 1.5rem;
-    background-size: 1px 1px; }
-
-td a, li a, dd a {
-  background-position: 0 1.5rem;
-  background-size: 1px 1px; }
 
 img {
   max-width: 100%; }
@@ -5437,11 +5424,9 @@ dd {
 a {
   text-decoration: none;
   color: #666;
-  background-image: linear-gradient(#fff 50%, #666 50%);
-  background-repeat: repeat-x; }
+  background-image: linear-gradient(to top, transparent 11%, rgba(0, 0, 0, 0.3) 11%, rgba(0, 0, 0, 0.3) 16%, transparent 16%); }
   a:hover {
     color: #8a9a0f;
-    background-image: linear-gradient(#fff 50%, #8a9a0f 50%);
     text-decoration: none; }
 
 @media (max-width: 47.9em) {
@@ -6059,6 +6044,7 @@ figure.video {
       left: -208px;
       max-width: 155px; } }
 
+.tutorial-setting-up-the-password-change-functionality .jumbotron,
 .hello-web-app-has-been-updated-for-django-19 .jumbotron,
 .hello-web-app-intermediate-concepts-is-on-product-hunt-today .jumbotron,
 .hello-web-apps-kickstarter-campaign-how-i-did-it-what-i-regret .jumbotron,
