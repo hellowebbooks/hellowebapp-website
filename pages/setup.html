@@ -89,6 +89,8 @@ Head over to these links to install Python 2.7 onto your computer:
 * [Windows](https://github.com/limedaring/HelloWebApp/blob/master/installation-instructions/python-installation-windows.md)
 * [Linux](http://docs.python-guide.org/en/latest/starting/install/linux/)
 
+Windows users, make sure you follow the instructions to install [Git for Windows](https://git-for-windows.github.io/) to give yourself the ability to use UNIX commands used in the books (like `touch`) in your command line.
+
 {% endfilter %}
         </div>
         <div class="col-md-3 col-md-pull-9 text-right" style="padding-right: 40px;">
@@ -102,9 +104,13 @@ Head over to these links to install Python 2.7 onto your computer:
 <h3 id="install-pip">Do you have pip installed?</h3>
 
 {% filter markdown %}
-*pip* is the Python package installer — you'll use it heavily with *Hello Web App* and pretty much any Python project. If you followed the Python install instructions, you should have pip installed already.
+*pip* is the Python package installer — you'll use it heavily with *Hello Web
+App* and pretty much any Python project. If you followed the Python install
+instructions, you should have pip installed already.
 
-To check whether it's installed, open up your command line and run this *(don't include the* `$`*, it's an indicator that this command is being run in your command line utility)*: 
+To check whether it's installed, open up your command line and run this *(don't
+include the* `$`*, it's an indicator that this command is being run in your
+command line utility)*: 
 {% endfilter %}
 
 <pre><code class="sh">
@@ -112,7 +118,8 @@ To check whether it's installed, open up your command line and run this *(don't 
 </code></pre>
 
 {% filter markdown %}
-It should be pretty obvious if it didn't work. If it didn't work, [check out this page](https://pip.pypa.io/en/stable/installing/).
+It should be pretty obvious if it didn't work. If it didn't work, [check out
+this page](https://pip.pypa.io/en/stable/installing/).
 
 {% endfilter %}
 
@@ -121,15 +128,26 @@ It should be pretty obvious if it didn't work. If it didn't work, [check out thi
 <h2 id="install-virtualenv">2. Install Virtualenv</h2>
 
 {% filter markdown %}
-When we start developing our Django apps, we want to make sure our projects are enclosed in "bubbles" known as virtual environments. 
+When we start developing our Django apps, we want to make sure our projects are
+enclosed in "bubbles" known as virtual environments. 
 
-For example, as of this writing, Django's current version is 1.9. When new versions of Django are released, they may not be backwards compatible with previous versions of Django.
+For example, as of this writing, Django's current version is 1.9. When new
+versions of Django are released, they may not be backwards compatible with
+previous versions of Django.
 
-Without a virtual environment, we'd have Django 1.9.2 installed *globally* on our computer, and every Django project you build would use that version. If you wanted to upgrade your version of Django, you'd have to go through every one of your projects to make sure they don't break.
+Without a virtual environment, we'd have Django 1.9.2 installed *globally* on
+our computer, and every Django project you build would use that version. If you
+wanted to upgrade your version of Django, you'd have to go through every one of
+your projects to make sure they don't break.
 
-**With a virtual environment, every project can have a separate version of Django and other plugins that you install.** You can install Django 1.9 on one project, and down the line, start another project with Django 1.10. Every project can work off of whatever version of whatever you install, keeping them separate from each other. This is very important when you're programming.
+**With a virtual environment, every project can have a separate version of
+Django and other plugins that you install.** You can install Django 1.9 on one
+project, and down the line, start another project with Django 1.10. Every
+project can work off of whatever version of whatever you install, keeping them
+separate from each other. This is very important when you're programming.
 
-We should already have pip, so we'll use it to install virtualenv *(again, don't paste in the* `$` *)*:
+We should already have pip, so we'll use it to install virtualenv *(again,
+don't paste in the* `$` *)*:
 {% endfilter %}
 
 <pre><code class="sh commandline">
@@ -227,6 +245,20 @@ contents part of a new Git repository. For more about git and why we should use
 it (spoiler: version control is very important *and* it's needed for deployment
 to Heroku), see the [Git tips page
 here](https://github.com/limedaring/HelloWebApp/tree/master/git-tips).
+
+**Optional but good to do:** Git will track *everything* in your directory, but we really only want it to track files we're changing (as compared to plugins we install, which can be kind of large.) We can create a _.gitignore_ file which tells Git what files we don't need to track. To add this, create a _.gitignore_ file in your top level directory:
+
+{% endfilter %}
+
+<pre><code class="sh">
+<span class="cmd">$</span> touch .gitignore
+</code></pre>
+
+{% filter markdown %}
+
+Then open up the file and paste everything here in: [https://raw.githubusercontent.com/github/gitignore/master/Python.gitignore](https://raw.githubusercontent.com/github/gitignore/master/Python.gitignore)
+
+Then you can commit the file (`git commit -a -m "Added git ignore file"`) and now Git won't track files it doesn't need to.
 
 ### Start your Django project
 
