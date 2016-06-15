@@ -223,6 +223,7 @@ Before we can test our logic, we need to create an email template. Our email tem
 *contact_template.txt*
 {% endfilter %}
 
+{% verbatim %}
 <pre><code class="python">
 Contact Name:
 {{ contact_name }}
@@ -233,6 +234,7 @@ Email:
 Content:
 {{ form_content|safe|striptags }}
 </code></pre>
+{% endverbatim %}
 
 {% filter markdown %}
 ## Improve the form (optional)
