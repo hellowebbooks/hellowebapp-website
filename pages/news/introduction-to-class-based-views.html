@@ -132,7 +132,7 @@ We'll need to update our view a little for this:
 from django.utils.timezone import now
 
 class AboutUsView(TemplateView):
-template_name = 'about_us.html'
+    template_name = 'about_us.html'
 
 def get_context_data(self, **kwargs):
     context = super(AboutUsView, self).get_context_data(**kwargs)
