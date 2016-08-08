@@ -32,7 +32,7 @@ analytics.page("Blog Home");
                     <p>{{ post.headline }}</p>
                     {% endif %}
                     {% if post.excerpt %}
-                    <p class="excerpt">{{ post.excerpt|truncatewords:30 }}</p>
+                    <p class="excerpt">{{ post.excerpt|truncatewords:50 }}</p>
                     {% endif %}
                     <p class="readmore"><a href="{{ post.page.link_url|cut:".html" }}/">Read more...</a></p>
                 </li>
@@ -51,7 +51,7 @@ analytics.page("Blog Home");
 
             <div class="blog-newsletter text-center">
                 <h2>Get the Hello Web App newsletter</h2>
-                <p><small>Get email notifications of new posts, new books, and more.</small></p>
+                <p style="text-align: left"><small>Get email notifications of new posts, new books, and more.</small></p>
 
                 <div id="mc_embed_signup">
                     <form action="//hellowebapp.us3.list-manage.com/subscribe/post?u=65146251a5ccb429e109f902f&amp;id=f0a7b0a10c" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
@@ -85,7 +85,7 @@ analytics.page("Blog Home");
                 {% for post in posts %}
                     {% if post.category == "tutorial" %}
                     <li><a href='{{ post.page.link_url|cut:".html" }}/'>
-                        {{ post.title }}
+                        {{ post.title|cut:"Tutorial: " }}
                     </a></li>
                     {% endif %}
                 {% endfor %}

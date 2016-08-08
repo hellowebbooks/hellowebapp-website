@@ -1,0 +1,149 @@
+title: Tutorial: Calculating your Stripe monthly recurring revenue (MRR)
+excerpt: I love Stripe, the customer payment solution I advocate using in Hello Web App: Intermediate Concepts, but I wish the Stripe's dashboard came with a bit more information about the state of your project and revenue. Here's my script for pulling in that information for your Django project.
+author: Tracy Osborn 
+featuredimage: /images/blog/2016/8/6/stripe.png
+date: 6-8-2016
+category: tutorial
+featured: True
+
+{% extends "post.html" %}
+{% block body %}
+
+{% filter markdown %}
+I love [Stripe](http://stripe.com) (the customer payment solution I advocate using in [Hello Web App: Intermediate Concepts](http://hellowebapp.com/intermediate-concepts)), but I wish the Stripe's dashboard came with a bit more information about the state of your project and revenue.
+
+{% endfilter %}
+
+<figure class="caption">
+    <img src="/static/images/blog/2016/8/6/stripe.png" alt=""/>
+    <figcaption>Actually the current WeddingLovely dashboard. #YOLO</figcaption>
+</figure>
+
+{% filter markdown %}
+
+In particular, I wish it had MRR (monthly recurring revenue), which is a good indicator of health for your app's revenue. For [WeddingLovely](http://weddinglovely.com), my wedding planning and vendor marketplace app, I have people on monthly *and* (mostly) yearly subscriptions, not to mention a lot of folks with discounts. Calculating MRR just based on the number of customers I have would be fairly inaccurate. So I need to query Stripe and calculate MRR based on the subscriptions and discounts applied to my actual customers, and I wrote a script to do this.
+
+__Prerequisites__: Django app with an active Stripe account (with the [Stripe Python library](https://pypi.python.org/pypi/stripe/) installed), with at least a few active customers (can be test data).
+
+I recommend reading [Hello Web App: Intermediate Concepts](http://hellowebapp.com/intermediate-concepts)'s Stripe chapter if you're looking to learn how to tie in Stripe to your Django app.
+
+## The code:
+The necessary bits of code to calculate and return MRR:
+
+{% endfilter %}
+<p>&nbsp;</p>
+
+<pre><code class="python">
+# Import me at the top.
+import stripe
+from django.conf import settings
+stripe.api_key = settings.STRIPE_SECRET
+
+# Grab all your customers from Stripe.
+# I have about 200 customers so I set the limit to 50 - the 
+# default is 10.
+stripe_customers = stripe.Customer.list(limit=50)
+
+# The results are auto-paginated, so you need to loop over 
+# the pages.
+for customer in stripe_customers.auto_paging_iter():
+
+    # Grab the subscriptions for the specific customer.
+    subscriptions = stripe.Subscription.all(
+        customer=customer,
+        status="active",
+    )
+
+    # Start tracking revenue for that customer.
+    rev = 0
+    for sub in subscriptions:
+        # Year subscriptions need to be divided by 12. Update
+        # this to match your specific subscription intervals.
+        if sub.plan.interval == "year":
+            rev += sub.plan.amount / 12.0
+        elif sub.plan.interval == "month":
+            rev += sub.plan.amount
+
+    # If your customer has a coupon attached, make sure to take 
+    # that into account for your revenue.
+    if customer.discount:
+        percent_off = customer.discount.coupon.percent_off
+        discount = rev * (percent_off / 100.0)
+        rev = rev - discount
+
+    # Add this customer's revenue to your total.
+    monthly_rev += rev
+
+# Total monthly revenue, divided by 100 because Stripe gives 
+# revenue in cents
+monthly_rev = monthly_rev / 100
+</code></pre>
+{% filter markdown %}
+
+This looks deceptively simple, but it took me a couple of hours to figure out that I need to loop over the results returned from Stripe, and that I can't `len(stripe_customers)` because it actually isn't a simple list (It'll always return `4` because that's the number of keys in the underlying dict structure.)
+
+## The Django management command:
+Here's my full script if you'd like to copy my Django management command that has nice printouts and whatnot. There is also a chapter on scripts in [Hello Web App: Intermediate Concepts](http://hellowebapp.com/intermediate-concepts) if you're interested in learning more!
+
+*mrr.py*
+{% endfilter %}
+<pre><code class="python">
+import stripe
+
+from django.conf import settings
+from django.core.management.base import BaseCommand
+stripe.api_key = settings.STRIPE_SECRET
+
+class Command(BaseCommand):
+    def handle(self, *args, **options):
+        monthly_rev = 0
+        stripe_customers = stripe.Customer.all(limit=50)
+
+        print "------"
+        for customer in stripe_customers.auto_paging_iter():
+            print "Profile: %s" % customer.description
+            subscriptions = stripe.Subscription.all(
+                customer=customer.id,
+                status="active",
+            )
+            rev = 0
+            for sub in subscriptions:
+                print "Interval: %s" % sub.plan.interval
+                if sub.plan.interval == "year":
+                    rev += sub.plan.amount / 12.0
+                elif sub.plan.interval == "month":
+                    rev += sub.plan.amount
+                else:
+                    print "ISSUE"
+            if customer.discount:
+                percent_off = customer.discount.coupon.percent_off
+                discount = rev * (percent_off / 100.0)
+                rev = rev - discount
+                print "Rev with discount: %f (%f off)" % (rev, percent_off)
+            else:
+                print "Revenue: %f" % rev 
+
+            monthly_rev += rev
+            print "Total revenue now: %f" % monthly_rev
+            print "&gt;"
+
+        print "------"
+
+        # because Stripe gives us revenue in cents...
+        monthly_rev = monthly_rev / 100
+
+        print "MRR: $%f" % monthly_rev
+</code></pre>
+
+{% filter markdown %}
+After all this work, I figured out that WeddingLovely's MRR is $1568.25. Not bad, not bad at all.
+
+Go forth and conquer with your new datapoint for your app's health!
+{% endfilter %}
+{% endblock body %}
+
+{% block scripts %}
+<link rel="stylesheet" href="{% static '/css/tomorrow.css' %}">
+<script src="{% static '/js/highlight.pack.js' %}"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+{% endblock scripts %}
