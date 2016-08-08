@@ -23,6 +23,8 @@ I love [Stripe](http://stripe.com) (the customer payment solution I advocate usi
 
 In particular, I wish it had MRR (monthly recurring revenue), which is a good indicator of health for your app's revenue. For [WeddingLovely](http://weddinglovely.com), my wedding planning and vendor marketplace app, I have people on monthly *and* (mostly) yearly subscriptions, not to mention a lot of folks with discounts. Calculating MRR just based on the number of customers I have would be fairly inaccurate. So I need to query Stripe and calculate MRR based on the subscriptions and discounts applied to my actual customers, and I wrote a script to do this.
 
+Note: This does not comply with generally accepted accounting principles, so don't use this for your accounting. It's just a quick estimation of your Stripe subscriptions.
+
 __Prerequisites__: Django app with an active Stripe account (with the [Stripe Python library](https://pypi.python.org/pypi/stripe/) installed), with at least a few active customers (can be test data).
 
 I recommend reading [Hello Web App: Intermediate Concepts](http://hellowebapp.com/intermediate-concepts)'s Stripe chapter if you're looking to learn how to tie in Stripe to your Django app.
