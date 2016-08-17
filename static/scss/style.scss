@@ -641,6 +641,15 @@ form input {
     }
 }
 
+.setup-sidebar {
+    padding-right: 40px;
+    code {
+        font-size: 0.8rem;
+        padding: .1rem .2rem;
+        font-style: normal;
+    }
+}
+
 // workshops landing page
 #workshops {
     .jumbotron {

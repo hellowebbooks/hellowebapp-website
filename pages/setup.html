@@ -229,8 +229,15 @@ environment is activated:
 We're telling pip to install a specific version of Django, in case Django
 releases a new version that this tutorial doesn't cover.
 
-### Start git
+{% endfilter %}
 
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-9 col-md-push-3">
+            <h3 style="margin-top: 0;">Start git</h3>
+{% filter markdown %}
 We also want to start our version control system. Now that we're in our project
 folder, run this command to start git:
 {% endfilter %}
@@ -246,19 +253,26 @@ it (spoiler: version control is very important *and* it's needed for deployment
 to Heroku), see the [Git tips page
 here](https://github.com/limedaring/HelloWebApp/tree/master/git-tips).
 
-*Optional but good to do:* Git will track *everything* in your directory, but we really only want it to track files we're changing (as compared to plugins we install, which can be kind of large.) We can create a _.gitignore_ file which tells Git what files we don't need to track. To add this, create a _.gitignore_ file in your top level directory:
-
 {% endfilter %}
+        </div>
+        <div class="col-md-3 col-md-pull-9 text-right setup-sidebar">
+            <p><small style="display:block">
+                    <i><b>Optional but good to do:</b> Git will track <b>everything</b> in your directory, but we really only want it to track files we're actually changing. We can tell Git to ignore certain files by creating a </i>.gitignore<i> file in our top level directory (<code>touch .gitignore</code>), then open up the file with a code editor and <a href="https://hellowebapp.com/gitignore/">pasting everything here in</a>.
+</i></small></p>
+<p><small style="display:block"><i>
+            Then you can commit the file (<code>git add .</code> then <code>git commit -a -m "Added git ignore file"</code>) and now Git won't track those files.
+</i></small></p>
 
-<pre><code class="sh">
-<span class="cmd">$</span> touch .gitignore
-</code></pre>
+
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-9 col-md-offset-3">
+
 
 {% filter markdown %}
 
-Then open up the file with your code editor and paste everything here in: [https://raw.githubusercontent.com/github/gitignore/master/Python.gitignore](https://raw.githubusercontent.com/github/gitignore/master/Python.gitignore)
-
-Then you can commit the file (`git add .` then `git commit -a -m "Added git ignore file"`) and now Git won't track files it doesn't need to.
 
 ### Start your Django project
 

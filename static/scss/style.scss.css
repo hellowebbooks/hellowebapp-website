@@ -5781,6 +5781,13 @@ form input {
 #setup li code {
   font-size: 80%; }
 
+.setup-sidebar {
+  padding-right: 40px; }
+  .setup-sidebar code {
+    font-size: 0.8rem;
+    padding: .1rem .2rem;
+    font-style: normal; }
+
 #workshops .jumbotron {
   background: url(../images/heros/workshop.jpg) center -300px no-repeat;
   background-size: 100% cover;
