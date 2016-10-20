@@ -151,9 +151,10 @@ Let's fill out the rest of the email logic. Here's the view from before, now fil
 {% verbatim %}
 <pre><code class="python">
 # new imports that go at the top of the file
-from django.template.loader import get_template
 from django.core.mail import EmailMessage
+from django.shortcuts import redirect
 from django.template import Context
+from django.template.loader import get_template
 
 # our view
 def contact(request):
