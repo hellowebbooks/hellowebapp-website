@@ -6,6 +6,7 @@
 /install-django https://hellowebapp.com/setup/#setup-django;
 /install-python https://hellowebapp.com/setup/;
 /kickstarter https://www.kickstarter.com/projects/1868398473/hello-web-app-intermediate-concepts;
+/01 http://amzn.to/1qUIE8o;
 /1 http://amzn.to/1qUIE8o;
 /2 http://learn.shayhowe.com/html-css/;
 /3 http://www.dontfeartheinternet.com/;
