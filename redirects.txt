@@ -20,11 +20,11 @@
 /11 https://github.com/limedaring/HelloWebApp;
 /12 https://github.com/limedaring/HelloWebApp/tree/master/git-tips;
 /13 http://learnpythonthehardway.org/book/ex29.html;
-/14 https://docs.djangoproject.com/en/1.7/ref/templates/builtins/;
-/15 https://docs.djangoproject.com/en/1.7/ref/contrib/humanize/;
+/14 https://docs.djangoproject.com/en/1.9/ref/templates/builtins/;
+/15 https://docs.djangoproject.com/en/1.9/ref/contrib/humanize/;
 /16 https://hellowebapp.com/setup/;
 /17 https://docs.djangoproject.com/en/dev/ref/models/fields/#slugfield;
-/18 https://docs.djangoproject.com/en/1.7/ref/models/querysets/;
+/18 https://docs.djangoproject.com/en/1.9/ref/models/querysets/;
 /19 https://docs.python.org/2/howto/regex.html;
 /20 https://docs.djangoproject.com/en/dev/topics/forms/modelforms/;
 /21 https://docs.djangoproject.com/en/dev/ref/csrf/;
@@ -37,7 +37,7 @@
 /28 http://haystacksearch.org/;
 /29 https://docs.djangoproject.com/en/dev/ref/models/querysets/#istartswith;
 /30 http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html;
-/31 https://docs.djangoproject.com/en/1.7/topics/testing/overview/;
+/31 https://docs.djangoproject.com/en/1.9/topics/testing/overview/;
 /32 http://heroku.com;
 /33 https://devcenter.heroku.com/articles/getting-started-with-python#set-up;
 /34 https://devcenter.heroku.com/articles/procfile;
@@ -45,7 +45,7 @@
 /36 http://stackoverflow.com/;
 /37 https://github.com/limedaring/HelloWebApp/tree/master/irc-tips;
 /38 https://stackoverflow.com/users/login?returnurl=%2fquestions%2fask;
-/39 https://docs.djangoproject.com/en/1.7/internals/mailing-lists/#django-users;
+/39 https://docs.djangoproject.com/en/1.9/internals/mailing-lists/#django-users;
 /40 https://groups.google.com/forum/#!forum/django-users;
 /41 http://www.pyladies.com/;
 /42 http://python.meetup.com/;
