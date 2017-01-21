@@ -1,4 +1,5 @@
 .build
 .env
+*.bak
 *.pyc
 .DS_Store
