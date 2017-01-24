@@ -199,12 +199,12 @@ Then fill it out:
 {% endblock title %} 
 
 {% block content %}
-    <h1>Create a Thing</h1>
-    <form role="form" action="" method="post">
+    &lt;h1&gt;Create a Thing&lt;/h1&gt;
+    &lt;form role="form" action="" method="post"&gt;
         {% csrf_token %}
         {{ form.as_p }}
-        <input type="submit" value="Submit" />
-    </form>
+        &lt;input type="submit" value="Submit" /&gt;
+    &lt;/form&gt;
 {% endblock %}
 </code></pre>
 {% endverbatim %}
@@ -279,14 +279,14 @@ who isn't logged in:
 {% endblock title %}
 
 {% block content %}
-    <h1>{{ thing.name }}</h1>
-    <p>{{ thing.description }}</p>
+    &lt;h1&gt;{{ thing.name }}&lt;/h1&gt;
+    &lt;p&gt;{{ thing.description }}&lt;/p&gt;
     <b>{% if user == thing.user %}
-        <p>
-            <a href="{% url 'edit_thing' slug=thing.slug %}">
+        &lt;p&gt;
+            &lt;a href="{% url 'edit_thing' slug=thing.slug %}"&gt;
                 Edit me!
-            </a>
-        </p>
+            &lt;/a&gt;
+        &lt;/p&gt;
     {% endif %}</b>
 {% endblock content %}
 </code></pre>

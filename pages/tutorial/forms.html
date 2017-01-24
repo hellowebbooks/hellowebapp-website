@@ -33,6 +33,7 @@ and add the indicated line:
 *urls.py*
 {% endfilter %}
 
+{% comment %}CHECK ME {% endcomment %}
 <pre><code class="python">
 urlpatterns = [
     url(r'^$', views.index, name='home'),
@@ -187,12 +188,12 @@ we'll add into our template:
 {% endblock title %}
 
 {% block content %}
-    <h1>Edit "{{ thing.name }}"</h1>
-    <form role="form" action="" method="post">
+    &lt;h1&gt;Edit "{{ thing.name }}"&lt;/h1&gt;
+    &lt;form role="form" action="" method="post"&gt;
         {% csrf_token %}
         {{ form.as_p }}
-        <button type="submit">Submit</button>
-    </form>
+        &lt;button type="submit"&gt;Submit&lt;/button&gt;
+    &lt;/form&gt;
 {% endblock content %}
 </code></pre>
 {% endverbatim %}
@@ -226,9 +227,9 @@ view:
 {% endblock title %}
 
 {% block content %}
-    <h1>{{ thing.name }}</h1>
-    <p>{{ thing.description }}</p>
-    <b><a href="{% url 'edit_thing' slug=thing.slug %}">Edit me!</a></b>
+    &lt;h1&gt;{{ thing.name }}&lt;/h1&gt;
+    &lt;p&gt;{{ thing.description }}&lt;/p&gt;
+    <b>&lt;a href="{% url 'edit_thing' slug=thing.slug %}"&gt;Edit me!&lt;/&gt;></b>
     {% endblock content %}
 </code></pre>
 {% endverbatim %}

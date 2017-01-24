@@ -76,7 +76,7 @@ for line in fileinput.input(paths):
         continue
 
     # Check if we're in the desired parsing range. If not, skip or exit.
-    if time_since and timestamp < time_since:
+    if time_since and timestamp &lt; time_since:
         # Fast forward
         continue
     else:
@@ -145,7 +145,7 @@ Python 2.7.8 (default, Aug 24 2014, 21:26:19)
 [GCC 4.2.1 Compatible Apple LLVM 5.1 (clang-503.0.40)] on darwin
 Type "help", "copyright", "credits" or "license" for more information.
 (InteractiveConsole)
->>>
+&gt;&gt;&gt;
 </code></pre>
 
 {% filter markdown %}
@@ -156,9 +156,9 @@ see instantaneous results.
 {% endfilter %}
 
 <pre><code class="python">
->>> from collection.models import Thing
->>> things = Thing.objects.all()
->>> for thing in things:
+&gt;&gt;&gt; from collection.models import Thing
+&gt;&gt;&gt; things = Thing.objects.all()
+&gt;&gt;&gt; for thing in things:
 ...     print thing
 ... 
 Hello Thing

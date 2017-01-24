@@ -45,16 +45,16 @@ for now — we can get fancy later.
 {% endfilter %}
 
 <pre><code class="html">
-<!doctype html>
-<html>
-    <head>
-        <title>My Hello Web App Project</title>
-    </head>
-    <body>
-        <h1>Hello World!</h1>
-        <p>I am a basic website.</p>
-    </body>
-</html>
+&lt;!doctype html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;My Hello Web App Project&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h1&gt;Hello World!&lt;/h1&gt;
+        &lt;p&gt;I am a basic website.&lt;/p&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
 </code></pre>
 
 {% filter markdown %}
@@ -187,10 +187,11 @@ collection/static/css $ touch style.css
 
 Head back into your *index.html* page. We'll need to tell Django that there are
 static files used on this page, so at the top (like imports in *views.py* and
-*urls.py*) add `{% load staticfiles %}`. Why the `{%`? We'll get to that soon.
+*urls.py*) add `{% verbatim %}{% load staticfiles %}{% end verbatim %}`. Why
+the `{% verbatim %}{%{% endverbatim %}`? We'll get to that soon.
 
 Now that we can add static files to this template, add your CSS tag to the
-`<HEAD>` just like this:
+`&lt;HEAD&gt;` just like this:
 
 *index.html*
 {% endfilter %}
@@ -198,17 +199,17 @@ Now that we can add static files to this template, add your CSS tag to the
 {% verbatim %}
 <pre><code class="django">
 <b>{% load staticfiles %}</b>
-<!doctype html>
-<html>
-    <head>
-        <title>My Hello Web App Project</title>
-        <b><link rel="stylesheet" href="{% static 'css/style.css' %}" /></b>
-    </head>
-    <body>
-        <h1>Hello World!</h1>
-        <p>I am a basic website.</p>
-    </body>
-</html>
+&lt;!doctype html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;My Hello Web App Project&lt;/title&gt;
+        <b>&lt;link rel="stylesheet" href="{% static 'css/style.css' %}" /&gt;</b>
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h1&gt;Hello World!&lt;/h1&gt;
+        &lt;p&gt;I am a basic website.&lt;/p&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
 </code></pre>
 {% endverbatim %}
 
@@ -240,11 +241,17 @@ body {
 
 Nice! Feel free to update your CSS more at this point.
 
+{% endfilter %}
+
+{% verbatim %}
 To link to any static file from a template, use the `{% static
 'FILELOCATION/FILENAME.TYPE' %}` syntax, such as `{% static 'js/script.js' %}`
 or `{% static 'images/logo.jpg' %}`. Keep in mind you still need the `IMG` HTML
-tag when displaying images, for example: `<img src="{% static 'images/logo.jpg'
-%}" alt=""/>`
+tag when displaying images, for example: `&lt;img src="{% static 'images/logo.jpg'
+%}" alt=""/&gt;`
+{% endverbatim %}
+
+{% filter markdown %}
 
 That said, don't worry about this within your CSS files — feel free to use
 relative paths because your static files should always be together anyways.

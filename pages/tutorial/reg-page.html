@@ -203,12 +203,12 @@ file:
 {% endblock title %}
 
 {% block content %}
-    <h1>Login</h1>
-    <form role="form" action="" method="post">
+    &lt;h1&gt;Login&lt;/h1&gt;
+    &lt;form role="form" action="" method="post"&gt;
         {% csrf_token %}
         {{ form.as_p }}
-        <input type="submit" value="Submit" />
-    </form>
+        &lt;input type="submit" value="Submit" /&gt;
+    &lt;/form&gt;
 {% endblock content %}
 </code></pre>
 {% endverbatim %}
@@ -226,8 +226,8 @@ file:
 {% endblock title %}
 
 {% block content %}
-    <h1>Logged Out</h1>
-    <p>You have been logged out!</p>
+    &lt;h1&gt;Logged Out&lt;/h1&gt;
+    &lt;p&gt;You have been logged out!&lt;/p&gt;
 {% endblock content %}
 </code></pre>
 {% endverbatim %}
@@ -245,8 +245,8 @@ file:
 {% endblock title %}
 
 {% block content %}
-    <h1>Registration Complete</h1>
-    <p>Your account has been registered!</p>
+    &lt;h1&gt;Registration Complete&lt;/h1&gt;
+    &lt;p&gt;Your account has been registered!&lt;/p&gt;
 {% endblock content %}
 </code></pre>
 {% endverbatim %}
@@ -264,12 +264,12 @@ file:
 {% endblock title %}
 
 {% block content %}
-    <h1>Registration Form</h1>
-    <form role="form" action="" method="post">
+    &lt;h1&gt;Registration Form&lt;/h1&gt;
+    &lt;form role="form" action="" method="post"&gt;
         {% csrf_token %}
         {{ form.as_p }}
-        <input type="submit" value="Submit" />
-    </form>
+        &lt;input type="submit" value="Submit" /&gt;
+    &lt;/form&gt;
 {% endblock content %}
 </code></pre>
 {% endverbatim %}
@@ -287,16 +287,16 @@ Update your *base.html* layout file:
 {% verbatim %}
 <pre><code class="django">
     <b>{% if user.is_authenticated %}
-    <li>
-        <a href="{% url 'auth_logout' %}">Logout</a>
-    </li>
+    &lt;li&gt;
+        &lt;a href="{% url 'auth_logout' %}"&gt;Logout&lt;/a&gt;
+    &lt;/li&gt;
     {% else %}
-    <li>
-        <a href="{% url 'auth_login' %}">Login</a>
-    </li>
-    <li>
-        <a href="{% url 'registration_register' %}">Register</a>
-    </li>
+    &lt;li&gt;
+        &lt;a href="{% url 'auth_login' %}"&gt;Login&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;a href="{% url 'registration_register' %}"&gt;Register&lt;/a&gt;
+    &lt;/li&gt;
     {% endif %}</b>
 </ul>
 </code></pre>
@@ -304,8 +304,8 @@ Update your *base.html* layout file:
 
 {% filter markdown %}
 
-Note the two extra links we're adding to the navigation: `{% if
-user.is_authenticated %}` does what it looks like it does — returns `True` if
+Note the two extra links we're adding to the navigation: `{% verbatim %}{% if
+user.is_authenticated %}{% endverbatim %}` does what it looks like it does — returns `True` if
 the current user is logged into your app or not. Django by default automatically
 adds the current user for use in templates.
 
@@ -357,8 +357,8 @@ content.
 {% endblock title %}
 
 {% block content %}
-    <h1>Password Change Done</h1>
-    <p>Your password was changed.</p>
+    &lt;h1&gt;Password Change Done&lt;/h1&gt;
+    &lt;p&gt;Your password was changed.&lt;/p&gt;
 {% endblock content %}
 </code></pre>
 
@@ -376,12 +376,12 @@ content.
 {% endblock title %}
 
 {% block content %}
-    <h1>Password Change Form</h1>
-    <form role="form" action="" method="post">
+    &lt;h1&gt;Password Change Form&lt;/h1&gt;
+    &lt;form role="form" action="" method="post"&gt;
         {% csrf_token %}
         {{ form.as_p }}
-        <input type="submit" value="Submit" />
-    </form>
+        &lt;input type="submit" value="Submit" /&gt;
+    &lt;/form&gt;
 {% endblock content %}
 </code></pre>
 {% endverbatim %}
@@ -399,8 +399,8 @@ content.
 {% endblock title %}
 
 {% block content %}
-    <h1>Password Reset Complete</h1>
-    <p>Your password has been reset!</p>
+    &lt;h1&gt;Password Reset Complete&lt;/h1&gt;
+    &lt;p&gt;Your password has been reset!&lt;/p&gt;
 {% endblock content %}
 </code></pre>
 {% endverbatim %}
@@ -419,18 +419,18 @@ content.
 
 {% block content %}
     {% if validlink %}
-    <h1>Confirm Password Reset</h1>
-    <p>Please enter your new password twice so we can verify you
-    typed it in correctly.</p>
-    <form role="form" action="" method="post">
+    &lt;h1&gt;Confirm Password Reset&lt;/h1&gt;
+    &lt;p&gt;Please enter your new password twice so we can verify you
+    typed it in correctly.&lt;/p&gt;
+    &lt;form role="form" action="" method="post"&gt;
         {% csrf_token %}
         {{ form.as_p }}
-        <input type="submit" value="Change password" />
-    </form>
+        &lt;input type="submit" value="Change password" /&gt;
+    &lt;/form&gt;
     {% else %}
-    <h1>Password reset unsuccessful</h1>
-    <p>The password reset link was invalid, possibly because it has
-    already been used. Please request a new password reset.</p>
+    &lt;h1&gt;Password reset unsuccessful&lt;/h1&gt;
+    &lt;p&gt;The password reset link was invalid, possibly because it has
+    already been used. Please request a new password reset.&lt;/p&gt;
     {% endif %}
 {% endblock content %}
 </code></pre>
@@ -449,8 +449,8 @@ content.
 {% endblock title %}
 
 {% block content %}
-    <h1>Password Reset Complete</h1>
-    <p>Check your email for a link to reset your password!</p>
+    &lt;h1&gt;Password Reset Complete&lt;/h1&gt;
+    &lt;p&gt;Check your email for a link to reset your password!&lt;/p&gt;
 {% endblock content %}
 </code></pre>
 {% endverbatim %}
@@ -460,6 +460,7 @@ content.
 *password_reset_email.txt*
 {% endfilter %}
 
+{% verbatim %}
 <pre><code class="python">
 {% autoescape off %}
 You're receiving this email because you requested a password
@@ -473,6 +474,7 @@ password:
 Your username, in case you've forgotten: {{ user.username }}
 {% endautoescape %}
 </code></pre>
+{% endverbatim %}
 
 {% filter markdown %}
 
@@ -487,12 +489,12 @@ Your username, in case you've forgotten: {{ user.username }}
 {% endblock title %}
 
 {% block content %}
-    <h1>Password Reset Form</h1>
-    <form role="form" action="" method="post">
+    &lt;h1&gt;Password Reset Form&lt;/h1&gt;
+    &lt;form role="form" action="" method="post"&gt;
         {% csrf_token %}
         {{ form.as_p }}
-        <input type="submit" value="Submit" />
-    </form>
+        &lt;input type="submit" value="Submit" /&gt;
+    &lt;/form&gt;
 {% endblock content %}
 </code></pre>
 {% endverbatim %}
@@ -578,17 +580,17 @@ passwords from the login page. Update your login template to the following:
 {% endblock title %}
 
 {% block content %}
-    <h1>Login</h1>
-    <form role="form" action="" method="post">
+    &lt;h1&gt;Login&lt;/h1&gt;
+    &lt;form role="form" action="" method="post"&gt;
         {% csrf_token %}
         {{ form.as_p }}
-        <input type="submit" value="Submit" />
-    </form>
-    <b><p>
-        <a href="{% url 'password_reset' %}">
+        &lt;input type="submit" value="Submit" /&gt;
+    &lt;/form&gt;
+    <b>&lt;p&gt;
+        &lt;a href="{% url 'password_reset' %}"&gt;
             Forgot your password?
-        </a>
-    </p></b>
+        &lt;/a&gt;
+    &lt;/p&gt;</b>
 {% endblock content %}
 </code></pre>
 {% endverbatim %}

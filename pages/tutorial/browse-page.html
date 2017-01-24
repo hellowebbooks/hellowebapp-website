@@ -139,28 +139,28 @@ Our *search.html* file:
 {% endblock title %}
 
 {% block content %}
-    <h1>
+    &lt;h1&gt;
         Browse Things{% if initial %} Starting with 
         '{{ initial|title }}'{% endif %}
-    </h1>
+    &lt;/h1&gt;
 
     {% for letter in 'abcdefghijklmnopqrstuvwxyz' %}
-    <a href="{% url 'browse_by_name' initial=letter %}" 
-    {% if initial == letter %}class="active"{% endif %}>
+    &lt;a href="{% url 'browse_by_name' initial=letter %}" 
+    {% if initial == letter %}class="active"{% endif %}&gt;
         {{ letter|upper }}
-    </a>
+    &lt;/a&gt;
     {% endfor %}
 
     {% for thing in things %}
-    <ul>
-        <li>
-            <a href="{% url 'thing_detail' slug=thing.slug %}">
+    &lt;ul&gt;
+        &lt;li&gt;
+            &lt;a href="{% url 'thing_detail' slug=thing.slug %}"&gt;
                 {{ thing.name }}
-            </a>
-        </li>
-    </ul>
+            &lt;/a&gt;
+        &lt;/li&gt;
+    &lt;/ul&gt;
     {% empty %}
-    <p>Sorry, no results!</p>
+    &lt;p&gt;Sorry, no results!&lt;/p&gt;
     {% endfor %}
 {% endblock content %}
 </code></pre>
@@ -199,12 +199,12 @@ There isn't a link to this page in the main nav, so we should update the nav:
 
 {% verbatim %}
 <pre><code class="django">
-<li>
-    <a href="{% url 'contact' %}">Contact</a>
-</li>
-<b><li>
-    <a href="{% url 'browse' %}">Browse</a>
-</li></b>
+&lt;li&gt;
+    &lt;a href="{% url 'contact' %}"&gt;Contact&lt;/a&gt;
+&lt;/li&gt;
+<b>&lt;li&gt;
+    &lt;a href="{% url 'browse' %}"&gt;Browse&lt;/a&gt;
+&lt;/li&gt;</b>
 </code></pre>
 {% endverbatim %}
 

@@ -46,19 +46,18 @@ into *base.html*:
 
 <pre><code class="html">
 {% load staticfiles %}
-<!doctype html>
-<html>
-    <head>
-        <b><title>
-             <!-- we want to override page titles -->
-        </title></b>
-        <link rel="stylesheet" 
-             href="{% static 'css/style.css' %}" />
-    </head>
-    <body>
-        <b><!-- as well as override content bits --></b>
-    </body>
-</html>
+&lt;!doctype html>
+&lt;html>
+    &lt;head>
+        <b>&lt;title>
+             &lt;!-- we want to override page titles -->
+        &lt;/title></b>
+        &lt;link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    &lt;/head>
+    &lt;body>
+        <b>&lt;!-- as well as override content bits -->&lt;/b>
+    &lt;/body>
+&lt;/html>
 </code></pre>
 
 {% filter markdown %}
@@ -78,23 +77,22 @@ and right-before-closing-body tag (for adding other Javascript files).
 {% verbatim %}
 <pre><code class="django">
 {% load staticfiles %}
-<!doctype html>
-<html>
-    <head>
-        <b><title>
+&lt;!doctype html>
+&lt;html>
+    &lt;head>
+        <b>&lt;title>
             {% block title %}
                 My Hello Web App Project
             {% endblock title %}
-        </title></b>
-        <link rel="stylesheet"
-            href="{% static 'css/style.css' %}" />
+        &lt;/title></b>
+        &lt;link rel="stylesheet" href="{% static 'css/style.css' %}" />
         <b>{% block header %}{% endblock header %}</b>
-    </head>
-    <body>
+    &lt;/head>
+    &lt;body>
         <b>{% block content %}{% endblock content %}
         {% block footer %}{% endblock footer %}</b>
-    </body>
-</html>
+    &lt;/body>
+&lt;/html>
 </code></pre>
 {% endverbatim %}
 
@@ -122,8 +120,8 @@ Our new *index.html*:
 {% endblock title %}
 
 {% block content %}
-    <h1>Hello World!</h1>
-    <p>I am a basic website.</p>
+    &lt;h1>Hello World!&lt;/h1>
+    &lt;p>I am a basic website.&lt;/p>
 {% endblock content %}
 </code></pre>
 {% endverbatim %}
@@ -181,8 +179,8 @@ Then open the pages and edit the HTML so it makes sense for each page.
 {% endblock title %}
 
 {% block content %}
-    <h1>About page</h1>
-    <p>About content.</p>
+    &lt;h1>About page&lt;/h1>
+    &lt;p>About content.&lt;/p>
 {% endblock content %}
 </code></pre>
 {% endverbatim %}
@@ -200,8 +198,8 @@ Then open the pages and edit the HTML so it makes sense for each page.
 {% endblock title %}
 
 {% block content %}
-    <h1>Contact page</h1>
-    <p>Contact content.</p>
+    &lt;h1>Contact page&lt;/h1>
+    &lt;p>Contact content.&lt;/p>
 {% endblock content %}
 </code></pre>
 {% endverbatim %}
@@ -259,39 +257,38 @@ some other bits):
 {% verbatim %}
 <pre><code class="django">
 {% load staticfiles %}
-<!doctype html>
-<html>
-    <head>
-        <title>
+&lt;!doctype html>
+&lt;html>
+    &lt;head>
+        &lt;title>
             {% block title %}
                 My Hello Web App Project
             {% endblock title %}
-        </title>
-        <link rel="stylesheet"
-            href="{% static 'css/style.css' %}" />
+        &lt;/title>
+        &lt;link rel="stylesheet" href="{% static 'css/style.css' %}" />
         {% block header %}{% endblock header %}
-    </head>
-    <body>
-        <b><header>
-            <h1>Hello Web App</h1>
-            <nav>
-                <ul>
-                    <li>
-                        <a href="{% url 'home' %}">Home</a>
-                    </li>
-                    <li>
-                        <a href="{% url 'about' %}">About</a>
-                    </li>
-                    <li>
-                        <a href="{% url 'contact' %}">Contact</a>
-                    </li>
-                </ul>
-            </nav>
-        </header></b>
+    &lt;/head>
+    &lt;body>
+        <b>&lt;header>
+            &lt;h1>Hello Web App&lt;/h1>
+            &lt;nav>
+                &lt;ul>
+                    &lt;li>
+                        &lt;a href="{% url 'home' %}">Home&lt;/a>
+                    &lt;/li>
+                    &lt;li>
+                        &lt;a href="{% url 'about' %}">About&lt;/a>
+                    &lt;/li>
+                    &lt;li>
+                        &lt;a href="{% url 'contact' %}">Contact&lt;/a>
+                    &lt;/li>
+                &lt;/ul>
+            &lt;/nav>
+        &lt;/header></b>
         {% block content %}{% endblock content %}
         {% block footer %}{% endblock footer %}
-    </body>
-</html>
+    &lt;/body>
+&lt;/html>
 </code></pre>
 {% endverbatim %}
 
@@ -361,9 +358,9 @@ To see this in action, let’s first display the variable. Add this to your
 {% endblock title %}
 
 {% block content %}
-    <h1>Hello World!</h1>
-    <!-- here's the variable we are passing in -->
-    <b><p>{{ number }}</p></b>
+    &lt;h1>Hello World!&lt;/h1>
+    &lt;!-- here's the variable we are passing in -->
+    <b>&lt;p>{{ number }}&lt;/p></b>
 {% endblock content %}
 </code></pre>
 {% endverbatim %}
@@ -386,7 +383,7 @@ Check out an *if-else statement* in action:
 
 {% verbatim %}
 <pre><code class="django">
-<p>{% if number %}Number exists!{% endif %}</p>
+&lt;p>{% if number %}Number exists!{% endif %}&lt;/p>
 </code></pre>
 {% endverbatim %}
 
@@ -400,13 +397,13 @@ And another example:
 
 {% verbatim %}
 <pre><code class="django">
-    <p>There are six dogs! <b>
+    &lt;p>There are six dogs! <b>
     {% if number == 6 %}
         True
     {% else %}
         False
     {% endif %}
-    </b></p>
+    </b>&lt;/p>
 </code></pre>
 {% endverbatim %}
 
@@ -423,7 +420,7 @@ if the number is more than one:
 
 {% verbatim %}
 <pre><code class="django">
-<p>There are {{ number }} dog{{ number|pluralize }}!</p>
+&lt;p>There are {{ number }} dog{{ number|pluralize }}!&lt;/p>
 </code></pre>
 {% endverbatim %}
 
@@ -437,7 +434,7 @@ This template tag also accepts different suffixes:
 
 {% verbatim %}
 <pre><code class="django">
-<p>There are {{ number }} walrus{{ number|pluralize:"es" }}!</p>
+&lt;p>There are {{ number }} walrus{{ number|pluralize:"es" }}!&lt;/p>
 </code></pre>
 {% endverbatim %}
 
@@ -481,8 +478,8 @@ with `apnumber`, which spells out the numbers 1-9:
 {% endblock title %}
 
 {% block content %}
-    <h1>Hello World!</h1>
-    <b><p>There are {{ number|apnumber }} dogs!</p></b>
+    &lt;h1>Hello World!&lt;/h1>
+    <b>&lt;p>There are {{ number|apnumber }} dogs!&lt;/p></b>
 {% endblock content %}
 </code></pre>
 {% endverbatim %}
@@ -522,7 +519,7 @@ As well as our template:
 
 {% verbatim %}
 <pre><code class="django">
-<p>This is my name: {{ thing }}</p>
+&lt;p>This is my name: {{ thing }}&lt;/p>
 </code></pre>
 {% endverbatim %}
 
@@ -537,7 +534,7 @@ it into a slug, a shortened, lowercased version of a string used for URLs:
 
 {% verbatim %}
 <pre><code class="django">
-<p>This is my name: {{ thing|slugify }}</p>
+&lt;p>This is my name: {{ thing|slugify }}&lt;/p>
 </code></pre>
 {% endverbatim %}
 
@@ -551,7 +548,7 @@ Feel like using title case?
 
 {% verbatim %}
 <pre><code class="django">
-<p>This is my name: {{ thing|title }}</p>
+&lt;p>This is my name: {{ thing|title }}&lt;/p>
 </code></pre>
 {% endverbatim %}
 
@@ -565,7 +562,7 @@ Perhaps it's too long of a name for you? Truncate it.
 
 {% verbatim %}
 <pre><code class="django">
-<p>This is my name: {{ thing|truncatewords:1 }}</p>
+&lt;p&gt;This is my name: {{ thing|truncatewords:1 }}&lt;/p&gt;
 </code></pre>
 {% endverbatim %}
 

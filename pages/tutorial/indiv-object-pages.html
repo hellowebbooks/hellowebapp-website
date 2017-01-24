@@ -142,8 +142,8 @@ Here's our new individual object HTML template:
 {% endblock title %}
 
 {% block content %}
-    <h1>{{ thing.name }}</h1>
-    <p>{{ thing.description }}</p>
+    &lt;h1&gt;{{ thing.name }}&lt;/h1&gt;
+    &lt;p&gt;{{ thing.description }}&lt;/p&gt;
 {% endblock content %}
 </code></pre>
 
@@ -171,12 +171,12 @@ Our new *index.html* template:
 
 {% block content %}
     <b>{% for thing in things %}
-    <h2>
-        <a href="{% url 'thing_detail' slug=thing.slug %}">
+    &lt;h2&gt;
+        &lt;a href="{% url 'thing_detail' slug=thing.slug %}"&gt;
             {{ thing.name }}
-        </a>
-    </h2>
-    <p>{{ thing.description }}</p>
+        &lt;/a&gt;
+    &lt;/h2&gt;
+    &lt;p&gt;{{ thing.description }}&lt;/p&gt;
     {% endfor %}</b>
 {% endblock content %}
 </code></pre>
