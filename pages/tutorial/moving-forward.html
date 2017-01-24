@@ -1,3 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %}Set Up - {{ block.super }}{% endblock %}
+
+{% block analytics %}
+analytics.page("Setup");
+{% endblock %}
+
+{% block bodyclass %}
+<body id="setup">
+{% endblock %}
+
+{% block content %}
+<div class="jumbotron"></div>
+
+{% filter markdown %}
+
 # Moving Forward
 
 You've created your first web app using Hello Web App — congratulations! I'm
@@ -150,3 +167,17 @@ account) or [http://twitter.com/limedaring](http://twitter.com/limedaring)
 (personal).
 
 Keep in touch, and best of luck building your web apps!
+
+{% endfilter %}
+
+{% include 'includes/newsletter.html' %}
+
+{% endblock content %}
+
+{% block scripts %}
+{{ block.super }}
+{% include 'includes/newsletter-analytics.html' %}
+<link rel="stylesheet" href="{% static '/css/tomorrow.css' %}">
+<script src="{% static '/js/highlight.pack.js' %}"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+{% endblock scripts %}

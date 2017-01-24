@@ -1,3 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %}Set Up - {{ block.super }}{% endblock %}
+
+{% block analytics %}
+analytics.page("Setup");
+{% endblock %}
+
+{% block bodyclass %}
+<body id="setup">
+{% endblock %}
+
+{% block content %}
+<div class="jumbotron"></div>
+
+{% filter markdown %}
+
 # Deploying Your Web App
 
 It's really important for you to know how to push your web app onto the internet
@@ -384,3 +401,17 @@ For the future, as you develop locally, run the below steps to push it live:
 * Run `git push heroku master` to push the changes to Heroku.
 * Also worth it to run `git push origin master` if you've set up a remote GitHub
     repository to back your app up in the cloud. 
+
+{% endfilter %}
+
+{% include 'includes/newsletter.html' %}
+
+{% endblock content %}
+
+{% block scripts %}
+{{ block.super }}
+{% include 'includes/newsletter-analytics.html' %}
+<link rel="stylesheet" href="{% static '/css/tomorrow.css' %}">
+<script src="{% static '/js/highlight.pack.js' %}"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+{% endblock scripts %}

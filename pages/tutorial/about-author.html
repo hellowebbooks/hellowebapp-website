@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block title %}Set Up - {{ block.super }}{% endblock %}
+
+{% block analytics %}
+analytics.page("Setup");
+{% endblock %}
+
+{% block bodyclass %}
+<body id="setup">
+{% endblock %}
+
+{% block content %}
+<div class="jumbotron"></div>
+
+{% filter markdown %}
+
+# About the Author
+
+Tracy Osborn is a designer, developer, and entrepreneur living in the Bay Area of California. Building websites since she was twelve, she always felt an affinity to computers, the internet, and what it brings us. 
+
+Tracy graduated with a BFA in Art & Design with a concentration in Graphic Design from California Polytechnic State University, San Luis Obispo, and worked as a web designer for five years before teaching herself programming and launching her first startup, WeddingLovely. 
+
+She's also an avid outdoorswoman, hiking over 200 miles on the John Muir Trail solo in 2014.
+
+{% endfilter %}
+
+{% include 'includes/newsletter.html' %}
+
+{% endblock content %}
+
+{% block scripts %}
+{{ block.super }}
+{% include 'includes/newsletter-analytics.html' %}
+<link rel="stylesheet" href="{% static '/css/tomorrow.css' %}">
+<script src="{% static '/js/highlight.pack.js' %}"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+{% endblock scripts %}

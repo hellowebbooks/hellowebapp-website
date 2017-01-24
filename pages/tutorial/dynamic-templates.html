@@ -1,3 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %}Set Up - {{ block.super }}{% endblock %}
+
+{% block analytics %}
+analytics.page("Setup");
+{% endblock %}
+
+{% block bodyclass %}
+<body id="setup">
+{% endblock %}
+
+{% block content %}
+<div class="jumbotron"></div>
+
+{% filter markdown %}
+
 # Displaying Dynamic Information in the Templates
 
 It's great that we can see our information in the admin, but now we need to be
@@ -192,3 +209,17 @@ def index(request):
 
 Congrats — we now have objects in our database showing up on our website! Commit
 your work, and now let's move on to creating individual pages for these objects.
+
+{% endfilter %}
+
+{% include 'includes/newsletter.html' %}
+
+{% endblock content %}
+
+{% block scripts %}
+{{ block.super }}
+{% include 'includes/newsletter-analytics.html' %}
+<link rel="stylesheet" href="{% static '/css/tomorrow.css' %}">
+<script src="{% static '/js/highlight.pack.js' %}"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+{% endblock scripts %}

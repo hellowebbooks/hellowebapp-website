@@ -1,4 +1,21 @@
-w# What To Do If Your App Is Broken
+{% extends "base.html" %}
+
+{% block title %}Set Up - {{ block.super }}{% endblock %}
+
+{% block analytics %}
+analytics.page("Setup");
+{% endblock %}
+
+{% block bodyclass %}
+<body id="setup">
+{% endblock %}
+
+{% block content %}
+<div class="jumbotron"></div>
+
+{% filter markdown %}
+
+# What To Do If Your App Is Broken
 
 You'll probably spend more time trying to fix random errors than you will
 building your app. You might have heard jokes of programmers spending all night
@@ -102,3 +119,17 @@ happening near you.
 
 These events are also a great place to meet new friends and expand your
 programming community!
+
+{% endfilter %}
+
+{% include 'includes/newsletter.html' %}
+
+{% endblock content %}
+
+{% block scripts %}
+{{ block.super }}
+{% include 'includes/newsletter-analytics.html' %}
+<link rel="stylesheet" href="{% static '/css/tomorrow.css' %}">
+<script src="{% static '/js/highlight.pack.js' %}"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+{% endblock scripts %}

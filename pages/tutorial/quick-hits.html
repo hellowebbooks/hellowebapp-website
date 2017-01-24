@@ -1,3 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %}Set Up - {{ block.super }}{% endblock %}
+
+{% block analytics %}
+analytics.page("Setup");
+{% endblock %}
+
+{% block bodyclass %}
+<body id="setup">
+{% endblock %}
+
+{% block content %}
+<div class="jumbotron"></div>
+
+{% filter markdown %}
+
 # Quick Hits: 404 Pages, requirements.txt, and Testing
 
 We're going to go over some small things in this chapter that aren't worthy of
@@ -249,3 +266,17 @@ Django tests here: [http://hellowebapp.com/31](http://hellowebapp.com/31)
 
 Get into the practice of running your tests often, and especially before
 deploying your web app live. Might save your bacon! 
+
+{% endfilter %}
+
+{% include 'includes/newsletter.html' %}
+
+{% endblock content %}
+
+{% block scripts %}
+{{ block.super }}
+{% include 'includes/newsletter-analytics.html' %}
+<link rel="stylesheet" href="{% static '/css/tomorrow.css' %}">
+<script src="{% static '/js/highlight.pack.js' %}"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+{% endblock scripts %}

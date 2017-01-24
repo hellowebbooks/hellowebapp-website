@@ -1,3 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %}Set Up - {{ block.super }}{% endblock %}
+
+{% block analytics %}
+analytics.page("Setup");
+{% endblock %}
+
+{% block bodyclass %}
+<body id="setup">
+{% endblock %}
+
+{% block content %}
+<div class="jumbotron"></div>
+
+{% filter markdown %}
+
 # References
 
 For reference, the shortened link URLs throughout the book and their related
@@ -106,3 +123,17 @@ long URL are listed below.
 **57:** [http://ladieslearningcode.com/](http://ladieslearningcode.com/) 
 **58:** [http://rocket-space.com/rocketu/](http://rocket-space.com/rocketu/)
 **59:** [https://generalassemb.ly/education/](https://generalassemb.ly/education/) 
+
+{% endfilter %}
+
+{% include 'includes/newsletter.html' %}
+
+{% endblock content %}
+
+{% block scripts %}
+{{ block.super }}
+{% include 'includes/newsletter-analytics.html' %}
+<link rel="stylesheet" href="{% static '/css/tomorrow.css' %}">
+<script src="{% static '/js/highlight.pack.js' %}"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+{% endblock scripts %}
