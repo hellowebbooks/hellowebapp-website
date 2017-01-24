@@ -12,6 +12,7 @@ analytics.page("Chapter 4: Setting Up Your Templates");
 
 {% block content %}
 <div class="jumbotron"></div>
+<div class="container">
 
 {% filter markdown %}
 # Setting Up Your Templates
@@ -27,10 +28,10 @@ create *index.html* within it.
 {% endfilter %}
 
 <pre><code class="python">
-$ cd collection
-collection $ mkdir templates
-collection $ cd templates
-collection/templates $ touch index.html
+<span class="cmd">$</span> cd collection
+<span class="cmd">collection $</span> mkdir templates
+<span class="cmd">collection $</span> cd templates
+<span class="cmd">collection/templates $</span> touch index.html
 </code></pre>
 
 {% filter markdown %}
@@ -165,20 +166,20 @@ add a blank *style.css* file.
 {% endfilter %}
 
 <pre><code class="python">
-$ cd collection
-collection $ mkdir static
-collection $ cd static
-collection/static $ mkdir images
-collection/static $ mkdir js
-collection/static $ mkdir css
-collection/static $ cd css
-collection/static/css $ touch style.css
+<span class="cmd">$</span> cd collection
+<span class="cmd">collection $</span> mkdir static
+<span class="cmd">collection $</span> cd static
+<span class="cmd">collection/static $</span> mkdir images
+<span class="cmd">collection/static $</span> mkdir js
+<span class="cmd">collection/static $</span> mkdir css
+<span class="cmd">collection/static $</span> cd css
+<span class="cmd">collection/static/css $</span> touch style.css
 </code></pre>
 
 <p>Head back into your *index.html* page. We'll need to tell Django that there are
 static files used on this page, so at the top (like imports in <i>views.py</i> and
 <i>urls.py</i>) add <code>{% verbatim %}{% load staticfiles %}{% endverbatim %}</code>. Why
-the <code>{% verbatim %}{%{% endverbatim %}</code>? We'll get to that soon.</p>
+    the <code>{% verbatim %}{%{% endverbatim %}</code>? We'll get to that soon.</p>
 
 {% filter markdown %}
 Now that we can add static files to this template, add your CSS tag to the
@@ -259,6 +260,7 @@ work with git (review git on our git tips page here:
 Next up, Django has a bunch of awesome template utilities that'll elevate these
 static HTML files and make them a lot more interesting (and fun to work with).
 {% endfilter %}
+</div>
 
 {% include 'includes/newsletter.html' %}
 

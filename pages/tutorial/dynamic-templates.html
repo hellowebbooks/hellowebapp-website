@@ -12,6 +12,7 @@ analytics.page("Chapter 7: Displaying Dynamic Information in the Templates");
 
 {% block content %}
 <div class="jumbotron"></div>
+<div class="container">
 
 {% filter markdown %}
 
@@ -234,6 +235,7 @@ Congrats — we now have objects in our database showing up on our website! Comm
 your work, and now let's move on to creating individual pages for these objects.
 
 {% endfilter %}
+</div>
 
 {% include 'includes/newsletter.html' %}
 

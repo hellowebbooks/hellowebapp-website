@@ -12,9 +12,9 @@ analytics.page("Chapter 11: Associating Users with Objects");
 
 {% block content %}
 <div class="jumbotron"></div>
+<div class="container">
 
 {% filter markdown %}
-
 # Associating Users with Objects
 
 These new "users" can't create and update `Thing`s yet in our database.
@@ -49,7 +49,6 @@ class Thing(models.Model):
 </code></pre>
 
 {% filter markdown %}
-
 We're in a tiny bit of a pickle. We're saying that each `Thing` needs to have a
 unique `User`. Remember the migrations stuff we did earlier? We'll need to
 migrate the database to this new schema. Visualize a spreadsheet of `Thing`s
@@ -64,24 +63,21 @@ created, just our future ones.
 ### Migrating your database
 
 Create the migration by running the command below:
-
 {% endfilter %}
 
 <pre><code class="python">
-$ python manage.py makemigrations
+<span class="cmd">$</span> python manage.py makemigrations
 Migrations for 'collection':
   0002_thing_user.py:
     - Add field user to thing
 </code></pre>
 
 {% filter markdown %}
-
 And then apply the migration...
-
 {% endfilter %}
 
 <pre><code class="python">
-$ python manage.py migrate
+<span class="cmd">$</span> python manage.py migrate
 Operations to perform:
   Synchronize unmigrated apps: registration
   Apply all migrations: admin, contenttypes, collection, auth, sessions
@@ -173,19 +169,16 @@ Then head back over to *views.py* to create the new view:
 </code></pre>
 
 {% filter markdown %}
-
 We're going to be reusing the form (`ThingForm`) we made before! Next, we'll
 need to create the template. Create the file:
-
 {% endfilter %}
 
 <pre><code class="python">
-$ cd collection/templates/things
-collection/templates/things $ touch create_thing.html
+<span class="cmd">$</span> cd collection/templates/things
+<span class="cmd">collection/templates/things $</span> touch create_thing.html
 </code></pre>
 
 {% filter markdown %}
-
 Then fill it out:
 
 *create_thing.html*
@@ -226,12 +219,11 @@ We're going to put this piece of overwritten code in its own file. In your
 {% endfilter %}
 
 <pre><code class="python">
-$ cd collection
-collection $ touch backends.py
+<span class="cmd">$</span> cd collection
+<span class="cmd">collection $</span> touch backends.py
 </code></pre>
 
 {% filter markdown %}
-
 Here are the contents of the new *backends.py*:
 
 *backends.py*
@@ -250,7 +242,6 @@ class MyRegistrationView(RegistrationView):
 </code></pre>
 
 {% filter markdown %}
-
 How did we know about this? Check out django-registration-redux's documentation
 on views ([http://hellowebapp.com/26](http://hellowebapp.com/26)) — this page
 lists out all the classes included in django-registration-redux and what is
@@ -347,7 +338,6 @@ def edit_thing(request, slug):
 </code></pre>
 
 {% filter markdown %}
-
 We're adding two important security measures — adding a *decorator* to our view
 (`@login_required`), provided by Django, that basically says, "The only people
 who can access this view are ones who are logged in." The second thing we're
@@ -360,13 +350,13 @@ Our longest, most intense chapter yet! I hope this chapter gave you a better
 idea on how you can extend open-source plugins, update them to satisfy your
 needs, and how to keep data secure on your website. 
 
-*One last thing* — we set up the templates to do a password update for logged in
-users (that's the *password_change* templates we set up before). Can you figure out how to add
-that yourself?
+*One last thing* — we set up the templates to do a password update for logged
+in users (that's the *password_change* templates we set up before). Can you
+figure out how to add that yourself?
 
 Commit your work before moving forward!
-
 {% endfilter %}
+</div>
 
 {% include 'includes/newsletter.html' %}
 

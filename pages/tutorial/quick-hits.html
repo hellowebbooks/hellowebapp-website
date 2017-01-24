@@ -12,6 +12,7 @@ analytics.page("Chapter 13: Quick Hits: 404 Pages, requirements.txt, and Testing
 
 {% block content %}
 <div class="jumbotron"></div>
+<div class="container">
 
 {% filter markdown %}
 
@@ -67,9 +68,9 @@ Create *404.html* and *500.html* files in your templates directory:
 {% endfilter %}
 
 <pre><code class="python">
-$ cd collection/templates/
-collection/templates $ touch 404.html
-collection/templates $ touch 500.html
+<span class="cmd">$<span> cd collection/templates/
+<span class="cmd">collection/templates $</span> touch 404.html
+<span class="cmd">collection/templates $</span> touch 500.html
 </code></pre>
 
 {% filter markdown %}
@@ -139,27 +140,24 @@ command line (make sure you're in your virtual environment first):
 {% endfilter %}
 
 <pre><code class="python">
-$ pip freeze
+<span class="cmd">$</span> pip freeze
 Django==1.9.1
 django-registration-redux==1.3
 wsgiref==0.1.2
 </code></pre>
 
 {% filter markdown %}
-
 We installed the first two, and the last (`wsgiref`) is something installed by
 virtualenv. To set up your *requirements.txt*, make sure you're in the top level
 directory (the same one as *manage.py*) and pipe the contents of `pip freeze`
 into the new file:
-
 {% endfilter %}
 
 <pre><code class="python">
-$ pip freeze > requirements.txt
+<span class="cmd">$</span> pip freeze > requirements.txt
 </code></pre>
 
 {% filter markdown %}
-
 Check out your new *requirements.txt* file, which should look like the below:
 
 *requirements.txt*
@@ -172,10 +170,8 @@ wsgiref==0.1.2
 </code></pre>
 
 {% filter markdown %}
-
 That's all you need to do. You can test it out by running `pip install -r
 requirements.txt`, and pip will let you know everything is installed already:
-
 {% endfilter %}
 
 <pre><code class="python">
@@ -226,7 +222,6 @@ from django.test import TestCase
 </code></pre>
 
 {% filter markdown %}
-
 We're creating tests for our `collection` app, first testing whether our
 homepage pops up, as well as testing whether a simple no-logic page (our "about"
 page) works as well. For each, we're "grabbing" the page and assigning it to the
@@ -236,11 +231,10 @@ variable `r`, and then asserting whether the page's status code equals 200
 
 To run the test, head back to your command line and run `python manage.py test`,
 and you should see the below output:
-
 {% endfilter %}
 
 <pre><code class="python">
-$ python manage.py test
+<span class="cmd">$</span> python manage.py test
 Creating test database for alias 'default'...
 ..
 -------------------------------------------------------------
@@ -251,7 +245,6 @@ Destroying test database for alias 'default'...
 </code></pre>
 
 {% filter markdown %}
-
 Boom, ran 2 tests, and everything was OK.
 
 What if something went wrong? Go into your *views.py* and add a typo to your
@@ -276,7 +269,7 @@ And then run your tests again:
 {% endfilter %}
 
 <pre><code class="python">
-$ python manage.py test
+<span class="cmd">$</span> python manage.py test
 Creating test database for alias 'default'...
 E.
 =================================================================
@@ -314,6 +307,7 @@ Get into the practice of running your tests often, and especially before
 deploying your web app live. Might save your bacon! 
 
 {% endfilter %}
+</div>
 
 {% include 'includes/newsletter.html' %}
 

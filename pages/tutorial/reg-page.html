@@ -12,9 +12,9 @@ analytics.page("Chapter 10: Adding a Registration Page");
 
 {% block content %}
 <div class="jumbotron"></div>
+<div class="container">
 
 {% filter markdown %}
-
 # Adding a Registration Page
 
 Right now our web app, if launched, would let our users browse the items and
@@ -61,7 +61,6 @@ INSTALLED_APPS = (
 </code></pre>
 
 {% filter markdown %}
-
 We'll also need to add more setting to our *settings.py* file, according to
 django-registration-redux's documentation
 ([http://hellowebapp.com/24](http://hellowebapp.com/24)). Add this line at the
@@ -74,7 +73,6 @@ ACCOUNT_ACTIVATION_DAYS = 7
 </code></pre>
 
 {% filter markdown %}
-
 django-registration-redux will set up account activation emails automatically
 for new users, and this required setting lets us specify the number of days the
 user has to activate the account before the ability to use the account expires.
@@ -82,7 +80,6 @@ Let's keep it at the default `7` for now.
 
 Last, django-registration-redux comes with some migration files that we need to
 apply to our database. Apply these using `python manage.py migrate`:
-
 {% endfilter %}
 
 <pre><code class="python">
@@ -97,7 +94,6 @@ Running migrations:
 </code></pre>
 
 {% filter markdown %}
-
 ### Setting up the URLs
 
 We're going to basically import django-registration-redux's URLs for use in our
@@ -118,7 +114,6 @@ from django.conf.urls import url, <b>include</b>
 </code></pre>
 
 {% filter markdown %}
-
 The new line basically says, "For any URL path starting with 
 *accounts/*, search for a matching URL path in django-registration-redux's URLs."
 
@@ -156,25 +151,22 @@ LOGIN_REDIRECT_URL = "home"
 </code></pre>
 
 {% filter markdown %}
-
 ### Adding in the required templates
 
 django-registration-redux also assumes that we have several templates already
 added to our app (More info:
 [http://hellowebapp.com/25](http://hellowebapp.com/25)). We're going to create a
 new folder in our templates directory to hold these new templates:
-
 {% endfilter %}
 
 <pre><code class="python">
-$ cd collection/templates/
-collection/templates $ mkdir registration
-collection/templates $ cd registration
-collection/templates/registration $ touch registration_form.html
+<span class="cmd">$</span> cd collection/templates/
+<span class="cmd">collection/templates $</span> mkdir registration
+<span class="cmd">collection/templates $</span> cd registration
+<span class="cmd">collection/templates/registration $</span> touch registration_form.html
 </code></pre>
 
 {% filter markdown %}
-
 Continue to use `touch` to create blank files in this directory with the
 following file names:
 
@@ -233,7 +225,6 @@ file:
 {% endverbatim %}
 
 {% filter markdown %}
-
 *registration_complete.html*
 {% endfilter %}
 
@@ -275,7 +266,6 @@ file:
 {% endverbatim %}
 
 {% filter markdown %}
-
 ### Add links to nav to login and logout
 
 The last thing we should do is add a link to login and logout in our navigation.
@@ -303,7 +293,6 @@ Update your *base.html* layout file:
 {% endverbatim %}
 
 {% filter markdown %}
-
 Note the two extra links we're adding to the navigation: `{% verbatim %}{% if
 user.is_authenticated %}{% endverbatim %}` does what it looks like it does — returns `True` if
 the current user is logged into your app or not. Django by default automatically
@@ -633,6 +622,7 @@ in and update their object as well. Commit your work if you haven't already!
 {% endfilter %}
 
 {% include 'includes/newsletter.html' %}
+</div>
 
 {% endblock content %}
 

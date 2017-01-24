@@ -12,6 +12,7 @@ analytics.page("Chapter 9: Forms.py Funsies");
 
 {% block content %}
 <div class="jumbotron"></div>
+<div class="container">
 
 {% filter markdown %}
 
@@ -127,8 +128,8 @@ to add a file called *forms.py* into our `collection` app.
 {% endfilter %}
 
 <pre><code class="python">
-$ cd collection
-collection $ touch forms.py
+<span class="cmd">$</span> cd collection
+<span class="cmd">collection $</span> touch forms.py
 </code></pre>
 
 {% filter markdown %}
@@ -167,8 +168,8 @@ edit your object.
 {% endfilter %}
 
 <pre><code class="python">
-$ cd collection/templates/things
-collection/templates/things $ touch edit_thing.html
+<span class="cmd">$</span> cd collection/templates/things
+<span class="cmd">collection/templates/things $</span> touch edit_thing.html
 </code></pre>
 
 {% filter markdown %}
@@ -229,7 +230,7 @@ view:
 {% block content %}
     &lt;h1&gt;{{ thing.name }}&lt;/h1&gt;
     &lt;p&gt;{{ thing.description }}&lt;/p&gt;
-    <b>&lt;a href="{% url 'edit_thing' slug=thing.slug %}"&gt;Edit me!&lt;/&gt;></b>
+    <b>&lt;a href="{% url 'edit_thing' slug=thing.slug %}"&gt;Edit me!&lt;/&gt;</b>
     {% endblock content %}
 </code></pre>
 {% endverbatim %}
@@ -262,6 +263,7 @@ were created to make sure all external links continue to work. You can manually
 override this in your admin, however.*
 
 {% endfilter %}
+</div>
 
 {% include 'includes/newsletter.html' %}
 

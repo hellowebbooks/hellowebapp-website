@@ -12,6 +12,7 @@ analytics.page("Chapter 16: Important Things to Know");
 
 {% block content %}
 <div class="jumbotron"></div>
+<div class="container">
 
 {% filter markdown %}
 
@@ -83,7 +84,7 @@ for line in fileinput.input(paths):
         # None specified, assume from the first entry.
         time_since, time_until = timestamp_to_range(timestamp)
 
-    if time_until and timestamp >= time_until:
+    if time_until and timestamp &gt;= time_until:
         # Done
         return time_until
 </code></pre>
@@ -140,7 +141,7 @@ open a new window if you'd like), run `python manage.py shell`:
 {% endfilter %}
 
 <pre><code class="python">
-$ python manage.py shell
+<span class="cmd">$</span> python manage.py shell
 Python 2.7.8 (default, Aug 24 2014, 21:26:19) 
 [GCC 4.2.1 Compatible Apple LLVM 5.1 (clang-503.0.40)] on darwin
 Type "help", "copyright", "credits" or "license" for more information.
@@ -187,6 +188,7 @@ In a nut shell, the shell is a handy skill to have once you're comfortable using
 it.
 
 {% endfilter %}
+</div>
 
 {% include 'includes/newsletter.html' %}
 

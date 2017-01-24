@@ -12,6 +12,7 @@ analytics.page("Chapter 8: Setting Up Individual Object Pages");
 
 {% block content %}
 <div class="jumbotron"></div>
+<div class="container">
 
 {% filter markdown %}
 
@@ -99,7 +100,6 @@ def index(request):
 </code></pre>
 
 {% filter markdown %}
-
 Fairly simple. Note that at the top of the view, we now have `slug` passed in
 from `urls.py` — remember that this was what was in that big, scary regex bit.
 
@@ -108,14 +108,13 @@ And now to the template...
 ## Setting up the template
 
 We'll need to create the new HTML file that the view indicates.
-
 {% endfilter %}
 
 <pre><code class="python">
-$ cd collection/templates
-collection/templates $ mkdir things
-collection/templates $ cd things
-collection/templates/things $ cp ../index.html thing_detail.html
+<span class="cmd">$</span> cd collection/templates
+<span class="cmd">collection/templates $</span> mkdir things
+<span class="cmd">collection/templates $</span> cd things
+<span class="cmd">collection/templates/things $</span> cp ../index.html thing_detail.html
 </code></pre>
 
 {% filter markdown %}
@@ -199,6 +198,7 @@ We are one step toward a working website that's useful to visitors and potential
 customers! Don't forget to commit your work.
 
 {% endfilter %}
+</div>
 
 {% include 'includes/newsletter.html' %}
 

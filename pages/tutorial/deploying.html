@@ -12,6 +12,7 @@ analytics.page("Chapter 15: Deploying Your Web App");
 
 {% block content %}
 <div class="jumbotron"></div>
+<div class="container">
 
 {% filter markdown %}
 
@@ -63,7 +64,7 @@ In your command line, generate the public key by running this command:
 {% endfilter %}
 
 <pre><code class="python">
-$ ssh-keygen -t rsa
+<span class="cmd">$</span> ssh-keygen -t rsa
 </code></pre>
 
 {% filter markdown %}
@@ -74,8 +75,8 @@ you'll remember. The final output should look something like this:
 
 {% endfilter %}
 
-<pre><code class="python">
-$ ssh-keygen -t rsa
+<pre><code class="sh">
+<span class="cmd">$</span> ssh-keygen -t rsa
 Generating public/private rsa key pair.
 Enter file in which to save the key (/Users/limedaring/.ssh/id_rsa):
 Enter passphrase (empty for no passphrase):
@@ -124,7 +125,7 @@ we install our requirements. Also, why not `pip freeze > requirements.txt`? Run
 {% endfilter %}
 
 <pre><code class="python">
-$ pip freeze
+<span class="cmd">$</span> pip freeze
 Django==1.9.1
 dj-database-url==0.3.0
 django-registration-redux==1.3
@@ -156,7 +157,7 @@ Django==1.9.1
 django-registration-redux==1.3
 wsgiref==0.1.2
 hellowebapp-deploy
-<p>psycopg2==2.6.1</b>
+<b>psycopg2==2.6.1</b>
 </code></pre>
 
 {% filter markdown %}
@@ -175,15 +176,15 @@ tell Heroku how to run our app:
 {% endfilter %}
 
 <pre><code class="python">
-$ touch Procfile
+<span class="cmd">$</span> touch Procfile
 </code></pre>
 
 {% filter markdown %}
 
 And update it to the below:
 
+*Procfile*
 {% endfilter %}
-
 <pre><code class="python">
 web: waitress-serve --port=$PORT hellowebapp.wsgi:application
 </code></pre>
@@ -249,9 +250,9 @@ empty file to it:
 {% endfilter %}
 
 <pre><code class="python">
-$ mkdir static
-$ cd static
-static $ touch robots.txt
+<span class="cmd">$</span> mkdir static
+<span class="cmd">$</span> cd static
+<span class="cmd">static $</span> touch robots.txt
 </code></pre>
 
 {% filter markdown %}
@@ -267,7 +268,7 @@ command line:
 {% endfilter %}
 
 <pre><code class="python">
-$ heroku create
+<span class="cmd">$</span> heroku create
 </code></pre>
 
 {% filter markdown %}
@@ -280,7 +281,7 @@ point:
 {% endfilter %}
 
 <pre><code class="python">
-$ git commit -a -m "Committing before pushing to Heroku."
+<span class="cmd">$</span> git commit -a -m "Committing before pushing to Heroku."
 </code></pre>
 
 {% filter markdown %}
@@ -290,7 +291,7 @@ Let's push our code to Heroku, which you can do by running this command:
 {% endfilter %}
 
 <pre><code class="python">
-$ git push heroku master
+<span class="cmd">$</span> git push heroku master
 </code></pre>
 
 {% filter markdown %}
@@ -305,7 +306,7 @@ tells Heroku to actually start serving your website:
 {% endfilter %}
 
 <pre><code class="python">
-$ heroku ps:scale web=1
+<span class="cmd">$</span> heroku ps:scale web=1
 </code></pre>
 
 {% filter markdown %}
@@ -337,8 +338,8 @@ In the same folder as *settings.py*, create *settings_production.py*:
 {% endfilter %}
 
 <pre><code class="python">
-$ cd hellowebapp
-hellowebapp $ touch settings_production.py
+<span class="cmd">$</span> cd hellowebapp
+<span class="cmd">hellowebapp $</span> touch settings_production.py
 </code></pre>
 
 {% filter markdown %}
@@ -368,8 +369,7 @@ ALLOWED_HOSTS = ['*']
 DEBUG = False 
 
 # Static asset configuration
-STATICFILES_STORAGE = \
-    'whitenoise.django.GzipManifestStaticFilesStorage'
+STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 </code></pre>
 
 {% filter markdown %}
@@ -384,7 +384,7 @@ your command line (make sure you're in the same folder as *manage.py*):
 {% endfilter %}
 
 <pre><code class="python">
-$ heroku config:set DJANGO_SETTINGS_MODULE=hellowebapp.settings_production
+<span class="cmd">$</span> heroku config:set DJANGO_SETTINGS_MODULE=hellowebapp.settings_production
 </code></pre>
 
 {% filter markdown %}
@@ -395,8 +395,7 @@ As well as update your *wsgi.py* file:
 {% endfilter %}
 
 <pre><code class="python">
-<b>os.environ.setdefault("DJANGO_SETTINGS_MODULE",
-    "hellowebapp.settings_production")</b>
+<b>os.environ.setdefault("DJANGO_SETTINGS_MODULE", "hellowebapp.settings_production")</b>
 </code></pre>
 
 {% filter markdown %}
@@ -406,9 +405,9 @@ Add the file to git, commit, and push your changes to Heroku:
 {% endfilter %}
 
 <pre><code class="python">
-$ git add .
-$ git commit -a -m "Added production settings file."
-$ git push heroku master
+<span class="cmd">$</span> git add .
+<span class="cmd">$</span> git commit -a -m "Added production settings file."
+<span class="cmd">$</span> git push heroku master
 </code></pre>
 
 {% filter markdown %}
@@ -421,7 +420,7 @@ apply all the changes we made locally by running migrate on the server:
 {% endfilter %}
 
 <pre><code class="python">
-$ heroku run python manage.py migrate
+<span class="cmd">$</span> heroku run python manage.py migrate
 </code></pre>
 
 {% filter markdown %}
@@ -432,7 +431,7 @@ our local server:
 {% endfilter %}
 
 <pre><code class="python">
-$ heroku run python manage.py createsuperuser
+<span class="cmd">$</span> heroku run python manage.py createsuperuser
 </code></pre>
 
 {% filter markdown %}
@@ -446,7 +445,7 @@ name for your app.)
 {% endfilter %}
 
 <pre><code class="python">
-$ heroku apps:rename YOURAPPNAME
+<span class="cmd">$</span> heroku apps:rename YOURAPPNAME
 </code></pre>
 
 {% filter markdown %}
@@ -461,6 +460,7 @@ For the future, as you develop locally, run the below steps to push it live:
     repository to back your app up in the cloud. 
 
 {% endfilter %}
+</div>
 
 {% include 'includes/newsletter.html' %}
 

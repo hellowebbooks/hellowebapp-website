@@ -12,6 +12,7 @@ analytics.page("Chapter 5: Fun With Template Tags");
 
 {% block content %}
 <div class="jumbotron"></div>
+<div class="container">
 
 {% filter markdown %}
 
@@ -28,7 +29,6 @@ inheritance. Instead of having a bunch of files that repeat information (such as
 template that all other templates import.
 
 In your templates directory, add a new file called *base.html*.
-
 {% endfilter %}
 
 <pre><code class="python">
@@ -37,7 +37,6 @@ collection/templates $ touch base.html
 </code></pre>
 
 {% filter markdown %}
-
 We’re going to strip out all website-common code from *index.html* and stick it
 into *base.html*:
 
@@ -167,8 +166,8 @@ all extending one layout template.
     </code> tags added for inheritance.</p>
 
 <pre><code class="python">
-templates $ cp index.html about.html
-templates $ cp index.html contact.html
+<span class="cmd">templates $</span> cp index.html about.html
+<span class="cmd">templates $</span> cp index.html contact.html
 </code></pre>
 
 {% filter markdown %}
@@ -212,7 +211,6 @@ Then open the pages and edit the HTML so it makes sense for each page.
 {% endverbatim %}
 
 {% filter markdown %}
-
 Last, we’ll need to create a few new URL definitions in urls.py. If your new
 template won’t display information from your database — only simple HTML and CSS
 — then we can simplify our URL definition with a shortcut without having to add
@@ -245,7 +243,6 @@ urlpatterns = [
 </code></pre>
 
 {% filter markdown %}
-
 These new patterns are nearly the same thing we had before when we made a URL
 entry: The regular expression at the beginning, and the name of the view at the
 end. Instead of pointing to a function in *views.py* though, we're going to use
@@ -264,10 +261,10 @@ some other bits):
 {% verbatim %}
 <pre><code class="django">
 {% load staticfiles %}
-&lt;!doctype html>
-&lt;html>
-    &lt;head>
-        &lt;title>
+&lt;!doctype html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;
             {% block title %}
                 My Hello Web App Project
             {% endblock title %}
@@ -300,7 +297,6 @@ some other bits):
 {% endverbatim %}
 
 {% filter markdown %}
-
 Surprise: We’re not going to link to other HTML files like we normally would.
 This is why we name URLs — we can tell Django that we want to link to the URL
 named "home," and Django will automatically insert the right path. In the
@@ -515,9 +511,7 @@ def index(request):
 </code></pre>
 
 {% filter markdown %}
-
 As well as our template:
-
 {% endfilter %}
 
 {% verbatim %}
@@ -527,12 +521,10 @@ As well as our template:
 {% endverbatim %}
 
 {% filter markdown %}
-
 ![](images/stringname.png) 
 
 So now we can play with more fun template tags, like this one which would turn
 it into a slug, a shortened, lowercased version of a string used for URLs:
-
 {% endfilter %}
 
 {% verbatim %}
@@ -542,11 +534,9 @@ it into a slug, a shortened, lowercased version of a string used for URLs:
 {% endverbatim %}
 
 {% filter markdown %}
-
 ![](images/slugify.png) 
 
 Feel like using title case?
-
 {% endfilter %}
 
 {% verbatim %}
@@ -556,11 +546,9 @@ Feel like using title case?
 {% endverbatim %}
 
 {% filter markdown %}
-
 ![](images/title.png) 
 
 Perhaps it's too long of a name for you? Truncate it.
-
 {% endfilter %}
 
 {% verbatim %}
@@ -570,7 +558,6 @@ Perhaps it's too long of a name for you? Truncate it.
 {% endverbatim %}
 
 {% filter markdown %}
-
 ![](images/truncate.png) 
 
 I hope at this point you can see how Django’s template system has a bunch of
@@ -581,8 +568,8 @@ when you have real dynamic data to work with, which is coming up in the next
 section.
 
 Don't forget to commit your work at this point!
-
 {% endfilter %}
+</div>
 
 {% include 'includes/newsletter.html' %}
 

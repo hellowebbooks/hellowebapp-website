@@ -12,6 +12,7 @@ analytics.page("Chapter 12: Setting Up Basic Browse Pages");
 
 {% block content %}
 <div class="jumbotron"></div>
+<div class="container">
 
 {% filter markdown %}
 
@@ -115,11 +116,11 @@ Create a new directory for search in your templates, and then create your
 
 {% endfilter %}
 
-<pre><code class="python">
-$ cd collection/templates/
-collection/templates $ mkdir search
-collection/templates $ cd search
-collection/templates/search $ touch search.html
+<pre><code class="sh">
+<span class="cmd">$</span> cd collection/templates/
+<span class="cmd">collection/templates $</span> mkdir search
+<span class="cmd">collection/templates $</span> cd search
+<span class="cmd">collection/templates/search $</span> touch search.html
 </code></pre>
 
 {% filter markdown %}
@@ -177,7 +178,7 @@ We're doing quite a bit of fun things here.
 * Note that in the headline, we have `initial|title` — one of the template tags
     we talked about earlier in Chapter 4. Why not `|upper`? I mentioned before
     this actually works with any letter or word, and chose `|title` so, if we
-    searched for "hello" it would be displayed as "Hello rather than "HELLO." 
+    searched for "hello" it would be displayed as "Hello" rather than "HELLO." 
 * To display links for every letter in the alphabet, we're looping over the
     alphabet in the template. Again, less code (as compared to writing out all
     the links) means less maintenance. 
@@ -232,13 +233,10 @@ from django.views.generic import (TemplateView,
 {% endfilter %}
 
 <pre><code class="python">
-    # our new redirect view
-    <b>url(r'^browse/$', RedirectView.as_view(
-        pattern_name='browse', permanent=True)),</b>
-    url(r'^browse/name/$',
-        views.browse_by_name, name='browse'),
-    url(r'^browse/name/(?P<initial>[-\w]+)/$',
-        views.browse_by_name, name='browse_by_name'),
+# our new redirect view
+<b>url(r'^browse/$', RedirectView.as_view(pattern_name='browse', permanent=True)),</b>
+url(r'^browse/name/$', views.browse_by_name, name='browse'),
+url(r'^browse/name/(?P<initial>[-\w]+)/$', views.browse_by_name, name='browse_by_name'),
 </code></pre>
 
 {% filter markdown %}
@@ -253,12 +251,9 @@ redirect */things/* to our browse page as well:
 {% endfilter %}
 
 <pre><code class="python">
-    <b>url(r'^things/$', RedirectView.as_view(
-        pattern_name='browse', permanent=True)),</b>
-    url(r'^things/(?P<slug>[-\w]+)/$',
-        views.thing_detail, name='thing_detail'),
-    url(r'^things/(?P<slug>[-\w]+)/edit/$',
-        views.edit_thing, name='edit_thing'),
+<b>url(r'^things/$', RedirectView.as_view(pattern_name='browse', permanent=True)),</b>
+url(r'^things/(?P<slug>[-\w]+)/$', views.thing_detail, name='thing_detail'),
+url(r'^things/(?P<slug>[-\w]+)/edit/$', views.edit_thing, name='edit_thing'),
 </code></pre>
 
 {% filter markdown %}
@@ -270,6 +265,7 @@ There we go, a great start to building browsable pages for your website
 visitors. Commit your work!
 
 {% endfilter %}
+</div>
 
 {% include 'includes/newsletter.html' %}
 

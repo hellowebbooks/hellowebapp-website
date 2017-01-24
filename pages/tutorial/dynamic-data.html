@@ -12,6 +12,7 @@ analytics.page("Chapter 6: Adding Dynamic Data");
 
 {% block content %}
 <div class="jumbotron"></div>
+<div class="container">
 
 {% filter markdown %}
 
@@ -44,7 +45,7 @@ Type this into your command line:
 {% endfilter %}
 
 <pre><code class="python">
-$ python manage.py createsuperuser
+<span class="cmd">$</span> python manage.py createsuperuser
 </code></pre>
 
 {% filter markdown %}
@@ -140,7 +141,7 @@ line (in the same folder as *manage.py*), type this in:
 {% endfilter %}
 
 <pre><code class="python">
-$ python manage.py makemigrations
+<span class="cmd">$</span> python manage.py makemigrations
 </code></pre>
 
 {% filter markdown %}
@@ -163,7 +164,7 @@ manage.py migrate` next:
 {% endfilter %}
 
 <pre><code class="python">
-$ python manage.py migrate
+<span class="cmd">$</span> python manage.py migrate
 Operations to perform:
   Apply all migrations: admin, contenttypes, collection, auth, sessions
 Running migrations:
@@ -294,6 +295,7 @@ Next up, let's get our database information showing up in the templates. Don't
 forget to commit your work!
 
 {% endfilter %}
+</div>
 
 {% include 'includes/newsletter.html' %}
 
