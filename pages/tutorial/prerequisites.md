@@ -1,0 +1,68 @@
+# Prerequisites
+
+## HTML and CSS
+
+This tutorial works best for those who have a solid understanding of HTML and
+CSS.
+
+If you haven't worked with HTML before, there are tons of resources to help get
+you started with front-end development. Here are a few recommended resources:
+
+* HTML and CSS: Design and Build Websites
+    ([http://hellowebapp.com/1](http://hellowebapp.com/1))
+* Learn to Code HTML & CSS
+    ([http://hellowebapp.com/2](http://hellowebapp.com/2))
+* Don't Fear the Internet: Basic HTML & CSS for Non-Web Designers
+    ([http://hellowebapp.com/3](http://hellowebapp.com/3))
+
+It is recommended and highly encouraged to be comfortable building a website
+using basic HTML and CSS before jumping into this book. If you're not, it won't
+take long to get there.
+
+## Python (just a bit)
+
+Here's the big one!
+
+"But this is a book on how to learn how to program. Why do I need Python
+knowledge?" you might be asking.
+
+The best resources for learning the basic principles in Python have already been
+written and are online for free: no need for Hello Web App to reinvent the
+wheel.
+
+My personal favorite: *Learn Python The Hard Way*
+([http://hellowebapp.com/4](http://hellowebapp.com/4)) by Zed Shaw, which
+contains a series of easy and well written Python exercises. Try to get through
+at least half. It shouldn't take very long.
+
+Alternatively (or in addition), the video tutorial *Hands-On Intro to Python for
+Beginning Programmers* ([http://hellowebapp.com/5](http://hellowebapp.com/5)) by
+Jessica McKeller is excellent.
+
+Make sure you at least partially understand the following concepts (More info:
+[http://hellowebapp.com/6](http://hellowebapp.com/6)):
+
+* Variables
+* If-statements
+* For-loops
+* Comments
+
+If you don't feel like an expert, or even an intermediate, that's okay — these
+concepts will make more and more sense to you as you play around with
+programming. Once you feel like you have a basic grasp, we can start building
+our web app.
+
+## Suggestion: A Linux or Mac computer
+
+Unfortunately, the Windows environment doesn't play as nicely with development
+and programming as Unix-based systems do (such as Linux and Mac operating
+systems.)
+
+This doesn't mean you can't develop on Windows, and all Hello Web App
+instructions are written with both in mind. However, in general, life will be a
+lot easier on a Unix-based system, so if you have the option to use something
+other than a Windows environment, it's highly encouraged that you do so.
+
+If you're using Windows and have any issues with Hello Web App's instructions
+while going through this book, check out our Windows resource page here:
+[http://hellowebapp.com/7](http://hellowebapp.com/7)

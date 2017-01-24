@@ -1,0 +1,166 @@
+# Setting Up Individual Object Pages
+
+We now have a list of all the objects in our database on our homepage — wouldn't
+it be nice for each object to have its own page?
+
+## Adding the new pages to our URL definitions
+
+Following our usual URLs-views-templates routine, let's head over to the
+*urls.py* file to add the new URL scheme for our new pages.
+
+We're going to remove the commented out default stuff from before, and add a new
+line:
+
+{title="urls.py", lang="python"}    
+```
+urlpatterns = [
+    url(r'^$', views.index, name='home'),
+    url(r'^about/$', 
+        TemplateView.as_view(template_name='about.html'),
+        name='about'),
+    url(r'^contact/$', 
+        TemplateView.as_view(template_name='contact.html'),
+        name='contact'),
+    # leanpub-start-insert
+    url(r'^things/(?P<slug>[-\w]+)/$', views.thing_detail, 
+        name='thing_detail'),
+    # leanpub-start-insert
+    url(r'^admin/', admin.site.urls),
+]
+```
+
+Whoa, holy scary regular expression, right?
+
+To be honest, if you stopped me and asked me to write that line from scratch, I
+wouldn't be able to. I copy and paste it from project to project, and just
+update the small things that matter, leaving the regular expression ("regex")
+alone. Learning regex, while handy, is definitely not required for basic web app
+development (you can learn more here if you want, though:
+[http://hellowebapp.com/19](http://hellowebapp.com/19))
+
+Going over the bits in the new line:
+* `url(`: Beginning of the url definition.
+* `r'^things/`: Basically says "starts with 'things.'" You can update this to
+    match your model, so `r'profiles/` or `r'surfboards/` for example. r stands
+    for "raw" and ensures the regex is executed literally.
+* `(?P<slug>[-\w]+)/$`: Basically means "matches any word and call it 'slug.'"
+    The only important part to remember is that you can change 'slug' for other
+    uses, but for this use, we should call it slug.
+* `'collection.views.thing_detail',`: We're using the soon-to-be-created
+    `thing_detail` view.
+* `, name='thing_detail'),`: And this URL is named `thing_detail`.
+
+## Create the view
+
+Our second view, woohoo!
+
+Head back to `views.py` and add the new view in:
+
+{title="views.py", lang="python"}
+```
+from django.shortcuts import render
+from collection.models import Thing
+
+def index(request):
+    things = Thing.objects.all()
+    return render(request, ‘index.html', {
+        'things': things,
+    })
+
+# leanpub-start-insert
+def thing_detail(request, slug):
+    # grab the object...
+    thing = Thing.objects.get(slug=slug)
+
+    # and pass to the template
+    return render(request, 'things/thing_detail.html', {
+        'thing': thing,
+    })
+# leanpub-end-insert
+```
+
+Fairly simple. Note that at the top of the view, we now have `slug` passed in
+from `urls.py` — remember that this was what was in that big, scary regex bit.
+
+And now to the template...
+
+## Setting up the template
+
+We'll need to create the new HTML file that the view indicates.
+
+{linenos=off}
+```
+$ cd collection/templates
+collection/templates $ mkdir things
+collection/templates $ cd things
+collection/templates/things $ cp ../index.html thing_detail.html
+```
+
+We could write `touch thing_detail.html` to create a blank file, but to avoid
+writing out the content blocks and save us some typing, we'll just copy the
+index file.
+
+Of course, feel free to update 'thing' and 'things' here to match what you're
+building (don't forget to update the view if you do so). We're putting the
+detail page under a separate folder to keep all the templates that deal with
+individual things in one place.
+
+Here's our new individual object HTML template:
+
+{title="thing_detail.html", lang="html+django"}
+```
+{% extends 'base.html' %}
+{% block title %}
+    {{ thing.name }} - {{ block.super }}
+{% endblock title %}
+
+{% block content %}
+    <h1>{{ thing.name }}</h1>
+    <p>{{ thing.description }}</p>
+{% endblock content %}
+```
+
+`{{ thing }}` is the object we passed in from the database, and we can access
+the fields we set in the model (name and description) by adding the model field
+after a dot — basically, `{{ thing.name }}`.
+
+How do we get to these individual pages? Let's update our index view to make the
+list of objects we're displaying to link to their individual pages.
+
+Our new *index.html* template:
+
+{title="index.html", lang="html+django"}
+```
+{% extends 'base.html' %}
+{% block title %}
+    Homepage - {{ block.super }}
+{% endblock title %}
+
+{% block content %}
+    # leanpub-start-insert
+    {% for thing in things %}
+    <h2>
+        <a href="{% url 'thing_detail' slug=thing.slug %}">
+            {{ thing.name }}
+        </a>
+    </h2>
+    <p>{{ thing.description }}</p>
+    {% endfor %}
+    # leanpub-end-insert
+{% endblock content %}
+```
+
+We're going to use Django's named URLs again. We named our detail pages (back in
+*urls.py*) `thing_detail`, and we also need to pass in the slug so it knows
+which exact `thing` to make a link for.
+
+Now we have an index page full of links:
+
+![](images/index_links.png) 
+
+Which link to the object's respective page:
+
+![](images/individual_page.png) 
+
+We are one step toward a working website that's useful to visitors and potential
+customers! Don't forget to commit your work.

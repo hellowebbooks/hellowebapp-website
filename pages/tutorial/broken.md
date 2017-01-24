@@ -1,0 +1,104 @@
+w# What To Do If Your App Is Broken
+
+You'll probably spend more time trying to fix random errors than you will
+building your app. You might have heard jokes of programmers spending all night
+trying to fix an error only to find out that they were missing a simple comma.
+So if you run into an error, you're not alone — debugging happens to the best of
+us. If you're stuck, here's some ideas to help you debug your app.
+
+## Error pages *usually* help you find the problem
+
+![](images/syntax.png) 
+
+Generally the error page you get when developing locally will tell you what and
+where the problem is. Here, I have a syntax error on line 13 in my *views.py*
+file. 
+
+The offending line:
+
+{linenos=off}
+```
+return render(request, ‘search/search.html' {
+```
+
+Nothing obvious on first glance, but it really should be:
+
+{linenos=off}
+```
+return render(request, 'search/search.html', {
+```
+
+Missing comma! Those pesky things. Easy to fix once you find it, though.
+
+What do you do if your error page isn't so helpful?
+
+## Googling the error usually comes up with helpful answers
+
+![](images/so-error.png) 
+
+Copy/paste the error into Google and chances are, someone else had the same
+error and it's already answered — usually on Stack Overflow
+([http://hellowebapp.com/36](http://hellowebapp.com/36)), which is an immensely
+helpful website that people use to ask and answer programming questions.
+
+## Ask for help
+
+You might have scanned your code inch by inch looking for the issue, and
+Googling isn't helping. What now?
+
+### IRC
+
+IRC is essentially chat, with "rooms" that can be based around a topic, like
+Django. It's a little complicated to get going and might seem intimidating, but
+generally the strangers and future friends on IRC are happy to help others who
+are having problems.
+
+If you already know how to use IRC, here are a couple channels on freenode to
+ask questions:
+
+* `#django`
+* `#python`
+* `##learnpython`
+* `#pyladies`
+
+(Of course, make sure to be polite and specific as possible when explaining your
+problem.)
+
+New to IRC? Check out our IRC page on the Hello Web App GitHub page here:
+[http://hellowebapp.com/37](http://hellowebapp.com/37).
+
+### Stack Overflow
+
+Obviously, you can also ask for help on Stack Overflow. Just like IRC, make sure
+to be as descriptive as possible when explaining your issue. Here's a link to
+ask a question on Stack Overflow:
+[http://hellowebapp.com/38](http://hellowebapp.com/38).
+
+### Mailing List
+
+There is a django-users mailing list
+([http://hellowebapp.com/39](http://hellowebapp.com/39)) where people ask
+questions and help each other. If you're not in a rush, this could be a good
+place to write up your problem and get some feedback on how to proceed.
+
+Before posting, it's good form to search through the
+archive([http://hellowebapp.com/40](http://hellowebapp.com/40)) to see if
+somebody asked a similar question yet. This will also help you get a feel for
+the format that most messages are in.
+
+### Meetups and developer events
+
+Need face to face help? There are hundreds of meetups and developer events
+worldwide, and there is likely one in the city near you. Here are some great
+organizations that run meetups and places to find meetups:
+
+* PyLadies ([http://hellowebapp.com/41](http://hellowebapp.com/41))
+* Python meetups on Meetup.com
+    ([http://hellowebapp.com/42](http://hellowebapp.com/42))
+* Django Girls ([http://hellowebapp.com/43](http://hellowebapp.com/43))
+
+You can also search for "Python meetup YOURCITY" to see if there is something
+happening near you.
+
+These events are also a great place to meet new friends and expand your
+programming community!

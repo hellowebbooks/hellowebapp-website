@@ -1,0 +1,108 @@
+# References
+
+For reference, the shortened link URLs throughout the book and their related
+long URL are listed below.
+
+**Chapter 2**
+
+**1:** [http://amzn.to/1qUIE8o ](http://amzn.to/1qUIE8o)
+**2:** [http://learn.shayhowe.com/html-css/ ](http://learn.shayhowe.com/html-css/ )
+**3:** [http://www.dontfeartheinternet.com/](http://www.dontfeartheinternet.com/)
+**4:** [http://learnpythonthehardway.org/ ](http://learnpythonthehardway.org/ )
+**5:** [http://pyvideo.org/video/2559/hands-on-intro-to-python-for-beginning-programmer](http://pyvideo.org/video/2559/hands-on-intro-to-python-for-beginning-programmer)
+**6:** [https://github.com/limedaring/HelloWebApp/tree/master/python-tips](https://github.com/limedaring/HelloWebApp/tree/master/python-tips)
+**7:** [https://github.com/hellowebapp/hellowebapp/tree/master/windows-help](https://github.com/hellowebapp/hellowebapp/tree/master/windows-help)
+
+**Chapter 3**
+
+**8:** [https://github.com/limedaring/HelloWebApp/tree/master/installation-instructions](https://github.com/limedaring/HelloWebApp/tree/master/installation-instructions)
+**9:** [https://github.com/limedaring/HelloWebApp-Code](https://github.com/limedaring/HelloWebApp-Code) 
+**10:** [http://discuss.hellowebapp.com](http://discuss.hellowebapp.com)
+**11:** [https://github.com/limedaring/HelloWebApp ](https://github.com/limedaring/HelloWebApp )
+
+**Chapter 4**
+
+**12:** [https://github.com/limedaring/HelloWebApp/tree/master/git-tips](https://github.com/limedaring/HelloWebApp/tree/master/git-tips)
+
+**Chapter 5**
+
+**13:** [http://learnpythonthehardway.org/book/ex29.html](http://learnpythonthehardway.org/book/ex29.html) 
+**14:** [https://docs.djangoproject.com/en/1.7/ref/templates/builtins/](https://docs.djangoproject.com/en/1.7/ref/templates/builtins/) 
+**15:** [https://docs.djangoproject.com/en/1.7/ref/contrib/humanize/](https://docs.djangoproject.com/en/1.7/ref/contrib/humanize/)
+
+**Chapter 6**
+
+**16:** [https://github.com/limedaring/HelloWebApp/blob/master/installation-instructions/starting-your-project.md](https://github.com/limedaring/HelloWebApp/blob/master/installation-instructions/starting-your-project.md) 
+**17:** [https://docs.djangoproject.com/en/dev/ref/models/fields/#slugfield](https://docs.djangoproject.com/en/dev/ref/models/fields/#slugfield)
+
+**Chapter 7**
+
+**18:** [https://docs.djangoproject.com/en/1.7/ref/models/querysets/](https://docs.djangoproject.com/en/1.7/ref/models/querysets/)
+
+**Chapter 8**
+
+**19:** [https://docs.python.org/2/howto/regex.html](https://docs.python.org/2/howto/regex.html)
+
+**Chapter 9**
+
+**20:** [https://docs.djangoproject.com/en/dev/topics/forms/modelforms](https://docs.djangoproject.com/en/dev/topics/forms/modelforms)
+**21:** [https://docs.djangoproject.com/en/dev/ref/csrf/](https://docs.djangoproject.com/en/dev/ref/csrf/)
+**22:** [https://docs.djangoproject.com/en/dev/topics/forms/#form-rendering-options](https://docs.djangoproject.com/en/dev/topics/forms/#form-rendering-options)
+
+**Chapter 10**
+
+**23:** [https://django-registration-redux.readthedocs.org](https://django-registration-redux.readthedocs.org) 
+**24:** [https://django-registration-redux.readthedocs.org/en/latest/quick  	start.html#settings](https://django-registration-redux.readthedocs.org/en/latest/quick  	start.html#settings)
+**25:** [https://django-registration-redux.readthedocs.org/en/latest/quick 	start.html#required-templates](https://django-registration-redux.readthedocs.org/en/latest/quick 	start.html#required-templates) 
+**26:** [http://django-registration-redux.readthedocs.org/en/stable/views.html](http://django-registration-redux.readthedocs.org/en/stable/views.html)
+**27:** [https://github.com/macropin/django-registration/](https://github.com/macropin/django-registration/) 
+
+**Chapter 11**
+
+**28:** [http://haystacksearch.org/](http://haystacksearch.org/) 
+**29:** [https://docs.djangoproject.com/en/dev/ref/models/querysets/#istartswith](https://docs.djangoproject.com/en/dev/ref/models/querysets/#istartswith) 
+
+**Chapter 12**
+
+**30:** [http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html) 
+**31:** [https://docs.djangoproject.com/en/1.7/topics/testing/overview/](https://docs.djangoproject.com/en/1.7/topics/testing/overview/)
+
+**Chapter 13**
+
+**32:** [http://heroku.com](http://heroku.com)
+**33:** [https://devcenter.heroku.com/articles/getting-started-with-python#set-up ](https://devcenter.heroku.com/articles/getting-started-with-python#set-up )
+**34:** [https://devcenter.heroku.com/articles/procfile](https://devcenter.heroku.com/articles/procfile)
+**35:** [https://devcenter.heroku.com/articles/getting-started-with-django#django-settings ](https://devcenter.heroku.com/articles/getting-started-with-django#django-settings )
+
+**Chapter 14**
+
+**36:** [http://stackoverflow.com/](http://stackoverflow.com/)
+**37:** [https://github.com/limedaring/HelloWebApp/tree/master/irc-tips](https://github.com/limedaring/HelloWebApp/tree/master/irc-tips) 
+**38:** [https://stackoverflow.com/users/login?returnurl=%2fquestions%2fask](https://stackoverflow.com/users/login?returnurl=%2fquestions%2fask)
+**39:** [https://docs.djangoproject.com/en/1.7/internals/mailing-lists/#django-users](https://docs.djangoproject.com/en/1.7/internals/mailing-lists/#django-users) 
+**40:** [https://groups.google.com/forum/#!forum/django-users](https://groups.google.com/forum/#!forum/django-users) 
+**41:** [http://www.pyladies.com/](http://www.pyladies.com/)
+**42:** [http://python.meetup.com/](http://python.meetup.com/) 
+**43:** [http://djangogirls.org](http://djangogirls.org) 
+
+**Chapter 15**
+
+**44:** [https://www.python.org/dev/peps/pep-0008/](https://www.python.org/dev/peps/pep-0008/)
+**45:** [http://docs.writethedocs.org/writing/beginners-guide-to-docs/](http://docs.writethedocs.org/writing/beginners-guide-to-docs/)
+**46:** [http://www.djangobook.com/en/2.0/chapter20.html](http://www.djangobook.com/en/2.0/chapter20.html) 
+
+**Chapter 16**
+
+**47:** [http://amzn.to/13sLUh6](http://amzn.to/13sLUh6)
+**48:** [http://amzn.to/1GrwlUF](http://amzn.to/1GrwlUF) 
+**49:** [http://tutorial.djangogirls.org/en/](http://tutorial.djangogirls.org/en/)
+**50:** [https://docs.djangoproject.com/en/dev/intro/tutorial01/](https://docs.djangoproject.com/en/dev/intro/tutorial01/) 
+**51:** [https://www.djangopackages.com/](https://www.djangopackages.com/) 
+**52:** [http://www.codecademy.com/](http://www.codecademy.com/)
+**53:** [https://www.coursera.org/courses?query=python](https://www.coursera.org/courses?query=python) 
+**54:** [https://github.com/limedaring/HelloWebApp/tree/master/additional-resources](https://github.com/limedaring/HelloWebApp/tree/master/additional-resources)
+**55:** [http://www.hackbrightacademy.com/](http://www.hackbrightacademy.com/)
+**56:** [https://www.hackerschool.com/](https://www.hackerschool.com/) 
+**57:** [http://ladieslearningcode.com/](http://ladieslearningcode.com/) 
+**58:** [http://rocket-space.com/rocketu/](http://rocket-space.com/rocketu/)
+**59:** [https://generalassemb.ly/education/](https://generalassemb.ly/education/) 

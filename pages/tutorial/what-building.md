@@ -1,0 +1,101 @@
+# What We're Building
+
+*Python* is a beautiful programming language. As a designer, I find the clean
+code and organization very appealing.
+
+*Django* is a Python framework (like Ruby on Rails is for Ruby, another
+programming language you might have heard of). It is the most feature-complete
+and beginner-friendly web framework for Python: lots of useful utilities are
+built in and there is a massive amount of resources (tutorials as well as
+plugins) due to the size of the Django community.
+
+But what exactly are we building?
+
+Most tutorials start with a specific project. The official Django tutorial, for
+example, creates a polling app. But what if that tutorial subject doesn't
+interest you?
+
+If you're like me, you would finish the tutorial but not feel any "ownership"
+over what you built because you essentially replicated another project. It's
+hard to relate and really understand what you're doing unless you feel involved.
+To that end, we're going to try something a little different here.
+
+Hello Web App is going to walk you through building a generic "collection of
+things." However, this framework covers many different types of web apps you
+could build:
+
+* A blog, which is a collection of posts.
+* An online store, which is a collection of items you could buy.
+* An online directory, which is a collection of people's profiles.
+* ... and so on and so forth.
+
+What's written here is going to be generic and vanilla, and it's up to you to
+decide what exactly you're going to build using Hello Web App. Pretty much the
+only thing you're going to change are the names of code bits, but the
+functionality will remain the same.
+
+Some specific examples of what you could build using this book:
+
+* A ratings website for a collection of things. Really love backpacking? You
+    could create a website that shows your reviews for various pieces of
+    equipment.
+* A directory of people. This was my original project — I built a listing of
+    custom wedding invitation designers. You could also do a listing of
+    conference attendees, a list of awesome web people, such and so forth.
+* An online store. There are a lot of solutions out there that help you set up a
+    store without coding it, but it might be fun to build a store from the
+    ground up to sell products.
+* Or a blog, as mentioned above.
+
+Take five minutes and think about a collection of objects that you're going to
+build using Hello Web App. Don't worry about scope just yet (we're getting to
+that); just find something you would be interested in working on.
+
+C> What's your "collection of things" project?
+
+## MVP: Minimum Viable Product
+
+Oh goodness, there's an acronym sneaking in, and I said I wouldn't do that.
+
+Your MVP—Minimum Viable Product, a popular term in start-up land—is the minimum
+you need to build for your app to work and be useful to users. 
+
+Sometimes people get an idea for something they want to build and spend four
+years trying to perfect it. But there will always be another feature to add,
+another bug to fix, another thing to improve, all while you could be getting
+real people to use your app and give you feedback (**real** feedback) on how to
+improve.
+
+Building your idea might seem really intimidating, especially when working with
+real customers. But having real customers will be an incredible motivation to
+work on your web app more.
+
+For example, my first programming project mentioned before — today, it's chock
+full of features. There are free and paid accounts, using Stripe and PayPal to
+trigger recurring charges. There are a bunch of different ways to browse pages,
+such as by location, by budget, or by style. There's an API so other websites
+can integrate vendor listings into their websites powered by my app.
+
+**None of these features existed in the first version I built.** 
+
+The only real features I needed for that first version were:
+
+* A homepage.
+* A profile page for each stationer in the directory.
+* A basic search by location page. 
+* A form so a stationer could apply to join the directory.
+* And static pages: About, Contact, etc.
+
+It took me only six weeks from deciding to learn how to program to launch my
+first app. Two weeks later, it was profiled in a prominent design blog. Swamped
+by customers, my startup was born. 
+
+**Even the simplest of web apps can grow into something big.** Something you
+build now could become a business.
+
+Take some time to write down your "collection of things" project idea, and then
+write down every awesome feature you think it should have. Then, circle only the
+ones that are really truly necessary. Make your web app as small and easy to
+launch as possible. With luck, the lessons of Hello Web App will be all you need
+to launch your app, and if not, you'll have only a few new concepts to learn
+before you can launch.

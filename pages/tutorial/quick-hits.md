@@ -1,0 +1,251 @@
+# Quick Hits: 404 Pages, requirements.txt, and Testing
+
+We're going to go over some small things in this chapter that aren't worthy of
+pulling out into a chapter of their own. Simple things that are pretty
+important.
+
+## Setting up 404 and 500 error pages
+
+When you're going through this tutorial, because you're working locally and your
+`DEBUG` setting in *settings.py* is set to True, Django gives you a nice error
+page with all the info about your error. However, it's not good to show that
+info to random users of your web app.
+
+Head to *settings.py* and change `DEBUG` to `False`. Additionally, Django will
+whine unless we update the `ALLOWED_HOSTS` setting. Right now, let's set it to
+everything (A.K.A., we'll allow any host), but add a note that we should update
+it to our future domain on our launched app for security's sake.
+
+{title="settings.py", lang="python", line-numbers=on,starting-line-number=23}
+```
+DEBUG = False 
+```
+
+{title="settings.py", lang="python", line-numbers=on,starting-line-number=27}
+```
+# XXX: Update me before launch!
+ALLOWED_HOSTS = ['*']
+```
+
+Check out what happens when you go to a non-existent page and get a 404
+response:
+
+![](images/404.png)
+
+Ew, a default browser page not using our app's styles. Let's add a 404 page,
+shall we?
+
+### Add your template files
+
+Create *404.html* and *500.html* files in your templates directory:
+
+{linenos=off}
+```
+$ cd collection/templates/
+collection/templates $ touch 404.html
+collection/templates $ touch 500.html
+```
+
+Then update the template contents:
+
+{title="404.html", lang="html+django"}
+```
+{% extends 'base.html' %}
+{% block title %}
+    404 - {{ block.super }}
+{% endblock title %}
+
+{% block content %}
+    <h1>404 Error</h1>
+    <p>You've run into a page that doesn't exist!</p>
+{% endblock content %}
+```
+
+{title="500.html", lang="html+django"}
+```
+{% extends 'base.html' %}
+{% block title %}
+    500 - {{ block.super }}
+{% endblock title %}
+
+{% block content %}
+    <h1>500 Error</h1>
+    <p>You've run into an error!</p>
+{% endblock content %}
+```
+
+That's all you need to do! Take a look at the broken page again in your browser:
+
+![](images/404-2.png) 
+
+Custom error pages, woohoo! Make sure to change `DEBUG` in *settings.py* back to
+`True` before you move on.
+
+## Setting up a requirements.txt
+
+This part of the chapter won't make any website changes or be visible to your
+future users, but will make setting up your app on other computers and working
+with others much easier.
+
+A `requirements.txt` file lists everything installed in your project, in your
+virtual environment. If you ever had a clean virtual environment in the future
+and needed to install everything to make your web app work, you could run `pip
+install -r requirements.txt` and pip will go through the entire list and install
+everything at once. It's a convention for Python, and super useful.
+
+First, let's get a list of everything installed so far. Run `pip freeze` in your
+command line (make sure you're in your virtual environment first):
+
+{linenos=off}
+```
+$ pip freeze
+Django==1.9.1
+django-registration-redux==1.3
+wsgiref==0.1.2
+```
+
+We installed the first two, and the last (`wsgiref`) is something installed by
+virtualenv. To set up your *requirements.txt*, make sure you're in the top level
+directory (the same one as *manage.py*) and pipe the contents of `pip freeze`
+into the new file:
+
+{linenos=off}
+```
+$ pip freeze > requirements.txt
+```
+
+Check out your new *requirements.txt* file, which should look like the below:
+
+{title="requirements.txt", lang="text"}
+```
+Django==1.9.1
+django-registration-redux==1.3
+wsgiref==0.1.2
+```
+
+That's all you need to do. You can test it out by running `pip install -r
+requirements.txt`, and pip will let you know everything is installed already:
+
+{linenos=off}
+```
+$ pip install -r requirements.txt 
+Requirement already satisfied (use --upgrade to upgrade): Django==1.9.1 in ./venv/lib/python2.7/site-packages (from -r requirements.txt (line 1))
+Requirement already satisfied (use --upgrade to upgrade): django-registration-redux==1.3 in ./venv/lib/python2.7/site-packages (from -r requirements.txt (line 2))
+Requirement already satisfied (use --upgrade to upgrade): wsgiref==0.1.2 in /usr/local/Cellar/python/2.7.8_1/Frameworks/Python.framework/Versions/2.7/lib/python2.7 (from -r requirements.txt (line 3))
+Cleaning up...
+```
+
+Awesome. Future you or friends can install your app more easily now by
+installing from your requirements file!
+
+## Setting up your first tests
+
+When you have your app deployed live to the world, nothing is worse than making
+a "quick change," deploying, and then discovering you broke a major feature or
+(worse) took down the entire site. This is especially common when your app does
+a lot of different things that tie together in ways that you might forget —
+change one thing and something else breaks. You could manually go through the
+website yourself, making sure everything works by clicking from page to page and
+testing features, but that's time consuming.
+
+That's why we write tests, so we can run a command and test our functionality in
+the command line, making sure the site is up and everything works without having
+to test manually.
+ 
+Let's set up a basic test to make sure our site is working without errors.
+Django created a file already for your tests in your `collection` app. Update it
+to the below:
+
+{title="tests.py", lang="python"}
+```
+from django.test import TestCase
+
+# leanpub-start-insert
+class CollectionTest(TestCase):
+    def test_index(self):
+        r = self.client.get('/')
+        self.assertEqual(r.status_code, 200)
+
+    def test_no_logic_page(self):
+        r = self.client.get('/about/')
+        self.assertEqual(r.status_code, 200) 
+# leanpub-end-insert   
+```
+
+We're creating tests for our `collection` app, first testing whether our
+homepage pops up, as well as testing whether a simple no-logic page (our "about"
+page) works as well. For each, we're "grabbing" the page and assigning it to the
+variable `r`, and then asserting whether the page's status code equals 200
+(which, as you know, means OK. More info:
+[http://hellowebapp.com/30](http://hellowebapp.com/30))
+
+To run the test, head back to your command line and run `python manage.py test`,
+and you should see the below output:
+
+{linenos=off}
+```
+$ python manage.py test
+Creating test database for alias 'default'...
+..
+-------------------------------------------------------------
+Ran 2 tests in 0.033s
+
+OK
+Destroying test database for alias 'default'...
+```
+
+Boom, ran 2 tests, and everything was OK.
+
+What if something went wrong? Go into your *views.py* and add a typo to your
+index view:
+
+{title="views.html", lang="python"}
+```
+def index(request):
+    things = Thing.objects.all()
+    return render(request, 'index.html', {
+        # typo below!
+# leanpub-start-insert
+        'things': thinggs,
+# leanpub-end-insert
+    })
+```
+
+And then run your tests again:
+
+{linenos=off}
+```
+$ python manage.py test
+Creating test database for alias 'default'...
+E.
+=================================================================
+ERROR: test_index (collection.tests.CollectionTest)
+-----------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/limedaring/projects/testhwa/collection/tests.py", line 9, in test_index
+    r = self.client.get('/')
+  File "/Users/limedaring/projects/testhwa/venv/lib/python2.7/site-packages/django/test/client.py", line 470, in get **extra)
+  File "/Users/limedaring/projects/testhwa/venv/lib/python2.7/site-packages/django/test/client.py", line 286, in get
+    return self.generic('GET', path, secure=secure, **r)
+  File "/Users/limedaring/projects/testhwa/venv/lib/python2.7/site-packages/django/test/client.py", line 358, in generic
+    return self.request(**r)
+  File "/Users/limedaring/projects/testhwa/venv/lib/python2.7/site-packages/django/test/client.py", line 440, in request
+    six.reraise(*exc_info)
+  File "/Users/limedaring/projects/testhwa/venv/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/limedaring/projects/testhwa/collection/views.py", line 14, in index
+    'things': thinggs,
+NameError: global name 'thinggs' is not defined
+
+----------------------------------------------------------------
+Ran 2 tests in 0.044s
+
+FAILED (errors=1)
+Destroying test database for alias 'default'...
+```
+
+Nifty, right? Make sure to fix the typo and commit your work. Read more about
+Django tests here: [http://hellowebapp.com/31](http://hellowebapp.com/31)
+
+Get into the practice of running your tests often, and especially before
+deploying your web app live. Might save your bacon! 

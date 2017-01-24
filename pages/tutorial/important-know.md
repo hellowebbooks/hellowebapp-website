@@ -1,0 +1,158 @@
+# Important Things to Know
+
+There are a few things and principles you should know about building web apps.
+Generally you can do whatever you want (have fun programming!) but keep these
+points in mind:
+
+## Code style 
+
+Python has a style guide known as PEP 8 which gives coding conventions and gives
+recommendations — such as, the numbers of space per indent (four), comment
+styling (above the code, starting with # and a single space), and other tidbits. 
+
+Why is this important? These conventions will keep your code consistent and
+readable, to yourself in the future as well as for any others who will read your
+code. 
+
+The style guide includes recommendations like this:
+
+{linenos=off}
+```
+Yes: spam(ham[1], {eggs: 2})
+No:  spam( ham[ 1 ], { eggs: 2 } )
+```
+
+Read more about PEP 8 and the Python style guide here:
+[http://hellowebapp.com/44](http://hellowebapp.com/44)
+
+## Documentation
+
+Another recommendation for your future self as well as other reviewers of your
+code — good documentation.
+
+This might seem superfluous while you're programing — of course you know what's
+going on as you're typing it — but you could come back later and think, "What
+the heck was I doing?"
+
+It's always a good idea to add comments above your code to describe what's going
+on. For example, random chuck of code from my app:
+
+{lang="python"}
+```
+for line in fileinput.input(paths):
+    if not line.strip():
+        # Empty line
+        continue
+
+    # Split the log into its' individual parts
+    access = parse_access_log(line)
+    if not access:
+        continue
+
+    user_agent = access['user_agent']
+    if "bot" in user_agent:
+        # ignore everything with "bot" in the name
+        continue
+
+    # Check if we're in the desired parsing range. If not, skip or exit.
+    if time_since and timestamp < time_since:
+        # Fast forward
+        continue
+    else:
+        # None specified, assume from the first entry.
+        time_since, time_until = timestamp_to_range(timestamp)
+
+    if time_until and timestamp >= time_until:
+        # Done
+        return time_until
+```
+
+You *could* write the above without the comments, but it's a lot easier to read
+and skim with them added. It's always a good idea to document what you're doing
+as you go. 
+
+More on this topic: [http://hellowebapp.com/45](http://hellowebapp.com/45)
+
+## Security
+
+I remember when I was building my first web app and I showed it to a friend
+before launch. He immediately went to the page where users could update their
+logic and figured out that the number in my edit page URL
+(*http://mywebapp.com/edit/1*) corresponded to the ID of the object, so he could
+change it to something like */21/* and see another person's object, and then
+edit it because I wasn't checking for ownership when displaying the page. Duh,
+right? It stands out to me as the first time I realized that people were going
+to try to actively break my app, and that I needed to always keep in mind
+security precautions.
+
+Back in "Adding a Registration Page," we added the `@login_required` decorator
+as well as checking ownership on the object when updating the edit page to make
+sure you don't make the same mistake I did.
+
+Another issue I had with my app back in the day was a silly favoriting ability I
+added: users could save their favorites as they browsed the site. I didn't
+require the users to have an account — I saved the favorite with their
+`session_id` in the database. However, months later I discovered that there
+seemed to be a bot going through all of my listings and favoriting everything,
+causing hundreds of database saves and drastically slowing down (and sometimes
+taking down) my site. Seriously? Someone did that to me?
+
+That problem has since been fixed, but again, my tiny little site got targeted
+by people looking to break it. Keep an eye out for vulnerabilities that your app
+could have and try to prevent things like this. For more about potential
+security issues you could run into, check out this article:
+[http://hellowebapp.com/46](http://hellowebapp.com/46)
+
+## Using the Django Shell
+
+When I first started learning how to program, I felt more comfortable building
+my views and seeing the results in the template — and I suspect a lot of other
+beginners are the same, thus the format of this book. Most experienced
+programmers don't do this, however, preferring to test code in the command line
+window. It's faster, once you get used to it.
+
+Like how we ran `python manage.py runserver` in the command line (feel free to
+open a new window if you'd like), run `python manage.py shell`:
+
+{linenos=off}
+```
+$ python manage.py shell
+Python 2.7.8 (default, Aug 24 2014, 21:26:19) 
+[GCC 4.2.1 Compatible Apple LLVM 5.1 (clang-503.0.40)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+(InteractiveConsole)
+>>>
+```
+
+Here, you can import settings and run commands just like in your *views.py*, but
+see instantaneous results. 
+
+{linenos=off}
+```
+>>> from collection.models import Thing
+>>> things = Thing.objects.all()
+>>> for thing in things:
+...     print thing
+... 
+Hello Thing
+Another Thing
+Yet Another!
+Another Name of a Thing
+```
+
+The first three lines were commands I typed in — first importing `Thing` from
+our models, then running a query to grab all of our `Thing`s, then running a
+for-loop to print all of the `Thing` names. When the shell detects a code block
+(like our for loop), it'll give you another row to type the next line in (make
+sure to add the indent.) An extra return will indicate that you're done with the
+command. This is hard to explain in print — try it out and play around and it
+should become more clear.
+
+When you create more complex views, you can walk through the code in your shell
+to confirm that it's working correctly before seeing the results in the
+template. You can also use it to grab and update information in your database
+without using the admin panel (but make sure to be careful so you don't erase or
+overwrite information that you need.)
+
+In a nut shell, the shell is a handy skill to have once you're comfortable using
+it.

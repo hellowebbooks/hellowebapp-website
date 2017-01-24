@@ -1,0 +1,92 @@
+# Special Thanks
+
+This book couldn't have been written without the support of my friends, family, and Kickstarter backers (friends from afar!) 
+
+## Super duper thanks to our sponsor
+
+![](images/kinsights.png) 
+
+The biggest thanks goes to [Kinsights](https://kinsights.com) for sponsoring Hello Web App on Kickstarter, and in particular for pushing the campaign over its goal. A bit about them:
+
+*Kinsights is a free advice-sharing network for parents. Get advice from parents that you'll actually use.  Learning Django? Join a group of other Django-loving parents here: [https://kinsights.com/for/django](https://kinsights.com/for/django)*
+
+What a great resource after you're done with this book!
+
+## Book reviewers, editors, and testers
+
+I tested (and tested, and tested) this book and yet things still snuck through. The hugest thanks to those that took the time to review, edit, and run all the code bits contained within this book — your feedback was invaluable.
+
+Andrey Petrov  
+Kenneth Love  
+Carol Willing  
+Drew Gerlach  
+Glen Gilchrist  
+Hans Meldgaard  
+Kerstin Kollmann  
+Leland Richardson  
+Matthew Oliphant  
+Olya Sanakoev  
+Osvaldo Santana Neto  
+Peter Westlake  
+Richard Cornish  
+Siow Chen Ang  
+Vincent Smith  
+
+## Help and suggestions
+
+I wouldn't have made it this far without having a lot of smart people giving suggestions and lending help.
+
+Julia Elman  
+Michael Trythall  
+Kenneth Love  
+Audrey Roy Greenfield  
+Daniel Greenfield  
+Jonathan Snook  
+Poornima Vijayashanker  
+
+## Kickstarter backers
+
+Hello Web App's Kickstarter campaign was a success due to the generosity of the folks below. Again, my sincere thanks:
+
+Aidan Nulman  
+Alejandro Krumkamp  
+Andreas Djunaedi  
+Andrew Louis  
+Andrew Wasem  
+Andy Giffen  
+Angie Chang  
+Ben Blumenfeld  
+Bryan Veloso  
+Carol Naslund Willing  
+Chris Spicer  
+Cory Benfield  
+Daly Chang  
+David Ritter  
+Ed Stockman  
+Ellen Amudipe  
+Enrique Piedrafita  
+Frederic Tschannen  
+Jackie Ta  
+Jannis Leidel  
+Jeremy Gillick  
+Julio Carlos Menéndez González  
+Kara Beyer  
+Kathleen Tuite  
+M. Jackson Wilkinson  
+Maria khomenko  
+Marta Maria Casetti  
+Martin Kleppmann  
+Matthew Oliphant  
+Noah Kantrowitz  
+Olivier Yiptong  
+Ozzie Sabina  
+Rachel Cordray Sanders  
+Ryan Feeley  
+Sam Stokes  
+Samuel Clay  
+Theodore Tedwardson III  
+Thomas A Kent  
+Tim Kuehlhorn  
+Toby Bettridge  
+Turki Alotieschan  
+Tzu-ping Chung  

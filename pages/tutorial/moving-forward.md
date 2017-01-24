@@ -1,0 +1,152 @@
+# Moving Forward
+
+You've created your first web app using Hello Web App — congratulations! I'm
+proud of you. I hope that I've ignited the spark to learn more (and hopefully
+gotten you on the path to building the next billion dollar company, perhaps.)
+
+Now what? Here are some resources and advice to continue your education.
+
+## Keep building your app
+
+When I started my first app, I got better at programming in general by improving
+my app and adding new features. For example, learning how to monetize the app by
+integrating Stripe and PayPal, creating new search pages, creating
+administration pages, etc. Each of these additional features started with me
+thinking, "Huh, I wonder how to add payments from customers," and led to a
+rabbit hole of Googling for help, playing around with ideas, testing, and
+eventually launching the new feature. Don't be scared of learning while doing —
+it's a great way to teach yourself.
+
+## Great books and additional reading
+
+Hello Web App intentionally glossed over a lot of programming details to show
+you how fast you can get started with web app development. The below resources
+will help you start filling in your knowledge.
+
+***Hello Web App: Intermediate Concepts* by Tracy Osborn:** 
+[http://hellowebapp.com/intermediate-concepts](http://hellowebapp.com/intermediate-concepts)
+
+Hey, that author looks familiar! Intermediate Concepts is the official follow up
+to this book, covering more complex features such as adding payments and
+user-uploaded images as well as intermediate concepts like proper database
+design. Use HWAREADER in the purchase form for 10% off.
+
+***Two Scoops of Django* by Audrey Roy Greenfield and Daniel Greenfield:**
+[http://hellowebapp.com/47](http://hellowebapp.com/47)
+
+I hesitate ordering you where to go next except this book pretty much should be
+required reading. *Two Scoops* is a resource book for Django best practices and
+expands on pretty much everything mentioned here in Hello Web App. Definitely
+recommend adding this to your reading list.
+
+***Test-Driven Development with Python* by Harry J. W. Percival:**
+[http://hellowebapp.com/48](http://hellowebapp.com/48)
+
+Interested in learning more about tests? The ones we did back in Chapter 13 are
+pretty much the very bare minimum — here, you'll learn how to build tests first
+before writing your main code.
+
+## Additional tutorials and resources
+
+There are quite a few tutorials ranging from beginner to intermediate that you
+can jump into to walk through expanding your app.
+
+**Django Girls Tutorial:**
+[http://hellowebapp.com/49](http://hellowebapp.com/49)
+
+Very comprehensive beginner tutorial for Django, not just for girls. 
+
+**Django's official polls tutorial:**
+[http://hellowebapp.com/50](http://hellowebapp.com/50)
+
+Cement your knowledge by going over an additional beginner course provided by
+the Django Software Foundation. Again, Hello Web App glossed over some aspects
+of programming that this tutorial will go over a bit more in depth.
+
+**Django Packages:** 
+[http://hellowebapp.com/51](http://hellowebapp.com/51)
+
+Great directory listing reusable Django apps, packages, and tools that you can
+use for your own app.
+
+## Free online classes
+
+If you love the format of learning in a school-like environment, there are a lot
+of online courses you can take to learn more. Here are a few of my favorites:
+
+**Codecademy:** [http://hellowebapp.com/52](http://hellowebapp.com/52)
+
+Courses on HTML, CSS, Javascript, jQuery, Python, Ruby, and PHP, all interactive
+and free.
+
+**Coursera:** [http://hellowebapp.com/53](http://hellowebapp.com/53)
+
+Coursera lists a lot of great programming courses — Python, Django, programming
+in general, marketing, and more.
+
+More resources can be found here:
+[http://hellowebapp.com/54](http://hellowebapp.com/54)
+
+## In-person programming schools and development courses
+
+There are many, many schools and in-person courses that you can take to take
+your development skills to the next level. Below is a short list of my favorites
+— more can be found by a quick internet search.
+
+**Hackbright Academy - San Francisco, CA:**
+[http://hellowebapp.com/55](http://hellowebapp.com/55)
+
+Hackbright Academy is a programming fellowship created for women in San
+Francisco. I've heard a lot of great things about this program — a fast-track
+course to becoming a full-fledged software engineer. Requires an application.
+Tuition is $15,000 and there are scholarships available.
+
+**The Recurse Center - New York City, NY:**
+[http://hellowebapp.com/56](http://hellowebapp.com/56)
+
+Less specific tutorials and programming help and more of a "retreat" to explore
+programming on your own with the support of your fellows. The Recurse Center
+also helps connect their members with jobs if that's something you're looking
+for. Each round is three months and requires an application. The Recurse
+Centered is free, and has grants to cover living expenses in NYC for minorities.
+
+**Ladies Learning Code — Many cities, Canada:**
+[http://hellowebapp.com/57](http://hellowebapp.com/57)
+
+Ladies Learning Code is a not-for-profit organization dedicated to helping women
+and kids learn to code. They have chapters and run workshops in many cities in
+Canada. Workshops generally cost a small amount — for example, $50 CAD for a
+half-day course.
+
+**RocketU Full-Stack Developer Bootcamp — San Francisco, CA:**
+[http://hellowebapp.com/58](http://hellowebapp.com/58)
+
+A 12-week intensive bootcamp teaching full-stack development in San Francisco.
+Requires application and costs $12,500.
+
+**General Assembly's classes — In person (many locations) and online:**
+[http://hellowebapp.com/59](http://hellowebapp.com/59)
+
+A lot of great general programming courses and other educational lessons. Topics
+range from design to development, and course lengths range from full-time,
+part-time, and one-day offerings.
+
+## Stay in touch with Hello Web App
+
+Last but not least, I encourage you to stay in touch with this book's online
+resources. If you haven't already, check out
+[http://hellowebapp.com](http://hellowebapp.com) and sign up for the email
+newsletter. I'll be sending updates about this book, new resources, as well as
+announcing new editions and books in the *Hello* series — there is a good chance
+*Hello Web Design* will be next!
+
+As mentioned earlier in the book, we also have a discussion forum, and I'd love
+to see what you've built using this book:
+[http://discuss.hellowebapp.com](http://discuss.hellowebapp.com)
+
+I also would love to chat with you on Twitter:
+[http://twitter.com/hellowebapp](http://twitter.com/hellowebapp) (official book
+account) or [http://twitter.com/limedaring](http://twitter.com/limedaring)
+(personal).
+
+Keep in touch, and best of luck building your web apps!
