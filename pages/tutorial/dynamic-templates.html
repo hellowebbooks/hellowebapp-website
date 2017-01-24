@@ -27,8 +27,10 @@ it's back to *views.py* we go.
 
 Find the index view back from when we were playing with template tags:
 
-{title="views.py", lang="python", line-numbers=on, starting-line-number=4}
-```
+*views.py*
+{% endfilter %}
+
+<pre><code class="python">
 def index(request):
     number = 6
     # don't forget the quotes since it's a string, 
@@ -39,7 +41,9 @@ def index(request):
         # don't forget to pass it in, and the last comma
         'thing': thing,
     })
-```
+</code></pre>
+
+{% filter markdown %}
 
 Right now it's essentially saying: "When the index page is viewed, display this
 template and pass along these two variables." 
@@ -51,8 +55,10 @@ template."
 Here's the new view. Don't forget, if you've renamed `Thing` to something else
 in your model, make sure to update all instances below:
 
-{title="views.py", lang="python"}
-```
+*views.py*
+{% endfilter %}
+
+<pre><code class="python">
 from django.shortcuts import render
 # leanpub-start-insert
 from collection.models import Thing
@@ -68,8 +74,9 @@ def index(request):
         'things': things,
     # leanpub-end-insert
     })
-```
+</code></pre>
 
+{% filter markdown %}
 First, we need to tell the view that we need some information from the model, so
 we've added an import statement to the top of the page (that's the `from
 collection.models import Thing`).
@@ -84,8 +91,10 @@ so now we need to display that in the template.
 
 Update your *index.html*:
 
-{title="index.html", lang="html+django"}
-```
+*index.html*
+{% endfilter %}
+
+<pre><code class="django">
 {% extends 'base.html' %}
 {% block title %}
     Homepage - {{ block.super }}
@@ -99,8 +108,9 @@ Update your *index.html*:
     {% endfor %}
     # leanpub-end-insert
 {% endblock content %}
-```
+</code></pre>
 
+{% filter markdown %}
 This is a loop that'll iterate over all the objects in the `things` variable,
 displaying the name for each `Thing`. Remember that `{% %}` shows an action and
 `{{ }}` prints out the variable.
@@ -117,15 +127,17 @@ website if you're not careful. That means querying for all `Thing`s when you
 only want one `Thing` is inefficient. *Don't* do something like this in your
 template:
 
-{linenos=off}
-```
+{% endfilter %}
+
+<pre><code class="django">
 {% for thing in things %}
     {% if thing.name == "Hello" %}
         {{ thing.name }}
     {% endif %}
 {% endfor %}
-```
+</code></pre>
 
+{% filter markdown %}
 It would be much faster if we could just query for that one `Thing` instead,
 rather than getting all of them and then just searching for just one in the
 template, right?
@@ -134,43 +146,52 @@ QuerySets come with a lot of extra stuff to help filter the records in your
 database. For example, if you wanted the `Thing` named "Hello," you could do
 this instead:
 
-{linenos=off}
-```
+{% endfilter %}
+
+<pre><code class="python">
 # what we had before
 things = Thing.objects.all()
 
 # just getting one object!
 correct_thing = Thing.objects.get(name='Hello')
-```
+</code></pre>
+
+{% filter markdown %}
 
 The `.get()` method will retrieve the object that matches the query, but keep in
 mind it'll throw an error if more than one object is found (or none.) If you
 want to grab a bunch of things that match, you'll use `.filter()`:
 
-{linenos=off}
-```
-things = Thing.objects.filter(name='Hello')
-```
+{% endfilter %}
 
+<pre><code class="python">
+things = Thing.objects.filter(name='Hello')
+</code></pre>
+
+{% filter markdown %}
 So, remember: `.get()` is when you want one, exact object; `.filter()` is for
 when you could possibly retrieve more than one result.
 
 When Django returns a bunch of items, we can also have it return it
 alphabetically using `.order_by()`:
 
-{linenos=off}
-```
-things = Thing.objects.filter(name='Hello').order_by('name')
-```
+{% endfilter %}
 
+<pre><code class="python">
+things = Thing.objects.filter(name='Hello').order_by('name')
+</code></pre>
+
+{% filter markdown %}
 Another useful method is to look up whether a field contains something using
 `contains`:
 
-{linenos=off}
-```
-things = Thing.objects.filter(name__contains='Hello')
-```
+{% endfilter %}
 
+<pre><code class="python">
+things = Thing.objects.filter(name__contains='Hello')
+</code></pre>
+
+{% filter markdown %}
 Check out your website to see the update:
 
 ![](images/things_order.png) 
@@ -181,10 +202,13 @@ matches, but `name__contains=` will get **incomplete** matches.
 
 We can also tell it to return a random order as well using `?`:
 
-{linenos=off}
-```
+{% endfilter %}
+
+<pre><code class="python">
 things = Thing.objects.all().order_by('?')
-```
+</code></pre>
+
+{% filter markdown %}
 
 This is just an overview of the basic queries we can make with Django. For more
 (a lot more, but it's pretty interesting), check out Django's documentation of
@@ -192,8 +216,10 @@ QuerySets: [http://hellowebapp.com/18](http://hellowebapp.com/18).
 
 Before you forget, change the query in your view back to grabbing all objects:
 
-{title="views.py", lang="python"}
-```
+*views.py*
+{% endfilter %}
+
+<pre><code class="python">
 from django.shortcuts import render
 
 from collection.models import Thing
@@ -205,8 +231,9 @@ def index(request):
     return render(request, ‘index.html', {
         'things': things,
     })
-```
+</code></pre>
 
+{% filter markdown %}
 Congrats — we now have objects in our database showing up on our website! Commit
 your work, and now let's move on to creating individual pages for these objects.
 

@@ -33,16 +33,24 @@ whine unless we update the `ALLOWED_HOSTS` setting. Right now, let's set it to
 everything (A.K.A., we'll allow any host), but add a note that we should update
 it to our future domain on our launched app for security's sake.
 
-{title="settings.py", lang="python", line-numbers=on,starting-line-number=23}
-```
-DEBUG = False 
-```
+*settings.py*
+{% endfilter %}
 
-{title="settings.py", lang="python", line-numbers=on,starting-line-number=27}
-```
+<pre><code class="python">
+DEBUG = False 
+</code></pre>
+
+{% filter markdown %}
+
+*settings.py*
+{% endfilter %}
+
+<pre><code class="python">
 # XXX: Update me before launch!
 ALLOWED_HOSTS = ['*']
-```
+</code></pre>
+
+{% filter markdown %}
 
 Check out what happens when you go to a non-existent page and get a 404
 response:
@@ -56,17 +64,22 @@ shall we?
 
 Create *404.html* and *500.html* files in your templates directory:
 
-{linenos=off}
-```
+{% endfilter %}
+
+<pre><code class="python">
 $ cd collection/templates/
 collection/templates $ touch 404.html
 collection/templates $ touch 500.html
-```
+</code></pre>
+
+{% filter markdown %}
 
 Then update the template contents:
 
-{title="404.html", lang="html+django"}
-```
+*404.html*
+{% endfilter %}
+
+<pre><code class="django">
 {% extends 'base.html' %}
 {% block title %}
     404 - {{ block.super }}
@@ -76,10 +89,14 @@ Then update the template contents:
     <h1>404 Error</h1>
     <p>You've run into a page that doesn't exist!</p>
 {% endblock content %}
-```
+</code></pre>
 
-{title="500.html", lang="html+django"}
-```
+{% filter markdown %}
+
+*500.html*
+{% endfilter %}
+
+<pre><code class="django">
 {% extends 'base.html' %}
 {% block title %}
     500 - {{ block.super }}
@@ -89,7 +106,9 @@ Then update the template contents:
     <h1>500 Error</h1>
     <p>You've run into an error!</p>
 {% endblock content %}
-```
+</code></pre>
+
+{% filter markdown %}
 
 That's all you need to do! Take a look at the broken page again in your browser:
 
@@ -113,44 +132,57 @@ everything at once. It's a convention for Python, and super useful.
 First, let's get a list of everything installed so far. Run `pip freeze` in your
 command line (make sure you're in your virtual environment first):
 
-{linenos=off}
-```
+{% endfilter %}
+
+<pre><code class="python">
 $ pip freeze
 Django==1.9.1
 django-registration-redux==1.3
 wsgiref==0.1.2
-```
+</code></pre>
+
+{% filter markdown %}
 
 We installed the first two, and the last (`wsgiref`) is something installed by
 virtualenv. To set up your *requirements.txt*, make sure you're in the top level
 directory (the same one as *manage.py*) and pipe the contents of `pip freeze`
 into the new file:
 
-{linenos=off}
-```
+{% endfilter %}
+
+<pre><code class="python">
 $ pip freeze > requirements.txt
-```
+</code></pre>
+
+{% filter markdown %}
 
 Check out your new *requirements.txt* file, which should look like the below:
 
-{title="requirements.txt", lang="text"}
-```
+*requirements.txt*
+{% endfilter %}
+
+<pre><code class="python">
 Django==1.9.1
 django-registration-redux==1.3
 wsgiref==0.1.2
-```
+</code></pre>
+
+{% filter markdown %}
 
 That's all you need to do. You can test it out by running `pip install -r
 requirements.txt`, and pip will let you know everything is installed already:
 
-{linenos=off}
-```
+{% endfilter %}
+
+<pre><code class="python">
 $ pip install -r requirements.txt 
 Requirement already satisfied (use --upgrade to upgrade): Django==1.9.1 in ./venv/lib/python2.7/site-packages (from -r requirements.txt (line 1))
 Requirement already satisfied (use --upgrade to upgrade): django-registration-redux==1.3 in ./venv/lib/python2.7/site-packages (from -r requirements.txt (line 2))
 Requirement already satisfied (use --upgrade to upgrade): wsgiref==0.1.2 in /usr/local/Cellar/python/2.7.8_1/Frameworks/Python.framework/Versions/2.7/lib/python2.7 (from -r requirements.txt (line 3))
 Cleaning up...
-```
+</code></pre>
+
+{% filter markdown %}
 
 Awesome. Future you or friends can install your app more easily now by
 installing from your requirements file!
@@ -173,8 +205,7 @@ Let's set up a basic test to make sure our site is working without errors.
 Django created a file already for your tests in your `collection` app. Update it
 to the below:
 
-{title="tests.py", lang="python"}
-```
+*tests.py*
 from django.test import TestCase
 
 # leanpub-start-insert
@@ -187,7 +218,9 @@ class CollectionTest(TestCase):
         r = self.client.get('/about/')
         self.assertEqual(r.status_code, 200) 
 # leanpub-end-insert   
-```
+</code></pre>
+
+{% filter markdown %}
 
 We're creating tests for our `collection` app, first testing whether our
 homepage pops up, as well as testing whether a simple no-logic page (our "about"
@@ -199,8 +232,9 @@ variable `r`, and then asserting whether the page's status code equals 200
 To run the test, head back to your command line and run `python manage.py test`,
 and you should see the below output:
 
-{linenos=off}
-```
+{% endfilter %}
+
+<pre><code class="python">
 $ python manage.py test
 Creating test database for alias 'default'...
 ..
@@ -209,15 +243,19 @@ Ran 2 tests in 0.033s
 
 OK
 Destroying test database for alias 'default'...
-```
+</code></pre>
+
+{% filter markdown %}
 
 Boom, ran 2 tests, and everything was OK.
 
 What if something went wrong? Go into your *views.py* and add a typo to your
 index view:
 
-{title="views.html", lang="python"}
-```
+*views.html*
+{% endfilter %}
+
+<pre><code class="python">
 def index(request):
     things = Thing.objects.all()
     return render(request, 'index.html', {
@@ -226,12 +264,15 @@ def index(request):
         'things': thinggs,
 # leanpub-end-insert
     })
-```
+</code></pre>
+
+{% filter markdown %}
 
 And then run your tests again:
 
-{linenos=off}
-```
+{% endfilter %}
+
+<pre><code class="python">
 $ python manage.py test
 Creating test database for alias 'default'...
 E.
@@ -259,7 +300,9 @@ Ran 2 tests in 0.044s
 
 FAILED (errors=1)
 Destroying test database for alias 'default'...
-```
+</code></pre>
+
+{% filter markdown %}
 
 Nifty, right? Make sure to fix the typo and commit your work. Read more about
 Django tests here: [http://hellowebapp.com/31](http://hellowebapp.com/31)

@@ -33,17 +33,23 @@ file.
 
 The offending line:
 
-{linenos=off}
-```
+{% endfilter %}
+
+<pre><code class="python">
 return render(request, ‘search/search.html' {
-```
+</code></pre>
+
+{% filter markdown %}
 
 Nothing obvious on first glance, but it really should be:
 
-{linenos=off}
-```
+{% endfilter %}
+
+<pre><code class="python">
 return render(request, 'search/search.html', {
-```
+</code></pre>
+
+{% filter markdown %}
 
 Missing comma! Those pesky things. Easy to fix once you find it, though.
 

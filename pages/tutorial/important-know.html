@@ -1,9 +1,9 @@
 {% extends "base.html" %}
 
-{% block title %}Set Up - {{ block.super }}{% endblock %}
+{% block title %}Chapter 16: Important Things to Know - {{ block.super }}{% endblock %}
 
 {% block analytics %}
-analytics.page("Setup");
+analytics.page("Chapter 16: Important Things to Know");
 {% endblock %}
 
 {% block bodyclass %}
@@ -33,11 +33,14 @@ code.
 
 The style guide includes recommendations like this:
 
-{linenos=off}
-```
+{% endfilter %}
+
+<pre><code class="python">
 Yes: spam(ham[1], {eggs: 2})
 No:  spam( ham[ 1 ], { eggs: 2 } )
-```
+</code></pre>
+
+{% filter markdown %}
 
 Read more about PEP 8 and the Python style guide here:
 [http://hellowebapp.com/44](http://hellowebapp.com/44)
@@ -54,8 +57,9 @@ the heck was I doing?"
 It's always a good idea to add comments above your code to describe what's going
 on. For example, random chuck of code from my app:
 
-{lang="python"}
-```
+{% endfilter %}
+
+<pre><code class="python">
 for line in fileinput.input(paths):
     if not line.strip():
         # Empty line
@@ -82,7 +86,9 @@ for line in fileinput.input(paths):
     if time_until and timestamp >= time_until:
         # Done
         return time_until
-```
+</code></pre>
+
+{% filter markdown %}
 
 You *could* write the above without the comments, but it's a lot easier to read
 and skim with them added. It's always a good idea to document what you're doing
@@ -131,21 +137,25 @@ window. It's faster, once you get used to it.
 Like how we ran `python manage.py runserver` in the command line (feel free to
 open a new window if you'd like), run `python manage.py shell`:
 
-{linenos=off}
-```
+{% endfilter %}
+
+<pre><code class="python">
 $ python manage.py shell
 Python 2.7.8 (default, Aug 24 2014, 21:26:19) 
 [GCC 4.2.1 Compatible Apple LLVM 5.1 (clang-503.0.40)] on darwin
 Type "help", "copyright", "credits" or "license" for more information.
 (InteractiveConsole)
 >>>
-```
+</code></pre>
+
+{% filter markdown %}
 
 Here, you can import settings and run commands just like in your *views.py*, but
 see instantaneous results. 
 
-{linenos=off}
-```
+{% endfilter %}
+
+<pre><code class="python">
 >>> from collection.models import Thing
 >>> things = Thing.objects.all()
 >>> for thing in things:
@@ -155,7 +165,9 @@ Hello Thing
 Another Thing
 Yet Another!
 Another Name of a Thing
-```
+</code></pre>
+
+{% filter markdown %}
 
 The first three lines were commands I typed in — first importing `Thing` from
 our models, then running a query to grab all of our `Thing`s, then running a

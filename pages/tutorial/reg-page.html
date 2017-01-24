@@ -41,8 +41,10 @@ Next, you'll need to tell Django that we've installed this plugin — like we di
 when we added `collection` but this time it's an external app we're installing.
 Head to `settings.py` and add `registration` to the list:
 
-{title="settings.py", lang="python", line-numbers=on,starting-line-number=32}
-```
+*settings.py*
+{% endfilter %}
+
+<pre><code class="python">
 INSTALLED_APPS = (
     'collection',
     'django.contrib.admin',
@@ -56,17 +58,22 @@ INSTALLED_APPS = (
     'registration',
 # leanpub-end-insert
 )
-```
+</code></pre>
+
+{% filter markdown %}
 
 We'll also need to add more setting to our *settings.py* file, according to
 django-registration-redux's documentation
 ([http://hellowebapp.com/24](http://hellowebapp.com/24)). Add this line at the
 bottom of *settings.py*:
 
-{linenos=off, line-numbers=on,starting-line-number=88}
-```
+{% endfilter %}
+
+<pre><code class="python">
 ACCOUNT_ACTIVATION_DAYS = 7
-```
+</code></pre>
+
+{% filter markdown %}
 
 django-registration-redux will set up account activation emails automatically
 for new users, and this required setting lets us specify the number of days the
@@ -76,7 +83,9 @@ Let's keep it at the default `7` for now.
 Last, django-registration-redux comes with some migration files that we need to
 apply to our database. Apply these using `python manage.py migrate`:
 
-```
+{% endfilter %}
+
+<pre><code class="python">
 $ python manage.py migrate
 Operations to perform:
   Apply all migrations: sessions, admin, collection, contenttypes, auth, registration
@@ -85,7 +94,9 @@ Running migrations:
   Applying registration.0001_initial... OK
   Applying registration.0002_registrationprofile_activated... OK
   Applying registration.0003_migrate_activatedstatus... OK
-```
+</code></pre>
+
+{% filter markdown %}
 
 ### Setting up the URLs
 
@@ -94,8 +105,10 @@ app, which is fairly simple.
 
 Head over to `urls.py` and add the lines indicated:
 
-{title="urls.py", lang="python", line-numbers=on,starting-line-number=19}
-```
+*urls.py*
+{% endfilter %}
+
+<pre><code class="python">
 from django.conf.urls import url, 
 # leanpub-start-insert
                              include
@@ -105,7 +118,9 @@ from django.conf.urls import url,
 # leanpub-end-insert
     url(r'^admin/', admin.site.urls),
 ]
-```
+</code></pre>
+
+{% filter markdown %}
 
 The new line basically says, "For any URL path starting with 
 *accounts/*, search for a matching URL path in django-registration-redux's URLs."
@@ -119,23 +134,31 @@ the latter (we can add actual email functionality when we launch the app).
 
 Head back to *settings.py* and add these lines to the bottom:
 
-{title="settings.py", lang="python", line-numbers=on,starting-line-number=90}
-```
+*settings.py*
+{% endfilter %}
+
+<pre><code class="python">
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 DEFAULT_FROM_EMAIL = 'testing@example.com'
 EMAIL_HOST_USER = ''
 EMAIL_HOST_PASSWORD = ''
 EMAIL_USE_TLS = False
 EMAIL_PORT = 1025
-```
+</code></pre>
+
+{% filter markdown %}
 
 While we're here, let's tell Django what page we want to redirect to after
 successful registration. Add after the code block above:
 
-{title="settings.py", lang="python", line-numbers=on,starting-line-number=97}
-```
+*settings.py
+{% endfilter %}
+
+<pre><code class="python">
 LOGIN_REDIRECT_URL = "home"
-```
+</code></pre>
+
+{% filter markdown %}
 
 ### Adding in the required templates
 
@@ -144,13 +167,16 @@ added to our app (More info:
 [http://hellowebapp.com/25](http://hellowebapp.com/25)). We're going to create a
 new folder in our templates directory to hold these new templates:
 
-{linenos=off}
-```
+{% endfilter %}
+
+<pre><code class="python">
 $ cd collection/templates/
 collection/templates $ mkdir registration
 collection/templates $ cd registration
 collection/templates/registration $ touch registration_form.html
-```
+</code></pre>
+
+{% filter markdown %}
 
 Continue to use `touch` to create blank files in this directory with the
 following file names:
@@ -169,8 +195,10 @@ The majority of code in these templates is just text or a form, which is created
 by Django. For the sake of brevity, I recommend the following content for each
 file:
 
-{title="login.html", lang="html+django"}
-```
+*login.html*
+{% endfilter %}
+
+<pre><code class="django">
 {% extends 'base.html' %}
 {% block title %}
     Login - {{ block.super }}
@@ -184,10 +212,14 @@ file:
         <input type="submit" value="Submit" />
     </form>
 {% endblock content %}
-```
+</code></pre>
 
-{title="logout.html", lang="html+django"}
-```
+{% filter markdown %}
+
+*logout.html*
+{% endfilter %}
+
+<pre><code class="django">
 {% extends 'base.html' %}
 {% block title %}
     Logout - {{ block.super }}
@@ -197,10 +229,14 @@ file:
     <h1>Logged Out</h1>
     <p>You have been logged out!</p>
 {% endblock content %}
-```
+</code></pre>
 
-{title="registration_complete.html", lang="html+django"}
-```
+{% filter markdown %}
+
+*registration_complete.html*
+{% endfilter %}
+
+<pre><code class="django">
 {% extends 'base.html' %}
 {% block title %}
     Registration Complete - {{ block.super }}
@@ -210,10 +246,14 @@ file:
     <h1>Registration Complete</h1>
     <p>Your account has been registered!</p>
 {% endblock content %}
-```
+</code></pre>
 
-{title="registration_form.html", lang="html+django"}
-```
+{% filter markdown %}
+
+*registration_form.html*
+{% endfilter %}
+
+<pre><code class="django">
 {% extends 'base.html' %}
 {% block title %}
     Registration Form - {{ block.super }}
@@ -227,15 +267,19 @@ file:
         <input type="submit" value="Submit" />
     </form>
 {% endblock content %}
-```
+</code></pre>
+
+{% filter markdown %}
 
 ### Add links to nav to login and logout
 
 The last thing we should do is add a link to login and logout in our navigation.
 Update your *base.html* layout file:
 
-{title="base.html", lang="html+django", line-numbers=on, starting-line-number=25}
-```
+*base.html*
+{% endfilter %}
+
+<pre><code class="django">
 # leanpub-start-insert
     {% if user.is_authenticated %}
     <li>
@@ -251,7 +295,9 @@ Update your *base.html* layout file:
     {% endif %}
 # leanpub-end-insert
 </ul>
-```
+</code></pre>
+
+{% filter markdown %}
 
 Note the two extra links we're adding to the navigation: `{% if
 user.is_authenticated %}` does what it looks like it does — returns `True` if
@@ -295,8 +341,10 @@ directory:
 And the content to put in the templates — quite a few files, but very simple
 content.
 
-{title="password_change_done.html", lang="html+django"}
-```
+*password_change_done.html*
+{% endfilter %}
+
+<pre><code class="django">
 {% extends 'base.html' %}
 {% block title %}
     Password Change Done - {{ block.super }}
@@ -306,10 +354,14 @@ content.
     <h1>Password Change Done</h1>
     <p>Your password was changed.</p>
 {% endblock content %}
-```
+</code></pre>
 
-{title="password_change_form.html", lang="html+django"}
-```
+{% filter markdown %}
+
+*password_change_form.html*
+{% endfilter %}
+
+<pre><code class="django">
 {% extends 'base.html' %}
 {% block title %}
     Password Change Form - {{ block.super }}
@@ -323,10 +375,14 @@ content.
         <input type="submit" value="Submit" />
     </form>
 {% endblock content %}
-```
+</code></pre>
 
-{title="password_reset_complete.html", lang="html+django"}
-```
+{% filter markdown %}
+
+*password_reset_complete.html*
+{% endfilter %}
+
+<pre><code class="django">
 {% extends 'base.html' %}
 {% block title %}
     Password Reset Complete - {{ block.super }}
@@ -336,10 +392,14 @@ content.
     <h1>Password Reset Complete</h1>
     <p>Your password has been reset!</p>
 {% endblock content %}
-```
+</code></pre>
 
-{title="password_reset_confirm.html", lang="html+django"}
-```
+{% filter markdown %}
+
+*password_reset_confirm.html*
+{% endfilter %}
+
+<pre><code class="django">
 {% extends 'base.html' %}
 {% block title %}
     Confirm Password Reset - {{ block.super }}
@@ -361,10 +421,14 @@ content.
     already been used. Please request a new password reset.</p>
     {% endif %}
 {% endblock content %}
-```
+</code></pre>
 
-{title="password_reset_done.html", lang="html+django"}
-```
+{% filter markdown %}
+
+*password_reset_done.html
+{% endfilter %}
+
+<pre><code class="django">
 {% extends 'base.html' %}
 {% block title %}
     Password Reset Done - {{ block.super }}
@@ -374,10 +438,14 @@ content.
     <h1>Password Reset Complete</h1>
     <p>Check your email for a link to reset your password!</p>
 {% endblock content %}
-```
+</code></pre>
 
-{title="password_reset_email.txt", lang="html+django"}
-```
+{% filter markdown %}
+
+*password_reset_email.txt*
+{% endfilter %}
+
+<pre><code class="python">
 {% autoescape off %}
 You're receiving this email because you requested a password
 reset. Please go to the following page and choose a new 
@@ -389,10 +457,14 @@ password:
 {% endblock %}
 Your username, in case you've forgotten: {{ user.username }}
 {% endautoescape %}
-```
+</code></pre>
 
-{title="password_reset_form.html", lang="html+django"}
-```
+{% filter markdown %}
+
+*password_reset_form.html*
+{% endfilter %}
+
+<pre><code class="django">
 {% extends 'base.html' %}
 {% block title %}
     Password Reset Form - {{ block.super }}
@@ -406,15 +478,19 @@ Your username, in case you've forgotten: {{ user.username }}
         <input type="submit" value="Submit" />
     </form>
 {% endblock content %}
-```
+</code></pre>
+
+{% filter markdown %}
 
 ### Setting up the URLs
 
 We'll need to tell Django we're using its password reset/recover feature, so add
 these URLs to your *urls.py*:
 
-{title="urls.py", lang="python"}
-```
+*urls.py*
+{% endfilter %}
+
+<pre><code class="python">
 ...
 # leanpub-start-insert
 from django.contrib.auth.views import (
@@ -424,10 +500,14 @@ from django.contrib.auth.views import (
    password_reset_complete
 )
 # leanpub-end-insert
-```
+</code></pre>
 
-{title="urls.py", lang="python", line-numbers=on,starting-line-number=22}
-```
+{% filter markdown %}
+
+*urls.py*
+{% endfilter %}
+
+<pre><code class="python">
     # the new password reset URLs
 # leanpub-start-insert
     url(r'^accounts/password/reset/$', 
@@ -455,7 +535,9 @@ from django.contrib.auth.views import (
         include('registration.backends.simple.urls')),
     url(r'^admin/', admin.site.urls),
 ]
-```
+</code></pre>
+
+{% filter markdown %}
 
 We're overriding the default URL paths that come with Django so we can point to
 the template we created. Otherwise, Django will just point to the admin
@@ -472,8 +554,10 @@ users who are already logged in, and password reset is for users who can't log
 in because they forgot their password. Therefore, users should reset their
 passwords from the login page. Update your login template to the following:
 
-{title="login.html", lang="html+django"}
-```
+*login.html*
+{% endfilter %}
+
+<pre><code class="django">
 {% extends 'base.html' %}
 {% block title %}
     Login - {{ block.super }}
@@ -494,7 +578,9 @@ passwords from the login page. Update your login template to the following:
     </p>
     # leanpub-end-insert
 {% endblock content %}
-```
+</code></pre>
+
+{% filter markdown %}
 
 Check out your website in the browser and play around with registering new
 "users," logging in, and logging out.
@@ -503,8 +589,9 @@ When you put in an email to reset the password for an account, check out your
 command line window to see your "email", which should look something like the
 below:
 
-{linenos=off}
-```
+{% endfilter %}
+
+<pre><code class="python">
 [27/Dec/2014 00:29:34] "GET /accounts/password/reset/ HTTP/1.1" 200 1079
 MIME-Version: 1.0
 Content-Type: text/plain; charset="utf-8"
@@ -524,7 +611,9 @@ Your username, in case you've forgotten: auser
 
 Thanks for using our site!
 The localhost:8000 team
-```
+</code></pre>
+
+{% filter markdown %}
 
 Paste the link into your browser to complete the password reset process:
 

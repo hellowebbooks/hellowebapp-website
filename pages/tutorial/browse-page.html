@@ -39,8 +39,10 @@ a simple example here, which is easily copied for other use-cases.
 
 Back to the familiar URLs-views-templates routine. Add in this new line:
 
-{title="urls.py", lang="python", line-numbers=on, starting-line-number=28}
-```
+*urls.py*
+{% endfilter %}
+
+<pre><code class="python">
 # our new browse flow
 # leanpub-start-insert
 url(r'^browse/name/$',
@@ -54,8 +56,9 @@ url(r'^accounts/password/reset/$',
     password_reset,
     {'template_name': 'registration/password_reset_form.html'},
     name="password_reset"),
-```
+</code></pre>
 
+{% filter markdown %}
 We're going to set up two new URLs at once: The first, which we'll list out
 every `Thing`'s name with a link to its page. The second will allow us to
 specify a letter (*/browse/name/a/* to search for names of `Thing`s that start
@@ -65,8 +68,10 @@ with "a," for example.)
 
 Next, off to your *views.py* to add this new view:
 
-{title="views.py", lang="python", line-numbers=on, starting-line-number=98}
-```
+*views.py*
+{% endfilter %}
+
+<pre><code class="python">
 def browse_by_name(request, initial=None):
     if initial:
         things = Thing.objects.filter(name__istartswith=initial)
@@ -78,8 +83,9 @@ def browse_by_name(request, initial=None):
         'things': things,
         'initial': initial,
     })
-```
+</code></pre>
 
+{% filter markdown %}
 We're going to write a view that works for both URL routes. Neat, right?
 
 The top line of the view where we have `initial=None`, this simply says that if
@@ -109,21 +115,25 @@ both flows here and we can extend in the future for other browse cases.
 Create a new directory for search in your templates, and then create your
 *search.html* file:
 
-{linenos=off}
-```
+{% endfilter %}
+
+<pre><code class="python">
 $ cd collection/templates/
 collection/templates $ mkdir search
 collection/templates $ cd search
 collection/templates/search $ touch search.html
-```
+</code></pre>
 
+{% filter markdown %}
 ***Note: **Technically we're browsing, not searching, but I find calling the
 pages and process "search" easier.*
 
 Our *search.html* file:
 
-{title="search.html", lang="html+django"}
-```
+*search.html*
+{% endfilter %}
+
+<pre><code class="django">
 {% extends 'base.html' %}
 {% block title %}
     Browse - {{ block.super }}
@@ -154,8 +164,9 @@ Our *search.html* file:
     <p>Sorry, no results!</p>
     {% endfor %}
 {% endblock content %}
-```
+</code></pre>
 
+{% filter markdown %}
 ![](images/browse_page.png) 
 
 We're doing quite a bit of fun things here.
@@ -183,8 +194,10 @@ We're doing quite a bit of fun things here.
 
 There isn't a link to this page in the main nav, so we should update the nav:
 
-{title="base.html", lang="html+django", line-numbers=on,starting-line-number=22}
-```
+*base.html*
+{% endfilter %}
+
+<pre><code class="python">
 <li>
     <a href="{% url 'contact' %}">Contact</a>
 </li>
@@ -193,8 +206,9 @@ There isn't a link to this page in the main nav, so we should update the nav:
     <a href="{% url 'browse' %}">Browse</a>
 </li>
 # leanpub-end-insert
-```
+</code></pre>
 
+{% filter markdown %}
 The second nitpick is our URL — */browse/name/* works, as well as
 */browse/name/a/*... but */browse/* will 404 since we haven't set up a route for
 it.  It's not linked to, but someone might edit the URL in their browser. Let's
@@ -203,18 +217,23 @@ redirect, rather than 302).
 
 Updated *urls.py*:
 
-{title="urls.py", lang="python", line-numbers=on,starting-line-number=2}
-```
+*urls.py*
+{% endfilter %}
+
+<pre><code class="python">
 # added RedirectView to this import statement
 from django.views.generic import (TemplateView, 
 # leanpub-start-insert
     RedirectView,
 # leanpub-end-insert
 )
-```
+</code></pre>
 
-{title="urls.py", lang="python", line-numbers=on,starting-line-number=28}    
-```
+{% filter markdown %}
+*urls.py*
+{% endfilter %}
+
+<pre><code class="python">
     # our new redirect view
 # leanpub-start-insert
     url(r'^browse/$', RedirectView.as_view(
@@ -224,8 +243,9 @@ from django.views.generic import (TemplateView,
         views.browse_by_name, name='browse'),
     url(r'^browse/name/(?P<initial>[-\w]+)/$',
         views.browse_by_name, name='browse_by_name'),
-```
+</code></pre>
 
+{% filter markdown %}
 Like `TemplateView`, which we used before to display a template without writing
 a view (for our *About* and *Contact* pages), `RedirectView` is another generic
 view that let's us avoid writing extra code and sets up a simple redirect.
@@ -233,8 +253,10 @@ view that let's us avoid writing extra code and sets up a simple redirect.
 We have another set of URLs that could benefit from this same treatment. Let's
 redirect */things/* to our browse page as well:
 
-{title="urls.py", lang="python", line-numbers=on,starting-line-number=22}
-```
+*urls.py*
+{% endfilter %}
+
+<pre><code class="python">
 # leanpub-start-insert
     url(r'^things/$', RedirectView.as_view(
         pattern_name='browse', permanent=True)),
@@ -243,8 +265,9 @@ redirect */things/* to our browse page as well:
         views.thing_detail, name='thing_detail'),
     url(r'^things/(?P<slug>[-\w]+)/edit/$',
         views.edit_thing, name='edit_thing'),
-```
+</code></pre>
 
+{% filter markdown %}
 Test the redirects out by going to *http://localhost:8000/browse/* and
 *http://localhost:8000/things/* and watch them automatically redirect to the
 correct pages.

@@ -32,8 +32,10 @@ every `Thing` is owned by one and only one `User`.
 
 Update your `Thing` model (or whatever you called it) to the following:
 
-{title="models.py", lang="python"}
-```
+*models.py*
+{% endfilter %}
+
+<pre><code class="python">
 # don't forget to import this
 # leanpub-start-insert
 from django.contrib.auth.models import User
@@ -48,7 +50,9 @@ class Thing(models.Model):
 # leanpub-start-insert
     user = models.OneToOneField(User, blank=True, null=True)
 # leanpub-end-insert
-```
+</code></pre>
+
+{% filter markdown %}
 
 We're in a tiny bit of a pickle. We're saying that each `Thing` needs to have a
 unique `User`. Remember the migrations stuff we did earlier? We'll need to
@@ -65,18 +69,22 @@ created, just our future ones.
 
 Create the migration by running the command below:
 
-{linenos=off}
-```
+{% endfilter %}
+
+<pre><code class="python">
 $ python manage.py makemigrations
 Migrations for 'collection':
   0002_thing_user.py:
     - Add field user to thing
-```
+</code></pre>
+
+{% filter markdown %}
 
 And then apply the migration...
 
-{linenos=off}
-```
+{% endfilter %}
+
+<pre><code class="python">
 $ python manage.py migrate
 Operations to perform:
   Synchronize unmigrated apps: registration
@@ -87,7 +95,9 @@ Synchronizing apps without migrations:
   Installing indexes...
 Running migrations:
   Applying collection.0002_thing_user... OK
-```
+</code></pre>
+
+{% filter markdown %}
 
 Now your `Thing`s can have a `User` owning them!
 
@@ -99,8 +109,10 @@ set up their `Thing`.
 
 First, add a couple new URLs to our *urls.py* file:
 
-{title="urls.py", lang="python", line-numbers=on, starting-line-number=10}
-```
+*urls.py*
+{% endfilter %}
+
+<pre><code class="python">
 # add this to the top
 # leanpub-start-insert
 from collection.backends import MyRegistrationView
@@ -116,20 +128,28 @@ url(r'^accounts/create_thing/$', views.create_thing,
 url(r'^accounts/', 
     include('registration.backends.default.urls')),
 url(r'^admin/', admin.site.urls),
-```
+</code></pre>
+
+{% filter markdown %}
 
 Then head back over to *views.py* to create the new view:
 
-{title="views.py", lang="python", line-numbers=on,starting-line-number=3}
-```
+*views.py*
+{% endfilter %}
+
+<pre><code class="python">
 # add at the top
 # leanpub-start-insert
 from django.template.defaultfilters import slugify
 # leanpub-end-insert
-```
+</code></pre>
 
-{title="views.py", lang="python", line-numbers=on,starting-line-number=52}
-```
+{% filter markdown %}
+
+*views.py*
+{% endfilter %}
+
+<pre><code class="python">
 # add below your edit_thing view
 # leanpub-start-insert
 def create_thing(request):
@@ -162,21 +182,28 @@ def create_thing(request):
         'form': form,
     })
 # leanpub-end-insert
-```
+</code></pre>
+
+{% filter markdown %}
 
 We're going to be reusing the form (`ThingForm`) we made before! Next, we'll
 need to create the template. Create the file:
 
-{linenos=off}
-```
+{% endfilter %}
+
+<pre><code class="python">
 $ cd collection/templates/things
 collection/templates/things $ touch create_thing.html
-```
+</code></pre>
+
+{% filter markdown %}
 
 Then fill it out:
 
-{title="create_thing.html", lang="html+django"}
-```
+*create_thing.html*
+{% endfilter %}
+
+<pre><code class="django">
 {% extends 'base.html' %}
 {% block title %}
     Create a Thing - {{ block.super }}
@@ -190,7 +217,9 @@ Then fill it out:
         <input type="submit" value="Submit" />
     </form>
 {% endblock %}
-```
+</code></pre>
+
+{% filter markdown %}
 
 Very last thing we need to do is tell django-registration-redux to go to this
 form's page after successful registration instead of the registration complete
@@ -204,16 +233,21 @@ than rewriting the entire plugin.
 We're going to put this piece of overwritten code in its own file. In your
 `collection` directory, create a file called `backends.py`:
 
-{linenos=off}
-```
+{% endfilter %}
+
+<pre><code class="python">
 $ cd collection
 collection $ touch backends.py
-```
+</code></pre>
+
+{% filter markdown %}
 
 Here are the contents of the new *backends.py*:
 
-{title="backends.py", lang="python"}
-```
+*backends.py*
+{% endfilter %}
+
+<pre><code class="python">
 from registration.backends.simple.views import RegistrationView
 
 # my new registration view, subclassing RegistrationView
@@ -223,7 +257,9 @@ class MyRegistrationView(RegistrationView):
         # the named URL that we want to redirect to after
         # successful registration
         return ('registration_create_thing')
-```
+</code></pre>
+
+{% filter markdown %}
 
 How did we know about this? Check out django-registration-redux's documentation
 on views ([http://hellowebapp.com/26](http://hellowebapp.com/26)) — this page
@@ -242,8 +278,10 @@ We probably want to make it so the owner of a `Thing` can edit only his or her
 respective `Thing`. Update your `Thing` template so the link is hidden to anyone
 who isn't logged in:
 
-{title="thing_detail.html", lang="html+django"}
-```
+*thing_detail.html*
+{% endfilter %}
+
+<pre><code class="django">
 {% extends 'base.html' %}
 {% block title %}
     {{ thing.name }} - {{ block.super }}
@@ -262,23 +300,31 @@ who isn't logged in:
     {% endif %}
     # leanpub-end-insert
 {% endblock content %}
-```
+</code></pre>
+
+{% filter markdown %}
 
 We also want to add some additional security precautions to our view to make
 sure that we let non-owners edit information that isn't theirs. 
 
 Update your *views.py*:
 
-{title="views.py", lang="python", line-numbers=on,starting-line-number=2}
-```
+*views.py*
+{% endfilter %}
+
+<pre><code class="python">
 # leanpub-start-insert
 from django.contrib.auth.decorators import login_required
 from django.http import Http404
 # leanpub-end-insert
-```
-    
-{title="views.py", lang="python", line-numbers=on,starting-line-number=28}
-```
+</code></pre>
+
+{% filter markdown %}
+
+*views.py*
+{% endfilter %}
+
+<pre><code class="python">
 # leanpub-start-insert
 @login_required
 # leanpub-end-insert
@@ -314,7 +360,9 @@ def edit_thing(request, slug):
         'thing': thing,
         'form': form,
     })
-```
+</code></pre>
+
+{% filter markdown %}
 
 We're adding two important security measures — adding a *decorator* to our view
 (`@login_required`), provided by Django, that basically says, "The only people

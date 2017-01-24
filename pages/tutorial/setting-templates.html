@@ -26,20 +26,25 @@ Head back to your command line, and `cd` into your `collection` folder (the one
 with *models.py*). Using `mkdir`, create a "templates" directory, and then
 create *index.html* within it.
 
-{linenos=off}
-```
+{% endfilter %}
+
+<pre><code class="python">
 $ cd collection
 collection $ mkdir templates
 collection $ cd templates
 collection/templates $ touch index.html
-```
+</code></pre>
+
+{% filter markdown %}
 
 Open up *index.html* in your preferred code editor and add the necessary pieces
 to display a typical webpage. We're going to use HTML5 but only the bare bones
 for now — we can get fancy later.
 
-{title="index.html", lang=html}
-```
+*index.html*
+{% endfilter %}
+
+<pre><code class="html">
 <!doctype html>
 <html>
     <head>
@@ -50,7 +55,9 @@ for now — we can get fancy later.
         <p>I am a basic website.</p>
     </body>
 </html>
-```
+</code></pre>
+
+{% filter markdown %}
 
 If you open up your browser and go to *http://localhost:8000*, you'll still see
 the same default page you saw before — none of the HTML above. We need to tell
@@ -65,8 +72,10 @@ associate the root directory (*/*) with the newly created *index.html*.
 In *urls.py*'s entries area, find the `urlpatterns` line, remove the
 pre-existing comments, and add in the lines indicated:
 
-{title="urls.py", lang="python"}
-```
+*urls.py
+{% endfilter %}
+
+<pre><code class="python">
 from django.conf.urls import url
 from django.contrib import admin
 
@@ -80,7 +89,9 @@ urlpatterns = [
 # leanpub-end-insert
     url(r'^admin/', admin.site.urls),
 ]
-```
+</code></pre>
+
+{% filter markdown %}
 
 There are essentially four parts to this new line:
 * `url()` encases the entry to indicate it's a URL entry.
@@ -95,8 +106,10 @@ There are essentially four parts to this new line:
 I am using the "typical" urls.py layout here, but if it's more understandable to
 you, you can layout the URL definition like this:
 
-{title="urls.py", lang="python"}
-```
+*urls.py*
+{% endfilter %}
+
+<pre><code class="python">
 urlpatterns = [
     url(
         regex=r'^$', 
@@ -105,7 +118,9 @@ urlpatterns = [
     ),
     url(r'^admin/', admin.site.urls),
 ]
-```
+</code></pre>
+
+{% filter markdown %}
 
 This will help you keep track of which bit is what. I'm going to keep using the
 previous configuration in this book though, since it's how it's usually laid out
@@ -127,8 +142,10 @@ my favorite is Django's shortcut function called `render`. This is something
 you'll need to import, but Django anticipates that you'll use it and already has
 it added to the top of *views.py* for us.
 
-{title="views.py", lang="python"}
-```
+*views.py*
+{% endfilter %}
+
+<pre><code class="python">
 from django.shortcuts import render
 
 # Create your views here.
@@ -137,7 +154,9 @@ def index(request):
     # this is your new view
     return render(request, 'index.html')
 # leanpub-end-insert
-```
+</code></pre>
+
+{% filter markdown %}
 
 Basically, `urls.py` will catch that someone wants the homepage and points to
 this piece of code, which will render the `index.html` template. Now open up
@@ -157,8 +176,9 @@ the folder that contains *models.py*), create a "static" directory, and within
 it, add in directories for CSS, Javascript, and images. In the CSS directory,
 add a blank *style.css* file.
 
-{linenos=off}
-```
+{% endfilter %}
+
+<pre><code class="python">
 $ cd collection
 collection $ mkdir static
 collection $ cd static
@@ -167,7 +187,9 @@ collection/static $ mkdir js
 collection/static $ mkdir css
 collection/static $ cd css
 collection/static/css $ touch style.css
-```
+</code></pre>
+
+{% filter markdown %}
 
 Head back into your *index.html* page. We'll need to tell Django that there are
 static files used on this page, so at the top (like imports in *views.py* and
@@ -176,8 +198,10 @@ static files used on this page, so at the top (like imports in *views.py* and
 Now that we can add static files to this template, add your CSS tag to the
 `<HEAD>` just like this:
 
-{title="index.html", lang="html+django"}
-```
+*index.html*
+{% endfilter %}
+
+<pre><code class="django">
 # leanpub-start-insert
 {% load staticfiles %}
 # leanpub-end-insert
@@ -195,7 +219,9 @@ Now that we can add static files to this template, add your CSS tag to the
         <p>I am a basic website.</p>
     </body>
 </html>
-```
+</code></pre>
+
+{% filter markdown %}
 
 We want to avoid using relative paths, such as `href="../css/style.css"`.  For
 optimization purposes, someday later you might want to move the static files of
@@ -208,12 +234,16 @@ At this point, feel free to add some stylesheet declarations to your *style.css*
 file and check out *http://localhost:8000* again  (run `python manage.py
 runserver` in your command line again if you need to do so).
 
-{title="style.css", lang="css"}
-```
+*style.css*
+{% endfilter %}
+
+<pre><code class="css">
 body {
     background-color: cornflowerblue;
 }
-```
+</code></pre>
+
+{% filter markdown %}
 
 ![](images/bluehelloworld.png) 
 
@@ -228,13 +258,16 @@ tag when displaying images, for example: `<img src="{% static 'images/logo.jpg'
 That said, don't worry about this within your CSS files — feel free to use
 relative paths because your static files should always be together anyways.
 
-{lang="css"}
-```
+{% endfilter %}
+
+<pre><code class="css">
 h1 {
     /* for example... */
     background-image: url(../images/logo.png);
 }
-```
+</code></pre>
+
+{% filter markdown %}
 
 Now you can add static files and style your website! Don't forget to commit your
 work with git (review git on our git tips page here:

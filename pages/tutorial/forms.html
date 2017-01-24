@@ -30,8 +30,10 @@ As usual, we'll need to do the typical create-a-url, create-a-view,
 create-a-template routine we've been doing. So, head back to over to *urls.py*,
 and add the indicated line:
 
-{title="urls.py", lang="python"}
-```
+*urls.py*
+{% endfilter %}
+
+<pre><code class="python">
 urlpatterns = [
     url(r'^$', views.index, name='home'),
     url(r'^about/$', 
@@ -50,7 +52,9 @@ urlpatterns = [
     # leanpub-end-insert
     url(r'^admin/', admin.site.urls),
 ]
-```
+</code></pre>
+
+{% filter markdown %}
 
 ***Note:** We set up our models so that we're assuming one `User` to one
 `Thing`. In that case, we actually don't need to include the slug in the URL, so
@@ -64,8 +68,10 @@ Go to your *views.py* file to add the new view. Add the below code below your
 `thing_detail` view (apologies, it's quite the doozy but the comments should
 help):
 
-{title="views.py", lang="python"}
-```
+*views.py*
+{% endfilter %}
+
+<pre><code class="python">
 # add to top of the file
 from django.shortcuts import render,
 # leanpub-start-insert
@@ -75,10 +81,14 @@ from django.shortcuts import render,
 from collection.forms import ThingForm
 # leanpub-end-insert
 from collection.models import Thing
-```
+</code></pre>
 
-{title="views.py", lang="python", line-numbers=on, starting-line-number=32}
-```
+{% filter markdown %}
+
+*views.py*
+{% endfilter %}
+
+<pre><code class="python">
 # add below your thing_detail view
 # leanpub-start-insert
 def edit_thing(request, slug):
@@ -106,7 +116,9 @@ def edit_thing(request, slug):
         'form': form,
     })
 # leanpub-end-insert
-```
+</code></pre>
+
+{% filter markdown %}
 
 The most complicated view we've added yet! We've added an if-statement, which
 allows the view to do two different things depending on whether we're just
@@ -119,16 +131,21 @@ In the view, we make reference to `ThingForm`, which we haven't created yet.
 It's really handy to have all your form information in one place, so we're going
 to add a file called *forms.py* into our `collection` app.
 
-{linenos=off}
-```
+{% endfilter %}
+
+<pre><code class="python">
 $ cd collection
 collection $ touch forms.py
-```
+</code></pre>
+
+{% filter markdown %}
 
 Open it up and add the following code:
 
-{title="forms.py", lang="python"}
-```
+*forms.py*
+{% endfilter %}
+
+<pre><code class="python">
 from django.forms import ModelForm
 
 from collection.models import Thing
@@ -137,7 +154,9 @@ class ThingForm(ModelForm):
     class Meta:
         model = Thing
         fields = ('name', 'description',)
-```
+</code></pre>
+
+{% filter markdown %}
 
 A part of Django's "magic" is the ability to create forms directly from your
 model — thus, the *ModelForm* (More info:
@@ -152,18 +171,23 @@ updating of its `name` and `description` fields.
 Last, the template. Head back into your *things* folder and add a template to
 edit your object.
 
-{linenos=off}
-```
+{% endfilter %}
+
+<pre><code class="python">
 $ cd collection/templates/things
 collection/templates/things $ touch edit_thing.html
-```
+</code></pre>
+
+{% filter markdown %}
 
 In the view above, you'll see we're passing in the form. Thankfully, Django has
 another useful utility for displaying the form in the template. Here's what
 we'll add into our template:
 
-{title="edit_thing.html", lang="html+django"}
-```
+*edit_thing.html*
+{% endfilter %}
+
+<pre><code class="django">
 {% extends 'base.html' %}
 {% block title %}
     Edit {{ thing.name }} - {{ block.super }}
@@ -177,7 +201,9 @@ we'll add into our template:
         <button type="submit">Submit</button>
     </form>
 {% endblock content %}
-```
+</code></pre>
+
+{% filter markdown %}
 
 A couple of things to note:
 * What's that whole `{% csrf_token %}` stuff? Django requires this added to
@@ -195,8 +221,10 @@ A couple of things to note:
 To make it easy to access this page, add a link to this page from our object
 view:
 
-{title="thing_detail.html", lang="html+django"}
-```
+*thing_detail.html*
+{% endfilter %}
+
+<pre><code class="django">
 {% extends 'base.html' %}
 {% block title %}
      {{ thing.name }} - {{ block.super }}
@@ -209,7 +237,9 @@ view:
     <a href="{% url 'edit_thing' slug=thing.slug %}">Edit me!</a>
     # leanpub-end-insert
     {% endblock content %}
-```
+</code></pre>
+
+{% filter markdown %}
 
 Head to the browser to check it out:
 

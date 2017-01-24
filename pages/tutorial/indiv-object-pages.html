@@ -28,8 +28,10 @@ Following our usual URLs-views-templates routine, let's head over to the
 We're going to remove the commented out default stuff from before, and add a new
 line:
 
-{title="urls.py", lang="python"}    
-```
+*urls.py*
+{% endfilter %}
+
+<pre><code class="python">
 urlpatterns = [
     url(r'^$', views.index, name='home'),
     url(r'^about/$', 
@@ -44,7 +46,9 @@ urlpatterns = [
     # leanpub-start-insert
     url(r'^admin/', admin.site.urls),
 ]
-```
+</code></pre>
+
+{% filter markdown %}
 
 Whoa, holy scary regular expression, right?
 
@@ -73,8 +77,10 @@ Our second view, woohoo!
 
 Head back to `views.py` and add the new view in:
 
-{title="views.py", lang="python"}
-```
+*views.py*
+{% endfilter %}
+
+<pre><code class="python">
 from django.shortcuts import render
 from collection.models import Thing
 
@@ -94,7 +100,9 @@ def thing_detail(request, slug):
         'thing': thing,
     })
 # leanpub-end-insert
-```
+</code></pre>
+
+{% filter markdown %}
 
 Fairly simple. Note that at the top of the view, we now have `slug` passed in
 from `urls.py` — remember that this was what was in that big, scary regex bit.
@@ -105,13 +113,16 @@ And now to the template...
 
 We'll need to create the new HTML file that the view indicates.
 
-{linenos=off}
-```
+{% endfilter %}
+
+<pre><code class="python">
 $ cd collection/templates
 collection/templates $ mkdir things
 collection/templates $ cd things
 collection/templates/things $ cp ../index.html thing_detail.html
-```
+</code></pre>
+
+{% filter markdown %}
 
 We could write `touch thing_detail.html` to create a blank file, but to avoid
 writing out the content blocks and save us some typing, we'll just copy the
@@ -124,8 +135,10 @@ individual things in one place.
 
 Here's our new individual object HTML template:
 
-{title="thing_detail.html", lang="html+django"}
-```
+*thing_detail.html*
+{% endfilter %}
+
+<pre><code class="django">
 {% extends 'base.html' %}
 {% block title %}
     {{ thing.name }} - {{ block.super }}
@@ -135,7 +148,9 @@ Here's our new individual object HTML template:
     <h1>{{ thing.name }}</h1>
     <p>{{ thing.description }}</p>
 {% endblock content %}
-```
+</code></pre>
+
+{% filter markdown %}
 
 `{{ thing }}` is the object we passed in from the database, and we can access
 the fields we set in the model (name and description) by adding the model field
@@ -146,8 +161,10 @@ list of objects we're displaying to link to their individual pages.
 
 Our new *index.html* template:
 
-{title="index.html", lang="html+django"}
-```
+*index.html*
+{% endfilter %}
+
+<pre><code class="django">
 {% extends 'base.html' %}
 {% block title %}
     Homepage - {{ block.super }}
@@ -165,7 +182,9 @@ Our new *index.html* template:
     {% endfor %}
     # leanpub-end-insert
 {% endblock content %}
-```
+</code></pre>
+
+{% filter markdown %}
 
 We're going to use Django's named URLs again. We named our detail pages (back in
 *urls.py*) `thing_detail`, and we also need to pass in the slug so it knows

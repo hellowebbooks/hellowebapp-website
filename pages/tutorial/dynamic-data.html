@@ -41,10 +41,13 @@ of your web app.
 
 Type this into your command line:
 
-{linenos=off}
-```
+{% endfilter %}
+
+<pre><code class="python">
 $ python manage.py createsuperuser
-```
+</code></pre>
+
+{% filter markdown %}
 
 This'll prompt you to create an admin user — choose any username, email address,
 and password that you like. It can always be changed later.
@@ -79,8 +82,10 @@ In *models.py*, we're going to build a model for the information we want to
 store. Here's where you're going to want to customize the titles — I'll give the
 generic example first, and then a customized example after to make it easy.
 
-{title="models.py", lang="python"}
-```
+*models.py*
+{% endfilter %}
+
+<pre><code class="python">
 from django.db import models
 
 # leanpub-start-insert
@@ -89,7 +94,9 @@ class Thing(models.Model):
     description = models.TextField()
     slug = models.SlugField(unique=True)
 # leanpub-end-insert
-```
+</code></pre>
+
+{% filter markdown %}
 
 If you were building a directory of invitation designers, you might want to
 change the class from `Thing` to `Profile` — so, `class Profile(models.Model)`.
@@ -132,31 +139,40 @@ information correctly to the new database plan (known as a schema).
 We need to tell Django we're creating the initial migration, so in your command
 line (in the same folder as *manage.py*), type this in:
 
-{linenos=off}
-```
+{% endfilter %}
+
+<pre><code class="python">
 $ python manage.py makemigrations
-```
+</code></pre>
+
+{% filter markdown %}
 
 And this is what you should see as a result:
 
-{linenos=off}
-```
+{% endfilter %}
+
+<pre><code class="python">
 Migrations for 'collection':
   0001_initial.py:
     - Create model Thing
-```
+</code></pre>
+
+{% filter markdown %}
 
 We've created the migration file, but we haven't applied it.  Run `python
 manage.py migrate` next:
 
-{linenos=off}
-```
+{% endfilter %}
+
+<pre><code class="python">
 $ python manage.py migrate
 Operations to perform:
   Apply all migrations: admin, contenttypes, collection, auth, sessions
 Running migrations:
   Applying collection.0001_initial... OK
-```
+</code></pre>
+
+{% filter markdown %}
 
 Like above, we're running the `migrate` command, telling Django to search for
 new migrations and apply them to the existing database tables.
@@ -177,9 +193,10 @@ automatically.
 Within your `collection` app folder, open up *admin.py* and add the following
 lines:
 
-{title="admin.py", lang="python"}
-```
-from django.contrib import admin
+*admin.py*
+{% endfilter %}
+
+<pre><code class="python">from django.contrib import admin
 
 # import your model
 # leanpub-start-insert
@@ -190,14 +207,16 @@ from collection.models import Thing
 # leanpub-start-insert
 admin.site.register(Thing)
 # leanpub-end-insert
-```
+</code></pre>
 
+{% filter markdown %}
 This is the bare minimum that you'll need to get your new model to show up in
 the admin. Let's add one more extra bit just to make it more awesome.
 
-{title="admin.py", lang="python"}
-```
-from django.contrib import admin
+*admin.py*
+{% endfilter %}
+
+<pre><code class="python">from django.contrib import admin
 # import your model
 from collection.models import Thing
 
@@ -213,8 +232,9 @@ class ThingAdmin(admin.ModelAdmin):
 # leanpub-start-insert
 admin.site.register(Thing, ThingAdmin)
 # leanpub-end-inserted
-```
+</code></pre>
 
+{% filter markdown %}
 Don't forget to add `ThingAdmin` to your register statement at the bottom of
 your file!
 
