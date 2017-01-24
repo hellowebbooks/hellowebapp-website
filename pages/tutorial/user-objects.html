@@ -13,10 +13,24 @@ analytics.page("Chapter 11: Associating Users with Objects");
 {% block content %}
 <div class="jumbotron"></div>
 <div class="container">
+        <div class="row">
+        <div class="col-md-9 col-md-offset-3">
+            <h1>Associating Users with Objects</h1>
+        </div>
+        <div class="col-md-3 text-right" style="padding-right: 40px;">
+            <h3 style="margin-top:0;">Next chapter:</h3>
+            <ol class="list-unstyled toc">
+                <li><a href="#install-python">Install Python</a></li>
+            </ol>
+            <h3 style="margin-top:0;">Previous chapter:</h3>
+            <ol class="list-unstyled toc">
+                <li><a href="#install-virtualenv">Install Virtualenv</a></li>
+            </ol>
+        </div>
+
+        <div class="col-md-9">
 
 {% filter markdown %}
-# Associating Users with Objects
-
 These new "users" can't create and update `Thing`s yet in our database.
 We're going to assume a one-to-one database relationship between users and
 `Thing`s — that is users can only create and update one `Thing`. This works best
@@ -353,7 +367,7 @@ figure out how to add that yourself?
 
 Commit your work before moving forward!
 {% endfilter %}
-</div>
+</div></div></div>
 
 {% include 'includes/newsletter.html' %}
 

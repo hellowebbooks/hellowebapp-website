@@ -13,11 +13,24 @@ analytics.page("Chapter 3: Getting Started");
 {% block content %}
 <div class="jumbotron"></div>
 <div class="container">
+        <div class="row">
+        <div class="col-md-9 col-md-offset-3">
+            <h1>Getting Started</h1>
+        </div>
+        <div class="col-md-3 text-right" style="padding-right: 40px;">
+            <h3 style="margin-top:0;">Next chapter:</h3>
+            <ol class="list-unstyled toc">
+                <li><a href="#install-python">Install Python</a></li>
+            </ol>
+            <h3 style="margin-top:0;">Previous chapter:</h3>
+            <ol class="list-unstyled toc">
+                <li><a href="#install-virtualenv">Install Virtualenv</a></li>
+            </ol>
+        </div>
+
+        <div class="col-md-9">
 
 {% filter markdown %}
-
-# Getting Started
-
 Writing HTML and viewing your results right away is easy: Just point your
 browser to your HTML (*.html*) file and voilà — your website gets displayed!
 
@@ -54,7 +67,7 @@ can be found on our main repository here:
 Now get started building your app!
 
 {% endfilter %}
-</div>
+</div></div></div>
 
 {% include 'includes/newsletter.html' %}
 

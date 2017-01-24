@@ -13,10 +13,24 @@ analytics.page("Chapter 1: What We're Building");
 {% block content %}
 <div class="jumbotron"></div>
 <div class="container">
+        <div class="row">
+        <div class="col-md-9 col-md-offset-3">
+            <h1>What We're Building</h1>
+        </div>
+        <div class="col-md-3 text-right" style="padding-right: 40px;">
+            <h3 style="margin-top:0;">Next chapter:</h3>
+            <ol class="list-unstyled toc">
+                <li><a href="#install-python">Install Python</a></li>
+            </ol>
+            <h3 style="margin-top:0;">Previous chapter:</h3>
+            <ol class="list-unstyled toc">
+                <li><a href="#install-virtualenv">Install Virtualenv</a></li>
+            </ol>
+        </div>
+
+        <div class="col-md-9">
 
 {% filter markdown %}
-# What We're Building
-
 *Python* is a beautiful programming language. As a designer, I find the clean
 code and organization very appealing.
 
@@ -117,7 +131,7 @@ launch as possible. With luck, the lessons of Hello Web App will be all you need
 to launch your app, and if not, you'll have only a few new concepts to learn
 before you can launch.
 {% endfilter %}
-</div>
+</div></div></div>
 
 {% include 'includes/newsletter.html' %}
 

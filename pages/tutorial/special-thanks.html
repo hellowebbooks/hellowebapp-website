@@ -13,11 +13,24 @@ analytics.page("Special Thanks");
 {% block content %}
 <div class="jumbotron"></div>
 <div class="container">
+        <div class="row">
+        <div class="col-md-9 col-md-offset-3">
+            <h1>Special Thanks</h1>
+        </div>
+        <div class="col-md-3 text-right" style="padding-right: 40px;">
+            <h3 style="margin-top:0;">Next chapter:</h3>
+            <ol class="list-unstyled toc">
+                <li><a href="#install-python">Install Python</a></li>
+            </ol>
+            <h3 style="margin-top:0;">Previous chapter:</h3>
+            <ol class="list-unstyled toc">
+                <li><a href="#install-virtualenv">Install Virtualenv</a></li>
+            </ol>
+        </div>
+
+        <div class="col-md-9">
 
 {% filter markdown %}
-
-# Special Thanks
-
 This book couldn't have been written without the support of my friends, family, and Kickstarter backers (friends from afar!) 
 
 ## Super duper thanks to our sponsor
@@ -114,7 +127,7 @@ Turki Alotieschan
 Tzu-ping Chung  
 
 {% endfilter %}
-</div>
+</div></div></div>
 
 {% include 'includes/newsletter.html' %}
 

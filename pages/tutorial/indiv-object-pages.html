@@ -13,11 +13,24 @@ analytics.page("Chapter 8: Setting Up Individual Object Pages");
 {% block content %}
 <div class="jumbotron"></div>
 <div class="container">
+        <div class="row">
+        <div class="col-md-9 col-md-offset-3">
+            <h1>Setting Up Individual Object Pages</h1>
+        </div>
+        <div class="col-md-3 text-right" style="padding-right: 40px;">
+            <h3 style="margin-top:0;">Next chapter:</h3>
+            <ol class="list-unstyled toc">
+                <li><a href="#install-python">Install Python</a></li>
+            </ol>
+            <h3 style="margin-top:0;">Previous chapter:</h3>
+            <ol class="list-unstyled toc">
+                <li><a href="#install-virtualenv">Install Virtualenv</a></li>
+            </ol>
+        </div>
+
+        <div class="col-md-9">
 
 {% filter markdown %}
-
-# Setting Up Individual Object Pages
-
 We now have a list of all the objects in our database on our homepage — wouldn't
 it be nice for each object to have its own page?
 
@@ -205,7 +218,7 @@ We are one step toward a working website that's useful to visitors and potential
 customers! Don't forget to commit your work.
 
 {% endfilter %}
-</div>
+</div></div></div>
 
 {% include 'includes/newsletter.html' %}
 

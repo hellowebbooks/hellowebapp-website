@@ -14,10 +14,23 @@ analytics.page("About the Author");
 <div class="jumbotron"></div>
 
 <div class="container">
+    <div class="row">
+        <div class="col-md-9 col-md-offset-3">
+            <h1>About the Author</h1>
+        </div>
+        <div class="col-md-3 text-right" style="padding-right: 40px;">
+            <h3 style="margin-top:0;">Next chapter:</h3>
+            <ol class="list-unstyled toc">
+                <li><a href="#install-python">Install Python</a></li>
+            </ol>
+            <h3 style="margin-top:0;">Previous chapter:</h3>
+            <ol class="list-unstyled toc">
+                <li><a href="#install-virtualenv">Install Virtualenv</a></li>
+            </ol>
+        </div>
 
+        <div class="col-md-9">
 {% filter markdown %}
-
-# About the Author
 
 Tracy Osborn is a designer, developer, and entrepreneur living in the Bay Area of California. Building websites since she was twelve, she always felt an affinity to computers, the internet, and what it brings us. 
 
@@ -26,7 +39,7 @@ Tracy graduated with a BFA in Art &amp; Design with a concentration in Graphic D
 She's also an avid outdoorswoman, hiking over 200 miles on the John Muir Trail solo in 2014.
 
 {% endfilter %}
-</div>
+</div></div></div>
 
 {% include 'includes/newsletter.html' %}
 

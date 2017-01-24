@@ -13,11 +13,23 @@ analytics.page("Chapter 2: Prerequisites");
 {% block content %}
 <div class="jumbotron"></div>
 <div class="container">
+    <div class="row">
+        <div class="col-md-9 col-md-offset-3">
+            <h1>Prerequisites</h1>
+        </div>
+        <div class="col-md-3 text-right" style="padding-right: 40px;">
+            <h3 style="margin-top:0;">Next chapter:</h3>
+            <ol class="list-unstyled toc">
+                <li><a href="#install-python">Install Python</a></li>
+            </ol>
+            <h3 style="margin-top:0;">Previous chapter:</h3>
+            <ol class="list-unstyled toc">
+                <li><a href="#install-virtualenv">Install Virtualenv</a></li>
+            </ol>
+        </div>
 
+        <div class="col-md-9">
 {% filter markdown %}
-
-# Prerequisites
-
 ## HTML and CSS
 
 This tutorial works best for those who have a solid understanding of HTML and
@@ -86,7 +98,7 @@ while going through this book, check out our Windows resource page here:
 [http://hellowebapp.com/7](http://hellowebapp.com/7)
 
 {% endfilter %}
-</div>
+</div></div></div>
 
 {% include 'includes/newsletter.html' %}
 

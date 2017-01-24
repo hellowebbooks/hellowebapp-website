@@ -13,11 +13,24 @@ analytics.page("Chapter 15: Deploying Your Web App");
 {% block content %}
 <div class="jumbotron"></div>
 <div class="container">
+        <div class="row">
+        <div class="col-md-9 col-md-offset-3">
+            <h1>Deploying Your Web App</h1>
+        </div>
+        <div class="col-md-3 text-right" style="padding-right: 40px;">
+            <h3 style="margin-top:0;">Next chapter:</h3>
+            <ol class="list-unstyled toc">
+                <li><a href="#install-python">Install Python</a></li>
+            </ol>
+            <h3 style="margin-top:0;">Previous chapter:</h3>
+            <ol class="list-unstyled toc">
+                <li><a href="#install-virtualenv">Install Virtualenv</a></li>
+            </ol>
+        </div>
+
+        <div class="col-md-9">
 
 {% filter markdown %}
-
-# Deploying Your Web App
-
 It's really important for you to know how to push your web app onto the internet
 so anyone in the world can access it - unfortunately, this is also one of the
 most difficult parts of web app development. I'm going to walk you through the
@@ -464,7 +477,7 @@ For the future, as you develop locally, run the below steps to push it live:
     repository to back your app up in the cloud. 
 
 {% endfilter %}
-</div>
+</div></div></div>
 
 {% include 'includes/newsletter.html' %}
 

@@ -13,10 +13,24 @@ analytics.page("Chapter 9: Forms.py Funsies");
 {% block content %}
 <div class="jumbotron"></div>
 <div class="container">
+        <div class="row">
+        <div class="col-md-9 col-md-offset-3">
+            <h1>Forms.py Funsies</h1>
+        </div>
+        <div class="col-md-3 text-right" style="padding-right: 40px;">
+            <h3 style="margin-top:0;">Next chapter:</h3>
+            <ol class="list-unstyled toc">
+                <li><a href="#install-python">Install Python</a></li>
+            </ol>
+            <h3 style="margin-top:0;">Previous chapter:</h3>
+            <ol class="list-unstyled toc">
+                <li><a href="#install-virtualenv">Install Virtualenv</a></li>
+            </ol>
+        </div>
+
+        <div class="col-md-9">
 
 {% filter markdown %}
-# Forms.py Funsies
-
 We now have a basic website that showcases a collection of objects, with
 individual pages for each object. However at the moment, if you needed to change
 any data for an object (basically, change the name or description), you can only
@@ -267,7 +281,7 @@ were created to make sure all external links continue to work. You can manually
 override this in your admin, however.*
 
 {% endfilter %}
-</div>
+</div></div></div>
 
 {% include 'includes/newsletter.html' %}
 

@@ -13,11 +13,23 @@ analytics.page("Chapter 13: Quick Hits: 404 Pages, requirements.txt, and Testing
 {% block content %}
 <div class="jumbotron"></div>
 <div class="container">
+    <div class="row">
+        <div class="col-md-9 col-md-offset-3">
+            <h1>Quick Hits: 404 Pages, requirements.txt, and Testing</h1>
+        </div>
+        <div class="col-md-3 text-right" style="padding-right: 40px;">
+            <h3 style="margin-top:0;">Next chapter:</h3>
+            <ol class="list-unstyled toc">
+                <li><a href="#install-python">Install Python</a></li>
+            </ol>
+            <h3 style="margin-top:0;">Previous chapter:</h3>
+            <ol class="list-unstyled toc">
+                <li><a href="#install-virtualenv">Install Virtualenv</a></li>
+            </ol>
+        </div>
 
+        <div class="col-md-9">
 {% filter markdown %}
-
-# Quick Hits: 404 Pages, requirements.txt, and Testing
-
 We're going to go over some small things in this chapter that aren't worthy of
 pulling out into a chapter of their own. Simple things that are pretty
 important.
@@ -314,7 +326,7 @@ Get into the practice of running your tests often, and especially before
 deploying your web app live. Might save your bacon! 
 
 {% endfilter %}
-</div>
+</div></div></div>
 
 {% include 'includes/newsletter.html' %}
 

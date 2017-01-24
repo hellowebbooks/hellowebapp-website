@@ -13,10 +13,24 @@ analytics.page("Chapter 10: Adding a Registration Page");
 {% block content %}
 <div class="jumbotron"></div>
 <div class="container">
+        <div class="row">
+        <div class="col-md-9 col-md-offset-3">
+            <h1>Adding a Registration Page</h1>
+        </div>
+        <div class="col-md-3 text-right" style="padding-right: 40px;">
+            <h3 style="margin-top:0;">Next chapter:</h3>
+            <ol class="list-unstyled toc">
+                <li><a href="#install-python">Install Python</a></li>
+            </ol>
+            <h3 style="margin-top:0;">Previous chapter:</h3>
+            <ol class="list-unstyled toc">
+                <li><a href="#install-virtualenv">Install Virtualenv</a></li>
+            </ol>
+        </div>
+
+        <div class="col-md-9">
 
 {% filter markdown %}
-# Adding a Registration Page
-
 Right now our web app, if launched, would let our users browse the items and
 objects we list but with no way for them to sign up for an account and to create
 their own objects. Shall we fix that?
@@ -641,7 +655,7 @@ in and update their object as well. Commit your work if you haven't already!
 {% endfilter %}
 
 {% include 'includes/newsletter.html' %}
-</div>
+</div></div></div>
 
 {% endblock content %}
 
