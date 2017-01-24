@@ -198,6 +198,7 @@ file:
 *login.html*
 {% endfilter %}
 
+{% verbatim %}
 <pre><code class="django">
 {% extends 'base.html' %}
 {% block title %}
@@ -213,12 +214,14 @@ file:
     </form>
 {% endblock content %}
 </code></pre>
+{% endverbatim %}
 
 {% filter markdown %}
 
 *logout.html*
 {% endfilter %}
 
+{% verbatim %}
 <pre><code class="django">
 {% extends 'base.html' %}
 {% block title %}
@@ -230,12 +233,14 @@ file:
     <p>You have been logged out!</p>
 {% endblock content %}
 </code></pre>
+{% endverbatim %}
 
 {% filter markdown %}
 
 *registration_complete.html*
 {% endfilter %}
 
+{% verbatim %}
 <pre><code class="django">
 {% extends 'base.html' %}
 {% block title %}
@@ -247,12 +252,14 @@ file:
     <p>Your account has been registered!</p>
 {% endblock content %}
 </code></pre>
+{% endverbatim %}
 
 {% filter markdown %}
 
 *registration_form.html*
 {% endfilter %}
 
+{% verbatim %}
 <pre><code class="django">
 {% extends 'base.html' %}
 {% block title %}
@@ -268,6 +275,7 @@ file:
     </form>
 {% endblock content %}
 </code></pre>
+{% endverbatim %}
 
 {% filter markdown %}
 
@@ -279,6 +287,7 @@ Update your *base.html* layout file:
 *base.html*
 {% endfilter %}
 
+{% verbatim %}
 <pre><code class="django">
 # leanpub-start-insert
     {% if user.is_authenticated %}
@@ -296,6 +305,7 @@ Update your *base.html* layout file:
 # leanpub-end-insert
 </ul>
 </code></pre>
+{% endverbatim %}
 
 {% filter markdown %}
 
@@ -344,6 +354,7 @@ content.
 *password_change_done.html*
 {% endfilter %}
 
+{% verbatim %}
 <pre><code class="django">
 {% extends 'base.html' %}
 {% block title %}
@@ -357,10 +368,12 @@ content.
 </code></pre>
 
 {% filter markdown %}
+{% endverbatim %}
 
 *password_change_form.html*
 {% endfilter %}
 
+{% verbatim %}
 <pre><code class="django">
 {% extends 'base.html' %}
 {% block title %}
@@ -376,12 +389,14 @@ content.
     </form>
 {% endblock content %}
 </code></pre>
+{% endverbatim %}
 
 {% filter markdown %}
 
 *password_reset_complete.html*
 {% endfilter %}
 
+{% verbatim %}
 <pre><code class="django">
 {% extends 'base.html' %}
 {% block title %}
@@ -393,12 +408,14 @@ content.
     <p>Your password has been reset!</p>
 {% endblock content %}
 </code></pre>
+{% endverbatim %}
 
 {% filter markdown %}
 
 *password_reset_confirm.html*
 {% endfilter %}
 
+{% verbatim %}
 <pre><code class="django">
 {% extends 'base.html' %}
 {% block title %}
@@ -422,12 +439,14 @@ content.
     {% endif %}
 {% endblock content %}
 </code></pre>
+{% endverbatim %}
 
 {% filter markdown %}
 
 *password_reset_done.html
 {% endfilter %}
 
+{% verbatim %}
 <pre><code class="django">
 {% extends 'base.html' %}
 {% block title %}
@@ -439,6 +458,7 @@ content.
     <p>Check your email for a link to reset your password!</p>
 {% endblock content %}
 </code></pre>
+{% endverbatim %}
 
 {% filter markdown %}
 
@@ -464,6 +484,7 @@ Your username, in case you've forgotten: {{ user.username }}
 *password_reset_form.html*
 {% endfilter %}
 
+{% verbatim %}
 <pre><code class="django">
 {% extends 'base.html' %}
 {% block title %}
@@ -479,6 +500,7 @@ Your username, in case you've forgotten: {{ user.username }}
     </form>
 {% endblock content %}
 </code></pre>
+{% endverbatim %}
 
 {% filter markdown %}
 
@@ -557,6 +579,7 @@ passwords from the login page. Update your login template to the following:
 *login.html*
 {% endfilter %}
 
+{% verbatim %}
 <pre><code class="django">
 {% extends 'base.html' %}
 {% block title %}
@@ -579,6 +602,7 @@ passwords from the login page. Update your login template to the following:
     # leanpub-end-insert
 {% endblock content %}
 </code></pre>
+{% endverbatim %}
 
 {% filter markdown %}
 

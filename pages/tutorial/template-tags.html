@@ -79,6 +79,7 @@ and right-before-closing-body tag (for adding other Javascript files).
 *base.html*
 {% endfilter %}
 
+{% verbatim %}
 <pre><code class="django">
 {% load staticfiles %}
 <!doctype html>
@@ -105,6 +106,7 @@ and right-before-closing-body tag (for adding other Javascript files).
     </body>
 </html>
 </code></pre>
+{% endverbatim %}
 
 {% filter markdown %}
 
@@ -122,6 +124,7 @@ Our new *index.html*:
 *index.html*
 {% endfilter %}
 
+{% verbatim %}
 <pre><code class="django">
 {% extends 'base.html' %}
 {% block title %}
@@ -133,6 +136,7 @@ Our new *index.html*:
     <p>I am a basic website.</p>
 {% endblock content %}
 </code></pre>
+{% endverbatim %}
 
 {% filter markdown %}
 
@@ -179,6 +183,7 @@ Then open the pages and edit the HTML so it makes sense for each page.
 *about.html*
 {% endfilter %}
 
+{% verbatim %}
 <pre><code class="django">
 {% extends 'base.html' %}
 {% block title %}
@@ -190,12 +195,14 @@ Then open the pages and edit the HTML so it makes sense for each page.
     <p>About content.</p>
 {% endblock content %}
 </code></pre>
+{% endverbatim %}
 
 {% filter markdown %}
 
 *contact.html*
 {% endfilter %}
 
+{% verbatim %}
 <pre><code class="django">
 {% extends 'base.html' %}
 {% block title %}
@@ -207,6 +214,7 @@ Then open the pages and edit the HTML so it makes sense for each page.
     <p>Contact content.</p>
 {% endblock content %}
 </code></pre>
+{% endverbatim %}
 
 {% filter markdown %}
 
@@ -262,6 +270,7 @@ some other bits):
 *base.html*
 {% endfilter %}
 
+{% verbatim %}
 <pre><code class="django">
 {% load staticfiles %}
 <!doctype html>
@@ -300,6 +309,7 @@ some other bits):
     </body>
 </html>
 </code></pre>
+{% endverbatim %}
 
 {% filter markdown %}
 
@@ -361,6 +371,7 @@ To see this in action, let’s first display the variable. Add this to your
 *index.html*
 {% endfilter %}
 
+{% verbatim %}
 <pre><code class="django">
 {% extends 'base.html' %}
 {% block title %}
@@ -375,6 +386,7 @@ To see this in action, let’s first display the variable. Add this to your
     # leanpub-end-insert
 {% endblock content %}
 </code></pre>
+{% endverbatim %}
 
 {% filter markdown %}
 
@@ -392,9 +404,11 @@ Check out an *if-else statement* in action:
 
 {% endfilter %}
 
+{% verbatim %}
 <pre><code class="django">
 <p>{% if number %}Number exists!{% endif %}</p>
 </code></pre>
+{% endverbatim %}
 
 {% filter markdown %}
 
@@ -404,6 +418,7 @@ And another example:
 
 {% endfilter %}
 
+{% verbatim %}
 <pre><code class="django">
     <p>There are six dogs! <b>
     {% if number == 6 %}
@@ -412,6 +427,10 @@ And another example:
         False
     {% endif %}
     </b></p>
+</code></pre>
+{% endverbatim %}
+
+{% filter markdown %}
 
 ![](images/sixdogs.png) 
 
@@ -422,9 +441,11 @@ if the number is more than one:
 
 {% endfilter %}
 
+{% verbatim %}
 <pre><code class="django">
 <p>There are {{ number }} dog{{ number|pluralize }}!</p>
 </code></pre>
+{% endverbatim %}
 
 {% filter markdown %}
 
@@ -434,9 +455,11 @@ This template tag also accepts different suffixes:
 
 {% endfilter %}
 
+{% verbatim %}
 <pre><code class="django">
 <p>There are {{ number }} walrus{{ number|pluralize:"es" }}!</p>
 </code></pre>
+{% endverbatim %}
 
 {% filter markdown %}
 
@@ -471,6 +494,7 @@ with `apnumber`, which spells out the numbers 1-9:
 *index.html*
 {% endfilter %}
 
+{% verbatim %}
 <pre><code class="django">
 {% extends 'base.html' %}
 # leanpub-start-insert
@@ -487,6 +511,7 @@ with `apnumber`, which spells out the numbers 1-9:
     # leanpub-end-insert
 {% endblock content %}
 </code></pre>
+{% endverbatim %}
 
 {% filter markdown %}
 
@@ -525,9 +550,11 @@ As well as our template:
 
 {% endfilter %}
 
+{% verbatim %}
 <pre><code class="django">
 <p>This is my name: {{ thing }}</p>
 </code></pre>
+{% endverbatim %}
 
 {% filter markdown %}
 
@@ -538,9 +565,11 @@ it into a slug, a shortened, lowercased version of a string used for URLs:
 
 {% endfilter %}
 
+{% verbatim %}
 <pre><code class="django">
 <p>This is my name: {{ thing|slugify }}</p>
 </code></pre>
+{% endverbatim %}
 
 {% filter markdown %}
 
@@ -550,9 +579,11 @@ Feel like using title case?
 
 {% endfilter %}
 
+{% verbatim %}
 <pre><code class="django">
 <p>This is my name: {{ thing|title }}</p>
 </code></pre>
+{% endverbatim %}
 
 {% filter markdown %}
 
@@ -562,9 +593,11 @@ Perhaps it's too long of a name for you? Truncate it.
 
 {% endfilter %}
 
+{% verbatim %}
 <pre><code class="django">
 <p>This is my name: {{ thing|truncatewords:1 }}</p>
 </code></pre>
+{% endverbatim %}
 
 {% filter markdown %}
 

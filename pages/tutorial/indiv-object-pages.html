@@ -138,6 +138,7 @@ Here's our new individual object HTML template:
 *thing_detail.html*
 {% endfilter %}
 
+{% verbatim %}
 <pre><code class="django">
 {% extends 'base.html' %}
 {% block title %}
@@ -151,6 +152,7 @@ Here's our new individual object HTML template:
 </code></pre>
 
 {% filter markdown %}
+{% endverbatim %}
 
 `{{ thing }}` is the object we passed in from the database, and we can access
 the fields we set in the model (name and description) by adding the model field
@@ -164,6 +166,7 @@ Our new *index.html* template:
 *index.html*
 {% endfilter %}
 
+{% verbatim %}
 <pre><code class="django">
 {% extends 'base.html' %}
 {% block title %}
@@ -183,6 +186,7 @@ Our new *index.html* template:
     # leanpub-end-insert
 {% endblock content %}
 </code></pre>
+{% endverbatim %}
 
 {% filter markdown %}
 

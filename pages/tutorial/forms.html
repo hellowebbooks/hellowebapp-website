@@ -187,6 +187,7 @@ we'll add into our template:
 *edit_thing.html*
 {% endfilter %}
 
+{% verbatim %}
 <pre><code class="django">
 {% extends 'base.html' %}
 {% block title %}
@@ -202,6 +203,7 @@ we'll add into our template:
     </form>
 {% endblock content %}
 </code></pre>
+{% endverbatim %}
 
 {% filter markdown %}
 
@@ -224,6 +226,7 @@ view:
 *thing_detail.html*
 {% endfilter %}
 
+{% verbatim %}
 <pre><code class="django">
 {% extends 'base.html' %}
 {% block title %}
@@ -238,6 +241,7 @@ view:
     # leanpub-end-insert
     {% endblock content %}
 </code></pre>
+{% endverbatim %}
 
 {% filter markdown %}
 

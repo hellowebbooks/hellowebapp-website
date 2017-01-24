@@ -203,6 +203,7 @@ Then fill it out:
 *create_thing.html*
 {% endfilter %}
 
+{% verbatim %}
 <pre><code class="django">
 {% extends 'base.html' %}
 {% block title %}
@@ -218,6 +219,7 @@ Then fill it out:
     </form>
 {% endblock %}
 </code></pre>
+{% endverbatim %}
 
 {% filter markdown %}
 
@@ -281,6 +283,7 @@ who isn't logged in:
 *thing_detail.html*
 {% endfilter %}
 
+{% verbatim %}
 <pre><code class="django">
 {% extends 'base.html' %}
 {% block title %}
@@ -301,6 +304,7 @@ who isn't logged in:
     # leanpub-end-insert
 {% endblock content %}
 </code></pre>
+{% endverbatim %}
 
 {% filter markdown %}
 

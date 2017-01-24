@@ -133,6 +133,7 @@ Our *search.html* file:
 *search.html*
 {% endfilter %}
 
+{% verbatim %}
 <pre><code class="django">
 {% extends 'base.html' %}
 {% block title %}
@@ -165,6 +166,7 @@ Our *search.html* file:
     {% endfor %}
 {% endblock content %}
 </code></pre>
+{% endverbatim %}
 
 {% filter markdown %}
 ![](images/browse_page.png) 
@@ -197,7 +199,8 @@ There isn't a link to this page in the main nav, so we should update the nav:
 *base.html*
 {% endfilter %}
 
-<pre><code class="python">
+{% verbatim %}
+<pre><code class="django">
 <li>
     <a href="{% url 'contact' %}">Contact</a>
 </li>
@@ -207,6 +210,7 @@ There isn't a link to this page in the main nav, so we should update the nav:
 </li>
 # leanpub-end-insert
 </code></pre>
+{% endverbatim %}
 
 {% filter markdown %}
 The second nitpick is our URL — */browse/name/* works, as well as

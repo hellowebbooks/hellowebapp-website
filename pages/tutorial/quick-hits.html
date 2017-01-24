@@ -79,6 +79,7 @@ Then update the template contents:
 *404.html*
 {% endfilter %}
 
+{% verbatim %}
 <pre><code class="django">
 {% extends 'base.html' %}
 {% block title %}
@@ -90,12 +91,14 @@ Then update the template contents:
     <p>You've run into a page that doesn't exist!</p>
 {% endblock content %}
 </code></pre>
+{% endverbatim %}
 
 {% filter markdown %}
 
 *500.html*
 {% endfilter %}
 
+{% verbatim %}
 <pre><code class="django">
 {% extends 'base.html' %}
 {% block title %}
@@ -107,6 +110,7 @@ Then update the template contents:
     <p>You've run into an error!</p>
 {% endblock content %}
 </code></pre>
+{% endverbatim %}
 
 {% filter markdown %}
 
@@ -206,6 +210,9 @@ Django created a file already for your tests in your `collection` app. Update it
 to the below:
 
 *tests.py*
+{% endfilter %}
+
+<pre><code class="python">
 from django.test import TestCase
 
 # leanpub-start-insert

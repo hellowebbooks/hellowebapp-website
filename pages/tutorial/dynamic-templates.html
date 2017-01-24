@@ -94,6 +94,7 @@ Update your *index.html*:
 *index.html*
 {% endfilter %}
 
+{% verbatim %}
 <pre><code class="django">
 {% extends 'base.html' %}
 {% block title %}
@@ -109,6 +110,7 @@ Update your *index.html*:
     # leanpub-end-insert
 {% endblock content %}
 </code></pre>
+{% endverbatim %}
 
 {% filter markdown %}
 This is a loop that'll iterate over all the objects in the `things` variable,
@@ -129,6 +131,7 @@ template:
 
 {% endfilter %}
 
+{% verbatim %}
 <pre><code class="django">
 {% for thing in things %}
     {% if thing.name == "Hello" %}
@@ -136,6 +139,7 @@ template:
     {% endif %}
 {% endfor %}
 </code></pre>
+{% endverbatim %}
 
 {% filter markdown %}
 It would be much faster if we could just query for that one `Thing` instead,
