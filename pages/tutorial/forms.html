@@ -45,11 +45,9 @@ urlpatterns = [
     url(r'^things/(?P<slug>[-\w]+)/$', views.thing_detail',
         name='thing_detail'),
     # new line we're adding!
-    # leanpub-start-insert
-    url(r'^things/(?P<slug>[-\w]+)/edit/$', 
+    <b>url(r'^things/(?P<slug>[-\w]+)/edit/$', 
         views.edit_thing,
-        name='edit_thing'),
-    # leanpub-end-insert
+        name='edit_thing'),</b>
     url(r'^admin/', admin.site.urls),
 ]
 </code></pre>
@@ -73,13 +71,9 @@ help):
 
 <pre><code class="python">
 # add to top of the file
-from django.shortcuts import render,
-# leanpub-start-insert
-                             redirect
-# leanpub-end-insert
-# leanpub-start-insert
-from collection.forms import ThingForm
-# leanpub-end-insert
+from django.shortcuts import render, <b>redirect</b>
+
+<b>from collection.forms import ThingForm</b>
 from collection.models import Thing
 </code></pre>
 
@@ -90,8 +84,7 @@ from collection.models import Thing
 
 <pre><code class="python">
 # add below your thing_detail view
-# leanpub-start-insert
-def edit_thing(request, slug):
+<b>def edit_thing(request, slug):
     # grab the object
     thing = Thing.objects.get(slug=slug)
     # set the form we're using
@@ -114,8 +107,7 @@ def edit_thing(request, slug):
     return render(request, ‘things/edit_thing.html', {
         'thing': thing,
         'form': form,
-    })
-# leanpub-end-insert
+    })</b>
 </code></pre>
 
 {% filter markdown %}
@@ -236,9 +228,7 @@ view:
 {% block content %}
     <h1>{{ thing.name }}</h1>
     <p>{{ thing.description }}</p>
-    # leanpub-start-insert
-    <a href="{% url 'edit_thing' slug=thing.slug %}">Edit me!</a>
-    # leanpub-end-insert
+    <b><a href="{% url 'edit_thing' slug=thing.slug %}">Edit me!</a></b>
     {% endblock content %}
 </code></pre>
 {% endverbatim %}

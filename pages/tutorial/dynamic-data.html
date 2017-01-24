@@ -88,12 +88,10 @@ generic example first, and then a customized example after to make it easy.
 <pre><code class="python">
 from django.db import models
 
-# leanpub-start-insert
-class Thing(models.Model):
+<b>class Thing(models.Model):
     name = models.CharField(max_length=255)
     description = models.TextField()
-    slug = models.SlugField(unique=True)
-# leanpub-end-insert
+    slug = models.SlugField(unique=True)</b>
 </code></pre>
 
 {% filter markdown %}
@@ -200,14 +198,10 @@ lines:
 from django.contrib import admin
 
 # import your model
-# leanpub-start-insert
-from collection.models import Thing
-# leanpub-end-insert
+<b>from collection.models import Thing</b>
 
 # and register it
-# leanpub-start-insert
-admin.site.register(Thing)
-# leanpub-end-insert
+<b>admin.site.register(Thing)</b>
 </code></pre>
 
 {% filter markdown %}
@@ -223,17 +217,13 @@ from django.contrib import admin
 from collection.models import Thing
 
 # set up automated slug creation
-# leanpub-start-insert
-class ThingAdmin(admin.ModelAdmin):
+<b>class ThingAdmin(admin.ModelAdmin):
     model = Thing
     list_display = ('name', 'description',)
-    prepopulated_fields = {'slug': ('name',)}
-# leanpub-end-insert
+    prepopulated_fields = {'slug': ('name',)}</b>
 
 # and register it
-# leanpub-start-insert
-admin.site.register(Thing, ThingAdmin)
-# leanpub-end-inserted
+<b>admin.site.register(Thing, ThingAdmin)</b>
 </code></pre>
 
 {% filter markdown %}

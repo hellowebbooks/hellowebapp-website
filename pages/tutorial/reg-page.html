@@ -109,13 +109,10 @@ Head over to `urls.py` and add the lines indicated:
 {% endfilter %}
 
 <pre><code class="python">
-from django.conf.urls import url, 
-# leanpub-start-insert
-                             include
+from django.conf.urls import url, <b>include</b>
 
-    url(r'^accounts/', 
-        include('registration.backends.simple.urls')),
-# leanpub-end-insert
+    <b>url(r'^accounts/', 
+        include('registration.backends.simple.urls')),</b>
     url(r'^admin/', admin.site.urls),
 ]
 </code></pre>
@@ -289,8 +286,7 @@ Update your *base.html* layout file:
 
 {% verbatim %}
 <pre><code class="django">
-# leanpub-start-insert
-    {% if user.is_authenticated %}
+    <b>{% if user.is_authenticated %}
     <li>
         <a href="{% url 'auth_logout' %}">Logout</a>
     </li>
@@ -301,8 +297,7 @@ Update your *base.html* layout file:
     <li>
         <a href="{% url 'registration_register' %}">Register</a>
     </li>
-    {% endif %}
-# leanpub-end-insert
+    {% endif %}</b>
 </ul>
 </code></pre>
 {% endverbatim %}
@@ -514,14 +509,12 @@ these URLs to your *urls.py*:
 
 <pre><code class="python">
 ...
-# leanpub-start-insert
-from django.contrib.auth.views import (
+<b>from django.contrib.auth.views import (
    password_reset, 
    password_reset_done,
    password_reset_confirm,
    password_reset_complete
-)
-# leanpub-end-insert
+)</b>
 </code></pre>
 
 {% filter markdown %}
@@ -531,8 +524,7 @@ from django.contrib.auth.views import (
 
 <pre><code class="python">
     # the new password reset URLs
-# leanpub-start-insert
-    url(r'^accounts/password/reset/$', 
+    <b>url(r'^accounts/password/reset/$', 
         password_reset,
         {'template_name':
         'registration/password_reset_form.html'},
@@ -551,8 +543,7 @@ from django.contrib.auth.views import (
         password_reset_complete,
         {'template_name':
         'registration/password_reset_complete.html'},
-        name="password_reset_complete"),
-# leanpub-end-insert
+        name="password_reset_complete"),</b>
     url(r'^accounts/',
         include('registration.backends.simple.urls')),
     url(r'^admin/', admin.site.urls),
@@ -593,13 +584,11 @@ passwords from the login page. Update your login template to the following:
         {{ form.as_p }}
         <input type="submit" value="Submit" />
     </form>
-    # leanpub-start-insert
-    <p>
+    <b><p>
         <a href="{% url 'password_reset' %}">
             Forgot your password?
         </a>
-    </p>
-    # leanpub-end-insert
+    </p></b>
 {% endblock content %}
 </code></pre>
 {% endverbatim %}

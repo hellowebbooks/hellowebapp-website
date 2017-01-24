@@ -112,9 +112,7 @@ below:
 Django==1.9.1
 django-registration-redux==1.3
 wsgiref==0.1.2
-# leanpub-start-insert
-hellowebapp-deploy
-# leanpub-end-insert
+<b>hellowebapp-deploy</b>
 </code></pre>
 
 {% filter markdown %}
@@ -158,9 +156,7 @@ Django==1.9.1
 django-registration-redux==1.3
 wsgiref==0.1.2
 hellowebapp-deploy
-# leanpub-start-insert
-psycopg2==2.6.1
-# leanpub-end-insert
+<p>psycopg2==2.6.1</b>
 </code></pre>
 
 {% filter markdown %}
@@ -218,14 +214,10 @@ os.environ.setdefault("DJANGO_SETTINGS_MODULE",
     "hellowebapp.settings")
 
 from django.core.wsgi import get_wsgi_application
-# leanpub-start-insert
-from whitenoise.django import DjangoWhiteNoise
-# leanpub-end-insert
+<b>from whitenoise.django import DjangoWhiteNoise</b>
 
 application = get_wsgi_application()
-# leanpub-start-insert
-application = DjangoWhiteNoise(application)
-# leanpub-end-insert
+<b>application = DjangoWhiteNoise(application)</b>
 </code></pre>
 
 {% filter markdown %}
@@ -238,12 +230,10 @@ We then need to update *settings.py* for DjangoWhiteNoise. Add `STATIC_ROOT =
 
 <pre><code class="python">
 STATIC_URL = '/static/'
-# leanpub-start-insert
-STATIC_ROOT = 'staticfiles'
+<b>STATIC_ROOT = 'staticfiles'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
-)
-# leanpub-end-insert
+)</b>
 </code></pre>
 
 {% filter markdown %}
@@ -405,10 +395,8 @@ As well as update your *wsgi.py* file:
 {% endfilter %}
 
 <pre><code class="python">
-# leanpub-start-insert
-os.environ.setdefault("DJANGO_SETTINGS_MODULE",
-    "hellowebapp.settings_production")
-# leanpub-end-insert
+<b>os.environ.setdefault("DJANGO_SETTINGS_MODULE",
+    "hellowebapp.settings_production")</b>
 </code></pre>
 
 {% filter markdown %}

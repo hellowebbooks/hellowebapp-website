@@ -79,14 +79,10 @@ pre-existing comments, and add in the lines indicated:
 from django.conf.urls import url
 from django.contrib import admin
 
-# leanpub-start-insert
-from collection import views
-# leanpub-end-insert
+<b>from collection import views</b>
 
 urlpatterns = [
-# leanpub-start-insert
-    url(r'^$', views.index, name='home'),
-# leanpub-end-insert
+    <b>url(r'^$', views.index, name='home'),</b>
     url(r'^admin/', admin.site.urls),
 ]
 </code></pre>
@@ -149,11 +145,9 @@ it added to the top of *views.py* for us.
 from django.shortcuts import render
 
 # Create your views here.
-# leanpub-start-insert
-def index(request): 
+<b>def index(request): 
     # this is your new view
-    return render(request, 'index.html')
-# leanpub-end-insert
+    return render(request, 'index.html')</b>
 </code></pre>
 
 {% filter markdown %}
@@ -203,17 +197,12 @@ Now that we can add static files to this template, add your CSS tag to the
 
 {% verbatim %}
 <pre><code class="django">
-# leanpub-start-insert
-{% load staticfiles %}
-# leanpub-end-insert
+<b>{% load staticfiles %}</b>
 <!doctype html>
 <html>
     <head>
         <title>My Hello Web App Project</title>
-# leanpub-start-insert
-        <link rel="stylesheet" 
-      href="{% static 'css/style.css' %}" />
-# leanpub-end-insert
+        <b><link rel="stylesheet" href="{% static 'css/style.css' %}" /></b>
     </head>
     <body>
         <h1>Hello World!</h1>

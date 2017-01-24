@@ -60,19 +60,14 @@ in your model, make sure to update all instances below:
 
 <pre><code class="python">
 from django.shortcuts import render
-# leanpub-start-insert
-from collection.models import Thing
-# leanpub-end-insert
+<b>from collection.models import Thing</b>
 
 # the rewritten view!
 def index(request):
-    # leanpub-start-insert
-    things = Thing.objects.all()
-    # leanpub-end-insert
-    return render(request, ‘index.html', {
-    # leanpub-start-insert
-        'things': things,
-    # leanpub-end-insert
+    <b>things = Thing.objects.all()</b>
+
+    return render(request, 'index.html', {
+        <b>'things': things,</b>
     })
 </code></pre>
 
@@ -102,12 +97,10 @@ Update your *index.html*:
 {% endblock title %}
 
 {% block content %}
-    # leanpub-start-insert
-    {% for thing in things %}
+    <b>{% for thing in things %}
     <h2>{{ thing.name }}</h2>
     <p>{{ thing.description }}</p>
-    {% endfor %}
-    # leanpub-end-insert
+    {% endfor %}</b>
 {% endblock content %}
 </code></pre>
 {% endverbatim %}
@@ -229,9 +222,8 @@ from django.shortcuts import render
 from collection.models import Thing
 
 def index(request):
-    # leanpub-start-insert
-    things = Thing.objects.all()
-    # leanpub-end-insert
+    <b>things = Thing.objects.all()</b>
+
     return render(request, ‘index.html', {
         'things': things,
     })

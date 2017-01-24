@@ -37,9 +37,7 @@ Update your `Thing` model (or whatever you called it) to the following:
 
 <pre><code class="python">
 # don't forget to import this
-# leanpub-start-insert
-from django.contrib.auth.models import User
-# leanpub-end-insert
+<b>from django.contrib.auth.models import User</b>
 from django.db import models
 
 class Thing(models.Model):
@@ -47,9 +45,7 @@ class Thing(models.Model):
     description = models.TextField()
     slug = models.SlugField(unique=True)
     # the new line we're adding
-# leanpub-start-insert
-    user = models.OneToOneField(User, blank=True, null=True)
-# leanpub-end-insert
+    <b>user = models.OneToOneField(User, blank=True, null=True)</b>
 </code></pre>
 
 {% filter markdown %}
@@ -114,17 +110,13 @@ First, add a couple new URLs to our *urls.py* file:
 
 <pre><code class="python">
 # add this to the top
-# leanpub-start-insert
-from collection.backends import MyRegistrationView
-# leanpub-end-insert
+<b>from collection.backends import MyRegistrationView</b>
 {title="urls.py", lang="python", line-numbers=on, starting-line-number=45}
-# leanpub-start-insert
-url(r'^accounts/register/$', 
+<b>url(r'^accounts/register/$', 
     MyRegistrationView.as_view(),
     name='registration_register'),
 url(r'^accounts/create_thing/$', views.create_thing, 
-    name='registration_create_thing'),
-# leanpub-end-insert
+    name='registration_create_thing'),</b>
 url(r'^accounts/', 
     include('registration.backends.default.urls')),
 url(r'^admin/', admin.site.urls),
@@ -139,9 +131,7 @@ Then head back over to *views.py* to create the new view:
 
 <pre><code class="python">
 # add at the top
-# leanpub-start-insert
-from django.template.defaultfilters import slugify
-# leanpub-end-insert
+<b>from django.template.defaultfilters import slugify</b>
 </code></pre>
 
 {% filter markdown %}
@@ -151,8 +141,7 @@ from django.template.defaultfilters import slugify
 
 <pre><code class="python">
 # add below your edit_thing view
-# leanpub-start-insert
-def create_thing(request):
+<b>def create_thing(request):
     form_class = ThingForm
 
     # if we're coming from a submitted form, do this
@@ -180,8 +169,7 @@ def create_thing(request):
 
     return render(request, ‘things/create_thing.html', {
         'form': form,
-    })
-# leanpub-end-insert
+    })</b>
 </code></pre>
 
 {% filter markdown %}
@@ -293,15 +281,13 @@ who isn't logged in:
 {% block content %}
     <h1>{{ thing.name }}</h1>
     <p>{{ thing.description }}</p>
-    # leanpub-start-insert
-    {% if user == thing.user %}
+    <b>{% if user == thing.user %}
         <p>
             <a href="{% url 'edit_thing' slug=thing.slug %}">
                 Edit me!
             </a>
         </p>
-    {% endif %}
-    # leanpub-end-insert
+    {% endif %}</b>
 {% endblock content %}
 </code></pre>
 {% endverbatim %}
@@ -317,10 +303,8 @@ Update your *views.py*:
 {% endfilter %}
 
 <pre><code class="python">
-# leanpub-start-insert
-from django.contrib.auth.decorators import login_required
-from django.http import Http404
-# leanpub-end-insert
+<b>from django.contrib.auth.decorators import login_required
+from django.http import Http404</b>
 </code></pre>
 
 {% filter markdown %}
@@ -329,18 +313,14 @@ from django.http import Http404
 {% endfilter %}
 
 <pre><code class="python">
-# leanpub-start-insert
-@login_required
-# leanpub-end-insert
+<b>@login_required</b>
 def edit_thing(request, slug):
     # grab the object...
     thing = Thing.objects.get(slug=slug)
 
-    # leanpub-start-insert
-    # make sure the logged in user is the owner of the thing
+    <b># make sure the logged in user is the owner of the thing
     if thing.user != request.user:
-        raise Http404
-    # leanpub-end-insert
+        raise Http404</b>
 
     # set the form we're using...
     form_class = ThingForm

@@ -49,18 +49,14 @@ into *base.html*:
 <!doctype html>
 <html>
     <head>
-        # leanpub-start-insert
-        <title>
+        <b><title>
              <!-- we want to override page titles -->
-        </title>
-        # leanpub-end-insert
+        </title></b>
         <link rel="stylesheet" 
              href="{% static 'css/style.css' %}" />
     </head>
     <body>
-        # leanpub-start-insert
-        <!-- as well as override content bits -->
-        # leanpub-end-insert
+        <b><!-- as well as override content bits --></b>
     </body>
 </html>
 </code></pre>
@@ -85,24 +81,18 @@ and right-before-closing-body tag (for adding other Javascript files).
 <!doctype html>
 <html>
     <head>
-        # leanpub-start-insert
-        <title>
+        <b><title>
             {% block title %}
                 My Hello Web App Project
             {% endblock title %}
-        </title>
-        # leanpub-end-insert
+        </title></b>
         <link rel="stylesheet"
             href="{% static 'css/style.css' %}" />
-        # leanpub-start-insert
-        {% block header %}{% endblock header %}
-        # leanpub-end-insert
+        <b>{% block header %}{% endblock header %}</b>
     </head>
     <body>
-        # leanpub-start-insert
-        {% block content %}{% endblock content %}
-        {% block footer %}{% endblock footer %}
-        # leanpub-end-insert
+        <b>{% block content %}{% endblock content %}
+        {% block footer %}{% endblock footer %}</b>
     </body>
 </html>
 </code></pre>
@@ -232,22 +222,18 @@ definitions.
 <pre><code class="python">
 from django.conf.urls import url
 from django.contrib import administration
-# leanpub-start-insert
-from django.views.generic import TemplateView
-# leanpub-end-insert
+<b>from django.views.generic import TemplateView</b>
 from collection import views
 
 urlpatterns = [
     url(r'^$', views.index, name='home'),
     # The new URL entries we're adding:
-    # leanpub-start-insert
-    url(r'^about/$',
+    <b>url(r'^about/$',
         TemplateView.as_view(template_name='about.html'),
         name='about'),
     url(r'^contact/$', 
         TemplateView.as_view(template_name='contact.html'),
-        name='contact'),
-    # leanpub-end-insert
+        name='contact'),</b>
 
     url(r'^admin/', admin.site.urls),
 ]
@@ -286,8 +272,7 @@ some other bits):
         {% block header %}{% endblock header %}
     </head>
     <body>
-        # leanpub-start-insert
-        <header>
+        <b><header>
             <h1>Hello Web App</h1>
             <nav>
                 <ul>
@@ -302,8 +287,7 @@ some other bits):
                     </li>
                 </ul>
             </nav>
-        </header>
-        # leanpub-end-insert
+        </header></b>
         {% block content %}{% endblock content %}
         {% block footer %}{% endblock footer %}
     </body>
@@ -345,14 +329,12 @@ available to the template. Update your view to the following:
 from django.shortcuts import render
 
 def index(request):
-    # leanpub-start-insert
-    # defining the variable
+    <b># defining the variable
     number = 6
     # passing the variable to the view
     return render(request, 'index.html', {
         'number': number,
-    })
-    # leanpub-end-insert
+    })</b>
 </code></pre>
 
 {% filter markdown %}
@@ -381,9 +363,7 @@ To see this in action, let’s first display the variable. Add this to your
 {% block content %}
     <h1>Hello World!</h1>
     <!-- here's the variable we are passing in -->
-    # leanpub-start-insert
-    <p>{{ number }}</p>
-    # leanpub-end-insert
+    <b><p>{{ number }}</p></b>
 {% endblock content %}
 </code></pre>
 {% endverbatim %}
@@ -480,9 +460,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    # leanpub-start-insert
-    'django.contrib.humanize',
-    # leanpub-end-insert
+    <b>'django.contrib.humanize',</b>
 )
 </code></pre>
 
@@ -497,18 +475,14 @@ with `apnumber`, which spells out the numbers 1-9:
 {% verbatim %}
 <pre><code class="django">
 {% extends 'base.html' %}
-# leanpub-start-insert
-{% load humanize %}
-# leanpub-end-insert
+<b>{% load humanize %}</b>
 {% block title %}
     Homepage - {{ block.super }}
 {% endblock title %}
 
 {% block content %}
     <h1>Hello World!</h1>
-    # leanpub-start-insert
-    <p>There are {{ number|apnumber }} dogs!</p>
-    # leanpub-end-insert
+    <b><p>There are {{ number|apnumber }} dogs!</p></b>
 {% endblock content %}
 </code></pre>
 {% endverbatim %}
@@ -532,15 +506,11 @@ def index(request):
     number = 6
     # don't forget the quotes because it's a string,
     # not an integer
-    # leanpub-start-insert
-    thing = "Thing name" 
-    # leanpub-end-insert
+    <b>thing = "Thing name"</b>
     return render(request, 'index.html', {
         'number': number,
         # don't forget to pass it in, and the last comma
-        # leanpub-start-insert
-        'thing': thing, 
-        # leanpub-end-insert
+        <b>'thing': thing,</b>
     })
 </code></pre>
 

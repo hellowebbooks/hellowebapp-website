@@ -44,12 +44,10 @@ Back to the familiar URLs-views-templates routine. Add in this new line:
 
 <pre><code class="python">
 # our new browse flow
-# leanpub-start-insert
-url(r'^browse/name/$',
+<b>url(r'^browse/name/$',
     views.browse_by_name, name='browse'),
 url(r'^browse/name/(?P<initial>[-\w]+)/$', 
-    views.browse_by_name, name='browse_by_name'),
-# leanpub-end-insert
+    views.browse_by_name, name='browse_by_name'),</b>
 
 # password reset URLs
 url(r'^accounts/password/reset/$', 
@@ -204,11 +202,9 @@ There isn't a link to this page in the main nav, so we should update the nav:
 <li>
     <a href="{% url 'contact' %}">Contact</a>
 </li>
-# leanpub-start-insert
-<li>
+<b><li>
     <a href="{% url 'browse' %}">Browse</a>
-</li>
-# leanpub-end-insert
+</li></b>
 </code></pre>
 {% endverbatim %}
 
@@ -227,9 +223,7 @@ Updated *urls.py*:
 <pre><code class="python">
 # added RedirectView to this import statement
 from django.views.generic import (TemplateView, 
-# leanpub-start-insert
-    RedirectView,
-# leanpub-end-insert
+    <b>RedirectView,</b>
 )
 </code></pre>
 
@@ -239,10 +233,8 @@ from django.views.generic import (TemplateView,
 
 <pre><code class="python">
     # our new redirect view
-# leanpub-start-insert
-    url(r'^browse/$', RedirectView.as_view(
-        pattern_name='browse', permanent=True)),
-# leanpub-end-insert
+    <b>url(r'^browse/$', RedirectView.as_view(
+        pattern_name='browse', permanent=True)),</b>
     url(r'^browse/name/$',
         views.browse_by_name, name='browse'),
     url(r'^browse/name/(?P<initial>[-\w]+)/$',
@@ -261,10 +253,8 @@ redirect */things/* to our browse page as well:
 {% endfilter %}
 
 <pre><code class="python">
-# leanpub-start-insert
-    url(r'^things/$', RedirectView.as_view(
-        pattern_name='browse', permanent=True)),
-# leanpub-end-insert
+    <b>url(r'^things/$', RedirectView.as_view(
+        pattern_name='browse', permanent=True)),</b>
     url(r'^things/(?P<slug>[-\w]+)/$',
         views.thing_detail, name='thing_detail'),
     url(r'^things/(?P<slug>[-\w]+)/edit/$',

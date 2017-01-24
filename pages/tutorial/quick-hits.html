@@ -215,16 +215,14 @@ to the below:
 <pre><code class="python">
 from django.test import TestCase
 
-# leanpub-start-insert
-class CollectionTest(TestCase):
+<b>class CollectionTest(TestCase):
     def test_index(self):
         r = self.client.get('/')
         self.assertEqual(r.status_code, 200)
 
     def test_no_logic_page(self):
         r = self.client.get('/about/')
-        self.assertEqual(r.status_code, 200) 
-# leanpub-end-insert   
+        self.assertEqual(r.status_code, 200) </b>
 </code></pre>
 
 {% filter markdown %}
@@ -267,9 +265,7 @@ def index(request):
     things = Thing.objects.all()
     return render(request, 'index.html', {
         # typo below!
-# leanpub-start-insert
-        'things': thinggs,
-# leanpub-end-insert
+        <b>'things': thinggs,</b>
     })
 </code></pre>
 

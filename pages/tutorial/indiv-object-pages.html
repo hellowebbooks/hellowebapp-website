@@ -40,10 +40,8 @@ urlpatterns = [
     url(r'^contact/$', 
         TemplateView.as_view(template_name='contact.html'),
         name='contact'),
-    # leanpub-start-insert
-    url(r'^things/(?P<slug>[-\w]+)/$', views.thing_detail, 
-        name='thing_detail'),
-    # leanpub-start-insert
+    <b>url(r'^things/(?P<slug>[-\w]+)/$', views.thing_detail, 
+        name='thing_detail'),</b>
     url(r'^admin/', admin.site.urls),
 ]
 </code></pre>
@@ -90,16 +88,14 @@ def index(request):
         'things': things,
     })
 
-# leanpub-start-insert
-def thing_detail(request, slug):
+<b>def thing_detail(request, slug):
     # grab the object...
     thing = Thing.objects.get(slug=slug)
 
     # and pass to the template
     return render(request, 'things/thing_detail.html', {
         'thing': thing,
-    })
-# leanpub-end-insert
+    })</b>
 </code></pre>
 
 {% filter markdown %}
@@ -174,16 +170,14 @@ Our new *index.html* template:
 {% endblock title %}
 
 {% block content %}
-    # leanpub-start-insert
-    {% for thing in things %}
+    <b>{% for thing in things %}
     <h2>
         <a href="{% url 'thing_detail' slug=thing.slug %}">
             {{ thing.name }}
         </a>
     </h2>
     <p>{{ thing.description }}</p>
-    {% endfor %}
-    # leanpub-end-insert
+    {% endfor %}</b>
 {% endblock content %}
 </code></pre>
 {% endverbatim %}
