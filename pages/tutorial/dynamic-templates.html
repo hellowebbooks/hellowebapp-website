@@ -107,8 +107,8 @@ Update your *index.html*:
 
 {% filter markdown %}
 This is a loop that'll iterate over all the objects in the `things` variable,
-displaying the name for each `Thing`. Remember that `{% %}` shows an action and
-`{{ }}` prints out the variable.
+displaying the name for each `Thing`. Remember that `{% verbatim %}{% %}{% endverbatim %}` shows an action and
+`{% verbatim %}{{ }}{% endverbatim %}` prints out the variable.
 
 Voilà: We're showing the information from our database in our homepage!
 

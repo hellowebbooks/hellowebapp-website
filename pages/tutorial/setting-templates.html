@@ -14,7 +14,6 @@ analytics.page("Chapter 4: Setting Up Your Templates");
 <div class="jumbotron"></div>
 
 {% filter markdown %}
-
 # Setting Up Your Templates
 
 Congrats, you've launched your Django web app! How do you actually make this
@@ -25,7 +24,6 @@ now.
 Head back to your command line, and `cd` into your `collection` folder (the one
 with *models.py*). Using `mkdir`, create a "templates" directory, and then
 create *index.html* within it.
-
 {% endfilter %}
 
 <pre><code class="python">
@@ -36,7 +34,6 @@ collection/templates $ touch index.html
 </code></pre>
 
 {% filter markdown %}
-
 Open up *index.html* in your preferred code editor and add the necessary pieces
 to display a typical webpage. We're going to use HTML5 but only the bare bones
 for now — we can get fancy later.
@@ -58,7 +55,6 @@ for now — we can get fancy later.
 </code></pre>
 
 {% filter markdown %}
-
 If you open up your browser and go to *http://localhost:8000*, you'll still see
 the same default page you saw before — none of the HTML above. We need to tell
 Django how to get to that file.
@@ -88,7 +84,6 @@ urlpatterns = [
 </code></pre>
 
 {% filter markdown %}
-
 There are essentially four parts to this new line:
 * `url()` encases the entry to indicate it's a URL entry.
 * `r'^$'`  is the beginning of the URL pattern. Might look confusing, but just
@@ -117,7 +112,6 @@ urlpatterns = [
 </code></pre>
 
 {% filter markdown %}
-
 This will help you keep track of which bit is what. I'm going to keep using the
 previous configuration in this book though, since it's how it's usually laid out
 in Django.
@@ -151,7 +145,6 @@ from django.shortcuts import render
 </code></pre>
 
 {% filter markdown %}
-
 Basically, `urls.py` will catch that someone wants the homepage and points to
 this piece of code, which will render the `index.html` template. Now open up
 your browser and check out the new homepage on *http://localhost:8000*. Woohoo!
@@ -169,7 +162,6 @@ for files like style sheets. In your app (remember we named it `collection` —
 the folder that contains *models.py*), create a "static" directory, and within
 it, add in directories for CSS, Javascript, and images. In the CSS directory,
 add a blank *style.css* file.
-
 {% endfilter %}
 
 <pre><code class="python">
@@ -183,13 +175,12 @@ collection/static $ cd css
 collection/static/css $ touch style.css
 </code></pre>
 
+<p>Head back into your *index.html* page. We'll need to tell Django that there are
+static files used on this page, so at the top (like imports in <i>views.py</i> and
+<i>urls.py</i>) add <code>{% verbatim %}{% load staticfiles %}{% endverbatim %}</code>. Why
+the <code>{% verbatim %}{%{% endverbatim %}</code>? We'll get to that soon.</p>
+
 {% filter markdown %}
-
-Head back into your *index.html* page. We'll need to tell Django that there are
-static files used on this page, so at the top (like imports in *views.py* and
-*urls.py*) add `{% verbatim %}{% load staticfiles %}{% end verbatim %}`. Why
-the `{% verbatim %}{%{% endverbatim %}`? We'll get to that soon.
-
 Now that we can add static files to this template, add your CSS tag to the
 `&lt;HEAD&gt;` just like this:
 
@@ -214,7 +205,6 @@ Now that we can add static files to this template, add your CSS tag to the
 {% endverbatim %}
 
 {% filter markdown %}
-
 We want to avoid using relative paths, such as `href="../css/style.css"`.  For
 optimization purposes, someday later you might want to move the static files of
 your project to a different server (such as Amazon's *Simple Storage Service*,
@@ -236,26 +226,22 @@ body {
 </code></pre>
 
 {% filter markdown %}
-
 ![](images/bluehelloworld.png) 
 
 Nice! Feel free to update your CSS more at this point.
-
 {% endfilter %}
 
 {% verbatim %}
-To link to any static file from a template, use the `{% static
+<p>To link to any static file from a template, use the `{% static
 'FILELOCATION/FILENAME.TYPE' %}` syntax, such as `{% static 'js/script.js' %}`
 or `{% static 'images/logo.jpg' %}`. Keep in mind you still need the `IMG` HTML
 tag when displaying images, for example: `&lt;img src="{% static 'images/logo.jpg'
-%}" alt=""/&gt;`
+%}" alt=""/&gt;`</p>
 {% endverbatim %}
 
 {% filter markdown %}
-
 That said, don't worry about this within your CSS files — feel free to use
 relative paths because your static files should always be together anyways.
-
 {% endfilter %}
 
 <pre><code class="css">
@@ -266,14 +252,12 @@ h1 {
 </code></pre>
 
 {% filter markdown %}
-
 Now you can add static files and style your website! Don't forget to commit your
 work with git (review git on our git tips page here:
 [http://hellowebapp.com/12](http://hellowebapp.com/12)).
 
 Next up, Django has a bunch of awesome template utilities that'll elevate these
 static HTML files and make them a lot more interesting (and fun to work with).
-
 {% endfilter %}
 
 {% include 'includes/newsletter.html' %}

@@ -44,31 +44,33 @@ into *base.html*:
 *base.html*
 {% endfilter %}
 
+{% verbatim %}
 <pre><code class="html">
 {% load staticfiles %}
-&lt;!doctype html>
-&lt;html>
-    &lt;head>
-        <b>&lt;title>
-             &lt;!-- we want to override page titles -->
+&lt;!doctype html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        <b>&lt;title&gt;
+             &lt;!-- we want to override page titles --&gt;
         &lt;/title></b>
-        &lt;link rel="stylesheet" href="{% static 'css/style.css' %}" />
-    &lt;/head>
-    &lt;body>
-        <b>&lt;!-- as well as override content bits -->&lt;/b>
-    &lt;/body>
-&lt;/html>
+        &lt;link rel="stylesheet" href="{% static 'css/style.css' %}" /&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        <b>&lt;!-- as well as override content bits --&gt;</b>
+    &lt;/body&gt;
+&lt;/html&gt;
 </code></pre>
 
+<p>We can define blocks in our layout template where information can be added
+    or overwritten. For example, we’ll add <code>{% block content %} {%
+        endblock content %}</code> where we’d like the body content from
+    <i>index.html</i> to go. We can also add other overridable blocks in our
+    layout template: I usually add a block for the page title, optional header
+    information (for including other CSS files, for example), and
+    right-before-closing-body tag (for adding other Javascript files).</p>
+{% endverbatim %}
+
 {% filter markdown %}
-
-We can define blocks in our layout template where information can be added or
-overwritten. For example, we’ll add `{% block content %}{% endblock content %}`
-where we’d like the body content from *index.html* to go. We can also add other
-overridable blocks in our layout template: I usually add a block for the page
-title, optional header information (for including other CSS files, for example),
-and right-before-closing-body tag (for adding other Javascript files).
-
 *base.html* now:
 
 *base.html*
@@ -77,36 +79,37 @@ and right-before-closing-body tag (for adding other Javascript files).
 {% verbatim %}
 <pre><code class="django">
 {% load staticfiles %}
-&lt;!doctype html>
-&lt;html>
-    &lt;head>
-        <b>&lt;title>
+&lt;!doctype html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        <b>&lt;title&gt;
             {% block title %}
                 My Hello Web App Project
             {% endblock title %}
-        &lt;/title></b>
-        &lt;link rel="stylesheet" href="{% static 'css/style.css' %}" />
+        &lt;/title&gt;</b>
+        &lt;link rel="stylesheet" href="{% static 'css/style.css' %}" /&gt;
         <b>{% block header %}{% endblock header %}</b>
-    &lt;/head>
-    &lt;body>
+    &lt;/head&gt;
+    &lt;body&gt;
         <b>{% block content %}{% endblock content %}
         {% block footer %}{% endblock footer %}</b>
-    &lt;/body>
-&lt;/html>
+    &lt;/body&gt;
+&lt;/html&gt;
 </code></pre>
+
+<p>Note that we have content in the <code>{% block title %} </code> tags. That
+will be our default content that’ll show if child pages don’t override the
+title.</p>
+
+<p>Head back over to <i>index.html</i>, and delete everything other than our
+content that we removed from the new layout template. To indicate that this
+template has a layout template that will extend, we'll add <code>
+{% extends 'base.html' %}</code> to the top of the template, and then we can add in
+blocks in the template for the sections we defined in our <i>base.html</i>
+template.</p>
 {% endverbatim %}
 
 {% filter markdown %}
-
-Note that we have content in the `{% block title %}` tags. That will be our
-default content that’ll show if child pages don’t override the title.
-
-Head back over to *index.html*, and delete everything other than our content
-that we removed from the new layout template. To indicate that this template has
-a layout template that will extend, we'll add `{% extends 'base.html'
-%}` to the top of the template, and then we can add in blocks in the template
-for the sections we defined in our *base.html* template.
-
 Our new *index.html*:
 
 *index.html*
@@ -120,30 +123,34 @@ Our new *index.html*:
 {% endblock title %}
 
 {% block content %}
-    &lt;h1>Hello World!&lt;/h1>
-    &lt;p>I am a basic website.&lt;/p>
+    &lt;h1&gt;Hello World!&lt;/h1&gt;
+    &lt;p&gt;I am a basic website.&lt;/p&gt;
 {% endblock content %}
 </code></pre>
 {% endverbatim %}
 
 {% filter markdown %}
-
 A few important things to note:
+{% endfilter %}
 
-* Each block (like `{% block content %}`) has the name we defined in our
-    base.html file so the template engine knows where to render which part.
-* Check out the title block. See the `{{ block.super }}`? In our *base.html*
-    file, we defined "My Hello Web App Project" as the default content. `{{
-    block.super }}` will insert the contents of the default block instead of
-    overriding it. Now our page titles can have both the local page name as well
-    as the title of the website. If you ever change the main title of the
-    website, you only have to update it in *base.html* and it will automatically
-    update the child pages.
-* If you’re loading static assets like images, you’ll still need to add `{% load
-    staticfiles %}` to the top of the base layout file. We’re not yet in
-    *index.html* so we haven’t added it but keep in mind if you add static files
-    to your version.
+{% verbatim %}
+<li>Each block (like <code>{% block content %}</code>) has the name we defined
+    in our base.html file so the template engine knows where to render which
+    part.</li>
+<li>Check out the title block. See the <code>{{ block.super }}</code>? In our
+    <i>base.html</i> file, we defined "My Hello Web App Project" as the default
+    content. <code>{{ block.super }}</code> will insert the contents of the
+    default block instead of overriding it. Now our page titles can have both
+    the local page name as well as the title of the website. If you ever change
+    the main title of the website, you only have to update it in *base.html*
+    and it will automatically update the child pages.</li>
+<li>If you’re loading static assets like images, you’ll still need to add
+    <code>{% load staticfiles %}</code> to the top of the base layout file.
+    We’re not yet in <i>index.html</i> so we haven’t added it but keep in mind
+    if you add static files to your version.</li>
+{% endverbatim %}
 
+{% filter markdown %}
 Now you can add new simple pages to your website without having to repeat the
 same code over and over!
 
@@ -151,13 +158,13 @@ same code over and over!
 
 Having template inheritance doesn't feel real until you have multiple templates
 all extending one layout template.
-
-Let’s create a few extra pages: an *about.html* and *contact.html*. First,
-create the HTML files in your templates directory. I’m going to make it easy by
-copying our *index.html* file because it already has the `{% block %}` tags
-added for inheritance.
-
 {% endfilter %}
+
+<p>Let’s create a few extra pages: an <i>about.html</i> and
+    <i>contact.html</i>. First, create the HTML files in your templates
+    directory. I’m going to make it easy by copying our <i>index.html</i> file
+    because it already has the <code>{% verbatim %}{% block %}{% endverbatim %}
+    </code> tags added for inheritance.</p>
 
 <pre><code class="python">
 templates $ cp index.html about.html
@@ -179,8 +186,8 @@ Then open the pages and edit the HTML so it makes sense for each page.
 {% endblock title %}
 
 {% block content %}
-    &lt;h1>About page&lt;/h1>
-    &lt;p>About content.&lt;/p>
+    &lt;h1&gt;About page&lt;/h1&gt;
+    &lt;p&gt;About content.&lt;/p&gt;
 {% endblock content %}
 </code></pre>
 {% endverbatim %}
@@ -198,8 +205,8 @@ Then open the pages and edit the HTML so it makes sense for each page.
 {% endblock title %}
 
 {% block content %}
-    &lt;h1>Contact page&lt;/h1>
-    &lt;p>Contact content.&lt;/p>
+    &lt;h1&gt;Contact page&lt;/h1&gt;
+    &lt;p&gt;Contact content.&lt;/p&gt;
 {% endblock content %}
 </code></pre>
 {% endverbatim %}
@@ -264,31 +271,31 @@ some other bits):
             {% block title %}
                 My Hello Web App Project
             {% endblock title %}
-        &lt;/title>
-        &lt;link rel="stylesheet" href="{% static 'css/style.css' %}" />
+        &lt;/title&gt;
+        &lt;link rel="stylesheet" href="{% static 'css/style.css' %}" /&gt;
         {% block header %}{% endblock header %}
-    &lt;/head>
-    &lt;body>
+    &lt;/head&gt;
+    &lt;body&gt;
         <b>&lt;header>
-            &lt;h1>Hello Web App&lt;/h1>
-            &lt;nav>
-                &lt;ul>
-                    &lt;li>
-                        &lt;a href="{% url 'home' %}">Home&lt;/a>
-                    &lt;/li>
-                    &lt;li>
-                        &lt;a href="{% url 'about' %}">About&lt;/a>
-                    &lt;/li>
-                    &lt;li>
-                        &lt;a href="{% url 'contact' %}">Contact&lt;/a>
-                    &lt;/li>
-                &lt;/ul>
-            &lt;/nav>
-        &lt;/header></b>
+            &lt;h1&gt;Hello Web App&lt;/h1&gt;
+            &lt;nav&gt;
+                &lt;ul&gt;
+                    &lt;li&gt;
+                        &lt;a href="{% url 'home' %}"&gt;Home&lt;/a&gt;
+                    &lt;/li&gt;
+                    &lt;li&gt;
+                        &lt;a href="{% url 'about' %}"&gt;About&lt;/a&gt;
+                    &lt;/li&gt;
+                    &lt;li&gt;
+                        &lt;a href="{% url 'contact' %}"&gt;Contact&lt;/a&gt;
+                    &lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/nav&gt;
+        &lt;/header&gt;</b>
         {% block content %}{% endblock content %}
         {% block footer %}{% endblock footer %}
-    &lt;/body>
-&lt;/html>
+    &lt;/body&gt;
+&lt;/html&gt;
 </code></pre>
 {% endverbatim %}
 
@@ -335,15 +342,19 @@ def index(request):
 </code></pre>
 
 {% filter markdown %}
-
 Back over in *index.html*, we can access these variables in two ways:
+{% endfilter %}
 
-* `{{ variable }}`: Surrounded by two curly braces, this simply displays what
-    was passed in.
-* `{% tag %}`: `{% %}` is django's version of `< >` in HTML. A tag in curly
-    braces/percent signs means we’re doing something either with that variable
-    or to the template, such as loading static files.
+{% verbatim %}
+<li> <code>{{ variable }}</code>: Surrounded by two curly braces, this simply
+    displays what was passed in.</li> 
+<li> <code>{% tag %}</code>: <code>{% %}</code> is django's version of 
+    <code>&lt; &gt;</code> in HTML. A tag in curly braces/percent signs means 
+    we’re doing something either with that variable or to the template, such as 
+    loading static files.</li>
+{% endverbatim %}
 
+{% filter markdown %}
 To see this in action, let’s first display the variable. Add this to your
 *index.html* file:
 
@@ -358,88 +369,82 @@ To see this in action, let’s first display the variable. Add this to your
 {% endblock title %}
 
 {% block content %}
-    &lt;h1>Hello World!&lt;/h1>
-    &lt;!-- here's the variable we are passing in -->
-    <b>&lt;p>{{ number }}&lt;/p></b>
+    &lt;h1&gt;Hello World!&lt;/h1&gt;
+    &lt;!-- here's the variable we are passing in --&gt;
+    <b>&lt;p&gt;{{ number }}&lt;/p&gt;</b>
 {% endblock content %}
 </code></pre>
 {% endverbatim %}
 
 {% filter markdown %}
-
 ![](images/6.png) 
+{% endfilter %}
 
-Ta-da! Django translates `{{ number }}` to the value of the variable called
-`number` from the view which was passed into the template.
+<p>Ta-da! Django translates <code>{% verbatim %}{{ number }}{% endverbatim %}
+</code> to the value of the variable called <code>number</code> from the view
+which was passed into the template.</p>
 
+{% filter markdown %}
 Django’s templates also allow you to use basic logic similar to Python's within
 the templates — most importantly, *if-else statements* and *for loops*. (Can’t
 remember what these are? Refer to Learn Python The Hard Way
 ([http://hellowebapp.com/13](http://hellowebapp.com/13)) for a refresher.)
 
 Check out an *if-else statement* in action:
-
 {% endfilter %}
 
 {% verbatim %}
 <pre><code class="django">
-&lt;p>{% if number %}Number exists!{% endif %}&lt;/p>
+&lt;p&gt;{% if number %}Number exists!{% endif %}&lt;/p&gt;
 </code></pre>
 {% endverbatim %}
 
 {% filter markdown %}
-
 ![](images/numberexists.png) 
 
 And another example:
-
 {% endfilter %}
 
 {% verbatim %}
 <pre><code class="django">
-    &lt;p>There are six dogs! <b>
+    &lt;p&gt;There are six dogs! <b>
     {% if number == 6 %}
         True
     {% else %}
         False
     {% endif %}
-    </b>&lt;/p>
+    </b>&lt;/p&gt;
 </code></pre>
 {% endverbatim %}
 
 {% filter markdown %}
-
 ![](images/sixdogs.png) 
 
 Django also has a lot of fun template tags
 ([http://hellowebapp.com/14](http://hellowebapp.com/14)). For example, if you
 were passing in the number of dogs in your website, you could make a word plural
 if the number is more than one:
-
 {% endfilter %}
 
 {% verbatim %}
 <pre><code class="django">
-&lt;p>There are {{ number }} dog{{ number|pluralize }}!&lt;/p>
+&lt;p&gt;There are {{ number }} dog{{ number|pluralize }}!&lt;/p&gt;
 </code></pre>
 {% endverbatim %}
 
 {% filter markdown %}
-
 ![](images/pluralize.png) 
 
 This template tag also accepts different suffixes:
-
 {% endfilter %}
 
 {% verbatim %}
 <pre><code class="django">
-&lt;p>There are {{ number }} walrus{{ number|pluralize:"es" }}!&lt;/p>
+&lt;p&gt;There are {{ number }} walrus{{ number|pluralize:"es" }}!&lt;/p&gt;
 </code></pre>
 {% endverbatim %}
 
 {% filter markdown %}
-
 ![](images/sixwalruses.png) 
 
 Django has an optional library you can use to format and "humanize" numbers. Add
@@ -461,15 +466,13 @@ INSTALLED_APPS = (
 )
 </code></pre>
 
-{% filter markdown %}
-
-Then add `{% load humanize %}` to the top of our template. We're going to start
-with `apnumber`, which spells out the numbers 1-9:
-
-*index.html*
-{% endfilter %}
-
 {% verbatim %}
+<p>Then add <code>{% load humanize %}</code> to
+    the top of our template. We're going to start with `apnumber`, which spells
+    out the numbers 1-9:</p>
+
+<em>index.html</em>
+
 <pre><code class="django">
 {% extends 'base.html' %}
 <b>{% load humanize %}</b>
@@ -478,8 +481,8 @@ with `apnumber`, which spells out the numbers 1-9:
 {% endblock title %}
 
 {% block content %}
-    &lt;h1>Hello World!&lt;/h1>
-    <b>&lt;p>There are {{ number|apnumber }} dogs!&lt;/p></b>
+    &lt;h1&gt;Hello World!&lt;/h1&gt;
+    <b>&lt;p&gt;There are {{ number|apnumber }} dogs!&lt;/p&gt;</b>
 {% endblock content %}
 </code></pre>
 {% endverbatim %}
@@ -519,7 +522,7 @@ As well as our template:
 
 {% verbatim %}
 <pre><code class="django">
-&lt;p>This is my name: {{ thing }}&lt;/p>
+&lt;p&gt;This is my name: {{ thing }}&lt;/p&gt;
 </code></pre>
 {% endverbatim %}
 
@@ -534,7 +537,7 @@ it into a slug, a shortened, lowercased version of a string used for URLs:
 
 {% verbatim %}
 <pre><code class="django">
-&lt;p>This is my name: {{ thing|slugify }}&lt;/p>
+&lt;p&gt;This is my name: {{ thing|slugify }}&lt;/p&gt;
 </code></pre>
 {% endverbatim %}
 
@@ -548,7 +551,7 @@ Feel like using title case?
 
 {% verbatim %}
 <pre><code class="django">
-&lt;p>This is my name: {{ thing|title }}&lt;/p>
+&lt;p&gt;This is my name: {{ thing|title }}&lt;/p&gt;
 </code></pre>
 {% endverbatim %}
 

@@ -361,10 +361,9 @@ content.
     &lt;p&gt;Your password was changed.&lt;/p&gt;
 {% endblock content %}
 </code></pre>
-
-{% filter markdown %}
 {% endverbatim %}
 
+{% filter markdown %}
 *password_change_form.html*
 {% endfilter %}
 
@@ -387,7 +386,6 @@ content.
 {% endverbatim %}
 
 {% filter markdown %}
-
 *password_reset_complete.html*
 {% endfilter %}
 
@@ -406,7 +404,6 @@ content.
 {% endverbatim %}
 
 {% filter markdown %}
-
 *password_reset_confirm.html*
 {% endfilter %}
 
@@ -437,7 +434,6 @@ content.
 {% endverbatim %}
 
 {% filter markdown %}
-
 *password_reset_done.html
 {% endfilter %}
 
@@ -456,7 +452,6 @@ content.
 {% endverbatim %}
 
 {% filter markdown %}
-
 *password_reset_email.txt*
 {% endfilter %}
 
@@ -477,7 +472,6 @@ Your username, in case you've forgotten: {{ user.username }}
 {% endverbatim %}
 
 {% filter markdown %}
-
 *password_reset_form.html*
 {% endfilter %}
 
@@ -500,7 +494,6 @@ Your username, in case you've forgotten: {{ user.username }}
 {% endverbatim %}
 
 {% filter markdown %}
-
 ### Setting up the URLs
 
 We'll need to tell Django we're using its password reset/recover feature, so add
@@ -520,7 +513,6 @@ these URLs to your *urls.py*:
 </code></pre>
 
 {% filter markdown %}
-
 *urls.py*
 {% endfilter %}
 
@@ -553,7 +545,6 @@ these URLs to your *urls.py*:
 </code></pre>
 
 {% filter markdown %}
-
 We're overriding the default URL paths that come with Django so we can point to
 the template we created. Otherwise, Django will just point to the admin
 templates, which wouldn't match the style and layout of our web app.
@@ -596,14 +587,12 @@ passwords from the login page. Update your login template to the following:
 {% endverbatim %}
 
 {% filter markdown %}
-
 Check out your website in the browser and play around with registering new
 "users," logging in, and logging out.
 
 When you put in an email to reset the password for an account, check out your
 command line window to see your "email", which should look something like the
 below:
-
 {% endfilter %}
 
 <pre><code class="python">
@@ -629,7 +618,6 @@ The localhost:8000 team
 </code></pre>
 
 {% filter markdown %}
-
 Paste the link into your browser to complete the password reset process:
 
 ![](images/confirmpassword.png)
@@ -642,7 +630,6 @@ needs a few templates created to access it.
 Next chapter, we're going to tie these new users to objects in our database, so
 someone can create an account and a new object at the same time, as well as log
 in and update their object as well. Commit your work if you haven't already!
-
 {% endfilter %}
 
 {% include 'includes/newsletter.html' %}

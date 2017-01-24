@@ -187,7 +187,7 @@ We're doing quite a bit of fun things here.
     displayed. This way our links look like `/browse/name/a/` rather than
     `/browse/name/A/`. Both work, but the former looks better.
 * We loop over every result in our list and display a link to the `Thing`.
-* Last, `{% empty %}` is what the for loop will display if the list we pass in
+* Last, `{% verbatim %}{% empty %}{% endverbatim %}` is what the for loop will display if the list we pass in
     is empty.
 
 ## Updating your nav and setting up redirects

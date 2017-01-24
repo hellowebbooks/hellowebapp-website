@@ -146,13 +146,12 @@ Here's our new individual object HTML template:
     &lt;p&gt;{{ thing.description }}&lt;/p&gt;
 {% endblock content %}
 </code></pre>
-
-{% filter markdown %}
 {% endverbatim %}
 
+{% filter markdown %}
 `{{ thing }}` is the object we passed in from the database, and we can access
 the fields we set in the model (name and description) by adding the model field
-after a dot — basically, `{{ thing.name }}`.
+after a dot — basically, `{% verbatim %}{{ thing.name }}{% endverbatim %}`.
 
 How do we get to these individual pages? Let's update our index view to make the
 list of objects we're displaying to link to their individual pages.
