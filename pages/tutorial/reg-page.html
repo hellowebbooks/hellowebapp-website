@@ -301,18 +301,30 @@ adds the current user for use in templates.
 Everything you need for someone to create an account, activate their account,
 and login or logout should all be set up now! Open up your website and check it
 out:
+{% endfilter %}
 
-![](images/reg_form.png) 
+<figure class="caption">
+    <img src="/static/images/tutorial/reg_form.png" alt=""/>
+</figure>
 
+{% filter markdown %}
 Try creating a couple new users. 
+{% endfilter %}
 
-![](images/reg_complete.png) 
+<figure class="caption">
+    <img src="/static/images/tutorial/reg_complete.png" alt=""/>
+</figure>
 
+{% filter markdown %}
 Back in your admin (*http://localhost:8000/admin/*) you can see the new users
 created: 
+{% endfilter %}
 
-![](images/admin_new_users.png) 
+<figure class="caption">
+    <img src="/static/images/tutorial/admin_new_users.png" alt=""/>
+</figure>
 
+{% filter markdown %}
 Unfortunately there's no way yet for our new users to start adding `Thing`s —
 users can only register, log in, and log out at the moment. 
 
@@ -608,11 +620,18 @@ The localhost:8000 team
 
 {% filter markdown %}
 Paste the link into your browser to complete the password reset process:
+{% endfilter %}
 
-![](images/confirmpassword.png)
+<figure class="caption">
+    <img src="/static/images/tutorial/confirmpassword.png" alt=""/>
+</figure>
 
-![](images/resetcomplete.png)
+<figure class="caption">
+    <img src="/static/images/tutorial/resetcomplete.png" alt=""/>
+</figure>
 
+
+{% filter markdown %}
 Now you see how password resetting functionality is built into Django and just
 needs a few templates created to access it. 
 

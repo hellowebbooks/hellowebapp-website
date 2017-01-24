@@ -15,7 +15,6 @@ analytics.page("Chapter 6: Adding Dynamic Data");
 <div class="container">
 
 {% filter markdown %}
-
 # Adding Dynamic Data
 
 Now that we know what we can do with templates and know how variables can be
@@ -96,7 +95,6 @@ from django.db import models
 </code></pre>
 
 {% filter markdown %}
-
 If you were building a directory of invitation designers, you might want to
 change the class from `Thing` to `Profile` — so, `class Profile(models.Model)`.
 
@@ -145,9 +143,7 @@ line (in the same folder as *manage.py*), type this in:
 </code></pre>
 
 {% filter markdown %}
-
 And this is what you should see as a result:
-
 {% endfilter %}
 
 <pre><code class="python">
@@ -157,10 +153,8 @@ Migrations for 'collection':
 </code></pre>
 
 {% filter markdown %}
-
 We've created the migration file, but we haven't applied it.  Run `python
 manage.py migrate` next:
-
 {% endfilter %}
 
 <pre><code class="python">
@@ -172,7 +166,6 @@ Running migrations:
 </code></pre>
 
 {% filter markdown %}
-
 Like above, we're running the `migrate` command, telling Django to search for
 new migrations and apply them to the existing database tables.
 
@@ -243,13 +236,21 @@ of a `Thing` in the admin. You'll see this in a second.
 Now if you go back to your browser and go to *http://localhost:8000/admin*, you
 can log in using the admin username and password that you made earlier when
 creating a superuser. 
+{% endfilter %}
 
-![](images/admin.png) 
+<figure class="caption">
+    <img src="/static/images/tutorial/admin.png" alt=""/>
+</figure>
 
+{% filter markdown %}
 Voilà: a visual representation of your database information — your admin panel.
+{% endfilter %}
 
-![](images/admin_loggedin.png) 
+<figure class="caption">
+    <img src="/static/images/tutorial/admin_loggedin.png" alt=""/>
+</figure>
 
+{% filter markdown %}
 As you can see, we have links for a `User` database as well as an area for our
 new app (`Collection`) and a link for our models defined in the app (so far,
 only `Thing`). 
@@ -257,9 +258,13 @@ only `Thing`).
 Click on Users and you can see the entry for your admin user account (you!), and
 if you click on that entry, you can update any of the information on that `User`
 account.
+{% endfilter %}
 
-![](images/admin_admin.png) 
+<figure class="caption">
+    <img src="/static/images/tutorial/admin_admin.png" alt=""/>
+</figure>
 
+{% filter markdown %}
 Here's where you can see that Django's included `User` accounts really saves us
 some time: The password on the account is hashed for us, which is kind-of like
 encryption but one-way and can't be reversed. This is important because if the
@@ -275,25 +280,34 @@ whatever you decided to call your model. Let's add our first one.
 Back out of the User area and click on "Things" (or whatever you named your
 model). At the top right of the page, there's a button to add objects to your
 database.
+{% endfilter %}
 
-![](images/admin_addthing.png) 
+<figure class="caption">
+    <img src="/static/images/tutorial/admin_addthing.png" alt=""/>
+</figure>
 
-![](images/admin_addthing_after.png) 
+<figure class="caption">
+    <img src="/static/images/tutorial/admin_addthing_after.png" alt=""/>
+</figure>
 
+{% filter markdown %}
 As you can see, this is a handy place for us to see, add, change, and remove any
 account added to our website without logging into the database through the
 command line. Our slug was also auto-created, saving us valuable time. Win!
 
 Add a couple of more test objects to your database.
+{% endfilter %}
 
-![](images/admin_things.png) 
+<figure class="caption">
+    <img src="/static/images/tutorial/admin_things.png" alt=""/>
+</figure>
 
+{% filter markdown %}
 Customers can't see the admin though (and really shouldn't ever — this panel
 should only be used for administrative use). 
 
 Next up, let's get our database information showing up in the templates. Don't
 forget to commit your work!
-
 {% endfilter %}
 </div>
 

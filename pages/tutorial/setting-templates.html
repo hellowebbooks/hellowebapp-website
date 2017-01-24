@@ -149,9 +149,13 @@ from django.shortcuts import render
 Basically, `urls.py` will catch that someone wants the homepage and points to
 this piece of code, which will render the `index.html` template. Now open up
 your browser and check out the new homepage on *http://localhost:8000*. Woohoo!
+{% endfilter %}
 
-![](images/helloworld.png) 
+<figure class="caption">
+    <img src="/static/images/tutorial/helloworld.png" alt=""/>
+</figure>
 
+{% filter markdown %}
 ## Adding static files
 
 We're now displaying the HTML file we created, but how do we get CSS styling in
@@ -226,9 +230,11 @@ body {
 }
 </code></pre>
 
-{% filter markdown %}
-![](images/bluehelloworld.png) 
+<figure class="caption">
+    <img src="/static/images/tutorial/bluehelloworld.png" alt=""/>
+</figure>
 
+{% filter markdown %}
 Nice! Feel free to update your CSS more at this point.
 {% endfilter %}
 

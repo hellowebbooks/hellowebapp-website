@@ -15,7 +15,6 @@ analytics.page("Chapter 9: Forms.py Funsies");
 <div class="container">
 
 {% filter markdown %}
-
 # Forms.py Funsies
 
 We now have a basic website that showcases a collection of objects, with
@@ -173,7 +172,6 @@ edit your object.
 </code></pre>
 
 {% filter markdown %}
-
 In the view above, you'll see we're passing in the form. Thankfully, Django has
 another useful utility for displaying the form in the template. Here's what
 we'll add into our template:
@@ -238,11 +236,17 @@ view:
 {% filter markdown %}
 
 Head to the browser to check it out:
+{% endfilter %}
 
-![](images/new_edit_link.png) 
+<figure class="caption">
+    <img src="/static/images/tutorial/new_edit_link.png" alt=""/>
+</figure>
 
-![](images/new_edit_page.png) 
+<figure class="caption">
+    <img src="/static/images/tutorial/new_edit_page.png" alt=""/>
+</figure>
 
+{% filter markdown %}
 Neat, all of the form fields already have the current information for the
 object. Thanks, Django! Feel free to edit and save any information here and
 it'll automagically update the database, and ergo, all the information on your

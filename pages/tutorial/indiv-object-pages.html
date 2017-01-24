@@ -48,7 +48,6 @@ urlpatterns = [
 </code></pre>
 
 {% filter markdown %}
-
 Whoa, holy scary regular expression, right?
 
 To be honest, if you stopped me and asked me to write that line from scratch, I
@@ -187,13 +186,21 @@ We're going to use Django's named URLs again. We named our detail pages (back in
 which exact `thing` to make a link for.
 
 Now we have an index page full of links:
+{% endfilter %}
 
-![](images/index_links.png) 
+<figure class="caption">
+    <img src="/static/images/tutorial/index_links.png" alt=""/>
+</figure>
 
+{% filter markdown %}
 Which link to the object's respective page:
+{% endfilter %}
 
-![](images/individual_page.png) 
+<figure class="caption">
+    <img src="/static/images/tutorial/individual_page.png" alt=""/>
+</figure>
 
+{% filter markdown %}
 We are one step toward a working website that's useful to visitors and potential
 customers! Don't forget to commit your work.
 

@@ -15,7 +15,6 @@ analytics.page("Chapter 16: Important Things to Know");
 <div class="container">
 
 {% filter markdown %}
-
 # Important Things to Know
 
 There are a few things and principles you should know about building web apps.
@@ -33,7 +32,6 @@ readable, to yourself in the future as well as for any others who will read your
 code. 
 
 The style guide includes recommendations like this:
-
 {% endfilter %}
 
 <pre><code class="python">
@@ -42,7 +40,6 @@ No:  spam( ham[ 1 ], { eggs: 2 } )
 </code></pre>
 
 {% filter markdown %}
-
 Read more about PEP 8 and the Python style guide here:
 [http://hellowebapp.com/44](http://hellowebapp.com/44)
 
@@ -57,7 +54,6 @@ the heck was I doing?"
 
 It's always a good idea to add comments above your code to describe what's going
 on. For example, random chuck of code from my app:
-
 {% endfilter %}
 
 <pre><code class="python">
@@ -90,7 +86,6 @@ for line in fileinput.input(paths):
 </code></pre>
 
 {% filter markdown %}
-
 You *could* write the above without the comments, but it's a lot easier to read
 and skim with them added. It's always a good idea to document what you're doing
 as you go. 
@@ -137,7 +132,6 @@ window. It's faster, once you get used to it.
 
 Like how we ran `python manage.py runserver` in the command line (feel free to
 open a new window if you'd like), run `python manage.py shell`:
-
 {% endfilter %}
 
 <pre><code class="python">
@@ -150,10 +144,8 @@ Type "help", "copyright", "credits" or "license" for more information.
 </code></pre>
 
 {% filter markdown %}
-
 Here, you can import settings and run commands just like in your *views.py*, but
 see instantaneous results. 
-
 {% endfilter %}
 
 <pre><code class="python">
@@ -169,7 +161,6 @@ Another Name of a Thing
 </code></pre>
 
 {% filter markdown %}
-
 The first three lines were commands I typed in — first importing `Thing` from
 our models, then running a query to grab all of our `Thing`s, then running a
 for-loop to print all of the `Thing` names. When the shell detects a code block
@@ -186,7 +177,6 @@ overwrite information that you need.)
 
 In a nut shell, the shell is a handy skill to have once you're comfortable using
 it.
-
 {% endfilter %}
 </div>
 

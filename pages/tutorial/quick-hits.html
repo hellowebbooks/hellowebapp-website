@@ -55,16 +55,19 @@ ALLOWED_HOSTS = ['*']
 
 Check out what happens when you go to a non-existent page and get a 404
 response:
+{% endfilter %}
 
-![](images/404.png)
+<figure class="caption">
+    <img src="/static/images/tutorial/404.png" alt=""/>
+</figure>
 
+{% filter markdown %}
 Ew, a default browser page not using our app's styles. Let's add a 404 page,
 shall we?
 
 ### Add your template files
 
 Create *404.html* and *500.html* files in your templates directory:
-
 {% endfilter %}
 
 <pre><code class="python">
@@ -116,9 +119,13 @@ Then update the template contents:
 {% filter markdown %}
 
 That's all you need to do! Take a look at the broken page again in your browser:
+{% endfilter %}
 
-![](images/404-2.png) 
+<figure class="caption">
+    <img src="/static/images/tutorial/404-2.png" alt=""/>
+</figure>
 
+{% filter markdown %}
 Custom error pages, woohoo! Make sure to change `DEBUG` in *settings.py* back to
 `True` before you move on.
 

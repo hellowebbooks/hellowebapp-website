@@ -305,9 +305,13 @@ future, if you ever decide to change the URL (like changing */about/* to
 Django will update your templates for you.
 
 Check out your website with it's shiny, new navigation:
+{% endfilter %}
 
-![](images/nav.png) 
+<figure class="caption">
+    <img src="/static/images/tutorial/nav.png" alt=""/>
+</figure>
 
+{% filter markdown %}
 ## Passing in variables and template tags
 
 At this point you could launch this basic website, but dynamic content is really
@@ -372,9 +376,9 @@ To see this in action, let’s first display the variable. Add this to your
 </code></pre>
 {% endverbatim %}
 
-{% filter markdown %}
-![](images/6.png) 
-{% endfilter %}
+<figure class="caption">
+    <img src="/static/images/tutorial/6.png" alt=""/>
+</figure>
 
 <p>Ta-da! Django translates <code>{% verbatim %}{{ number }}{% endverbatim %}
 </code> to the value of the variable called <code>number</code> from the view
@@ -395,9 +399,11 @@ Check out an *if-else statement* in action:
 </code></pre>
 {% endverbatim %}
 
-{% filter markdown %}
-![](images/numberexists.png) 
+<figure class="caption">
+    <img src="/static/images/tutorial/numberexists.png" alt=""/>
+</figure>
 
+{% filter markdown %}
 And another example:
 {% endfilter %}
 
@@ -413,9 +419,11 @@ And another example:
 </code></pre>
 {% endverbatim %}
 
-{% filter markdown %}
-![](images/sixdogs.png) 
+<figure class="caption">
+    <img src="/static/images/tutorial/sixdogs.png" alt=""/>
+</figure>
 
+{% filter markdown %}
 Django also has a lot of fun template tags
 ([http://hellowebapp.com/14](http://hellowebapp.com/14)). For example, if you
 were passing in the number of dogs in your website, you could make a word plural
@@ -428,9 +436,11 @@ if the number is more than one:
 </code></pre>
 {% endverbatim %}
 
-{% filter markdown %}
-![](images/pluralize.png) 
+<figure class="caption">
+    <img src="/static/images/tutorial/pluralize.png" alt=""/>
+</figure>
 
+{% filter markdown %}
 This template tag also accepts different suffixes:
 {% endfilter %}
 
@@ -440,9 +450,11 @@ This template tag also accepts different suffixes:
 </code></pre>
 {% endverbatim %}
 
-{% filter markdown %}
-![](images/sixwalruses.png) 
+<figure class="caption">
+    <img src="/static/images/tutorial/sixwalruses.png" alt=""/>
+</figure>
 
+{% filter markdown %}
 Django has an optional library you can use to format and "humanize" numbers. Add
 `'django.contrib.humanize'`, to your `INSTALLED_APPS` list in *settings.py*:
 
@@ -463,9 +475,9 @@ INSTALLED_APPS = (
 </code></pre>
 
 {% verbatim %}
-<p>Then add <code>{% load humanize %}</code> to
-    the top of our template. We're going to start with `apnumber`, which spells
-    out the numbers 1-9:</p>
+<p>Then add <code>{% load humanize %}</code> to the top of our template. We're
+    going to start with <code>apnumber</code>, which spells out the numbers
+    1-9:</p>
 
 <em>index.html</em>
 
@@ -483,10 +495,11 @@ INSTALLED_APPS = (
 </code></pre>
 {% endverbatim %}
 
+<figure class="caption">
+    <img src="/static/images/tutorial/apnumber.png" alt=""/>
+</figure>
+
 {% filter markdown %}
-
-![](images/apnumber.png) 
-
 Note that what was displayed as "6" before is now "six". Read more about
 humanize and the other fun options it has here:
 [http://hellowebapp.com/15](http://hellowebapp.com/15)
@@ -520,9 +533,11 @@ As well as our template:
 </code></pre>
 {% endverbatim %}
 
-{% filter markdown %}
-![](images/stringname.png) 
+<figure class="caption">
+    <img src="/static/images/tutorial/stringname.png" alt=""/>
+</figure>
 
+{% filter markdown %}
 So now we can play with more fun template tags, like this one which would turn
 it into a slug, a shortened, lowercased version of a string used for URLs:
 {% endfilter %}
@@ -533,9 +548,11 @@ it into a slug, a shortened, lowercased version of a string used for URLs:
 </code></pre>
 {% endverbatim %}
 
-{% filter markdown %}
-![](images/slugify.png) 
+<figure class="caption">
+    <img src="/static/images/tutorial/slugify.png" alt=""/>
+</figure>
 
+{% filter markdown %}
 Feel like using title case?
 {% endfilter %}
 
@@ -545,9 +562,11 @@ Feel like using title case?
 </code></pre>
 {% endverbatim %}
 
-{% filter markdown %}
-![](images/title.png) 
+<figure class="caption">
+    <img src="/static/images/tutorial/title.png" alt=""/>
+</figure>
 
+{% filter markdown %}
 Perhaps it's too long of a name for you? Truncate it.
 {% endfilter %}
 
@@ -557,9 +576,11 @@ Perhaps it's too long of a name for you? Truncate it.
 </code></pre>
 {% endverbatim %}
 
-{% filter markdown %}
-![](images/truncate.png) 
+<figure class="caption">
+    <img src="/static/images/tutorial/truncate.png" alt=""/>
+</figure>
 
+{% filter markdown %}
 I hope at this point you can see how Django’s template system has a bunch of
 powerful features that knock a static website out of the water. Check out the
 full list of included Django template tags here:

@@ -15,7 +15,6 @@ analytics.page("Chapter 7: Displaying Dynamic Information in the Templates");
 <div class="container">
 
 {% filter markdown %}
-
 # Displaying Dynamic Information in the Templates
 
 It's great that we can see our information in the admin, but now we need to be
@@ -45,7 +44,6 @@ def index(request):
 </code></pre>
 
 {% filter markdown %}
-
 Right now it's essentially saying: "When the index page is viewed, display this
 template and pass along these two variables." 
 
@@ -112,9 +110,13 @@ displaying the name for each `Thing`. Remember that `{% verbatim %}{% %}{% endve
 `{% verbatim %}{{ }}{% endverbatim %}` prints out the variable.
 
 Voilà: We're showing the information from our database in our homepage!
+{% endfilter %}
 
-![](images/things_added_homepage.png) 
+<figure class="caption">
+    <img src="/static/images/tutorial/things_added_homepage.png" alt=""/>
+</figure>
 
+{% filter markdown %}
 ## Retrieving and filtering information with QuerySets
 
 One of the biggest things to remember about programming is that accessing the
@@ -191,15 +193,18 @@ things = Thing.objects.filter(name__contains='Hello')
 
 {% filter markdown %}
 Check out your website to see the update:
+{% endfilter %}
 
-![](images/things_order.png) 
+<figure class="caption">
+    <img src="/static/images/tutorial/things_order.png" alt=""/>
+</figure>
 
+{% filter markdown %}
 Note how `contains` gets added onto the field that we're searching on using a
 double-underscore (`__`). If we had just `name=`, we'd only get **exact** name
 matches, but `name__contains=` will get **incomplete** matches.
 
 We can also tell it to return a random order as well using `?`:
-
 {% endfilter %}
 
 <pre><code class="python">
@@ -207,7 +212,6 @@ things = Thing.objects.all().order_by('?')
 </code></pre>
 
 {% filter markdown %}
-
 This is just an overview of the basic queries we can make with Django. For more
 (a lot more, but it's pretty interesting), check out Django's documentation of
 QuerySets: [http://hellowebapp.com/18](http://hellowebapp.com/18).
