@@ -1,0 +1,60 @@
+            <hr/>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3 text-right" style="padding-right: 40px;">
+            <ul class="list-unstyled sharing">
+                {% if github %}
+                <li>
+                    <a href="{{ github }}">
+                        <small style="display:block">View final code on Github <i class="fa fa-github" style="min-width: 25px; text-align: left; padding-left: 5px;"></i></small>
+                    </a>
+                </li>
+                {% endif %}
+                <li>
+                    <a href="http://twitter.com/home/?status={{ title }} https://hellowebapp.com{{ path|cut:".html" }}/ (via @hellowebapp)">
+                        <small style="display:block">Share on Twitter <i class="fa fa-twitter" style="min-width: 25px; text-align: left; padding-left: 5px;"></i></small>
+                    </a>
+                </li>
+                <li>
+                    <a class="facebook" href="#" onclick="
+                        window.open(
+                        'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href), 
+                        'facebook-share-dialog', 
+                        'width=626,height=436'); 
+                        return false;">
+                        <small style="display:block">Share on Facebook <i class="fa fa-facebook" style="min-width: 25px; text-align: left; padding-left: 5px;"></i></small>
+                    </a>
+                </li>
+                <li>
+                    <a href="mailto:?subject={{ title }}&amp;body=Here's the link: https://hellowebapp.com{{ path|cut:".html" }}/">
+                        <small style="display:block">Email to a friend <i class="fa fa-envelope" style="min-width: 25px; text-align: left;padding-left: 5px;"></i></small>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="col-md-9">
+
+            <div class="row">
+                <div class="col-md-6">
+                    {% if prevname %}
+                    <h3 style="margin-top: 0">Previous chapter:</h3>
+                    <a href="{% url prevlink %}">&#8592; {{ prevname }}</a>
+                    {% endif %}
+                </div>
+                <div class="col-md-6 text-right">
+                    {% if nextname %}
+                    <h3 style="margin-top: 0">Next chapter:</h3>
+                    <a href="{% url nextlink %}">{{ nextname }} &#8594;</a>
+                    {% endif %}
+                </div>
+            </div>
+
+            <div class="text-center super-vertical-margin" style="margin-top:4em;">
+                <h2>Support Hello Web App</h2>
+                <a href="" class="btn btn-primary">Buy the eBook, Paperback Book, or Videos</a>
+            </div>
+        </div>
+    </div>
+</div>

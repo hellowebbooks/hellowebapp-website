@@ -26,6 +26,10 @@ analytics.page("Chapter 17: Moving Forward");
             <ol class="list-unstyled toc">
                 <li><a href="{% url '/tutorial/important-know.html' %}">Important Things to Know</a></li>
             </ol>
+            <h3>Buy the book:</h3>
+            <ol class="list-unstyled toc">
+                <li><a href="{% url '/order.html' %}">Order Hello Web App</a></li>
+            </ol>
         </div>
 
         <div class="col-md-9">
@@ -183,7 +187,7 @@ account) or [http://twitter.com/limedaring](http://twitter.com/limedaring)
 Keep in touch, and best of luck building your web apps!
 {% endfilter %}
 
-{% include 'includes/tutorial-footer.html' prevname="Important Things to Know" prevlink="/tutorial/important-know.html" title="Moving Forward" path="/tutorial/moving-forward.html" %}
+{% include 'includes/tutorial-footer.html' with prevname="Important Things to Know" prevlink="/tutorial/important-know.html" title="Moving Forward" path="/tutorial/moving-forward.html" %}
 
 {% include 'includes/newsletter.html' %}
 
