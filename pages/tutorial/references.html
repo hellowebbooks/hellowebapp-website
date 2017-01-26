@@ -18,11 +18,25 @@ analytics.page("References");
             <h1>References</h1>
         </div>
         <div class="col-md-3 text-right" style="padding-right: 40px;">
-            <h3 style="margin-top:0;">Next chapter:</h3>
+                    <section class="sharing">
+                        <div>
+                            <a class="twitter" href="http://twitter.com/home/?status={{ title }} https://hellowebapp.com/{{ path|cut:".html" }}/ (via @hellowebapp)"><i class="fa fa-twitter"></i></a>
+
+                            <a class="facebook" href="#" onclick="
+                                window.open(
+                                'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href), 
+                                'facebook-share-dialog', 
+                                'width=626,height=436'); 
+                                return false;"><i class="fa fa-facebook"></i> 
+                            </a>
+                            <a class="mail" href="mailto:?subject={{ title }}&amp;body=Here's the link: https://hellowebapp.com/{{ path|cut:".html" }}/"><i class="fa fa-envelope"></i></a>
+                        </div>
+                    </section> 
+            <h3>Next chapter:</h3>
             <ol class="list-unstyled toc">
                 <li><a href="{% url '/tutorial/friendly-note.html' %}">Friendly Note</a></li>
             </ol>
-            <h3 style="margin-top:0;">Previous chapter:</h3>
+            <h3>Previous chapter:</h3>
             <ol class="list-unstyled toc">
                 <li><a href="{% url '/tutorial/special-thanks.html' %}">Special Thanks</a></li>
             </ol>
