@@ -3,7 +3,7 @@
     </div>
     <div class="row">
         <div class="col-md-3 text-right" style="padding-right: 40px;">
-            <ul class="list-unstyled sharing">
+            <ul class="list-unstyled sharing hidden-sm-down">
                 {% if github %}
                 <li>
                     <a href="{{ github }}">
@@ -37,13 +37,13 @@
         <div class="col-md-9">
 
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-xs-6">
                     {% if prevname %}
                     <h3 style="margin-top: 0">Previous chapter:</h3>
                     <a href="{% url prevlink %}">&#8592; {{ prevname }}</a>
                     {% endif %}
                 </div>
-                <div class="col-md-6 text-right">
+                <div class="col-xs-6 text-right">
                     {% if nextname %}
                     <h3 style="margin-top: 0">Next chapter:</h3>
                     <a href="{% url nextlink %}">{{ nextname }} &#8594;</a>

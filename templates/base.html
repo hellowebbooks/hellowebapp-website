@@ -71,7 +71,7 @@
     <nav class="container" id="main-nav">
         <div class="row">
             <ul class="list-inline col-sm-4">
-                <!--<li><a href="{% url '/about.html' %}">About</a></li>-->
+                <li class="hidden-xs-down"><a href="{% url '/tutorial/intro.html' %}">Tutorial</a></li>
                 <li class="hidden-xs-down"><a href="{% url '/start.html' %}">About</a></li>
                 <li class="hidden-sm-down"><a href="{% url '/news.html' %}">Blog</a></li>
             </ul>
@@ -82,8 +82,8 @@
             </a>
             <ul id="right-nav" class="list-inline col-sm-4">
                 <li class="hidden-md-down"><a href="{% url '/faq.html' %}">FAQ</a></li>
-                <li class="hidden-sm-up"><a href="{% url '/start.html' %}">Start Here</a></li>
-                <li class="hidden-sm-up"><a href="{% url '/faq.html' %}">FAQ</a></li>
+                <li class="hidden-sm-up"><a href="{% url '/tutorial/intro.html' %}">Tutorial</a></li>
+                <li class="hidden-sm-up"><a href="{% url '/start.html' %}">About</a></li>
                 <li class="hidden-sm-up"><a href="{% url '/news.html' %}">Blog</a></li>
                 <li class="hidden-md-down"><a href="{% url '/press.html' %}">Press</a></li>
                 <li><a href="{% url '/order.html' %}">Buy</a></li>
@@ -100,6 +100,7 @@
             <ul class="list-inline list-unstyled">
                 <li><a href="{% url '/original.html' %}">Hello Web App</a></li>
                 <li><a href="{% url '/intermediate-concepts.html' %}">Intermediate Concepts</a></li>
+                <li><a href="http://hellowebdesignbook.com">Hello Web Design</a></li>
             </ul>
 
             <p>More links</p>
