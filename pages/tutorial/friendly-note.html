@@ -22,7 +22,7 @@ analytics.page("Friendly Note");
             <ol class="list-unstyled toc">
                 <li><a href="{% url '/tutorial/about-author.html' %}">About The Author</a></li>
             </ol>
-            <h3 style="margin-top:0;">Previous chapter:</h3>
+            <h3>Previous chapter:</h3>
             <ol class="list-unstyled toc">
                 <li><a href="{% url '/tutorial/references.html' %}">References</a></li>
             </ol>
@@ -37,7 +37,8 @@ to make a donation at
 [http://hellowebapp.com/donate](http://hellowebapp.com/donate). Your support is
 appreciated!
 {% endfilter %}
-</div></div></div>
+
+{% include 'includes/tutorial-footer.html' with nextname="About The Author" nextlink="/tutorial/about-author.html" prevname="References" prevlink="/tutorial/references.html" title="Friendly Note" path="/tutorial/friendly-note.html" %}
 
 {% include 'includes/newsletter.html' %}
 

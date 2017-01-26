@@ -22,7 +22,7 @@ analytics.page("Chapter 6: Adding Dynamic Data");
             <ol class="list-unstyled toc">
                 <li><a href="{% url '/tutorial/dynamic-templates.html' %}">Displaying Dynamic Information in the Templates</a></li>
             </ol>
-            <h3 style="margin-top:0;">Previous chapter:</h3>
+            <h3>Previous chapter:</h3>
             <ol class="list-unstyled toc">
                 <li><a href="{% url '/tutorial/template-tags.html' %}">Fun with Template Tags</a></li>
             </ol>
@@ -323,7 +323,8 @@ should only be used for administrative use).
 Next up, let's get our database information showing up in the templates. Don't
 forget to commit your work!
 {% endfilter %}
-</div></div></div>
+
+{% include 'includes/tutorial-footer.html' with github="https://github.com/hellowebapp/hellowebapp-code/tree/chapter-6" nextname="Displaying Dynamic Information in the Templates" nextlink="/tutorial/dynamic-templates.html" prevname="Fun with Template Tags" prevlink="/tutorial/template-tags.html" title="Adding Dynamic Data" path="/tutorial/dynamic-data.html" %}
 
 {% include 'includes/newsletter.html' %}
 

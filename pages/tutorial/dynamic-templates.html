@@ -22,7 +22,7 @@ analytics.page("Chapter 7: Displaying Dynamic Information in the Templates");
             <ol class="list-unstyled toc">
                 <li><a href="{% url '/tutorial/indiv-object-pages.html' %}">Setting up Individual Object Pages</a></li>
             </ol>
-            <h3 style="margin-top:0;">Previous chapter:</h3>
+            <h3>Previous chapter:</h3>
             <ol class="list-unstyled toc">
                 <li><a href="{% url '/tutorial/dynamic-data.html' %}">Adding Dynamic Data</a></li>
             </ol>
@@ -252,7 +252,8 @@ def index(request):
 Congrats — we now have objects in our database showing up on our website! Commit
 your work, and now let's move on to creating individual pages for these objects.
 {% endfilter %}
-</div></div></div>
+
+{% include 'includes/tutorial-footer.html' with github="https://github.com/hellowebapp/hellowebapp-code/tree/chapter-7" nextname="Setting up Individual Object Pages" nextlink="/tutorial/indiv-object-pages.html" prevname="Adding Dynamic Data" prevlink="/tutorial/dynamic-data.html" title="Displaying Dynamic Information in the Templates" path="/tutorial/dynamic-templates.html" %}
 
 {% include 'includes/newsletter.html' %}
 

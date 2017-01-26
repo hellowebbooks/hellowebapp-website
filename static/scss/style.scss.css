@@ -3929,6 +3929,9 @@ form input {
 .sharing a {
   color: #8a9a0f; }
 
+.sharing a:hover {
+  color: #606c0a; }
+
 .sharing .mc-field-group input[type="email"] {
   width: 150px;
   margin-right: 5px;

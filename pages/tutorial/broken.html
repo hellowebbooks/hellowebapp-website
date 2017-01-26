@@ -18,13 +18,32 @@ analytics.page("Chapter 15: What To Do If Your App is Broken");
             <h1>What To Do If Your App Is Broken</h1>
         </div>
         <div class="col-md-3 text-right" style="padding-right: 40px;">
-            <h3 style="margin-top:0;">Next chapter:</h3>
+                    <section class="sharing">
+                        <div>
+                            <a class="twitter" href="http://twitter.com/home/?status={{ title }} https://hellowebapp.com/{{ path|cut:".html" }}/ (via @hellowebapp)"><i class="fa fa-twitter"></i></a>
+
+                            <a class="facebook" href="#" onclick="
+                                window.open(
+                                'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href), 
+                                'facebook-share-dialog', 
+                                'width=626,height=436'); 
+                                return false;"><i class="fa fa-facebook"></i> 
+                            </a>
+                            <a class="mail" href="mailto:?subject={{ title }}&amp;body=Here's the link: https://hellowebapp.com/{{ path|cut:".html" }}/"><i class="fa fa-envelope"></i></a>
+                        </div>
+                    </section> 
+            
+            <h3>Next chapter:</h3>
             <ol class="list-unstyled toc">
                 <li><a href="{% url '/tutorial/important-know.html' %}">Important Things to Know</a></li>
             </ol>
-            <h3 style="margin-top:0;">Previous chapter:</h3>
+            <h3>Previous chapter:</h3>
             <ol class="list-unstyled toc">
                 <li><a href="{% url '/tutorial/deploying.html' %}">Deploying Your Web App</a></li>
+            </ol>
+            <h3>Buy the book:</h3>
+            <ol class="list-unstyled toc">
+                <li><a href="{% url '/order.html' %}">Order Hello Web App</a></li>
             </ol>
         </div>
 
@@ -149,7 +168,8 @@ These events are also a great place to meet new friends and expand your
 programming community!
 
 {% endfilter %}
-</div></div></div>
+
+{% include 'includes/tutorial-footer.html' with github="https://github.com/hellowebapp/hellowebapp-code/tree/master" nextname="Important Things to Know" nextlink="/tutorial/important-know.html" prevname="Deploying Your Web App" prevlink="/tutorial/deploying.html" title="What To Do If Your App Is Broken" path="/tutorial/broken.html" %}
 
 {% include 'includes/newsletter.html' %}
 

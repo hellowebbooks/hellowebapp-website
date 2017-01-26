@@ -22,7 +22,7 @@ analytics.page("Chapter 12: Setting Up Basic Browse Pages");
             <ol class="list-unstyled toc">
                 <li><a href="{% url '/tutorial/quick-hits.html' %}">Quick Hits: 404 Pages, requirements.txt, and Testing</a></li>
             </ol>
-            <h3 style="margin-top:0;">Previous chapter:</h3>
+            <h3>Previous chapter:</h3>
             <ol class="list-unstyled toc">
                 <li><a href="{% url '/tutorial/user-objects.html' %}">Associating Users with Objects</a></li>
             </ol>
@@ -279,7 +279,8 @@ correct pages.
 There we go, a great start to building browsable pages for your website
 visitors. Commit your work!
 {% endfilter %}
-</div></div></div>
+
+{% include 'includes/tutorial-footer.html' with github="https://github.com/hellowebapp/hellowebapp-code/tree/chapter-12" nextname="Quick Hits: 404 Pages, requirements.txt, and Testing" nextlink="/tutorial/quick-hits.html" prevname="Associating Users with Objects" prevlink="/tutorial/user-objects.html" title="Setting Up Basic Browse Pages" path="/tutorial/browse-page.html" %}
 
 {% include 'includes/newsletter.html' %}
 

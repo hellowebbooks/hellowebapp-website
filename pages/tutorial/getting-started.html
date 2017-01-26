@@ -22,7 +22,7 @@ analytics.page("Chapter 3: Getting Started");
             <ol class="list-unstyled toc">
                 <li><a href="{% url '/tutorial/setting-templates.html' %}">Setting Up Your Templates</a></li>
             </ol>
-            <h3 style="margin-top:0;">Previous chapter:</h3>
+            <h3>Previous chapter:</h3>
             <ol class="list-unstyled toc">
                 <li><a href="{% url '/tutorial/prerequisites.html' %}">Prerequisites</a></li>
             </ol>
@@ -67,7 +67,8 @@ can be found on our main repository here:
 Now get started building your app!
 
 {% endfilter %}
-</div></div></div>
+
+{% include 'includes/tutorial-footer.html' with github="https://github.com/hellowebapp/hellowebapp-code/tree/chapter-3" nextname="Setting Up Your Templates" nextlink="/tutorial/setting-templates.html" prevname="Prerequisites" prevlink="/tutorial/prerequisites.html" title="Getting Started" path="/tutorial/getting-started.html" %}
 
 {% include 'includes/newsletter.html' %}
 

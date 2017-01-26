@@ -22,7 +22,7 @@ analytics.page("Chapter 9: Forms.py Funsies");
             <ol class="list-unstyled toc">
                 <li><a href="{% url '/tutorial/reg-page.html' %}">Adding a Registration Page</a></li>
             </ol>
-            <h3 style="margin-top:0;">Previous chapter:</h3>
+            <h3>Previous chapter:</h3>
             <ol class="list-unstyled toc">
                 <li><a href="{% url '/tutorial/indiv-object-pages.html' %}">Setting Up Individual Object Pages</a></li>
             </ol>
@@ -281,7 +281,8 @@ were created to make sure all external links continue to work. You can manually
 override this in your admin, however.*
 
 {% endfilter %}
-</div></div></div>
+
+{% include 'includes/tutorial-footer.html' with github="https://github.com/hellowebapp/hellowebapp-code/tree/chapter-9" nextname="Adding a Registration Page" nextlink="/tutorial/reg-page.html" prevname="Setting Up Individual Object Pages" prevlink="/tutorial/indiv-object-pages.html" title="Forms.py Funsies" path="/tutorial/forms.html" %}
 
 {% include 'includes/newsletter.html' %}
 

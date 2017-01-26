@@ -22,7 +22,7 @@ analytics.page("Chapter 15: Deploying Your Web App");
             <ol class="list-unstyled toc">
                 <li><a href="{% url '/tutorial/broken.html' %}">What To Do If Your App is Broken</a></li>
             </ol>
-            <h3 style="margin-top:0;">Previous chapter:</h3>
+            <h3>Previous chapter:</h3>
             <ol class="list-unstyled toc">
                 <li><a href="{% url '/tutorial/quick-hits.html' %}">Quick Hits: 404 Pages, requirements.txt, and Testing</a></li>
             </ol>
@@ -477,7 +477,8 @@ For the future, as you develop locally, run the below steps to push it live:
     repository to back your app up in the cloud. 
 
 {% endfilter %}
-</div></div></div>
+
+{% include 'includes/tutorial-footer.html' with github="https://github.com/hellowebapp/hellowebapp-code/tree/chapter-14" nextname="What To Do If Your App is Broken" nextlink="/tutorial/broken.html" prevname="Quick Hits: 404 Pages, requirements.txt, and Testing" prevlink="/tutorial/quick-hits.html" title="Deploying Your Web App" path="/tutorial/deploying.html" %}
 
 {% include 'includes/newsletter.html' %}
 

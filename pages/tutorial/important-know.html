@@ -22,7 +22,7 @@ analytics.page("Chapter 16: Important Things to Know");
             <ol class="list-unstyled toc">
                 <li><a href="{% url '/tutorial/moving-forward.html' %}">Moving Forward</a></li>
             </ol>
-            <h3 style="margin-top:0;">Previous chapter:</h3>
+            <h3>Previous chapter:</h3>
             <ol class="list-unstyled toc">
                 <li><a href="{% url '/tutorial/broken.html' %}">What To Do If Your App Is Broken</a></li>
             </ol>
@@ -192,7 +192,7 @@ overwrite information that you need.)
 In a nut shell, the shell is a handy skill to have once you're comfortable using
 it.
 {% endfilter %}
-</div></div></div>
+{% include 'includes/tutorial-footer.html' with github="https://github.com/hellowebapp/hellowebapp-code/tree/master" nextname="Moving Forward" nextlink="/tutorial/moving-forward.html" prevname="What To Do If Your App Is Broken" prevlink="/tutorial/broken.html" title="Important Things to Know" path="/tutorial/important-know.html" %}
 
 {% include 'includes/newsletter.html' %}
 
