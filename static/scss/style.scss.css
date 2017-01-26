@@ -4082,6 +4082,34 @@ figure.video {
       left: -208px;
       max-width: 155px; } }
 
+#nag-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 35px;
+  background-color: #F48E54;
+  text-align: center; }
+  #nag-bar a {
+    font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    font-size: 0.7rem;
+    color: #fff;
+    border-bottom: 0;
+    background-image: none;
+    text-decoration: none; }
+  #nag-bar a:hover {
+    color: #f2f2f2; }
+
+@media (min-width: 34em) {
+  #nag-bar a {
+    font-size: 1rem; } }
+
+body {
+  padding-top: 30px; }
+
 .tutorial-setting-up-the-password-change-functionality .jumbotron,
 .hello-web-app-has-been-updated-for-django-19 .jumbotron,
 .hello-web-app-intermediate-concepts-is-on-product-hunt-today .jumbotron,

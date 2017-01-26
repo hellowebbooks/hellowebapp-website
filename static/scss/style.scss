@@ -1018,6 +1018,38 @@ figure.video {
     }
 }
 
+#nag-bar {
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:35px;
+    background-color: #F48E54;
+    text-align: center;
+    a {
+        font-family: $font-family-sans-serif;
+        text-transform: uppercase;
+        font-weight: bold;
+        letter-spacing: 0.1em;
+        font-size: 0.7rem;
+        color: #fff;
+        border-bottom: 0;
+        background-image: none;
+        text-decoration: none;
+    }
+    a:hover {
+        color: darken(#fff, 5%);
+    }
+}
+
+@include media-breakpoint-up(sm) {
+    #nag-bar a { font-size: 1rem; }
+}
+
+body {
+    padding-top: 30px;
+}
+
 // Individual post overrides
 
 // posts that need a "featured image" for the blog page but not on their actual pages
