@@ -612,9 +612,9 @@ form input {
     }
 }
 
-// setup page
+// setup and tutorials page
 
-#setup {
+#setup, #tutorial {
     .toc li li {
         font-style: italic;
         font-size: 80%;
@@ -640,6 +640,9 @@ form input {
         font-size: 80%;
     }
 }
+
+#tutorial pre { margin-top: -1em; }
+#tutorial pre code.sh, #tutorial pre code.codespace { margin-top: 1em; }
 
 .setup-sidebar {
     padding-right: 40px;
@@ -851,6 +854,44 @@ form input {
     }
 }
 
+#tutorial {
+    figure img {
+        border: 1px solid #ccc;
+    }
+    .cmd {
+       -moz-user-select: -moz-none;
+       -khtml-user-select: none;
+       -webkit-user-select: none;
+
+       /*
+         Introduced in IE 10.
+         See http://ie.microsoft.com/testdrive/HTML5/msUserSelect/
+       */
+       -ms-user-select: none;
+       user-select: none;
+    }
+}
+
+#post, #tutorial {
+    figure {
+        margin: 2em 0;
+        position: relative;
+        figcaption {
+            font-size: 1rem;
+            color: $gray-light;
+            padding-top: 0.5em;
+            font-family: $font-family-sans-serif;
+        }
+    }
+    figure.full {
+    }
+    figure.caption {
+        figcaption {
+            top: 0;
+            border-top: 1px solid $gray-lighter;
+        }
+    }
+}
 
 // posts
 #post {
@@ -882,24 +923,6 @@ form input {
         -moz-hyphens: auto;
         -webkit-hyphens: auto;
         hyphens: auto;
-    }
-    figure {
-        margin: 2em 0;
-        position: relative;
-        figcaption {
-            font-size: 1rem;
-            color: $gray-light;
-            padding-top: 0.5em;
-            font-family: $font-family-sans-serif;
-        }
-    }
-    figure.full {
-    }
-    figure.caption {
-        figcaption {
-            top: 0;
-            border-top: 1px solid $gray-lighter;
-        }
     }
     blockquote {
         text-align: left;

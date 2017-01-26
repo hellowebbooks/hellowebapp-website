@@ -7,7 +7,7 @@ analytics.page("Chapter 12: Setting Up Basic Browse Pages");
 {% endblock %}
 
 {% block bodyclass %}
-<body id="setup">
+<body id="tutorial">
 {% endblock %}
 
 {% block content %}
@@ -53,7 +53,7 @@ Right now our app allows people to sign up, create a `Thing`, and then edit
 their `Thing`. However, the only way for users to browse all the `Thing`s your
 web app contains is by going to your homepage. Let's set up a basic browse page.
 
-***Note:** We won't be setting up text search, like Google, due to it being way
+*_Note:_ We won't be setting up text search, like Google, due to it being way
 more complex and beyond the scope of this book. If you're interested in learning
 more about how to do this, check out Haystack
 ([http://hellowebapp.com/28](http://hellowebapp.com/28)).*
@@ -155,12 +155,10 @@ Create a new directory for search in your templates, and then create your
 </code></pre>
 
 {% filter markdown %}
-***Note: **Technically we're browsing, not searching, but I find calling the
+***Note:** Technically we're browsing, not searching, but I find calling the
 pages and process "search" easier.*
 
 Our *search.html* file:
-
-*search.html*
 {% endfilter %}
 
 {% verbatim %}

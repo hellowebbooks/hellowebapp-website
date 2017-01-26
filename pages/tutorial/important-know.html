@@ -7,7 +7,7 @@ analytics.page("Chapter 16: Important Things to Know");
 {% endblock %}
 
 {% block bodyclass %}
-<body id="setup">
+<body id="tutorial">
 {% endblock %}
 
 {% block content %}
@@ -88,7 +88,7 @@ It's always a good idea to add comments above your code to describe what's going
 on. For example, random chuck of code from my app:
 {% endfilter %}
 
-<pre><code class="python">
+<pre><code class="python codespace">
 for line in fileinput.input(paths):
     if not line.strip():
         # Empty line
@@ -166,7 +166,7 @@ Like how we ran `python manage.py runserver` in the command line (feel free to
 open a new window if you'd like), run `python manage.py shell`:
 {% endfilter %}
 
-<pre><code class="python">
+<pre><code class="sh">
 <span class="cmd">$</span> python manage.py shell
 Python 2.7.8 (default, Aug 24 2014, 21:26:19) 
 [GCC 4.2.1 Compatible Apple LLVM 5.1 (clang-503.0.40)] on darwin

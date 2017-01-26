@@ -7,7 +7,7 @@ analytics.page("Chapter 10: Adding a Registration Page");
 {% endblock %}
 
 {% block bodyclass %}
-<body id="setup">
+<body id="tutorial">
 {% endblock %}
 
 {% block content %}
@@ -66,9 +66,13 @@ everything we need for user registration.
 We're going to use pip to install. Make sure you're in your virtual environment,
 then type this into your command line:
 
-{linenos=off}
-    $ pip install django-registration-redux==1.3
+{% endfilter %}
 
+<pre><code class="sh">
+<span class="cmd">$</span> pip install django-registration-redux==1.3
+</code></pre>
+
+{% filter markdown %}
 Next, you'll need to tell Django that we've installed this plugin — like we did
 when we added `collection` but this time it's an external app we're installing.
 Head to `settings.py` and add `registration` to the list:
@@ -86,9 +90,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.humanize',
-# leanpub-start-insert
-    'registration',
-# leanpub-end-insert
+    <b>'registration',</b>
 )
 </code></pre>
 
@@ -100,7 +102,7 @@ bottom of *settings.py*:
 
 {% endfilter %}
 
-<pre><code class="python">
+<pre><code class="python codespace">
 ACCOUNT_ACTIVATION_DAYS = 7
 </code></pre>
 
@@ -114,8 +116,8 @@ Last, django-registration-redux comes with some migration files that we need to
 apply to our database. Apply these using `python manage.py migrate`:
 {% endfilter %}
 
-<pre><code class="python">
-$ python manage.py migrate
+<pre><code class="sh">
+<span class="cmd">$</span> python manage.py migrate
 Operations to perform:
   Apply all migrations: sessions, admin, collection, contenttypes, auth, registration
 Running migrations:
@@ -131,7 +133,7 @@ Running migrations:
 We're going to basically import django-registration-redux's URLs for use in our
 app, which is fairly simple.
 
-Head over to `urls.py` and add the lines indicated:
+Head over to *urls.py* and add the lines indicated:
 
 *urls.py*
 {% endfilter %}
@@ -175,7 +177,7 @@ EMAIL_PORT = 1025
 While we're here, let's tell Django what page we want to redirect to after
 successful registration. Add after the code block above:
 
-*settings.py
+*settings.py*
 {% endfilter %}
 
 <pre><code class="python">
@@ -191,7 +193,7 @@ added to our app (More info:
 new folder in our templates directory to hold these new templates:
 {% endfilter %}
 
-<pre><code class="python">
+<pre><code class="sh">
 <span class="cmd">$</span> cd collection/templates/
 <span class="cmd">collection/templates $</span> mkdir registration
 <span class="cmd">collection/templates $</span> cd registration
@@ -308,18 +310,18 @@ Update your *base.html* layout file:
 
 {% verbatim %}
 <pre><code class="django">
-    <b>{% if user.is_authenticated %}
-    &lt;li&gt;
-        &lt;a href="{% url 'auth_logout' %}"&gt;Logout&lt;/a&gt;
-    &lt;/li&gt;
-    {% else %}
-    &lt;li&gt;
-        &lt;a href="{% url 'auth_login' %}"&gt;Login&lt;/a&gt;
-    &lt;/li&gt;
-    &lt;li&gt;
-        &lt;a href="{% url 'registration_register' %}"&gt;Register&lt;/a&gt;
-    &lt;/li&gt;
-    {% endif %}</b>
+<b>{% if user.is_authenticated %}
+&lt;li&gt;
+    &lt;a href="{% url 'auth_logout' %}"&gt;Logout&lt;/a&gt;
+&lt;/li&gt;
+{% else %}
+&lt;li&gt;
+    &lt;a href="{% url 'auth_login' %}"&gt;Login&lt;/a&gt;
+&lt;/li&gt;
+&lt;li&gt;
+    &lt;a href="{% url 'registration_register' %}"&gt;Register&lt;/a&gt;
+&lt;/li&gt;
+{% endif %}</b>
 </ul>
 </code></pre>
 {% endverbatim %}
@@ -368,13 +370,13 @@ to activate by setting up the appropriate URLs and templates.
 Like earlier, here's the full list of templates to create in the registration
 directory:
 
-* password_change_done.html
-* password_change_form.html
-* password_reset_complete.html
-* password_reset_confirm.html
-* password_reset_done.html
-* password_reset_email.txt
-* password_reset_form.html
+* password\_change\_done.html
+* password\_change\_form.html
+* password\_reset\_complete.html
+* password\_reset\_confirm.html
+* password\_reset\_done.html
+* password\_reset\_email.txt
+* password\_reset\_form.html
 
 And the content to put in the templates — quite a few files, but very simple
 content.
@@ -489,7 +491,7 @@ content.
 {% endfilter %}
 
 {% verbatim %}
-<pre><code class="python">
+<pre><code class="markdown">
 {% autoescape off %}
 You're receiving this email because you requested a password
 reset. Please go to the following page and choose a new 
@@ -536,7 +538,7 @@ these URLs to your *urls.py*:
 {% endfilter %}
 
 <pre><code class="python">
-...
+# add to the top
 <b>from django.contrib.auth.views import (
    password_reset, 
    password_reset_done,
@@ -628,7 +630,7 @@ command line window to see your "email", which should look something like the
 below:
 {% endfilter %}
 
-<pre><code class="python">
+<pre><code class="markdown codespace">
 [27/Dec/2014 00:29:34] "GET /accounts/password/reset/ HTTP/1.1" 200 1079
 MIME-Version: 1.0
 Content-Type: text/plain; charset="utf-8"
@@ -672,9 +674,9 @@ someone can create an account and a new object at the same time, as well as log
 in and update their object as well. Commit your work if you haven't already!
 {% endfilter %}
 
-{% include 'includes/newsletter.html' %}
-
 {% include 'includes/tutorial-footer.html' with github="https://github.com/hellowebapp/hellowebapp-code/tree/chapter-10" nextname="Associating Users with Objects" nextlink="/tutorial/user-objects.html" prevname="Forms.py Funsies" prevlink="/tutorial/forms.html" title="Adding a Registration Page" path="/tutorial/reg-page.html" %}
+
+{% include 'includes/newsletter.html' %}
 
 {% endblock content %}
 

@@ -7,7 +7,7 @@ analytics.page("Chapter 5: Fun With Template Tags");
 {% endblock %}
 
 {% block bodyclass %}
-<body id="setup">
+<body id="tutorial">
 {% endblock %}
 
 {% block content %}
@@ -61,9 +61,9 @@ template that all other templates import.
 In your templates directory, add a new file called *base.html*.
 {% endfilter %}
 
-<pre><code class="python">
-$ cd collection/templates
-collection/templates $ touch base.html
+<pre><code class="sh">
+<span class="cmd">$</span> cd collection/templates
+<span class="cmd">collection/templates $</span> touch base.html
 </code></pre>
 
 {% filter markdown %}
@@ -101,8 +101,6 @@ into *base.html*:
 
 {% filter markdown %}
 *base.html* now:
-
-*base.html*
 {% endfilter %}
 
 {% verbatim %}
@@ -140,8 +138,6 @@ template.</p>
 
 {% filter markdown %}
 Our new *index.html*:
-
-*index.html*
 {% endfilter %}
 
 {% verbatim %}
@@ -163,20 +159,22 @@ A few important things to note:
 {% endfilter %}
 
 {% verbatim %}
+<ul>
 <li>Each block (like <code>{% block content %}</code>) has the name we defined
-    in our base.html file so the template engine knows where to render which
-    part.</li>
+in our base.html file so the template engine knows where to render which
+part.</li>
 <li>Check out the title block. See the <code>{{ block.super }}</code>? In our
-    <i>base.html</i> file, we defined "My Hello Web App Project" as the default
-    content. <code>{{ block.super }}</code> will insert the contents of the
-    default block instead of overriding it. Now our page titles can have both
-    the local page name as well as the title of the website. If you ever change
-    the main title of the website, you only have to update it in *base.html*
-    and it will automatically update the child pages.</li>
+<i>base.html</i> file, we defined "My Hello Web App Project" as the default
+content. <code>{{ block.super }}</code> will insert the contents of the
+default block instead of overriding it. Now our page titles can have both
+the local page name as well as the title of the website. If you ever change
+the main title of the website, you only have to update it in *base.html*
+and it will automatically update the child pages.</li>
 <li>If you’re loading static assets like images, you’ll still need to add
-    <code>{% load staticfiles %}</code> to the top of the base layout file.
-    We’re not yet in <i>index.html</i> so we haven’t added it but keep in mind
-    if you add static files to your version.</li>
+<code>{% load staticfiles %}</code> to the top of the base layout file.
+We’re not yet in <i>index.html</i> so we haven’t added it but keep in mind
+if you add static files to your version.</li>
+</ul>
 {% endverbatim %}
 
 {% filter markdown %}
@@ -195,7 +193,7 @@ all extending one layout template.
     because it already has the <code>{% verbatim %}{% block %}{% endverbatim %}
     </code> tags added for inheritance.</p>
 
-<pre><code class="python">
+<pre><code class="sh">
 <span class="cmd">templates $</span> cp index.html about.html
 <span class="cmd">templates $</span> cp index.html contact.html
 </code></pre>
@@ -376,12 +374,14 @@ Back over in *index.html*, we can access these variables in two ways:
 {% endfilter %}
 
 {% verbatim %}
+<ul>
 <li> <code>{{ variable }}</code>: Surrounded by two curly braces, this simply
     displays what was passed in.</li> 
 <li> <code>{% tag %}</code>: <code>{% %}</code> is django's version of 
     <code>&lt; &gt;</code> in HTML. A tag in curly braces/percent signs means 
     we’re doing something either with that variable or to the template, such as 
     loading static files.</li>
+</ul>
 {% endverbatim %}
 
 {% filter markdown %}
@@ -424,7 +424,7 @@ Check out an *if-else statement* in action:
 {% endfilter %}
 
 {% verbatim %}
-<pre><code class="django">
+<pre><code class="django codespace">
 &lt;p&gt;{% if number %}Number exists!{% endif %}&lt;/p&gt;
 </code></pre>
 {% endverbatim %}
@@ -439,13 +439,13 @@ And another example:
 
 {% verbatim %}
 <pre><code class="django">
-    &lt;p&gt;There are six dogs! <b>
-    {% if number == 6 %}
-        True
-    {% else %}
-        False
-    {% endif %}
-    </b>&lt;/p&gt;
+&lt;p&gt;There are six dogs! <b>
+{% if number == 6 %}
+    True
+{% else %}
+    False
+{% endif %}
+</b>&lt;/p&gt;
 </code></pre>
 {% endverbatim %}
 
@@ -461,7 +461,7 @@ if the number is more than one:
 {% endfilter %}
 
 {% verbatim %}
-<pre><code class="django">
+<pre><code class="django codespace">
 &lt;p&gt;There are {{ number }} dog{{ number|pluralize }}!&lt;/p&gt;
 </code></pre>
 {% endverbatim %}
@@ -475,7 +475,7 @@ This template tag also accepts different suffixes:
 {% endfilter %}
 
 {% verbatim %}
-<pre><code class="django">
+<pre><code class="django codespace">
 &lt;p&gt;There are {{ number }} walrus{{ number|pluralize:"es" }}!&lt;/p&gt;
 </code></pre>
 {% endverbatim %}
@@ -509,7 +509,7 @@ INSTALLED_APPS = (
     going to start with <code>apnumber</code>, which spells out the numbers
     1-9:</p>
 
-<em>index.html</em>
+<p><em>index.html</em></p>
 
 <pre><code class="django">
 {% extends 'base.html' %}

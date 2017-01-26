@@ -3767,28 +3767,34 @@ form input {
 .table-of-contents li {
   margin: 1em 0; }
 
-#setup .toc li li {
+#setup .toc li li, #tutorial .toc li li {
   font-style: italic;
   font-size: 80%;
   margin-top: 2px; }
 
-#setup pre {
+#setup pre, #tutorial pre {
   margin: 1em 0 1em -15px; }
-  #setup pre code {
+  #setup pre code, #tutorial pre code {
     background-color: #f7f7f7;
     padding: 13px 15px !important; }
-    #setup pre code span.cmd {
+    #setup pre code span.cmd, #tutorial pre code span.cmd {
       color: #999;
       color: rgba(0, 0, 0, 0.4); }
-    #setup pre code .hljs-built_in {
+    #setup pre code .hljs-built_in, #tutorial pre code .hljs-built_in {
       color: #4d4d4c !important; }
 
-#setup h3 {
+#setup h3, #tutorial h3 {
   font-size: 1.6rem;
   margin: 1.5em 0 0.5em 0; }
 
-#setup li code {
+#setup li code, #tutorial li code {
   font-size: 80%; }
+
+#tutorial pre {
+  margin-top: -1em; }
+
+#tutorial pre code.sh, #tutorial pre code.codespace {
+  margin-top: 1em; }
 
 .setup-sidebar {
   padding-right: 40px; }
@@ -3949,6 +3955,33 @@ form input {
   padding-left: 7px;
   padding-right: 7px; }
 
+#tutorial figure img {
+  border: 1px solid #ccc; }
+
+#tutorial .cmd {
+  -moz-user-select: -moz-none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  /*
+         Introduced in IE 10.
+         See http://ie.microsoft.com/testdrive/HTML5/msUserSelect/
+       */
+  -ms-user-select: none;
+  user-select: none; }
+
+#post figure, #tutorial figure {
+  margin: 2em 0;
+  position: relative; }
+  #post figure figcaption, #tutorial figure figcaption {
+    font-size: 1rem;
+    color: #818a91;
+    padding-top: 0.5em;
+    font-family: "Source Sans Pro", Helvetica, Arial, sans-serif; }
+
+#post figure.caption figcaption, #tutorial figure.caption figcaption {
+  top: 0;
+  border-top: 1px solid #eceeef; }
+
 #post .jumbotron {
   background-size: cover;
   background-position: center center; }
@@ -3975,19 +4008,6 @@ form input {
   -moz-hyphens: auto;
   -webkit-hyphens: auto;
   hyphens: auto; }
-
-#post figure {
-  margin: 2em 0;
-  position: relative; }
-  #post figure figcaption {
-    font-size: 1rem;
-    color: #818a91;
-    padding-top: 0.5em;
-    font-family: "Source Sans Pro", Helvetica, Arial, sans-serif; }
-
-#post figure.caption figcaption {
-  top: 0;
-  border-top: 1px solid #eceeef; }
 
 #post blockquote {
   text-align: left;

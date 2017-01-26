@@ -7,7 +7,7 @@ analytics.page("Chapter 9: Forms.py Funsies");
 {% endblock %}
 
 {% block bodyclass %}
-<body id="setup">
+<body id="tutorial">
 {% endblock %}
 
 {% block content %}
@@ -75,7 +75,7 @@ urlpatterns = [
     url(r'^contact/$', 
         TemplateView.as_view(template_name='contact.html'),
         name='contact'),
-    url(r'^things/(?P<slug>[-\w]+)/$', views.thing_detail',
+    url(r'^things/(?P<slug>[-\w]+)/$', views.thing_detail,
         name='thing_detail'),
     # new line we're adding!
     <b>url(r'^things/(?P<slug>[-\w]+)/edit/$', 
@@ -158,7 +158,7 @@ to add a file called *forms.py* into our `collection` app.
 
 {% endfilter %}
 
-<pre><code class="python">
+<pre><code class="sh">
 <span class="cmd">$</span> cd collection
 <span class="cmd">collection $</span> touch forms.py
 </code></pre>
@@ -198,7 +198,7 @@ edit your object.
 
 {% endfilter %}
 
-<pre><code class="python">
+<pre><code class="sh">
 <span class="cmd">$</span> cd collection/templates/things
 <span class="cmd">collection/templates/things $</span> touch edit_thing.html
 </code></pre>
@@ -232,7 +232,8 @@ we'll add into our template:
 {% filter markdown %}
 
 A couple of things to note:
-* What's that whole `{% csrf_token %}` stuff? Django requires this added to
+
+* What's that whole `{% verbatim %}{% csrf_token %}{% endverbatim %}` stuff? Django requires this added to
     every form that submits via POST. Long story short, it's *Cross Site Request
     Forgery* protection (More info:
     [http://hellowebapp.com/21](http://hellowebapp.com/21)) that ships with

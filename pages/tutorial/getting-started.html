@@ -7,7 +7,7 @@ analytics.page("Chapter 3: Getting Started");
 {% endblock %}
 
 {% block bodyclass %}
-<body id="setup">
+<body id="tutorial">
 {% endblock %}
 
 {% block content %}
@@ -68,8 +68,14 @@ Once you've finished, head back to your command line (make sure you're in your
 virtual environment and you're in the same directory as *manage.py*) and run
 `python manage.py runserver`. If everything worked correctly, you should see the
 Django congratuations page (congratulations!)
+{% endfilter %}
 
-![What you should see if you correctly installed Python and Django and started the local web server.](images/newproject.png) 
+<figure class="caption">
+    <img src="/static/images/tutorial/newproject.png" alt=""/>
+    <figcaption>What you should see if you correctly installed Python and Django and started the local web server.</figcaption>
+</figure>
+
+{% filter markdown %}
 
 As you go through the rest of the book, keep in mind that if you ever need to
 check that you have the correct code snippets copied into your app, all code in

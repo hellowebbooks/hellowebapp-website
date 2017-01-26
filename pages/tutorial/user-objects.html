@@ -7,7 +7,7 @@ analytics.page("Chapter 11: Associating Users with Objects");
 {% endblock %}
 
 {% block bodyclass %}
-<body id="setup">
+<body id="tutorial">
 {% endblock %}
 
 {% block content %}
@@ -97,7 +97,7 @@ created, just our future ones.
 Create the migration by running the command below:
 {% endfilter %}
 
-<pre><code class="python">
+<pre><code class="sh">
 <span class="cmd">$</span> python manage.py makemigrations
 Migrations for 'collection':
   0002_thing_user.py:
@@ -108,7 +108,7 @@ Migrations for 'collection':
 And then apply the migration...
 {% endfilter %}
 
-<pre><code class="python">
+<pre><code class="sh">
 <span class="cmd">$</span> python manage.py migrate
 Operations to perform:
   Synchronize unmigrated apps: registration
@@ -205,7 +205,7 @@ We're going to be reusing the form (`ThingForm`) we made before! Next, we'll
 need to create the template. Create the file:
 {% endfilter %}
 
-<pre><code class="python">
+<pre><code class="sh">
 <span class="cmd">$</span> cd collection/templates/things
 <span class="cmd">collection/templates/things $</span> touch create_thing.html
 </code></pre>
@@ -249,7 +249,7 @@ We're going to put this piece of overwritten code in its own file. In your
 
 {% endfilter %}
 
-<pre><code class="python">
+<pre><code class="sh">
 <span class="cmd">$</span> cd collection
 <span class="cmd">collection $</span> touch backends.py
 </code></pre>

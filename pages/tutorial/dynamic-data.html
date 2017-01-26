@@ -7,7 +7,7 @@ analytics.page("Chapter 6: Adding Dynamic Data");
 {% endblock %}
 
 {% block bodyclass %}
-<body id="setup">
+<body id="tutorial">
 {% endblock %}
 
 {% block content %}
@@ -75,7 +75,7 @@ Type this into your command line:
 
 {% endfilter %}
 
-<pre><code class="python">
+<pre><code class="sh">
 <span class="cmd">$</span> python manage.py createsuperuser
 </code></pre>
 
@@ -170,7 +170,7 @@ line (in the same folder as *manage.py*), type this in:
 
 {% endfilter %}
 
-<pre><code class="python">
+<pre><code class="sh">
 <span class="cmd">$</span> python manage.py makemigrations
 </code></pre>
 
@@ -178,7 +178,7 @@ line (in the same folder as *manage.py*), type this in:
 And this is what you should see as a result:
 {% endfilter %}
 
-<pre><code class="python">
+<pre><code class="sh">
 Migrations for 'collection':
   0001_initial.py:
     - Create model Thing
@@ -189,7 +189,7 @@ We've created the migration file, but we haven't applied it.  Run `python
 manage.py migrate` next:
 {% endfilter %}
 
-<pre><code class="python">
+<pre><code class="sh">
 <span class="cmd">$</span> python manage.py migrate
 Operations to perform:
   Apply all migrations: admin, contenttypes, collection, auth, sessions

@@ -7,7 +7,7 @@ analytics.page("Chapter 8: Setting Up Individual Object Pages");
 {% endblock %}
 
 {% block bodyclass %}
-<body id="setup">
+<body id="tutorial">
 {% endblock %}
 
 {% block content %}
@@ -89,6 +89,7 @@ development (you can learn more here if you want, though:
 [http://hellowebapp.com/19](http://hellowebapp.com/19))
 
 Going over the bits in the new line:
+
 * `url(`: Beginning of the url definition.
 * `r'^things/`: Basically says "starts with 'things.'" You can update this to
     match your model, so `r'profiles/` or `r'surfboards/` for example. r stands
@@ -115,10 +116,11 @@ from collection.models import Thing
 
 def index(request):
     things = Thing.objects.all()
-    return render(request, ‘index.html', {
+    return render(request, 'index.html', {
         'things': things,
     })
 
+# our new view
 <b>def thing_detail(request, slug):
     # grab the object...
     thing = Thing.objects.get(slug=slug)
@@ -140,7 +142,7 @@ And now to the template...
 We'll need to create the new HTML file that the view indicates.
 {% endfilter %}
 
-<pre><code class="python">
+<pre><code class="sh">
 <span class="cmd">$</span> cd collection/templates
 <span class="cmd">collection/templates $</span> mkdir things
 <span class="cmd">collection/templates $</span> cd things
@@ -175,19 +177,17 @@ Here's our new individual object HTML template:
     &lt;p&gt;{{ thing.description }}&lt;/p&gt;
 {% endblock content %}
 </code></pre>
+
+<p><code>{{ thing }}</code> is the object we passed in from the database, and we can access
+the fields we set in the model (name and description) by adding the model field
+after a dot — basically, <code>{{ thing.name }}</code>.</p>
 {% endverbatim %}
 
 {% filter markdown %}
-`{{ thing }}` is the object we passed in from the database, and we can access
-the fields we set in the model (name and description) by adding the model field
-after a dot — basically, `{% verbatim %}{{ thing.name }}{% endverbatim %}`.
-
 How do we get to these individual pages? Let's update our index view to make the
 list of objects we're displaying to link to their individual pages.
 
 Our new *index.html* template:
-
-*index.html*
 {% endfilter %}
 
 {% verbatim %}

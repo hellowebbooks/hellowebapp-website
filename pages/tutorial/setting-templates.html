@@ -7,7 +7,7 @@ analytics.page("Chapter 4: Setting Up Your Templates");
 {% endblock %}
 
 {% block bodyclass %}
-<body id="setup">
+<body id="tutorial">
 {% endblock %}
 
 {% block content %}
@@ -59,7 +59,7 @@ with *models.py*). Using `mkdir`, create a "templates" directory, and then
 create *index.html* within it.
 {% endfilter %}
 
-<pre><code class="python">
+<pre><code class="sh">
 <span class="cmd">$</span> cd collection
 <span class="cmd">collection $</span> mkdir templates
 <span class="cmd">collection $</span> cd templates
@@ -101,7 +101,7 @@ associate the root directory (*/*) with the newly created *index.html*.
 In *urls.py*'s entries area, find the `urlpatterns` line, remove the
 pre-existing comments, and add in the lines indicated:
 
-*urls.py
+*urls.py*
 {% endfilter %}
 
 <pre><code class="python">
@@ -201,7 +201,7 @@ it, add in directories for CSS, Javascript, and images. In the CSS directory,
 add a blank *style.css* file.
 {% endfilter %}
 
-<pre><code class="python">
+<pre><code class="sh">
 <span class="cmd">$</span> cd collection
 <span class="cmd">collection $</span> mkdir static
 <span class="cmd">collection $</span> cd static
@@ -212,15 +212,15 @@ add a blank *style.css* file.
 <span class="cmd">collection/static/css $</span> touch style.css
 </code></pre>
 
-<p>Head back into your *index.html* page. We'll need to tell Django that there are
+<p>Head back into your <i>index.html</i> page. We'll need to tell Django that there are
 static files used on this page, so at the top (like imports in <i>views.py</i> and
-<i>urls.py</i>) add <code>{% verbatim %}{% load staticfiles %}{% endverbatim %}</code>. Why
-    the <code>{% verbatim %}{%{% endverbatim %}</code>? We'll get to that soon.</p>
+<i>urls.py</i>) add <code>&lcub;% load staticfiles %&rcub;</code>. Why
+    the <code>&lcub;%</code>? We'll get to that soon.</p>
+
+<p>Now that we can add static files to this template, add your CSS tag to the
+<code>&lt;HEAD&gt;</code> just like this:</p>
 
 {% filter markdown %}
-Now that we can add static files to this template, add your CSS tag to the
-`&lt;HEAD&gt;` just like this:
-
 *index.html*
 {% endfilter %}
 
@@ -271,11 +271,9 @@ Nice! Feel free to update your CSS more at this point.
 {% endfilter %}
 
 {% verbatim %}
-<p>To link to any static file from a template, use the `{% static
-'FILELOCATION/FILENAME.TYPE' %}` syntax, such as `{% static 'js/script.js' %}`
-or `{% static 'images/logo.jpg' %}`. Keep in mind you still need the `IMG` HTML
-tag when displaying images, for example: `&lt;img src="{% static 'images/logo.jpg'
-%}" alt=""/&gt;`</p>
+<p>To link to any static file from a template, use the <code>{% static 'FILELOCATION/FILENAME.TYPE' %}</code> syntax, such as <code>{% static 'js/script.js' %}</code> or
+<code>{% static 'images/logo.jpg' %}</code>. Keep in mind you still need the <code>IMG</code> HTML
+tag when displaying images, for example: <code>&lt;img src="{% static 'images/logo.jpg' %}" alt=""/&gt;</code></p>
 {% endverbatim %}
 
 {% filter markdown %}
