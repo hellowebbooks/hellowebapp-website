@@ -72,8 +72,8 @@
         <div class="row">
             <ul class="list-inline col-sm-4">
                 <li class="hidden-xs-down"><a href="{% url '/tutorial/intro.html' %}">Tutorial</a></li>
-                <li class="hidden-xs-down"><a href="{% url '/start.html' %}">About</a></li>
-                <li class="hidden-sm-down"><a href="{% url '/news.html' %}">Blog</a></li>
+                <li class="hidden-sm-down"><a href="{% url '/start.html' %}">About</a></li>
+                <li class="hidden-md-down"><a href="{% url '/news.html' %}">Blog</a></li>
             </ul>
             <a id="home-link" class="col-sm-4" href="{% url '/index.html' %}">
                 <div>
@@ -84,7 +84,7 @@
                 <li class="hidden-md-down"><a href="{% url '/faq.html' %}">FAQ</a></li>
                 <li class="hidden-sm-up"><a href="{% url '/tutorial/intro.html' %}">Tutorial</a></li>
                 <li class="hidden-sm-up"><a href="{% url '/start.html' %}">About</a></li>
-                <li class="hidden-sm-up"><a href="{% url '/news.html' %}">Blog</a></li>
+                <li class="hidden-lg-up"><a href="{% url '/news.html' %}">Blog</a></li>
                 <li class="hidden-md-down"><a href="{% url '/press.html' %}">Press</a></li>
                 <li><a href="{% url '/order.html' %}">Buy</a></li>
             </ul>
@@ -128,8 +128,11 @@
     </div>
 
     <div id="nag-bar">
-        <a href="https://www.kickstarter.com/projects/1868398473/hello-web-design-design-basics-for-non-designers/" target="_blank">
-            Support the Hello Web Design Kickstarter today! &#8594;
+        <a href="https://www.kickstarter.com/projects/1868398473/hello-web-design-design-basics-for-non-designers/" class="hidden-sm-down" target="_blank">
+            Support the new Hello Web Design Kickstarter, ending Feb 17th! &#8594;
+        </a>
+        <a href="https://www.kickstarter.com/projects/1868398473/hello-web-design-design-basics-for-non-designers/" class="hidden-md-up" target="_blank">
+            Support the Hello Web Design Kickstarter! &#8594;
         </a>
     </div>
 
