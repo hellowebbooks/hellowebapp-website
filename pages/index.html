@@ -153,6 +153,7 @@ analytics.page("Homepage");
 
 {% block scripts %}
 {{ block.super }}
+{% comment %}
 <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/signup-forms/popup/embed.js" data-dojo-config="usePlainJson: true, isDebug: false"></script>
 <script type="text/javascript">
     function showMailingPopUp() {
@@ -178,5 +179,6 @@ analytics.page("Homepage");
         });
     });
 </script>
+{% endcomment %}
 {% include 'includes/newsletter-analytics.html' %}
 {% endblock scripts %}

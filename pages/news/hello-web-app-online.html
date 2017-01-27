@@ -1,0 +1,35 @@
+title: Hello Web App is now free to read online during the Hello Web Design Kickstarter!
+# headline: An introduction
+excerpt: In honor of the Hello Web Design Kickstarter, I've made Hello Web App free to read online! Right now this is planned to be free through the end of the Kickstarter (which ends Feb. 17th) and we'll see what happens after that.
+author: Tracy Osborn 
+featuredimage: /images/blog/2015/5/7/hellowebapp3.jpeg
+date: 26-1-2017
+category: announcements
+featured: True
+
+{% extends "post.html" %}
+{% block body %}
+
+{% filter markdown %}
+
+In honor of the [Hello Web Design Kickstarter](https://www.kickstarter.com/projects/1868398473/hello-web-design-design-basics-for-non-designers/), **I've made Hello Web App free to read online!**
+{% endfilter %}
+
+<a class="btn btn-secondary vertical-margin" href="/tutorial/intro/">Start the tutorial here</a>
+
+{% filter markdown %}
+Right now this is planned to be free through the end of the Kickstarter (which ends Feb. 17th) and we'll see what happens after that. Would love your thoughts on what I should do!
+
+{% endfilter %}
+
+<iframe width="480" height="270" src="https://www.kickstarter.com/projects/1868398473/hello-web-design-design-basics-for-non-designers/widget/video.html" frameborder="0" scrolling="no"> </iframe>
+
+<a class="btn btn-primary vertical-margin" href="https://www.kickstarter.com/projects/1868398473/hello-web-design-design-basics-for-non-designers/ ">Support the Hello Web Design Kickstarter</a>
+
+
+{% filter markdown %}
+
+Thanks everyone, I hope you enjoy Hello Web App and support Hello Web Design!
+
+{% endfilter %}
+{% endblock body %}
