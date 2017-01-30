@@ -893,6 +893,20 @@ form input {
     }
 }
 
+#tutorial-toc {
+    li {
+        margin: 1em 0;
+        span {
+            text-transform: uppercase;
+            font-family: $font-family-sans-serif;
+            display: block;
+            font-size: 0.8rem;
+            letter-spacing: 0.1em;
+            margin: -5px 0;
+        }
+    }
+}
+
 // posts
 #post {
     .jumbotron {

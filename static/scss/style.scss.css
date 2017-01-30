@@ -3982,6 +3982,16 @@ form input {
   top: 0;
   border-top: 1px solid #eceeef; }
 
+#tutorial-toc li {
+  margin: 1em 0; }
+  #tutorial-toc li span {
+    text-transform: uppercase;
+    font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
+    display: block;
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    margin: -5px 0; }
+
 #post .jumbotron {
   background-size: cover;
   background-position: center center; }
