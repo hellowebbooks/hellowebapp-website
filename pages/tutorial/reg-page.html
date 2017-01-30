@@ -563,7 +563,7 @@ these URLs to your *urls.py*:
         {'template_name':
         'registration/password_reset_done.html'},
         name="password_reset_done"),
-    url(r'^accounts/password/reset/(?P<uidb64>[0-9A-Za-z]+)-(?P<token>.+)/$', 
+    url(r'^accounts/password/reset/(?P&lt;uidb64&gt;[0-9A-Za-z]+)-(?P&lt;token&gt;.+)/$', 
         password_reset_confirm,
         {'template_name':
         'registration/password_reset_confirm.html'},
