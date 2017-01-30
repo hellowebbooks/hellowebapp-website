@@ -78,7 +78,7 @@ Back to the familiar URLs-views-templates routine. Add in this new line:
 # our new browse flow
 <b>url(r'^browse/name/$',
     views.browse_by_name, name='browse'),
-url(r'^browse/name/(?P<initial>[-\w]+)/$', 
+url(r'^browse/name/(?P&lt;initial&gt;[-\w]+)/$', 
     views.browse_by_name, name='browse_by_name'),</b>
 
 # password reset URLs
@@ -267,7 +267,7 @@ from django.views.generic import (TemplateView,
 # our new redirect view
 <b>url(r'^browse/$', RedirectView.as_view(pattern_name='browse', permanent=True)),</b>
 url(r'^browse/name/$', views.browse_by_name, name='browse'),
-url(r'^browse/name/(?P<initial>[-\w]+)/$', views.browse_by_name, name='browse_by_name'),
+url(r'^browse/name/(?P&lt;initial&gt;[-\w]+)/$', views.browse_by_name, name='browse_by_name'),
 </code></pre>
 
 {% filter markdown %}
@@ -283,8 +283,8 @@ redirect */things/* to our browse page as well:
 
 <pre><code class="python">
 <b>url(r'^things/$', RedirectView.as_view(pattern_name='browse', permanent=True)),</b>
-url(r'^things/(?P<slug>[-\w]+)/$', views.thing_detail, name='thing_detail'),
-url(r'^things/(?P<slug>[-\w]+)/edit/$', views.edit_thing, name='edit_thing'),
+url(r'^things/(?P&lt;slug&gt;[-\w]+)/$', views.thing_detail, name='thing_detail'),
+url(r'^things/(?P&lt;slug&gt;[-\w]+)/edit/$', views.edit_thing, name='edit_thing'),
 </code></pre>
 
 {% filter markdown %}
