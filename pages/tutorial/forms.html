@@ -137,7 +137,7 @@ from collection.models import Thing
         form = form_class(instance=thing)
 
     # and render the template
-    return render(request, ‘things/edit_thing.html', {
+    return render(request, 'things/edit_thing.html', {
         'thing': thing,
         'form': form,
     })</b>
