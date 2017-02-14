@@ -68,7 +68,7 @@ def index(request):
     # don't forget the quotes since it's a string, 
     # not an integer
     thing = "Thing name" 
-    return render(request, ‘index.html', {
+    return render(request, 'index.html', {
         'number': number,
         # don't forget to pass it in, and the last comma
         'thing': thing,
@@ -259,7 +259,7 @@ from collection.models import Thing
 def index(request):
     <b>things = Thing.objects.all()</b>
 
-    return render(request, ‘index.html', {
+    return render(request, 'index.html', {
         'things': things,
     })
 </code></pre>

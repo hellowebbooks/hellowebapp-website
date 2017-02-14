@@ -109,7 +109,7 @@ def browse_by_name(request, initial=None):
     else:
         things = Thing.objects.all().order_by('name')
 
-    return render(request, ‘search/search.html', {
+    return render(request, 'search/search.html', {
         'things': things,
         'initial': initial,
     })
