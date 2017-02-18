@@ -139,7 +139,6 @@ First, add a couple new URLs to our *urls.py* file:
 <pre><code class="python">
 # add this to the top
 <b>from collection.backends import MyRegistrationView</b>
-{title="urls.py", lang="python", line-numbers=on, starting-line-number=45}
 <b>url(r'^accounts/register/$', 
     MyRegistrationView.as_view(),
     name='registration_register'),
