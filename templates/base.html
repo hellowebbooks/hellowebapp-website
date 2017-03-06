@@ -77,7 +77,7 @@
                 <div>
                     <img src="{% static 'images/hellowebapp.svg' %}" alt=""/>
                 </div>
-            </a>
+      /nag      </a>
             <ul id="right-nav" class="list-inline col-sm-4">
                 <li class="hidden-md-down"><a href="{% url '/faq.html' %}">FAQ</a></li>
                 <li class="hidden-sm-up"><a href="{% url '/tutorial/intro.html' %}">Tutorial</a></li>
@@ -125,6 +125,7 @@
         <p class="copy">Hello Web App by Tracy Osborn, &copy; {% now "Y" %}</p>
     </div>
 
+    {% comment %}
     <div id="nag-bar">
         <a href="https://www.kickstarter.com/projects/1868398473/hello-web-design-design-basics-for-non-designers/" class="hidden-sm-down" target="_blank">
             Support the new Hello Web Design Kickstarter, ending Feb 17th! &#8594;
@@ -133,6 +134,7 @@
             Support the Hello Web Design Kickstarter! &#8594;
         </a>
     </div>
+    {% endcomment %}
 
     {% block scripts %}
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
