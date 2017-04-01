@@ -44,17 +44,14 @@ stripe.api_key = settings.STRIPE_SECRET
 # Grab all your customers from Stripe.
 # I have about 200 customers so I set the limit to 50 - the 
 # default is 10.
-stripe_customers = stripe.Customer.list(limit=50)
+stripe_customers = stripe.Customer.list(limit=50, expand=['data.subscription'])
 
 # The results are auto-paginated, so you need to loop over 
 # the pages.
 for customer in stripe_customers.auto_paging_iter():
 
     # Grab the subscriptions for the specific customer.
-    subscriptions = stripe.Subscription.all(
-        customer=customer,
-        status="active",
-    )
+    subscriptions = customer.subscriptions
 
     # Start tracking revenue for that customer.
     rev = 0
@@ -141,6 +138,8 @@ class Command(BaseCommand):
 After all this work, I figured out that WeddingLovely's MRR is $1568.25. Not bad, not bad at all.
 
 Go forth and conquer with your new datapoint for your app's health!
+
+**Update**: Discovered [Stripe's "expanding objects" feature on API calls](https://stripe.com/docs/api#expanding_objects), so we can grab subscriptions as well when we're making the API call for customers, so we don't have to do additional API calls.
 {% endfilter %}
 {% endblock body %}
 
