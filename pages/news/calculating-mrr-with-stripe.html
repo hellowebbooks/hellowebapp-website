@@ -44,7 +44,10 @@ stripe.api_key = settings.STRIPE_SECRET
 # Grab all your customers from Stripe.
 # I have about 200 customers so I set the limit to 50 - the 
 # default is 10.
-stripe_customers = stripe.Customer.list(limit=50, expand=['data.subscription'])
+stripe_customers = stripe.Customer.list(
+    limit=50,
+    expand=['data.subscription'],
+)
 
 # The results are auto-paginated, so you need to loop over 
 # the pages.
@@ -96,15 +99,16 @@ stripe.api_key = settings.STRIPE_SECRET
 class Command(BaseCommand):
     def handle(self, *args, **options):
         monthly_rev = 0
-        stripe_customers = stripe.Customer.all(limit=50)
+        stripe_customers = stripe.Customer.list(
+            limit=50,
+            expand=['data.subscription'],
+        )
 
         print "------"
         for customer in stripe_customers.auto_paging_iter():
             print "Profile: %s" % customer.description
-            subscriptions = stripe.Subscription.all(
-                customer=customer.id,
-                status="active",
-            )
+            subscriptions = customer.subscriptions
+
             rev = 0
             for sub in subscriptions:
                 print "Interval: %s" % sub.plan.interval
