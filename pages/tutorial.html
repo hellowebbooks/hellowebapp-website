@@ -1,0 +1,219 @@
+{% extends "base.html" %}
+
+{% block title %}Introduction - {{ block.super }}{% endblock %}
+
+{% block analytics %}
+analytics.page("Introduction");
+{% endblock %}
+
+{% block bodyclass %}
+<body id="tutorial">
+{% endblock %}
+
+{% block content %}
+<div class="jumbotron"></div>
+<div class="container">
+        <div class="row">
+        <div class="col-md-9 col-md-offset-3">
+            <h1>Introduction</h1>
+        </div>
+        <div class="col-md-3 text-right hidden-sm-down" style="padding-right: 40px;">
+                    <section class="sharing">
+                        <div>
+                            <a class="twitter" href="http://twitter.com/home/?status={{ title }} https://hellowebapp.com/{{ path|cut:".html" }}/ (via @hellowebapp)"><i class="fa fa-twitter"></i></a>
+
+                            <a class="facebook" href="#" onclick="
+                                window.open(
+                                'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href), 
+                                'facebook-share-dialog', 
+                                'width=626,height=436'); 
+                                return false;"><i class="fa fa-facebook"></i> 
+                            </a>
+                            <a class="mail" href="mailto:?subject={{ title }}&amp;body=Here's the link: https://hellowebapp.com/{{ path|cut:".html" }}/"><i class="fa fa-envelope"></i></a>
+                        </div>
+                    </section> 
+            <h3>Next chapter:</h3>
+            <ol class="list-unstyled toc">
+                <li><a href="{% url '/tutorial/what-building.html' %}">What We're Building</a></li>
+            </ol>
+            <h3>Buy the book:</h3>
+            <ol class="list-unstyled toc">
+                <li><a href="{% url '/order.html' %}">Order Hello Web App</a></li>
+            </ol>
+        </div>
+
+        <div class="col-md-9">
+
+{% filter markdown %}
+Have you ever wanted to build something from scratch that other people could
+use? You could learn carpentry, knitting, or other physical crafts — but what
+about something for the web?
+
+There are tons of tutorials and instructions for writing your first website
+using HTML and CSS, but building something that interacts with the user — a
+full, complete web application — might feel unachievable and out of reach.
+
+The reality is that starting to build a web app is not as hard as you might
+think. Of course it’s not easy, but today’s tools can help a novice web
+developer create a basic web app in no time at all. It’s only a matter of
+learning the basics and launching something real, and you’ll be ready (and
+hopefully excited) to learn more.
+
+I used to be a web designer with no appreciable programming experience. In fact,
+once upon a time, I did take some introductory computer science classes at my
+university. After a couple of semesters, I thought I hated programming (and
+especially with Java), which drove me to switch my field of study to Art. I
+vowed to never program again.
+
+Fast forward again to when I was working as a web designer: I kept wishing
+certain web apps existed. I’m sure you know the feeling. Still convinced I hated
+programming, I tried finding a “technical cofounder” to help me launch an idea
+for a web app I had. It didn’t work. I was back to where I started:  an idea, no
+cofounder. I had two options: quit or finally try to write code again.
+
+Friends introduced me to Python,  a programming language that made way more
+sense to me than Java, and is simply nicer looking as well; and Django,  a
+framework built on Python to help jumpstart the creation of web apps.
+
+Slowly but surely, I built my startup, WeddingLovely. Over the next six years, I
+joined the startup accelerator 500 Startups and was accepted into the Designer
+Fund, raised money, and eventually made WeddingLovely into a mostly-bootstrapped
+profitable business.
+
+It wasn’t easy. The tutorials I found online all assumed previous programming
+knowledge. Crazy acronyms (like MVC) abounded, explanations only further
+confused me, and tutorials heavily relied on the command line,  a tool friendly
+only to experienced programmers. As a web designer the results didn’t feel
+“real” to me until I saw them on a website.
+
+**Hello Web App is what I wished had existed when I was learning to develop web
+apps.** I wrote this book to be free of confusing explanations and unnecessary
+acronyms. I talk plainly, not academically, as if we're having a conversation
+between friends. This book doesn't teach "best practices" — it teaches the
+easiest way to launch a web app.
+
+I hope you enjoy!
+{% endfilter %}
+
+<ul id="tutorial-toc">
+    <li>
+        <a href="{% url '/tutorial/what-building.html' %}">
+            <span>Chapter 1:</span> What We're Building
+        </a>
+    </li>
+    <li>
+        <a href="{% url '/tutorial/prerequisites.html' %}">
+            <span>Chapter 2:</span> Prerequisites
+        </a>
+    </li>
+    <li>
+        <a href="{% url '/tutorial/getting-started.html' %}">
+            <span>Chapter 3:</span> Getting Started
+        </a>
+    </li>
+    <li>
+        <a href="{% url '/tutorial/setting-templates.html' %}">
+            <span>Chapter 4:</span> Setting Up Your Templates
+        </a>
+    </li>
+    <li>
+        <a href="{% url '/tutorial/template-tags.html' %}">
+            <span>Chapter 5:</span> Fun With Template Tags
+        </a>
+    </li>
+    <li>
+        <a href="{% url '/tutorial/dynamic-data.html' %}">
+            <span>Chapter 6:</span> Adding Dynamic Data
+        </a>
+    </li>
+    <li>
+        <a href="{% url '/tutorial/dynamic-templates.html' %}">
+            <span>Chapter 7:</span> Displaying Dynamic Information in the Templates
+        </a>
+    </li>
+    <li>
+        <a href="{% url '/tutorial/indiv-object-pages.html' %}">
+            <span>Chapter 8:</span> Setting Up Individual Object Pages
+        </a>
+    </li>
+    <li>
+        <a href="{% url '/tutorial/forms.html' %}">
+            <span>Chapter 9:</span> Forms.py Funsies
+        </a>
+    </li>
+    <li>
+        <a href="{% url '/tutorial/reg-page.html' %}">
+            <span>Chapter 10:</span> Adding a Registration Page
+        </a>
+    </li>
+    <li>
+        <a href="{% url '/tutorial/user-objects.html' %}">
+            <span>Chapter 11:</span> Associating Users with Objects
+        </a>
+    </li>
+    <li>
+        <a href="{% url '/tutorial/browse-page.html' %}">
+            <span>Chapter 12:</span> Setting Up Basic Browse Pages
+        </a>
+    </li>
+    <li>
+        <a href="{% url '/tutorial/quick-hits.html' %}">
+            <span>Chapter 13:</span> Quick Hits: 404 Pages, requirements.txt, and Testing
+        </a>
+    </li>
+    <li>
+        <a href="{% url '/tutorial/deploying.html' %}">
+            <span>Chapter 14:</span> Deploying Your Web App
+        </a>
+    </li>
+    <li>
+        <a href="{% url '/tutorial/broken.html' %}">
+            <span>Chapter 15:</span> What To Do If Your Web App Is Broken
+        </a>
+    </li>
+    <li>
+        <a href="{% url '/tutorial/important-know.html' %}">
+            <span>Chapter 16:</span> Important Things to Know
+        </a>
+    </li>
+    <li>
+        <a href="{% url '/tutorial/moving-forward.html' %}">
+            <span>Chapter 17:</span> Moving Forward
+        </a>
+    </li>
+    <li>
+        <a href="{% url '/tutorial/special-thanks.html' %}">
+            Special Thanks
+        </a>
+    </li>
+    <li>
+        <a href="{% url '/tutorial/references.html' %}">
+            References
+        </a>
+    </li>
+    <li>
+        <a href="{% url '/tutorial/friendly-note.html' %}">
+            Friendly Note
+        </a>
+    </li>
+    <li>
+        <a href="{% url '/tutorial/about-author.html' %}">
+            About The Author
+        </a>
+    </li>
+    
+</ul>
+
+{% include 'includes/tutorial-footer.html' with nextname="What We're Building" nextlink="/tutorial/what-building.html" title="Introduction" path="/tutorial/intro.html" %}
+
+{% include 'includes/newsletter.html' %}
+
+{% endblock content %}
+
+{% block scripts %}
+{{ block.super }}
+{% include 'includes/newsletter-analytics.html' %}
+<link rel="stylesheet" href="{% static '/css/tomorrow.css' %}">
+<script src="{% static '/js/highlight.pack.js' %}"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+{% endblock scripts %}
