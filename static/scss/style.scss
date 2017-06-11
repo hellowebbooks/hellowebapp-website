@@ -12,9 +12,9 @@ $headings-color:             #111 !default;
 $enable-rounded:             true !default;
 $border-radius:              0 !default;
 
-$brand-primary-dark:         #8a9a0f !default;
-$brand-primary:              #a5bb00 !default;
-$brand-secondary:            #e6c24d !default;
+$brand-primary-dark:         #a5bb00 !default;
+$brand-primary:              #e6c24d !default;
+$brand-secondary:            #498D90 !default;
 
 $gray-lightish:              #ccc !default;
 $gray-lightisher:            #aaa !default;
@@ -22,7 +22,7 @@ $gray-superlight:            #e1e1e1;
 $default-banner:             #eceeef;
 //$default-banner:             lighten(#8a9a0f, 40%);
 
-$link-color:                 $brand-primary-dark;
+$link-color:                 darken($brand-primary, 10%);
 
 $btn-border-radius:          0;
 //$btn-secondary-color:        #fff;
@@ -90,7 +90,7 @@ h4 {
     font-weight: 700; 
 }
 h5 {
-
+    font-style: italic;
 }
 p {
     margin-bottom: 1.5rem; 
@@ -255,7 +255,7 @@ form input {
     font-weight: 100;
     margin: 0;
     letter-spacing: 0.1em;
-    color: $gray-lightish;
+    color: $gray-lightisher;
     font-size: 1rem;
     margin-bottom: 5px;
 }
@@ -474,18 +474,26 @@ form input {
 // homepage
 #home {
     .jumbotron {
-        background: url(../images/heros/home-yellow-grad.jpg) center center no-repeat;
-        background-size: cover;
-        height: 30em;
-        padding: 5rem 2rem;
+        // background: url(../images/heros/home-yellow-grad.jpg) center center no-repeat;
+        // background-size: cover;
+        background-color: #498D90; 
+        // height: 30em;
+        padding: 8rem 2rem;
         color: #fff;
         h1 {
             margin-bottom: 0.2em;
-            margin-top: 0.5em;
+            // margin-top: 0.5em;
         }
     }
     hr {
         margin: 4rem 0;
+    }
+    .packages {
+        h4 a {
+            color: $link-color;
+            text-decoration: none;
+            background-image: none;
+        }
     }
 }
 

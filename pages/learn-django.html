@@ -1,0 +1,167 @@
+{% extends "base.html" %}
+{% block title %}Learn how to build your first web app - {{ block.super }}{% endblock %}
+
+{% block analytics %}
+analytics.page("Original book landing page");
+{% endblock %}
+
+{% block bodyclass %}
+<body id="original">
+{% endblock %}
+
+{% block content %}
+<div class="jumbotron">
+    <div class="container text-center">
+        <h1>Build your first web app</h1>
+        <h2>Design and build your own custom web app using Python and Django. <br/>
+            Tailored for non-programmers, written by a designer.</h2>
+
+        <a href="" class="btn btn-secondary-outline free-sample-link" data-loc="Jumbotron">Free Sample</a>
+        <a href="{% url '/order.html' %}" class="btn btn-primary">Get the book</a>
+    </div>
+</div>
+
+<div class="container">
+    <div class="text-center content-block">
+        <h2>Have you ever wanted to develop your own web product?</h2>
+        <p>Not just a basic HTML &amp; CSS website design,<br/> but rather a complete functional web app with a database and user support.</p>
+
+        <p><strong>Your side project. Your lifestyle business. Your future startup.</strong></p>
+
+        <p>Hello Web App teaches the basics of web app programming using Python and Django. In less than 150 pages, you'll learn how to choose a project, set up a database, create your templates, and launch your app.</p>
+
+        <p><a href="" class="btn btn-secondary free-sample-link" data-loc="After intro">Read the book online for free</a></p>
+    </div>
+    
+</div>
+
+<div class="container-fluid photo-row">
+    <div class="row">
+        <div class="col-sm-3">
+            <img src="{% static 'images/original/1.jpg' %}" alt="" />
+        </div>
+
+        <div class="col-sm-3">
+            <img src="{% static 'images/original/2.jpg' %}" alt="" />
+        </div>
+
+        <div class="col-sm-3">
+            <img src="{% static 'images/original/3.jpg' %}" alt="" />
+        </div>
+        <div class="col-sm-3">
+            <img src="{% static 'images/original/4.jpg' %}" alt="" />
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row quotes">
+        <blockquote class="col-sm-4">
+            <p>This is a fantastic guide for anyone who is not a developer and has an idea that they wish they could build. The format - “collection of things” - is incredibly flexible and gives you a fast and easy way to start “sketching” out your application without getting overwhelmed by a lot of technology.</p>
+            <footer>Olya S.</footer>
+        </blockquote>
+
+        <blockquote class="col-sm-4">
+            <p>After reading and working through this book, I had a functioning prototype of a fairly complex app within 3 weeks. It really does help in a concrete, practical way. And I love its optimism—the idea that you don’t have to spend years becoming a seasoned programmer to build an interactive web app that’s decent.</p>
+            <footer>Blake W.</footer>
+        </blockquote>
+
+        <blockquote class="col-sm-4">
+            <p>This is a fantastic introduction to the Django framework if you’re getting into it for the first time. It delicately balances introductory content and intermediary content in a way that doesn’t make you feel like you’re being talked down to or that the pacing is too slow.</p>
+            <footer>Julian S.</footer>
+        </blockquote>
+    </div>
+
+    <div class="row table-of-contents content-block">
+        <h2 class="text-center">Table of Contents</h2>
+        <ul class="col-sm-6">
+            <li>Introduction</li>
+            <li>What We’re Building</li>
+            <li>Prerequisites</li>
+            <li>Getting Started</li>
+            <li>Setting up your Templates</li>
+            <li>Fun with Template Tags</li>
+            <li>Adding Dynamic Data</li>
+            <li>Displaying Dynamic Information in the Templates</li>
+            <li>Setting up Individual Object Pages</li>
+        </ul>
+        <ul class="col-sm-5 col-sm-offset-1">
+            <li>Forms.py Funsies</li>
+            <li>Adding a Registration Page</li>
+            <li>Setting up Basic Browse Pages</li>
+            <li>Quick Hits: 404 Pages, requirements.txt, and Testing</li>
+            <li>Deploying your Web App</li>
+            <li>What To Do If Your App is Broken</li>
+            <li>Important Things to Know</li>
+            <li>Moving Forward</li>
+        </ul>
+    </div>
+
+
+    <div class="row">
+        <h2 class="text-center vertical-margin" style="font-size: 3rem;">Buy the book</h2>
+        <div class="col-sm-5">
+            <img src="{% static 'images/products/original-videos.jpg' %}" alt="Hello Web App complete video package" />
+        </div>
+        <div class="col-sm-7">
+            <h3 style="font-size: 2rem;">The Complete Hello Web App Package</h3>
+            <p>This package contains the entire Hello Web App series &#8212; the paperback books, the videos, and the eBooks. Learn how to build, grow, and monetize your web app all in one purchase.</p>
+            <h4>Full contents:</h4>
+            <ul>
+                <li>Three eBook files &#8212; PDF, .mobi, and .ePub.</li>
+                <li>15 videos &#8212; screencasts walking you through all chapters of the book plus four bonus beginner videos.</li>
+                <li>The gorgeously designed paperback book.</li>
+            </ul>
+            <p class="text-center vertical-margin">
+                <a href="//gum.co/complete-hwa-pb" class="btn btn-primary buy-button" data-title="Hello Web App Video Paperback package" data-price="89">Buy for $89</a>
+            </p>
+        </div>
+    </div>
+
+    <div class="row super-vertical-margin">
+        <p class="text-center"><a href="{% url '/order.html' %}" class="btn btn-secondary">See all buying options here, starting at $14.95</a></p>
+    </div>
+</div>
+
+{% include 'includes/newsletter.html' %}
+{% endblock content %}
+
+{% block scripts %}
+{{ block.super }}
+<script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/signup-forms/popup/embed.js" data-dojo-config="usePlainJson: true, isDebug: false"></script>
+<script type="text/javascript">
+    function showMailingPopUp() {
+        require(["mojo/signup-forms/Loader"], function(L) {
+            L.start({
+                "baseUrl": "mc.us3.list-manage.com",
+                "uuid": "65146251a5ccb429e109f902f",
+                "lid": "f0a7b0a10c"
+            })
+        })
+        document.cookie = "MCEvilPopupClosed=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+    };
+
+    $(document).ready(function() {
+        $(".buy-button").each(function() {
+            var link = $(this);
+            analytics.trackLink(link, 'Clicked Buy Link', {
+                title: $(link).data("title"),
+                price: $(link).data("price"),
+            });
+        });
+
+        $(".free-sample-link").each(function() {
+            var link = $(this);
+            analytics.trackLink(link, 'Clicked Free Sample Link', {
+                title: $(link).data("loc"),
+            });
+        });
+
+        $('.free-sample-link').click(function(e) {
+            e.preventDefault();
+            showMailingPopUp();
+        });
+    });
+</script>
+{% include 'includes/newsletter-analytics.html' %}
+{% endblock scripts %}

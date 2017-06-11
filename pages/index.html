@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% block title %}Create your first web app with {{ block.super }}{% endblock %}
+{% block title %}{{ block.super }} | Beginner Programming &amp; Design Books{% endblock %}
 
 {% block analytics %}
 analytics.page("Homepage");
@@ -13,9 +13,8 @@ analytics.page("Homepage");
 {% block content %}
 <div class="jumbotron">
     <div class="container text-center">
-        <h1>Learn how to<br/> build a web app</h1>
-        <h2>Design and build your own custom web app using Python and Django. <br/>
-            Tailored for non-programmers, written by a designer.</h2>
+        <h1>Learn a new skill</h1>
+        <h2>Brief books and videos by Tracy Osborn to teach you how to build a web app, how to make better designs, or both.</h2>
 
         <a href="{% url '/tutorial/intro.html' %}" class="btn btn-secondary-outline" data-loc="Jumbotron">Read Online</a>
         <a href="{% url '/order.html' %}" class="btn btn-primary">Buy the books</a>
@@ -23,16 +22,40 @@ analytics.page("Homepage");
 </div>
 
 <div class="container">
-    <div class="text-center content-block">
-        <h2>Have you ever wanted to develop your own web product?</h2>
-        <p>Not just a basic HTML &amp; CSS website design,<br/> but rather a complete functional web app with a database and user support.</p>
-
-        <p><strong>Your side project. Your lifestyle business. Your future startup.</strong></p>
-
-        <p>Hello Web App teaches the basics of web app programming using Python and Django. In less than 150 pages, you'll learn how to choose a project, set up a database, create your templates, and launch your app.</p>
-
-        <p><a href="" class="btn btn-secondary free-sample-link" data-loc="After intro">Read the book online for free</a></p>
+    <div class="row packages">
+        <div class="col-sm-4 text-center">
+            <img src="{% static '/images/icons/design.svg' %}" width="50" height="50" alt="" class="vertical-margin" />
+            <p class="small-sans"><small>Upcoming</small></p>
+            <h4><a href="{% url '/learn-design.html' %}">Hello Web Design</a></h4>
+            <h5>Web design fundamentals and shortcuts.</h5>
+            {% comment %}<img src="{% static '/images/ic.jpg' %}" alt="Hello Web Design" class="vertical-margin" />{% endcomment %}
+            <p>Design shortcuts and fundamentals aimed for programmers, developers, marketers, and non-designers. Learn just enough design to be dangerous.</p>
+            <p><a href="{% url '/learn-design.html' %}" class="btn btn-secondary btn-sm">More about Hello Web Design</a></p>
+        </div>
+        <div class="col-sm-4 text-center">
+            <img src="{% static '/images/icons/design.svg' %}" width="50" height="50" alt="" class="vertical-margin" />
+            <p class="small-sans"><small>Released May 4th, 2015</small></p>
+            <h4><a href="{% url '/learn-django.html' %}">Hello Web App</a></h4>
+            <h5>Learn how to build your first web app.</h5>
+            {% comment %}<img src="{% static '/images/original.jpg' %}" alt="Hello Web App original" class="vertical-margin" />{% endcomment %}
+            <p>Want to build your first web app? Hello Web App walks you through building and launching a simple web app using Python and Django.</p>
+            <p><a href="{% url '/learn-django.html' %}" class="btn btn-secondary btn-sm">More about Hello Web App</a></p>
+        </div>
+        <div class="col-sm-4 text-center">
+            <img src="{% static '/images/icons/design.svg' %}" width="50" height="50" alt="" class="vertical-margin" />
+            <p class="small-sans"><small>Released December 7th, 2015</small></p>
+            <h4><a href="{% url '/intermediate-concepts.html' %}">Hello Web App: <span style="font-size: 14px">Intermediate Concepts</span></a></h4>
+            <h5>Intermediate web app tutorials.</h5>
+            {% comment %}<img src="{% static '/images/ic.jpg' %}" alt="Hello Web App: Intermediate Concepts" class="vertical-margin" />{% endcomment %}
+            <p>Learn how to add more advanced features to your app, such as customer payments, user-uploaded images, proper database design, and more.</p>
+            <p><a href="{% url '/django-intermediate-concepts.html' %}" class="btn btn-secondary btn-sm">More about Hello Web App: IC</a></p>
+        </div>
     </div>
+
+    <p class="text-center super-vertical-margin">
+        <a href="{% url '/order.html' %}" class="btn btn-primary">Buy the books</a>
+    </p>
+
 </div>
 
 <div class="container-fluid photo-row">
@@ -54,67 +77,8 @@ analytics.page("Homepage");
 </div>
 
 <div class="container">
-    <h2 class="text-center">Buy a book (or both!)</h2>
-
-    <div class="row">
-        <div class="col-sm-6 text-center">
-            <p class="small-sans"><small>Released May 4th, 2015</small></p>
-            <h4>Hello Web App</h4>
-            <h5>Learn how to build your first Django web app.</h5>
-            <img src="{% static '/images/original.jpg' %}" alt="Hello Web App original" class="vertical-margin" />
-            <p>Want to build your first web app? Hello Web App walks you through ideation to deployment of a super simple, easy web app. The project is easily customizable so you can create a web app that is unique to you.</p>
-            <p><a href="{% url '/original.html' %}" class="btn btn-secondary btn-sm">More about Hello Web App</a></p>
-        </div>
-        <div class="col-sm-6 text-center">
-            <p class="small-sans"><small>Released December 7th, 2015</small></p>
-            <h4>Hello Web App: Intermediate Concepts</h4>
-            <h5>Continue building and growing your web app.</h5>
-            <img src="{% static '/images/ic.jpg' %}" alt="Hello Web App: Intermediate Concepts" class="vertical-margin" />
-            <p>Learn how to add more advanced features to your app, such as customer payments, an API, user-uploaded images, multiple models, proper database design, and more. The perfect book for any beginner looking for the next step.</p>
-            <p><a href="{% url '/intermediate-concepts.html' %}" class="btn btn-secondary btn-sm">More about Hello Web App: Intermediate Concepts</a></p>
-        </div>
-    </div>
-
-    <p class="text-center super-vertical-margin">
-        <a href="{% url '/order.html' %}" class="btn btn-primary">Buy the books</a>
-    </p>
-
-    <hr/>
-
-    <div class="row quotes">
-        <blockquote class="col-sm-4">
-            <p>This is a fantastic guide for anyone who is not a developer and has an idea that they wish they could build. The format - “collection of things” - is incredibly flexible and gives you a fast and easy way to start “sketching” out your application without getting overwhelmed by a lot of technology.</p>
-            <footer>Olya S.</footer>
-        </blockquote>
-
-        <blockquote class="col-sm-4">
-            <p>After reading and working through this book, I had a functioning prototype of a fairly complex app within 3 weeks. It really does help in a concrete, practical way. And I love its optimism—the idea that you don’t have to spend years becoming a seasoned programmer to build an interactive web app that’s decent.</p>
-            <footer>Blake W.</footer>
-        </blockquote>
-
-        <blockquote class="col-sm-4">
-            <p>This is a fantastic introduction to the Django framework if you’re getting into it for the first time. It delicately balances introductory content and intermediary content in a way that doesn’t make you feel like you’re being talked down to or that the pacing is too slow.</p>
-            <footer>Julian S.</footer>
-        </blockquote>
-    </div>
-
-    {% comment %}
-    <hr />
-
-    <h3>About the Author</h3>
-    <p>Hi, I'm Tracy Osborn — designer, developer, and entreprenerd.</p>
-    <p>I taught myself how to code five years ago. As a visually oriented learner with no real previous experience with programming, I had a lot of problems with pre-existing tutorials and resources. Hello Web App is what I wish I had when I was learning — to the point, simple, down-to-earth introduction to building a web app.</p>
-    <p><a href="//twitter.com/limedaring">Feel free to chat with me on Twitter (@limedaring) any time.</a></p>
-
-    <div class="text-center">
-        <a href="{% url '/order.html' %}" class="btn btn-primary">Order Hello Web App today</a>
-    </div>
-    {% endcomment %}
-
-    <hr />
-
     <div id="featured-post-list">
-        <h2 class="text-center">Featured Posts</h2>
+        <h2 class="text-center">Featured Posts on the Blog</h2>
         <ul class="list-unstyled row">
         {% for post in posts %}
             {% if post.featured == "True" %}

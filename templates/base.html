@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="google-site-verification" content="6qgsnShfjPXfY1ujiQBVnf-BK8dywp_atWp0bvz2Zb8" />
     {% block header %}
-    <title>{% block title %}Hello Web App{% endblock %}</title>
+    <title>{% block title %}Hello Web Books{% endblock %}</title>
     {% endblock header %}
     <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}">
     <link rel="apple-touch-icon" sizes="57x57" href="{% static '/images/favicons/apple-touch-icon-57x57.png' %}">
@@ -69,7 +69,7 @@
     <nav class="container" id="main-nav">
         <div class="row">
             <ul class="list-inline col-sm-4">
-                <li class="hidden-xs-down"><a href="{% url '/tutorial.html' %}">Tutorial</a></li>
+                <li class="hidden-xs-down"><a href="{% url '/index.html' %}">The Books</a></li>
                 <li class="hidden-sm-down"><a href="{% url '/start.html' %}">About</a></li>
                 <li class="hidden-md-down"><a href="{% url '/news.html' %}">Blog</a></li>
             </ul>
@@ -80,7 +80,7 @@
             </a>
             <ul id="right-nav" class="list-inline col-sm-4">
                 <li class="hidden-md-down"><a href="{% url '/faq.html' %}">FAQ</a></li>
-                <li class="hidden-sm-up"><a href="{% url '/tutorial.html' %}">Tutorial</a></li>
+                <li class="hidden-sm-up"><a href="{% url '/index.html' %}">The Books</a></li>
                 <li class="hidden-sm-up"><a href="{% url '/start.html' %}">About</a></li>
                 <li class="hidden-lg-up"><a href="{% url '/news.html' %}">Blog</a></li>
                 <li class="hidden-md-down"><a href="{% url '/press.html' %}">Press</a></li>
@@ -96,9 +96,9 @@
         <nav id="footer-nav">
             <p>The books</p>
             <ul class="list-inline list-unstyled">
-                <li><a href="{% url '/original.html' %}">Hello Web App</a></li>
+                <li><a href="{% url '/learn-django.html' %}">Hello Web App</a></li>
                 <li><a href="{% url '/intermediate-concepts.html' %}">Intermediate Concepts</a></li>
-                <li><a href="http://hellowebdesignbook.com">Hello Web Design</a></li>
+                <li><a href="{% url '/learn-design.html' %}">Hello Web Design</a></li>
             </ul>
 
             <p>More links</p>
