@@ -299,10 +299,10 @@ blockquote {
   margin: 0 0 1rem; }
 
 a {
-  color: #e0b320;
+  color: #caa11c;
   text-decoration: none; }
   a:focus, a:hover {
-    color: #9d7e16;
+    color: #876c13;
     text-decoration: underline; }
   a:focus {
     outline: thin dotted;
@@ -1946,7 +1946,7 @@ fieldset[disabled] a.btn {
 
 .btn-link {
   font-weight: normal;
-  color: #e0b320;
+  color: #caa11c;
   border-radius: 0; }
   .btn-link, .btn-link:active, .btn-link.active, .btn-link:disabled,
   fieldset[disabled] .btn-link {
@@ -1956,7 +1956,7 @@ fieldset[disabled] a.btn {
   .btn-link:hover {
     border-color: transparent; }
   .btn-link:focus, .btn-link:hover {
-    color: #9d7e16;
+    color: #876c13;
     text-decoration: underline;
     background-color: transparent; }
   .btn-link:disabled:focus, .btn-link:disabled:hover,
@@ -3526,7 +3526,7 @@ form input {
     color: #55595c;
     text-decoration: none; }
     #main-nav a:hover {
-      color: #e0b320; }
+      color: #caa11c; }
   #main-nav a:hover {
     text-decoration: none; }
   #main-nav li {
@@ -3667,7 +3667,7 @@ form input {
       font-size: 0.8rem;
       text-decoration: none; }
       #footer #footer-nav ul li a:hover {
-        color: #e0b320; }
+        color: #caa11c; }
 
 #footer p.copy {
   margin-top: 2em;
@@ -3685,9 +3685,11 @@ form input {
   margin: 4rem 0; }
 
 #home .packages h4 a {
-  color: #e0b320;
+  color: #111;
   text-decoration: none;
   background-image: none; }
+  #home .packages h4 a:hover {
+    color: #caa11c; }
 
 @media (max-width: 47.9em) {
   #home .jumbotron {
@@ -3727,7 +3729,7 @@ form input {
     margin-top: 0.5em; }
     #featured-post-list li h5 a {
       background-image: none;
-      color: #e0b320; }
+      color: #caa11c; }
 
 #featured-post-list a {
   text-decoration: none; }
@@ -3926,7 +3928,7 @@ form input {
         background-image: none;
         font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
         font-size: 1.1rem;
-        color: #e0b320; }
+        color: #caa11c; }
 
 .sharing h5 {
   color: #818a91;
@@ -3938,10 +3940,10 @@ form input {
   margin-bottom: 0.2em; }
 
 .sharing a {
-  color: #e0b320; }
+  color: #caa11c; }
 
 .sharing a:hover {
-  color: #b48f19; }
+  color: #9d7e16; }
 
 .sharing .mc-field-group input[type="email"] {
   width: 150px;

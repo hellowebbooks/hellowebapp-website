@@ -22,7 +22,7 @@ $gray-superlight:            #e1e1e1;
 $default-banner:             #eceeef;
 //$default-banner:             lighten(#8a9a0f, 40%);
 
-$link-color:                 darken($brand-primary, 10%);
+$link-color:                 darken($brand-primary, 15%);
 
 $btn-border-radius:          0;
 //$btn-secondary-color:        #fff;
@@ -490,9 +490,12 @@ form input {
     }
     .packages {
         h4 a {
-            color: $link-color;
+            color: #111;
             text-decoration: none;
             background-image: none;
+            &:hover {
+                color: $link-color;
+            }
         }
     }
 }
