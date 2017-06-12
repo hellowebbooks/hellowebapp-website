@@ -3785,6 +3785,7 @@ form input {
 
 #design a.gumroad-button-strong {
   background-color: #ebb933 !important;
+  box-shadow: #5e470a 0 0 2px !important;
   color: #fff !important; }
 
 @media (max-width: 61.9em) {
