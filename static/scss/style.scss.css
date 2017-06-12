@@ -3478,6 +3478,10 @@ a {
   margin-top: 2em;
   margin-bottom: 2em; }
 
+.super-vertical-top-margin {
+  margin-top: 2em;
+  margin-bottom: 2em; }
+
 .clear {
   clear: both; }
 
@@ -3503,7 +3507,7 @@ form input {
     padding-right: 0;
     padding-top: 5px; }
 
-.small-sans {
+.small-sans, #design blockquote cite {
   font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
   text-transform: uppercase;
   font-weight: 100;
@@ -3765,6 +3769,18 @@ form input {
 #design figure.video {
   padding-bottom: 55%; }
 
+#design blockquote {
+  text-align: left;
+  border-left: 0;
+  margin: 5em 0;
+  padding-left: 4em;
+  background: url(../images/icons/quote.png) top left no-repeat; }
+  #design blockquote p {
+    font-size: 2rem; }
+  #design blockquote cite {
+    display: block;
+    font-style: normal; }
+
 #design .table-of-contents ul {
   margin-bottom: 0; }
   #design .table-of-contents ul li {
@@ -3784,7 +3800,7 @@ form input {
   box-shadow: rgba(0, 0, 0, 0.7) 0 0 2px !important; }
 
 #design a.gumroad-button-strong {
-  background-color: #ebb933 !important;
+  background-color: #dab238 !important;
   box-shadow: #5e470a 0 0 2px !important;
   color: #fff !important; }
 

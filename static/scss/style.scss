@@ -23,7 +23,7 @@ $default-banner:             #eceeef;
 //$default-banner:             lighten(#8a9a0f, 40%);
 
 $link-color:                 darken($brand-primary, 15%);
-$button-color:               #ebb933;
+$button-color:               #dab238;
 
 $btn-border-radius:          0;
 //$btn-secondary-color:        #fff;
@@ -215,6 +215,11 @@ a {
 }
 
 .super-vertical-margin {
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+.super-vertical-top-margin {
     margin-top: 2em;
     margin-bottom: 2em;
 }
@@ -613,6 +618,21 @@ form input {
     }
     figure.video {
         padding-bottom: 55%;
+    }
+    blockquote {
+        text-align: left;
+        border-left: 0;
+        margin: 5em 0;
+        padding-left: 4em;
+        background: url(../images/icons/quote.png) top left no-repeat;
+        p {
+            font-size: 2rem;
+        }
+        cite {
+            display: block;
+            font-style: normal;
+            @extend .small-sans;
+        }
     }
     .table-of-contents {
         ul {
