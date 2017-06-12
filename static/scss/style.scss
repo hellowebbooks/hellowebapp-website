@@ -23,6 +23,7 @@ $default-banner:             #eceeef;
 //$default-banner:             lighten(#8a9a0f, 40%);
 
 $link-color:                 darken($brand-primary, 15%);
+$button-color:               #ebb933;
 
 $btn-border-radius:          0;
 //$btn-secondary-color:        #fff;
@@ -571,17 +572,28 @@ form input {
     }
 }
 
-// ic landing page
-#original {
+// book landing pages
+.book-pages {
     .jumbotron {
-        background: url(../images/heros/original.jpg) top left no-repeat;
         background-size: cover;
         height: 33em;
-        padding-top: 8em;
         color: #fff;
+        padding-top: 8em;
         h1 {
             margin-bottom: 0.2em;
         }
+    }
+    .table-of-contents {
+        li {
+            margin: 1em 0;
+        }
+    }
+}
+
+// hwa landing page
+#original {
+    .jumbotron {
+        background: url(../images/heros/original.jpg) top left no-repeat;
     }
 }
 
@@ -589,25 +601,58 @@ form input {
 #ic {
     .jumbotron {
         background: url(../images/heros/ic-2.jpg) top center no-repeat;
-        background-size: cover;
-        height: 33em;
-        padding-top: 8em;
-        color: #fff;
-        h1 {
-            margin-bottom: 0.2em;
+    }
+}
+
+// design landing page
+#design {
+    .jumbotron {
+        background: url(../images/book-background.png) top left no-repeat;
+        background-color: $brand-secondary; 
+        padding-top: 6em;
+    }
+    figure.video {
+        padding-bottom: 55%;
+    }
+    .table-of-contents {
+        ul {
+            margin-bottom: 0;
+            li {
+                line-height: 1.4;
+                margin: 0.5em 0;
+                li {
+                    font-size: 1.2rem;
+                    font-style: italic;
+                }
+                ul > li {
+                    margin-top: 0.5em;
+                }
+            }
+            &> li {
+                margin-top: 0;
+            }
         }
+    }
+    .gumroad-button {
+        letter-spacing: 0.04em;
+        color: #444 !important;
+        box-shadow: rgba(0, 0, 0, .7) 0 0 2px !important;
+    }
+    a.gumroad-button-strong {
+        background-color: $button-color !important;
+        color: #fff !important;
     }
 }
 
 @include media-breakpoint-down(md) {
-    #ic .jumbotron, #original .jumbotron {
+    .book-pages .jumbotron {
         padding-top: 4em;
         padding-bottom: 3em;
     }
 }
 
 @include media-breakpoint-down(sm) {
-    #ic .jumbotron, #original .jumbotron {
+    .book-pages .jumbotron {
         padding-top: 2em;
         height: 25em;
         margin-bottom: 0;
@@ -617,14 +662,7 @@ form input {
     }
 }
 
-.table-of-contents {
-    li {
-        margin: 1em 0;
-    }
-}
-
 // setup and tutorials page
-
 #setup, #tutorial {
     .toc li li {
         font-style: italic;

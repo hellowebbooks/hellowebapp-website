@@ -1,32 +1,35 @@
 {% extends "base.html" %}
-{% block title %}Learn how to build your first web app - {{ block.super }}{% endblock %}
+{% block title %}Make Better Designs with Hello Web Design - {{ block.super }}{% endblock %}
 
 {% block analytics %}
-analytics.page("Original book landing page");
+analytics.page("Hello Web Design book landing page");
 {% endblock %}
 
 {% block bodyclass %}
-<body id="original">
+<body id="design" class="book-pages">
 {% endblock %}
 
 {% block content %}
 <div class="jumbotron">
     <div class="container text-center">
-        <h1>Build your first web app</h1>
-        <h2>Design and build your own custom web app using Python and Django. <br/>
-            Tailored for non-programmers, written by a designer.</h2>
+        <h1>Become a better designer</h1>
+        <h2>Hey programmers, developers, marketers, and non-designers &#8212; want to become a better designer? This short book has everything you need. Coming out late summer 2017.</h2>
 
-        <a href="" class="btn btn-secondary-outline free-sample-link" data-loc="Jumbotron">Free Sample</a>
-        <a href="{% url '/order.html' %}" class="btn btn-primary">Get the book</a>
+        <a href="{% url '/order.html' %}" class="btn btn-primary">Pre-order the book</a>
     </div>
 </div>
 
 <div class="container">
-    <h2 class="content-block text-center">Learn how to create your first web app with Hello Web App.</h2>
-    <p class="content-block text-center"><strong>Build a basic web app, from ideation to deployment. </strong> Hello Web App walks you through creating a "collection of things," a project template that you can alter to fit almost any idea you'd like to build.</p>
+    <h2 class="content-block text-center">Design fundamentals and shortcuts for non-designers.</h2>
+    <p class="content-block text-center">Beginner design books assume you want to become an expert designer. What if you want to learn just enough to complement your existing work? Hello Web Design will teach you the basics about design (no history!) and give you shortcuts <strong>so you can immediately become a better designer.</strong></p>
+
+    <p class="text-center super-vertical-margin">
+        <a href="{% url '/order.html' %}" class="btn btn-large btn-secondary">Pre-order the book</a>
+    </p>
 
 </div>
 
+{% comment %}
 <div class="container-fluid photo-row">
     <div class="row">
         <div class="col-sm-3">
@@ -45,34 +48,87 @@ analytics.page("Original book landing page");
         </div>
     </div>
 </div>
+{% endcomment %}
 
 <div class="container">
+    <div class="text-center">
+        <h2 class="super-vertical-margin">As based on the presentation given around the world</h2>
+        <figure class="full video">
+            <iframe src="https://www.youtube.com/embed/lsPrhA_m6ss" frameborder="0" allowfullscreen></iframe>
+        </figure>
+    </div>
+
     <div class="row table-of-contents content-block">
         <h2 class="text-center">Table of Contents</h2>
-        <ul class="col-sm-6">
+        <ul class="col-sm-12">
             <li>Introduction</li>
-            <li>What We’re Building</li>
-            <li>Prerequisites</li>
-            <li>Getting Started</li>
-            <li>Setting up your Templates</li>
-            <li>Fun with Template Tags</li>
-            <li>Adding Dynamic Data</li>
-            <li>Displaying Dynamic Information in the Templates</li>
-            <li>Setting up Individual Object Pages</li>
+            <li>If you only read one chapter, make it this one</li>
         </ul>
-        <ul class="col-sm-5 col-sm-offset-1">
-            <li>Forms.py Funsies</li>
-            <li>Adding a Registration Page</li>
-            <li>Setting up Basic Browse Pages</li>
-            <li>Quick Hits: 404 Pages, requirements.txt, and Testing</li>
-            <li>Deploying your Web App</li>
-            <li>What To Do If Your App is Broken</li>
-            <li>Important Things to Know</li>
+        <ul class="col-sm-6">
+            <li><strong>Part 1:</strong> Theory and Design Principles
+                <ul>
+                    <li>Grid</li>
+                    <li>Color</li>
+                    <li>Typography</li>
+                    <li>White Space</li>
+                    <li>Layout</li>
+                    <li>Content</li>
+                    <li>User Experience</li>
+                    <li>Images and Imagery</li>
+                    <li>Extra Tidbits</li>
+                </ul>
+            </li>
+        </ul>
+        <ul class="col-sm-6">
+            <li><strong>Part 2:</strong> The Process and Training Your Design Intuition
+                <ul>
+                    <li>Finding Inspiration</li>
+                    <li>Planning, Sketching, and Mocking</li>
+                    <li>Getting Feedback</li>
+                    <li>Coding the Site</li>
+                </ul>
+            </li>
+        </ul>
+        <ul class="col-sm-12">
+            <li>Reassurances</li>
             <li>Moving Forward</li>
         </ul>
     </div>
 
+    {% comment %}<p class="text-center super-vertical-margin">
+        <a href="{% url '/order.html' %}" class="btn btn-large btn-primary">Pre-order the book</a>
+    </p>{% endcomment %}
 
+    <div class="row text-center">
+        <h2 class="text-center">Packages available</h2>
+        <div class="col-sm-4">
+            <h3 class="text-center">The eBooks</h3>
+            <p><strong>Hello Web Design in digital format</strong>, lovingly designed by Tracy herself. A brief book jam-packed with information. Comes in PDF, .mobi, and .ePub formals.</p>
+            <div class="text-center">
+                <script src="https://gumroad.com/js/gumroad.js"></script>
+                <a class="gumroad-button" href="https://gum.co/hwd-ebook">Pre-order for $14.95</a>
+            </div>
+            {% comment %}<p><small>$14.95</small></p>{% endcomment %}
+        </div>
+        <div class="col-sm-4">
+            <h3 class="text-center">The Video Package</h3>
+            <p><strong>The eBooks plus 15+ videos</strong> walking you through the theory and process parts of the book, plus extra "design critique" videos to help you train your design intuition. <em>Add the paperback book for $10 more.</em></p>
+            <div class="text-center">
+                <a class="gumroad-button gumroad-button-strong" href="https://gum.co/hwd-videos">Pre-order for $79</a>
+            </div>
+            {% comment %}<p><small>$79</small></p>{% endcomment %}
+        </div>
+        <div class="col-sm-4">
+            <h3 class="text-center">The Paperback Package</h3>
+            <p>Learn better with a physical book? I got you! This package contains the eBook (in all three formats) <strong>plus the paperback book</strong>. Shipping extra.</p>
+            <div class="text-center">
+                <a class="gumroad-button" href="https://gum.co/hwd-pb">Pre-order for $24.95</a>
+            </div>
+            {% comment %}<p><small>$24.95</small></p>{% endcomment %}
+        </div>
+    </div>
+
+{% comment %}
     <div class="row">
         <h2 class="text-center vertical-margin" style="font-size: 3rem;">Buy the book</h2>
         <div class="col-sm-5">
@@ -96,6 +152,7 @@ analytics.page("Original book landing page");
     <div class="row super-vertical-margin">
         <p class="text-center"><a href="{% url '/order.html' %}" class="btn btn-secondary">See all buying options here, starting at $14.95</a></p>
     </div>
+{% endcomment %}
 </div>
 
 {% include 'includes/newsletter.html' %}

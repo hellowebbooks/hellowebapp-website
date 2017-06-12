@@ -3740,39 +3740,65 @@ form input {
 #featured-post-list li:nth-child(1n+7) {
   display: none; }
 
-#original .jumbotron {
-  background: url(../images/heros/original.jpg) top left no-repeat;
+.book-pages .jumbotron {
   background-size: cover;
   height: 33em;
-  padding-top: 8em;
-  color: #fff; }
-  #original .jumbotron h1 {
+  color: #fff;
+  padding-top: 8em; }
+  .book-pages .jumbotron h1 {
     margin-bottom: 0.2em; }
+
+.book-pages .table-of-contents li {
+  margin: 1em 0; }
+
+#original .jumbotron {
+  background: url(../images/heros/original.jpg) top left no-repeat; }
 
 #ic .jumbotron {
-  background: url(../images/heros/ic-2.jpg) top center no-repeat;
-  background-size: cover;
-  height: 33em;
-  padding-top: 8em;
-  color: #fff; }
-  #ic .jumbotron h1 {
-    margin-bottom: 0.2em; }
+  background: url(../images/heros/ic-2.jpg) top center no-repeat; }
+
+#design .jumbotron {
+  background: url(../images/book-background.png) top left no-repeat;
+  background-color: #498D90;
+  padding-top: 6em; }
+
+#design figure.video {
+  padding-bottom: 55%; }
+
+#design .table-of-contents ul {
+  margin-bottom: 0; }
+  #design .table-of-contents ul li {
+    line-height: 1.4;
+    margin: 0.5em 0; }
+    #design .table-of-contents ul li li {
+      font-size: 1.2rem;
+      font-style: italic; }
+    #design .table-of-contents ul li ul > li {
+      margin-top: 0.5em; }
+  #design .table-of-contents ul > li {
+    margin-top: 0; }
+
+#design .gumroad-button {
+  letter-spacing: 0.04em;
+  color: #444 !important;
+  box-shadow: rgba(0, 0, 0, 0.7) 0 0 2px !important; }
+
+#design a.gumroad-button-strong {
+  background-color: #ebb933 !important;
+  color: #fff !important; }
 
 @media (max-width: 61.9em) {
-  #ic .jumbotron, #original .jumbotron {
+  .book-pages .jumbotron {
     padding-top: 4em;
     padding-bottom: 3em; } }
 
 @media (max-width: 47.9em) {
-  #ic .jumbotron, #original .jumbotron {
+  .book-pages .jumbotron {
     padding-top: 2em;
     height: 25em;
     margin-bottom: 0; }
   #ic .jumbotron {
     height: 26em; } }
-
-.table-of-contents li {
-  margin: 1em 0; }
 
 #setup .toc li li, #tutorial .toc li li {
   font-style: italic;
